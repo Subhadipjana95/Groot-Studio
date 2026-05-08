@@ -184,3 +184,34 @@
     scrollbar-width: none !important;
   }
 }
+
+/* Customize the view transition animation */
+::view-transition-old(root) {
+  animation: 0.4s cubic-bezier(0.4, 0, 0.2, 1) both fade-out-blur;
+}
+
+::view-transition-new(root) {
+  animation: 0.4s cubic-bezier(0.4, 0, 0.2, 1) both fade-in-blur;
+}
+
+@keyframes fade-out-blur {
+  from {
+    opacity: 1;
+    filter: blur(0px);
+  }
+  to {
+    opacity: 0;
+    filter: blur(10px);
+  }
+}
+
+@keyframes fade-in-blur {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
