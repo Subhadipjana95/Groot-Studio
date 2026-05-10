@@ -260,6 +260,18 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "image-trail",
+      "type": "registry:block",
+      "title": "Image Trail",
+      "description": "A very smooth and interactive trail of images that follows your mouse cursor with discrete step interpolation.",
+      "files": [
+        {
+          "path": "registry/radix-nova/image-trail/image-trail.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }
