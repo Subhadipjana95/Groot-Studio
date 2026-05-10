@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-05-01T04:09:40.404Z
+// Last generated: 2026-05-10T19:46:33.292Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -185,6 +185,80 @@ export const registry: ComponentConfig[] = [
       {
         "name": "blurred-marquee.tsx",
         "content": "\"use client\"\r\n\r\nimport React, { memo, useState, useEffect } from \"react\"\r\nimport { cn } from \"@/lib/utils\"\r\nimport { PlusIcon } from \"lucide-react\"\r\nimport {\r\n  useMotionValue,\r\n  animate,\r\n  motion,\r\n  HTMLMotionProps,\r\n} from \"motion/react\"\r\nimport useMeasure from \"react-use-measure\"\r\n\r\nexport type Logo = {\r\n  src: string\r\n  alt: string\r\n  width?: number\r\n  height?: number\r\n}\r\n\r\ntype InfiniteSliderProps = {\r\n  children: React.ReactNode\r\n  gap?: number\r\n  duration?: number\r\n  durationOnHover?: number\r\n  direction?: \"horizontal\" | \"vertical\"\r\n  reverse?: boolean\r\n  className?: string\r\n}\r\n\r\nconst InfiniteSlider = memo(function InfiniteSlider({\r\n  children,\r\n  gap = 16,\r\n  duration = 25,\r\n  durationOnHover,\r\n  direction = \"horizontal\",\r\n  reverse = false,\r\n  className,\r\n}: InfiniteSliderProps) {\r\n  const [currentDuration, setCurrentDuration] = useState(duration)\r\n  const [ref, { width, height }] = useMeasure()\r\n  const translation = useMotionValue(0)\r\n  const [isTransitioning, setIsTransitioning] = useState(false)\r\n  const [key, setKey] = useState(0)\r\n\r\n  useEffect(() => {\r\n    const size = direction === \"horizontal\" ? width : height\r\n    const contentSize = size + gap\r\n    const from = reverse ? -contentSize / 2 : 0\r\n    const to = reverse ? 0 : -contentSize / 2\r\n\r\n    let controls\r\n\r\n    if (isTransitioning) {\r\n      controls = animate(translation, [translation.get(), to], {\r\n        ease: \"linear\",\r\n        duration:\r\n          currentDuration *\r\n          Math.abs((translation.get() - to) / contentSize),\r\n        onComplete: () => {\r\n          setIsTransitioning(false)\r\n          setKey((prev) => prev + 1)\r\n        },\r\n      })\r\n    } else {\r\n      controls = animate(translation, [from, to], {\r\n        ease: \"linear\",\r\n        duration: currentDuration,\r\n        repeat: Infinity,\r\n        repeatType: \"loop\",\r\n        repeatDelay: 0,\r\n        onRepeat: () => translation.set(from),\r\n      })\r\n    }\r\n\r\n    return controls?.stop\r\n  }, [\r\n    key,\r\n    translation,\r\n    currentDuration,\r\n    width,\r\n    height,\r\n    gap,\r\n    isTransitioning,\r\n    direction,\r\n    reverse,\r\n  ])\r\n\r\n  const hoverProps = durationOnHover\r\n    ? {\r\n        onHoverStart: () => {\r\n          setIsTransitioning(true)\r\n          setCurrentDuration(durationOnHover)\r\n        },\r\n        onHoverEnd: () => {\r\n          setIsTransitioning(true)\r\n          setCurrentDuration(duration)\r\n        },\r\n      }\r\n    : {}\r\n\r\n  return (\r\n    <div className={cn(\"overflow-hidden\", className)}>\r\n      <motion.div\r\n        ref={ref}\r\n        className=\"flex w-max\"\r\n        style={{\r\n          ...(direction === \"horizontal\"\r\n            ? { x: translation }\r\n            : { y: translation }),\r\n          gap: `${gap}px`,\r\n          flexDirection: direction === \"horizontal\" ? \"row\" : \"column\",\r\n        }}\r\n        {...hoverProps}\r\n      >\r\n        {children}\r\n        {children}\r\n      </motion.div>\r\n    </div>\r\n  )\r\n})\r\n\r\nconst GRADIENT_ANGLES = { top: 0, right: 90, bottom: 180, left: 270 }\r\n\r\ntype ProgressiveBlurProps = {\r\n  direction?: keyof typeof GRADIENT_ANGLES\r\n  blurLayers?: number\r\n  blurIntensity?: number\r\n  className?: string\r\n} & HTMLMotionProps<\"div\">\r\n\r\nconst ProgressiveBlur = memo(function ProgressiveBlur({\r\n  direction = \"bottom\",\r\n  blurLayers = 8,\r\n  blurIntensity = 0.25,\r\n  className,\r\n  ...props\r\n}: ProgressiveBlurProps) {\r\n  const layers = Math.max(blurLayers, 2)\r\n  const segmentSize = 1 / (blurLayers + 1)\r\n  const angle = GRADIENT_ANGLES[direction]\r\n\r\n  return (\r\n    <div className={cn(\"relative\", className)}>\r\n      {Array.from({ length: layers }).map((_, index) => {\r\n        const gradientStops = [\r\n          index * segmentSize,\r\n          (index + 1) * segmentSize,\r\n          (index + 2) * segmentSize,\r\n          (index + 3) * segmentSize,\r\n        ]\r\n          .map(\r\n            (pos, posIndex) =>\r\n              `rgba(255,255,255,${\r\n                posIndex === 1 || posIndex === 2 ? 1 : 0\r\n              }) ${pos * 100}%`\r\n          )\r\n          .join(\", \")\r\n\r\n        const gradient = `linear-gradient(${angle}deg, ${gradientStops})`\r\n\r\n        return (\r\n          <motion.div\r\n            key={index}\r\n            className=\"pointer-events-none absolute inset-0 rounded-[inherit]\"\r\n            style={{\r\n              maskImage: gradient,\r\n              WebkitMaskImage: gradient,\r\n              backdropFilter: `blur(${index * blurIntensity}px)`,\r\n            }}\r\n            {...props}\r\n          />\r\n        )\r\n      })}\r\n    </div>\r\n  )\r\n})\r\n\r\nconst LogoImage = memo(function LogoImage({ logo }: { logo: Logo }) {\r\n  return (\r\n    <img\r\n      alt={logo.alt}\r\n      src={logo.src}\r\n      width={logo.width ?? \"auto\"}\r\n      height={logo.height ?? \"auto\"}\r\n      loading=\"lazy\"\r\n      className=\"pointer-events-none h-4 select-none md:h-5 dark:brightness-0 dark:invert\"\r\n    />\r\n  )\r\n})\r\n\r\nexport const BlurredMarquee = memo(function BlurredMarquee({\r\n  logos,\r\n  className,\r\n}: {\r\n  logos: Logo[]\r\n  className?: string\r\n}) {\r\n  return (\r\n    <div\r\n      className={cn(\r\n        \"relative mx-auto max-w-6xl bg-linear-to-r from-secondary via-transparent to-secondary py-6 md:border-x\",\r\n        className\r\n      )}\r\n    >\r\n      <div className=\"-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-screen border-t\" />\r\n\r\n      <InfiniteSlider gap={52} reverse duration={60} durationOnHover={20}>\r\n        {logos.map((logo) => (\r\n          <LogoImage key={logo.alt} logo={logo} />\r\n        ))}\r\n      </InfiniteSlider>\r\n\r\n      <ProgressiveBlur\r\n        blurIntensity={1}\r\n        className=\"pointer-events-none absolute top-0 left-0 h-full w-40\"\r\n        direction=\"left\"\r\n      />\r\n      <ProgressiveBlur\r\n        blurIntensity={1}\r\n        className=\"pointer-events-none absolute top-0 right-0 h-full w-40\"\r\n        direction=\"right\"\r\n      />\r\n\r\n      <div className=\"-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-screen border-b\" />\r\n\r\n      <PlusIcon\r\n        className=\"-top-[12.5px] -right-[12.5px] absolute z-10 hidden size-6 md:block text-slate-800 dark:text-slate-300\"\r\n        strokeWidth={1}\r\n      />\r\n      <PlusIcon\r\n        className=\"-bottom-[12.5px] -left-[12.5px] absolute z-10 hidden size-6 md:block text-slate-800 dark:text-slate-300\"\r\n        strokeWidth={1}\r\n      />\r\n    </div>\r\n  )\r\n})\r\n\r\nBlurredMarquee.displayName = \"BlurredMarquee\""
+      }
+    ]
+  },
+  {
+    "name": "cursor-trail",
+    "title": "Cursor Trail",
+    "description": "A smooth and refined shape trail effect that beautifully interpolates along your mouse cursor path.",
+    "category": {
+      "name": "Effects",
+      "slug": "effects"
+    },
+    "tier": "free",
+    "status": "stable",
+    "image": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777376141/3d-button_light_owphex.webp",
+    "imageDark": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777376141/3d-button_dark_xbvhmf.webp",
+    "tags": [
+      "cursor",
+      "trail",
+      "mouse",
+      "effect",
+      "animation"
+    ],
+    "preview": {
+      "disableSSR": false,
+      "height": 400
+    },
+    "registryUrl": "https://grootui.vercel.app/r/cursor-trail.json",
+    "npmDependencies": [],
+    "registryDependencies": [],
+    "usage": {
+      "import": "import { CursorTrail } from \"@/components/cursor-trail\"",
+      "code": "export default function Demo() {\n  return (\n    <div className=\"relative w-full h-full overflow-hidden\">\n      <CursorTrail />\n    </div>\n  )\n}"
+    },
+    "props": [
+      {
+        "name": "images",
+        "type": "string[]",
+        "default": "flairImages",
+        "required": false,
+        "description": "An array of image URLs to use in the trail."
+      },
+      {
+        "name": "distance",
+        "type": "number",
+        "default": "60",
+        "required": false,
+        "description": "The distance in pixels the cursor must move before a new image spawns."
+      },
+      {
+        "name": "duration",
+        "type": "number",
+        "default": "1000",
+        "required": false,
+        "description": "The duration of the individual image animation in milliseconds."
+      },
+      {
+        "name": "imageSize",
+        "type": "number",
+        "default": "64",
+        "required": false,
+        "description": "The width and height of the trail images in pixels."
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "default": "undefined",
+        "required": false,
+        "description": "Optional class names for custom styling."
+      }
+    ],
+    "files": [
+      {
+        "name": "cursor-trail.tsx",
+        "content": "'use client';\n\nimport React, { useEffect, useRef } from 'react';\nimport { cn } from \"@/lib/utils\";\n\nconst flairImages = [\n    \"https://assets.codepen.io/16327/Revised+Flair.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-1.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-2.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-3.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-4.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-5.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-6.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-7.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-8.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-1.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-2.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-3.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-4.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-5.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-6.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-7.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-8.png\",\n];\n\nexport interface CursorTrailProps extends React.HTMLAttributes<HTMLDivElement> {\n    images?: string[];\n    distance?: number;\n    duration?: number;\n    imageSize?: number;\n}\n\nexport function CursorTrail({\n    className,\n    images = flairImages,\n    distance = 80,\n    duration = 1000,\n    imageSize = 64,\n    ...props\n}: CursorTrailProps) {\n    const containerRef = useRef<HTMLDivElement>(null);\n\n    useEffect(() => {\n        if (!containerRef.current) return;\n\n        const imgElements = Array.from(containerRef.current.querySelectorAll('.flair-image')) as HTMLElement[];\n        let currentIndex = 0;\n\n        let lastX = 0;\n        let lastY = 0;\n        let isInitial = true;\n\n        const spawnImage = (x: number, y: number) => {\n            const img = imgElements[currentIndex];\n            if (!img) return;\n            currentIndex = (currentIndex + 1) % imgElements.length;\n\n            // Adjust to center the image on the cursor\n            const targetX = x - imageSize / 2;\n            const targetY = y - imageSize / 2;\n\n            // Ensure any previous animation is cancelled safely\n            if (typeof img.getAnimations === 'function') {\n                img.getAnimations().forEach(anim => anim.cancel());\n            }\n\n            const randomRotation = Math.random() * 40 - 20;\n\n            img.animate([\n                {\n                    opacity: 0,\n                    transform: `translate(${targetX}px, ${targetY}px) scale(0.2) rotate(0deg)`\n                },\n                {\n                    opacity: 1,\n                    transform: `translate(${targetX}px, ${targetY}px) scale(1) rotate(${randomRotation / 2}deg)`,\n                    offset: 0.15\n                },\n                {\n                    opacity: 0,\n                    transform: `translate(${targetX}px, ${targetY + 80}px) scale(0.8) rotate(${randomRotation}deg)`\n                }\n            ], {\n                duration,\n                easing: 'cubic-bezier(0.25, 1, 0.5, 1)',\n                fill: 'forwards'\n            });\n        };\n\n        const handleMouseMove = (e: MouseEvent) => {\n            if (!containerRef.current) return;\n            const rect = containerRef.current.getBoundingClientRect();\n            const currentX = e.clientX - rect.left;\n            const currentY = e.clientY - rect.top;\n\n            if (isInitial) {\n                lastX = currentX;\n                lastY = currentY;\n                isInitial = false;\n                return;\n            }\n\n            const dist = Math.hypot(currentX - lastX, currentY - lastY);\n\n            if (dist > distance) {\n                const count = Math.floor(dist / distance);\n                for (let i = 1; i <= count; i++) {\n                    const t = (i * distance) / dist;\n                    const x = lastX + (currentX - lastX) * t;\n                    const y = lastY + (currentY - lastY) * t;\n                    spawnImage(x, y);\n                }\n\n                // Update lastX and lastY to the last spawned point\n                const totalT = (count * distance) / dist;\n                lastX = lastX + (currentX - lastX) * totalT;\n                lastY = lastY + (currentY - lastY) * totalT;\n            }\n        };\n\n        window.addEventListener('mousemove', handleMouseMove);\n        return () => window.removeEventListener('mousemove', handleMouseMove);\n    }, [distance, duration, imageSize]);\n\n    return (\n        <div\n            className={cn(\"pointer-events-none fixed inset-0 z-50 overflow-hidden\", className)}\n            {...props}\n        >\n            <div ref={containerRef} className=\"absolute inset-0\">\n                {images.map((src, index) => (\n                    <img\n                        key={index}\n                        src={src}\n                        alt=\"\"\n                        className=\"flair-image absolute left-0 top-0 object-cover pointer-events-none origin-center\"\n                        style={{\n                            width: imageSize,\n                            height: imageSize,\n                            transform: 'translate(-100%, -100%)'\n                        }}\n                        aria-hidden=\"true\"\n                    />\n                ))}\n            </div>\n        </div>\n    );\n}\n"
       }
     ]
   },
