@@ -7,7 +7,7 @@
 
 <br/>
   
-[![Stars](https://img.shields.io/github/stars/Subhadipjana95/Groot-UI?style=for-the-badge&logo=github&logoColor=white&color=8D44AD&labelColor=313131)](https://github.com/Subhadipjana95/Groot-UI/stargazers) [![Forks](https://img.shields.io/github/forks/Subhadipjana95/Groot-UI?style=for-the-badge&logo=github&logoColor=white&color=2ECC71&labelColor=313131)](https://github.com/Subhadipjana95/Groot-UI/network/members) [![Issues](https://img.shields.io/github/issues/Subhadipjana95/Groot-UI?style=for-the-badge&logo=github&logoColor=white&color=E74C3C&labelColor=313131)](https://github.com/Subhadipjana95/Groot-UI/issues) [![License](https://img.shields.io/github/license/Subhadipjana95/Groot-UI?style=for-the-badge&logo=github&logoColor=white&color=3498DB&labelColor=313131)](https://github.com/Subhadipjana95/Groot-UI/blob/main/LICENSE)
+![badge](https://shieldcn.dev/github/Subhadipjana95/Groot-UI/stars.svg?font=geist) ![badge](https://shieldcn.dev/github/vercel/next.js/forks.svg?variant=secondary&font=geist) ![badge](https://shieldcn.dev/github/vercel/next.js/issues.svg?variant=destructive&font=geist)![badge](https://shieldcn.dev/github/Subhadipjana95/Groot-UI/license.svg?font=geist)
 
 
  
