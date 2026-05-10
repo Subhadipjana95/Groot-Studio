@@ -7,7 +7,6 @@ export const config: ComponentConfig = {
   category: { name: "Components", slug: "components" },
   tier: "free",
   status: "stable",
-  label: "New",
   image: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777378066/client-grid_lighht_iglnwa.webp",
   imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777378066/client-grid_dark_ei9qu3.webp",
   tags: ["grid", "logos", "layout"],

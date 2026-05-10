@@ -8,7 +8,6 @@ export const config: ComponentConfig = {
   category: { name: "Components", slug: "components" },
   tier: "free",
   status: "stable",
-  label: "New",
   image: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777378662/client-marquee-blur_light_u1omgi.webp",
   imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777378662/client-marquee-blur_dark_duu30j.webp",
   tags: ["marquee", "logos", "blurred"],
