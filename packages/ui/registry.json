@@ -248,6 +248,18 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "cursor-trail",
+      "type": "registry:block",
+      "title": "Cursor Trail",
+      "description": "A smooth and refined shape trail effect that beautifully interpolates along your mouse cursor path.",
+      "files": [
+        {
+          "path": "registry/radix-nova/cursor-trail/cursor-trail.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }

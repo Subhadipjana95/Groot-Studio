@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:previews
-// Last generated: 2026-05-01T04:09:42.227Z
+// Last generated: 2026-05-10T19:46:34.239Z
 // ─────────────────────────────────────────────────────────────────
 
 import dynamic from "next/dynamic";
@@ -26,6 +26,10 @@ export const previewRegistry = {
   "blurred-marquee": dynamic(
     () => import("./previews/blurred-marquee/blurred-marquee.preview"),
     { ssr: false, loading: () => null }
+  ),
+  "cursor-trail": dynamic(
+    () => import("./previews/cursor-trail/cursor-trail.preview"),
+    { loading: () => null }
   ),
   "discord-online": dynamic(
     () => import("./previews/discord-online/discord-online.preview"),
