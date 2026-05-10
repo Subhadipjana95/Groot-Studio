@@ -1,10 +1,7 @@
 "use client"
 
 import { createRef, useRef, type ReactNode } from "react"
-
-function cn(...classes: (string | undefined | null | false)[]) {
-  return classes.filter(Boolean).join(" ")
-}
+import { cn } from "@/lib/utils"
 
 interface ImageMouseTrailProps {
   items: string[]
