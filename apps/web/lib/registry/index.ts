@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-05-10T20:00:42.056Z
+// Last generated: 2026-05-10T21:00:47.619Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -198,6 +198,7 @@ export const registry: ComponentConfig[] = [
     },
     "tier": "free",
     "status": "stable",
+    "label": "New",
     "image": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778443195/cursor-trail_light_f7ug7e.webp",
     "imageDark": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778443195/cursor-trail_dark_jdzcdz.webp",
     "tags": [
@@ -258,7 +259,7 @@ export const registry: ComponentConfig[] = [
     "files": [
       {
         "name": "cursor-trail.tsx",
-        "content": "'use client';\n\nimport React, { useEffect, useRef } from 'react';\nimport { cn } from \"@/lib/utils\";\n\nconst flairImages = [\n    \"https://assets.codepen.io/16327/Revised+Flair.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-1.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-2.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-3.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-4.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-5.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-6.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-7.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-8.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-1.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-2.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-3.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-4.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-5.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-6.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-7.png\",\n    \"https://assets.codepen.io/16327/Revised+Flair-8.png\",\n];\n\nexport interface CursorTrailProps extends React.HTMLAttributes<HTMLDivElement> {\n    images?: string[];\n    distance?: number;\n    duration?: number;\n    imageSize?: number;\n}\n\nexport function CursorTrail({\n    className,\n    images = flairImages,\n    distance = 80,\n    duration = 1000,\n    imageSize = 64,\n    ...props\n}: CursorTrailProps) {\n    const containerRef = useRef<HTMLDivElement>(null);\n\n    useEffect(() => {\n        if (!containerRef.current) return;\n\n        const imgElements = Array.from(containerRef.current.querySelectorAll('.flair-image')) as HTMLElement[];\n        let currentIndex = 0;\n\n        let lastX = 0;\n        let lastY = 0;\n        let isInitial = true;\n\n        const spawnImage = (x: number, y: number) => {\n            const img = imgElements[currentIndex];\n            if (!img) return;\n            currentIndex = (currentIndex + 1) % imgElements.length;\n\n            // Adjust to center the image on the cursor\n            const targetX = x - imageSize / 2;\n            const targetY = y - imageSize / 2;\n\n            // Ensure any previous animation is cancelled safely\n            if (typeof img.getAnimations === 'function') {\n                img.getAnimations().forEach(anim => anim.cancel());\n            }\n\n            const randomRotation = Math.random() * 40 - 20;\n\n            img.animate([\n                {\n                    opacity: 0,\n                    transform: `translate(${targetX}px, ${targetY}px) scale(0.2) rotate(0deg)`\n                },\n                {\n                    opacity: 1,\n                    transform: `translate(${targetX}px, ${targetY}px) scale(1) rotate(${randomRotation / 2}deg)`,\n                    offset: 0.15\n                },\n                {\n                    opacity: 0,\n                    transform: `translate(${targetX}px, ${targetY + 80}px) scale(0.8) rotate(${randomRotation}deg)`\n                }\n            ], {\n                duration,\n                easing: 'cubic-bezier(0.25, 1, 0.5, 1)',\n                fill: 'forwards'\n            });\n        };\n\n        const handleMouseMove = (e: MouseEvent) => {\n            if (!containerRef.current) return;\n            const rect = containerRef.current.getBoundingClientRect();\n            const currentX = e.clientX - rect.left;\n            const currentY = e.clientY - rect.top;\n\n            if (isInitial) {\n                lastX = currentX;\n                lastY = currentY;\n                isInitial = false;\n                return;\n            }\n\n            const dist = Math.hypot(currentX - lastX, currentY - lastY);\n\n            if (dist > distance) {\n                const count = Math.floor(dist / distance);\n                for (let i = 1; i <= count; i++) {\n                    const t = (i * distance) / dist;\n                    const x = lastX + (currentX - lastX) * t;\n                    const y = lastY + (currentY - lastY) * t;\n                    spawnImage(x, y);\n                }\n\n                // Update lastX and lastY to the last spawned point\n                const totalT = (count * distance) / dist;\n                lastX = lastX + (currentX - lastX) * totalT;\n                lastY = lastY + (currentY - lastY) * totalT;\n            }\n        };\n\n        window.addEventListener('mousemove', handleMouseMove);\n        return () => window.removeEventListener('mousemove', handleMouseMove);\n    }, [distance, duration, imageSize]);\n\n    return (\n        <div\n            className={cn(\"pointer-events-none fixed inset-0 z-50 overflow-hidden\", className)}\n            {...props}\n        >\n            <div ref={containerRef} className=\"absolute inset-0\">\n                {images.map((src, index) => (\n                    <img\n                        key={index}\n                        src={src}\n                        alt=\"\"\n                        className=\"flair-image absolute left-0 top-0 object-cover pointer-events-none origin-center\"\n                        style={{\n                            width: imageSize,\n                            height: imageSize,\n                            transform: 'translate(-100%, -100%)'\n                        }}\n                        aria-hidden=\"true\"\n                    />\n                ))}\n            </div>\n        </div>\n    );\n}\n"
+        "content": "'use client';\r\n\r\nimport React, { useEffect, useRef } from 'react';\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst flairImages = [\r\n    \"https://assets.codepen.io/16327/Revised+Flair.png\",\r\n    \"https://assets.codepen.io/16327/Revised+Flair-1.png\",\r\n    \"https://assets.codepen.io/16327/Revised+Flair-2.png\",\r\n    \"https://assets.codepen.io/16327/Revised+Flair-3.png\",\r\n    \"https://assets.codepen.io/16327/Revised+Flair-4.png\",\r\n    \"https://assets.codepen.io/16327/Revised+Flair-5.png\",\r\n    \"https://assets.codepen.io/16327/Revised+Flair-6.png\",\r\n    \"https://assets.codepen.io/16327/Revised+Flair-7.png\",\r\n    \"https://assets.codepen.io/16327/Revised+Flair-8.png\",\r\n    \"https://assets.codepen.io/16327/Revised+Flair.png\",\r\n    \"https://assets.codepen.io/16327/Revised+Flair-1.png\",\r\n    \"https://assets.codepen.io/16327/Revised+Flair-2.png\",\r\n    \"https://assets.codepen.io/16327/Revised+Flair-3.png\",\r\n    \"https://assets.codepen.io/16327/Revised+Flair-4.png\",\r\n    \"https://assets.codepen.io/16327/Revised+Flair-5.png\",\r\n    \"https://assets.codepen.io/16327/Revised+Flair-6.png\",\r\n    \"https://assets.codepen.io/16327/Revised+Flair-7.png\",\r\n    \"https://assets.codepen.io/16327/Revised+Flair-8.png\",\r\n];\r\n\r\nexport interface CursorTrailProps extends React.HTMLAttributes<HTMLDivElement> {\r\n    images?: string[];\r\n    distance?: number;\r\n    duration?: number;\r\n    imageSize?: number;\r\n}\r\n\r\nexport function CursorTrail({\r\n    className,\r\n    images = flairImages,\r\n    distance = 80,\r\n    duration = 1000,\r\n    imageSize = 64,\r\n    ...props\r\n}: CursorTrailProps) {\r\n    const containerRef = useRef<HTMLDivElement>(null);\r\n\r\n    useEffect(() => {\r\n        if (!containerRef.current) return;\r\n\r\n        const imgElements = Array.from(containerRef.current.querySelectorAll('.flair-image')) as HTMLElement[];\r\n        let currentIndex = 0;\r\n\r\n        let lastX = 0;\r\n        let lastY = 0;\r\n        let isInitial = true;\r\n\r\n        const spawnImage = (x: number, y: number) => {\r\n            const img = imgElements[currentIndex];\r\n            if (!img) return;\r\n            currentIndex = (currentIndex + 1) % imgElements.length;\r\n\r\n            // Adjust to center the image on the cursor\r\n            const targetX = x - imageSize / 2;\r\n            const targetY = y - imageSize / 2;\r\n\r\n            // Ensure any previous animation is cancelled safely\r\n            if (typeof img.getAnimations === 'function') {\r\n                img.getAnimations().forEach(anim => anim.cancel());\r\n            }\r\n\r\n            const randomRotation = Math.random() * 40 - 20;\r\n\r\n            img.animate([\r\n                {\r\n                    opacity: 0,\r\n                    transform: `translate(${targetX}px, ${targetY}px) scale(0.2) rotate(0deg)`\r\n                },\r\n                {\r\n                    opacity: 1,\r\n                    transform: `translate(${targetX}px, ${targetY}px) scale(1) rotate(${randomRotation / 2}deg)`,\r\n                    offset: 0.15\r\n                },\r\n                {\r\n                    opacity: 0,\r\n                    transform: `translate(${targetX}px, ${targetY + 80}px) scale(0.8) rotate(${randomRotation}deg)`\r\n                }\r\n            ], {\r\n                duration,\r\n                easing: 'cubic-bezier(0.25, 1, 0.5, 1)',\r\n                fill: 'forwards'\r\n            });\r\n        };\r\n\r\n        const handleMouseMove = (e: MouseEvent) => {\r\n            if (!containerRef.current) return;\r\n            const rect = containerRef.current.getBoundingClientRect();\r\n            const currentX = e.clientX - rect.left;\r\n            const currentY = e.clientY - rect.top;\r\n\r\n            if (isInitial) {\r\n                lastX = currentX;\r\n                lastY = currentY;\r\n                isInitial = false;\r\n                return;\r\n            }\r\n\r\n            const dist = Math.hypot(currentX - lastX, currentY - lastY);\r\n\r\n            if (dist > distance) {\r\n                const count = Math.floor(dist / distance);\r\n                for (let i = 1; i <= count; i++) {\r\n                    const t = (i * distance) / dist;\r\n                    const x = lastX + (currentX - lastX) * t;\r\n                    const y = lastY + (currentY - lastY) * t;\r\n                    spawnImage(x, y);\r\n                }\r\n\r\n                // Update lastX and lastY to the last spawned point\r\n                const totalT = (count * distance) / dist;\r\n                lastX = lastX + (currentX - lastX) * totalT;\r\n                lastY = lastY + (currentY - lastY) * totalT;\r\n            }\r\n        };\r\n\r\n        window.addEventListener('mousemove', handleMouseMove);\r\n        return () => window.removeEventListener('mousemove', handleMouseMove);\r\n    }, [distance, duration, imageSize]);\r\n\r\n    return (\r\n        <div\r\n            className={cn(\"pointer-events-none fixed inset-0 z-50 overflow-hidden\", className)}\r\n            {...props}\r\n        >\r\n            <div ref={containerRef} className=\"absolute inset-0\">\r\n                {images.map((src, index) => (\r\n                    <img\r\n                        key={index}\r\n                        src={src}\r\n                        alt=\"\"\r\n                        className=\"flair-image absolute left-0 top-0 object-cover pointer-events-none origin-center\"\r\n                        style={{\r\n                            width: imageSize,\r\n                            height: imageSize,\r\n                            transform: 'translate(-100%, -100%)'\r\n                        }}\r\n                        aria-hidden=\"true\"\r\n                    />\r\n                ))}\r\n            </div>\r\n        </div>\r\n    );\r\n}\r\n"
       }
     ]
   },
@@ -768,6 +769,88 @@ export const registry: ComponentConfig[] = [
       {
         "name": "gradient-text-fill.tsx",
         "content": "\"use client\"\r\n\r\nimport React, { memo, useMemo } from \"react\"\r\nimport { motion, MotionProps } from \"motion/react\"\r\nimport { cn } from \"@/lib/utils\"\r\n\r\ninterface GradientTextProps\r\n  extends Omit<React.HTMLAttributes<HTMLElement>, keyof MotionProps | \"style\"> {\r\n  className?: string\r\n  children: React.ReactNode\r\n  as?: React.ElementType\r\n  colors?: string\r\n  style?: React.CSSProperties\r\n}\r\n\r\nconst keyframesStyle = `\r\n@keyframes gradient-border {\r\n  0%, 100% { border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%; }\r\n  25% { border-radius: 47% 29% 39% 49% / 61% 19% 66% 26%; }\r\n  50% { border-radius: 57% 23% 47% 72% / 63% 17% 66% 33%; }\r\n  75% { border-radius: 28% 49% 29% 100% / 93% 20% 64% 25%; }\r\n}\r\n@keyframes gradient-1 {\r\n  0%, 100% { top: 0; right: 0; }\r\n  50% { top: 50%; right: 25%; }\r\n  75% { top: 25%; right: 50%; }\r\n}\r\n@keyframes gradient-2 {\r\n  0%, 100% { top: 0; left: 0; }\r\n  60% { top: 75%; left: 25%; }\r\n  85% { top: 50%; left: 50%; }\r\n}\r\n@keyframes gradient-3 {\r\n  0%, 100% { bottom: 0; left: 0; }\r\n  40% { bottom: 50%; left: 25%; }\r\n  65% { bottom: 25%; left: 50%; }\r\n}\r\n@keyframes gradient-4 {\r\n  0%, 100% { bottom: 0; right: 0; }\r\n  50% { bottom: 25%; right: 40%; }\r\n  90% { bottom: 50%; right: 25%; }\r\n}\r\n@media (prefers-reduced-motion: reduce) {\r\n  .groot-orb { animation: none !important; }\r\n}\r\n`\r\n\r\nconst ORB_BASE =\r\n  \"groot-orb pointer-events-none absolute h-[30vw] w-[30vw] mix-blend-overlay blur-lg\"\r\n\r\nconst GradientText = memo(function GradientText({\r\n  className,\r\n  children,\r\n  as: Component = \"span\",\r\n  colors = \"#cc0066, #1aff53, #004d99, #f5f56b, #a600e6\",\r\n  style,\r\n  ...props\r\n}: GradientTextProps) {\r\n  const MotionComponent = useMemo(() => motion.create(Component), [Component])\r\n\r\n  const colorArray = useMemo(\r\n    () => colors.split(\",\").map((c) => c.trim()),\r\n    [colors]\r\n  )\r\n\r\n  return (\r\n    <MotionComponent\r\n      className={cn(\r\n        \"relative inline-flex overflow-hidden bg-foreground text-transparent bg-clip-text py-1\",\r\n        className\r\n      )}\r\n      style={style}\r\n      {...props}\r\n    >\r\n      <style dangerouslySetInnerHTML={{ __html: keyframesStyle }} />\r\n      {children}\r\n      <span\r\n        aria-hidden\r\n        className=\"pointer-events-none absolute inset-0 mix-blend-lighten dark:mix-blend-darken\"\r\n      >\r\n        <span\r\n          className={cn(ORB_BASE, \"-top-1/2 animate-[gradient-border_6s_ease-in-out_infinite,gradient-1_12s_ease-in-out_infinite_alternate]\")}\r\n          style={{ backgroundColor: colorArray[0] }}\r\n        />\r\n        <span\r\n          className={cn(ORB_BASE, \"right-0 top-0 animate-[gradient-border_6s_ease-in-out_infinite,gradient-2_12s_ease-in-out_infinite_alternate]\")}\r\n          style={{ backgroundColor: colorArray[1] }}\r\n        />\r\n        <span\r\n          className={cn(ORB_BASE, \"bottom-0 left-0 animate-[gradient-border_6s_ease-in-out_infinite,gradient-3_12s_ease-in-out_infinite_alternate]\")}\r\n          style={{ backgroundColor: colorArray[2] }}\r\n        />\r\n        <span\r\n          className={cn(ORB_BASE, \"-bottom-1/2 right-0 animate-[gradient-border_6s_ease-in-out_infinite,gradient-4_12s_ease-in-out_infinite_alternate]\")}\r\n          style={{ backgroundColor: colorArray[3] }}\r\n        />\r\n      </span>\r\n    </MotionComponent>\r\n  )\r\n})\r\n\r\nGradientText.displayName = \"GradientText\"\r\n\r\nexport { GradientText }"
+      }
+    ]
+  },
+  {
+    "name": "image-trail",
+    "title": "Image Trail",
+    "description": "A very smooth and interactive trail of images that follows your mouse cursor with discrete step interpolation.",
+    "category": {
+      "name": "Effects",
+      "slug": "effects"
+    },
+    "tier": "free",
+    "status": "stable",
+    "label": "New",
+    "image": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778445439/image_trail_light_yo7x8b.webp",
+    "imageDark": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778445439/image_trail_dark_qne2hh.webp",
+    "tags": [
+      "image",
+      "trail",
+      "mouse",
+      "effect",
+      "animation"
+    ],
+    "preview": {
+      "disableSSR": false,
+      "height": 600
+    },
+    "registryUrl": "https://grootui.vercel.app/r/image-trail.json",
+    "npmDependencies": [],
+    "registryDependencies": [],
+    "usage": {
+      "import": "import { ImageCursorTrail } from \"@/components/image-trail\"",
+      "code": "export default function Demo() {\n  return (\n    <ImageCursorTrail\n      items={[\"/image1.jpg\", \"/image2.jpg\"]}\n      maxNumberOfImages={5}\n      distance={25}\n      imgClass=\"sm:w-40 w-28 sm:h-48 h-36\"\n      className=\"max-w-4xl rounded-3xl\"\n    />\n  )\n}"
+    },
+    "props": [
+      {
+        "name": "items",
+        "type": "string[]",
+        "default": "[]",
+        "required": true,
+        "description": "An array of image URLs to use in the trail."
+      },
+      {
+        "name": "distance",
+        "type": "number",
+        "default": "20",
+        "required": false,
+        "description": "The fraction of the window width required to trigger spawning a new image. Larger numbers mean closer images."
+      },
+      {
+        "name": "maxNumberOfImages",
+        "type": "number",
+        "default": "5",
+        "required": false,
+        "description": "The maximum number of images that can be visible on the screen at the same time."
+      },
+      {
+        "name": "fadeAnimation",
+        "type": "boolean",
+        "default": "false",
+        "required": false,
+        "description": "Whether to automatically fade out the image after 1.5 seconds regardless of trail length."
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "default": "undefined",
+        "required": false,
+        "description": "Optional class names for the container section."
+      },
+      {
+        "name": "imgClass",
+        "type": "string",
+        "default": "\"w-40 h-48\"",
+        "required": false,
+        "description": "Class names for individual image elements, particularly for adjusting sizing constraints."
+      }
+    ],
+    "files": [
+      {
+        "name": "image-trail.tsx",
+        "content": "\"use client\"\n\nimport { createRef, useRef, type ReactNode } from \"react\"\n\nfunction cn(...classes: (string | undefined | null | false)[]) {\n  return classes.filter(Boolean).join(\" \")\n}\n\ninterface ImageMouseTrailProps {\n  items: string[]\n  children?: ReactNode\n  className?: string\n  imgClass?: string\n  distance?: number\n  maxNumberOfImages?: number\n  fadeAnimation?: boolean\n}\n\nexport default function ImageCursorTrail({\n  items,\n  children,\n  className,\n  maxNumberOfImages = 5,\n  imgClass = \"w-40 h-48\",\n  distance = 20,\n  fadeAnimation = false,\n}: ImageMouseTrailProps) {\n  const containerRef = useRef<HTMLDivElement>(null)\n  const refs = useRef(items.map(() => createRef<HTMLImageElement>()))\n  const currentZIndexRef = useRef(1)\n\n  let globalIndex = 0\n  let last = { x: 0, y: 0 }\n\n  const activate = (image: HTMLImageElement, x: number, y: number) => {\n    const containerRect = containerRef.current?.getBoundingClientRect()\n    if (!containerRect) return\n    const relativeX = x - containerRect.left\n    const relativeY = y - containerRect.top\n    image.style.left = `${relativeX}px`\n    image.style.top = `${relativeY}px`\n\n    if (currentZIndexRef.current > 40) {\n      currentZIndexRef.current = 1\n    }\n    image.style.zIndex = String(currentZIndexRef.current)\n    currentZIndexRef.current++\n\n    image.dataset.status = \"active\"\n    if (fadeAnimation) {\n      setTimeout(() => {\n        image.dataset.status = \"inactive\"\n      }, 1500)\n    }\n    last = { x, y }\n  }\n\n  const distanceFromLast = (x: number, y: number) =>\n    Math.hypot(x - last.x, y - last.y)\n\n  const deactivate = (image: HTMLImageElement) => {\n    image.dataset.status = \"inactive\"\n  }\n\n  const handleOnMove = (clientX: number, clientY: number) => {\n    if (distanceFromLast(clientX, clientY) > window.innerWidth / distance) {\n      const lead = refs.current[globalIndex % refs.current.length]?.current\n      const tail =\n        refs.current[\n          (globalIndex - maxNumberOfImages) % refs.current.length\n        ]?.current\n      if (lead) activate(lead, clientX, clientY)\n      if (tail) deactivate(tail)\n      globalIndex++\n    }\n  }\n\n  return (\n    <section\n      onMouseMove={(e) => handleOnMove(e.clientX, e.clientY)}\n      onTouchMove={(e) => {\n        const touch = e.touches[0]\n        if (touch) {\n          handleOnMove(touch.clientX, touch.clientY)\n        }\n      }}\n      ref={containerRef}\n      className={cn(\n        \"relative grid h-[600px] w-full place-content-center overflow-hidden rounded-lg\",\n        className\n      )}\n    >\n      {items.map((item, index) => (\n        <img\n          key={index}\n          className={cn(\n            \"opacity:0 data-[status='active']:ease-out-expo absolute -translate-x-[50%] -translate-y-[50%] scale-0 rounded-3xl object-cover transition-transform duration-300 data-[status='active']:scale-100 data-[status='active']:opacity-100 data-[status='active']:duration-500\",\n            imgClass\n          )}\n          data-index={index}\n          data-status=\"inactive\"\n          src={item}\n          alt={`image-${index}`}\n          ref={refs.current[index]}\n        />\n      ))}\n      {children}\n    </section>\n  )\n}\n"
       }
     ]
   },
