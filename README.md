@@ -12,7 +12,7 @@
 
  
 
-[Website](https://grootui.vercel.app) • [Documentation](https://grootui.vercel.app/docs) • [Report Bug](https://github.com/Subhadipjana95/Groot-UI/issues/new) • [Request Feature](https://github.com/Subhadipjana95/Groot-UI/issues/new)
+[Website](https://grootui.vercel.app) | [Documentation](https://grootui.vercel.app/docs) | [Report Bug](https://github.com/Subhadipjana95/Groot-UI/issues/new) | [Request Feature](https://github.com/Subhadipjana95/Groot-UI/issues/new)
 
 ---
 
@@ -69,7 +69,7 @@ Ensure your project environment meets the following:
 - **shadcn/ui**: Initialized (`npx shadcn@latest init`)
 
 ### 2. Add a Component
-Groot UI components are installed via the shadcn CLI using their registry URLs. For example, to add the **Sliding Button**:
+Groot UI components are installed via the shadcn CLI using their registry URLs. For example, to add the `Sliding Button` :
 
 ```bash
 npx shadcn@latest add https://grootui.vercel.app/r/sliding-button.json
