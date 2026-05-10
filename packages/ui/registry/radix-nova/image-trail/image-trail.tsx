@@ -62,14 +62,14 @@ export default function ImageCursorTrail({
     image.dataset.status = "inactive"
   }
 
-  const handleOnMove = (e: MouseEvent | Touch) => {
-    if (distanceFromLast(e.clientX, e.clientY) > window.innerWidth / distance) {
-      const lead = refs.current[globalIndex % refs.current.length].current
+  const handleOnMove = (clientX: number, clientY: number) => {
+    if (distanceFromLast(clientX, clientY) > window.innerWidth / distance) {
+      const lead = refs.current[globalIndex % refs.current.length]?.current
       const tail =
         refs.current[
           (globalIndex - maxNumberOfImages) % refs.current.length
         ]?.current
-      if (lead) activate(lead, e.clientX, e.clientY)
+      if (lead) activate(lead, clientX, clientY)
       if (tail) deactivate(tail)
       globalIndex++
     }
@@ -77,8 +77,13 @@ export default function ImageCursorTrail({
 
   return (
     <section
-      onMouseMove={(e) => handleOnMove(e)}
-      onTouchMove={(e) => handleOnMove(e.touches[0])}
+      onMouseMove={(e) => handleOnMove(e.clientX, e.clientY)}
+      onTouchMove={(e) => {
+        const touch = e.touches[0]
+        if (touch) {
+          handleOnMove(touch.clientX, touch.clientY)
+        }
+      }}
       ref={containerRef}
       className={cn(
         "relative grid h-[600px] w-full place-content-center overflow-hidden rounded-lg",
