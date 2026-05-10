@@ -97,7 +97,8 @@ export default function ImageCursorTrail({
           data-index={index}
           data-status="inactive"
           src={item}
-          alt={`image-${index}`}
+          alt=""
+          aria-hidden="true"
           ref={refs.current[index]}
         />
       ))}
