@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-05-10T19:46:33.292Z
+// Last generated: 2026-05-10T20:00:42.056Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -198,8 +198,8 @@ export const registry: ComponentConfig[] = [
     },
     "tier": "free",
     "status": "stable",
-    "image": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777376141/3d-button_light_owphex.webp",
-    "imageDark": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777376141/3d-button_dark_xbvhmf.webp",
+    "image": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778443195/cursor-trail_light_f7ug7e.webp",
+    "imageDark": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778443195/cursor-trail_dark_jdzcdz.webp",
     "tags": [
       "cursor",
       "trail",
