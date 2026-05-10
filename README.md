@@ -7,7 +7,7 @@
 
 <br/>
   
-![badge](https://shieldcn.dev/github/Subhadipjana95/Groot-UI/stars.svg?font=geist) ![badge](https://shieldcn.dev/github/vercel/next.js/forks.svg?variant=secondary&font=geist) ![badge](https://shieldcn.dev/github/vercel/next.js/issues.svg?variant=destructive&font=geist)![badge](https://shieldcn.dev/github/Subhadipjana95/Groot-UI/license.svg?font=geist)
+![badge](https://shieldcn.dev/github/Subhadipjana95/Groot-UI/stars.svg?font=geist) ![badge](https://shieldcn.dev/github/vercel/next.js/forks.svg?variant=secondary&font=geist) ![badge](https://shieldcn.dev/github/vercel/next.js/issues.svg?variant=destructive&font=geist) ![badge](https://shieldcn.dev/github/Subhadipjana95/Groot-UI/license.svg?font=geist)
 
 
  
