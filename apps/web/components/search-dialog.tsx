@@ -50,8 +50,8 @@ export function NavSearchDialog({ open, onOpenChange }: NavSearchDialogProps) {
         <DialogTitle className="sr-only">Search</DialogTitle>
         <Command className="rounded-xl">
           <CommandInput placeholder="Search components, pages, settings..." />
-          <CommandList 
-            className="max-h-[380px] min-h-[280px] overflow-y-auto overscroll-contain scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none]"
+          <CommandList
+            className="max-h-[380px] min-h-[280px] overflow-y-auto overscroll-contain scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] mask-[linear-gradient(to_bottom,transparent,black_20px,black_calc(100%-60px),transparent_97.1%)]"
             onWheel={(e) => e.stopPropagation()}
           >
             <CommandEmpty className="flex min-h-[200px] flex-col items-center justify-center">
@@ -89,7 +89,7 @@ export function NavSearchDialog({ open, onOpenChange }: NavSearchDialogProps) {
                 return <React.Fragment key={id}>{content}</React.Fragment>
               })}
             </CommandGroup>
-            
+
             <CommandGroup heading="Components">
               {registry.map((component) => {
                 const { name, title, description, category, tags } = component;
