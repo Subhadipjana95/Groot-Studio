@@ -10,7 +10,7 @@ export const config: ComponentConfig = {
   label: "New",
   image: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777376141/text-outline-glow_light_owphex.webp",
   imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777376141/text-outline-glow_dark_xbvhmf.webp",
-  tags: ["text", "hover", "glow", "svg", "animation", "gsap"],
+  tags: ["hover", "glow", "cursor", "gsap"],
   preview: { disableSSR: false, height: 300 },
   registryUrl: "https://grootui.vercel.app/r/text-outline-glow.json",
   npmDependencies: ["gsap", "@gsap/react"],
