@@ -1,8 +1,13 @@
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 import { registry } from "@/lib/registry";
 import { cn } from "@/lib/utils";
 
 export default function ComponentsPage() {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
   // Group components by category
   const categories = registry.reduce((acc, component) => {
     const categoryName = component.category.name;
@@ -13,17 +18,59 @@ export default function ComponentsPage() {
     return acc;
   }, {} as Record<string, typeof registry>);
 
+  const sortedCategories = Object.entries(categories).sort(([a], [b]) => 
+    a.localeCompare(b)
+  );
+
+  const categoryNames = Object.keys(categories).sort();
+
+  const filteredCategories = selectedCategory 
+    ? sortedCategories.filter(([category]) => category === selectedCategory)
+    : sortedCategories;
+
   return (
     <div className="container max-w-5xl py-10">
-      <div className="flex flex-col gap-1 mb-6 ">
-        <h1 className="text-3xl font-medium tracking-tight lg:text-5xl text-transparent bg-clip-text bg-brand-gradient">Components</h1>
-        <p className="text-sm md:text-lg text-muted-foreground">
-          Premium UI components built with Radix UI and Tailwind CSS.
-        </p>
+      <div className="flex flex-col gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 overflow-hidden">
+          <h1 className="text-3xl font-medium tracking-tight lg:text-5xl text-transparent bg-clip-text bg-brand-gradient shrink-0">
+            Components
+          </h1>
+
+          {/* Category Filter */}
+          <div className="relative flex items-center flex-1 min-w-0 w-full md:max-w-[50%] bg-muted/40 pr-1.5 pl-0.5 py-0.5 border border-dashed border-border/50 rounded-lg group">
+            <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide pl-1 py-1 select-none scroll-smooth mask-[linear-gradient(to_right,transparent,black_12px,black_calc(100%-100px),transparent)]">
+              <button
+                onClick={() => setSelectedCategory(null)}
+                className={cn(
+                  "px-2.5 py-1 text-sm font-medium rounded-full transition-all border shrink-0",
+                  selectedCategory === null
+                    ? "bg-brand-gradient opacity-90 text-background border-background"
+                    : "bg-muted text-muted-foreground hover:text-foreground border-border/60"
+                )}
+              >
+                All
+              </button>
+              {categoryNames.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={cn(
+                    "px-2.5 py-1 text-sm font-medium rounded-full transition-all border shrink-0",
+                    selectedCategory === category
+                      ? "bg-brand-gradient opacity-90 text-background border-background"
+                      : "bg-muted text-muted-foreground hover:text-foreground border-border/60"
+                  )}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="grid gap-12">
-        {Object.entries(categories).map(([category, items]) => (
+        {filteredCategories.map(([category, items]) => (
           <section key={category}>
             <h2 id={category.toLowerCase().replace(/\s+/g, '-')} className="text-2xl font-medium mb-3 pb-1 scroll-m-20">{category}</h2>
             <div className="grid grid-cols-2 md:grid-cols-2 gap-2 md:gap-4">
