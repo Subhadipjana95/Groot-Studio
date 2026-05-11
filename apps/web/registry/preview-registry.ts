@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:previews
-// Last generated: 2026-05-11T18:10:03.628Z
+// Last generated: 2026-05-11T18:53:21.092Z
 // ─────────────────────────────────────────────────────────────────
 
 import dynamic from "next/dynamic";

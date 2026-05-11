@@ -288,6 +288,18 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "animated-bars",
+      "type": "registry:block",
+      "title": "Animated Bars",
+      "description": "A dynamic background component with pulsating, gradient bars that create a fluid energy effect.",
+      "files": [
+        {
+          "path": "registry/radix-nova/animated-bars/animated-bars.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }
