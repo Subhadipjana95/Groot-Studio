@@ -29,50 +29,60 @@ export function Sidebar() {
     return acc;
   }, {} as Record<string, typeof registry>);
 
+  const sortedCategories = Object.entries(categories).sort(([a], [b]) => 
+    a.localeCompare(b)
+  );
+
   return (
-    <SidebarProvider className="min-h-0 w-full items-start">
+    <SidebarProvider className="min-h-0 w-full">
       <BaseSidebar collapsible="none" className="w-full bg-transparent border-none">
         <SidebarContent className="scrollbar-hide pb-6 overflow-visible">
-          <SidebarGroup className="pt-0 min-w-full w-max pr-6">
-            <SidebarMenu>
+          <SidebarGroup className="pt-0 w-full flex flex-col items-start overflow-visible">
+            <SidebarMenu className="items-start">
               <SidebarMenuItem>
                 <SidebarMenuButton className="font-medium text-muted-foreground/80 hover:text-muted-foreground/60 cursor-default bg-muted/50 border hover:border-dashed w-fit h-7 mb-1">
                   Getting Started
                 </SidebarMenuButton>
-                <SidebarMenuSub>
+                <SidebarMenuSub className="items-start">
                   <SidebarMenuSubItem>
-                    <SidebarMenuSubButton asChild isActive={pathname === "/components"}>
+                    <SidebarMenuSubButton asChild isActive={pathname === "/components"} className="w-fit">
                       <Link href="/components">
-                        Overview
+                        <div className="px-0.5">
+                          Overview
+                        </div>
                       </Link>
                     </SidebarMenuSubButton>
                   </SidebarMenuSubItem>
                   <SidebarMenuSubItem>
-                    <SidebarMenuSubButton asChild isActive={pathname === "/components/installation"}>
+                    <SidebarMenuSubButton asChild isActive={pathname === "/components/installation"} className="w-fit">
                       <Link href="/components/installation">
-                        Installation
+                        <div className="px-0.5">
+                          Installation
+                        </div>
                       </Link>
                     </SidebarMenuSubButton>
                   </SidebarMenuSubItem>
                 </SidebarMenuSub>
               </SidebarMenuItem>
 
-              {Object.entries(categories).map(([category, items]) => (
-                <SidebarMenuItem key={category} className="group">
+              {sortedCategories.map(([category, items]) => (
+                <SidebarMenuItem key={category} className="group flex flex-col items-start">
                   <SidebarMenuButton className="font-medium text-muted-foreground/80 hover:text-muted-foreground/60 active:text-muted-foreground/60 cursor-default bg-muted/50 border hover:border-dashed w-fit h-7 my-1">
                     {category}
                   </SidebarMenuButton>
-                  <SidebarMenuSub>
+                  <SidebarMenuSub className="items-start">
                     {items.map((item) => (
                       <SidebarMenuSubItem key={item.name}>
-                        <SidebarMenuSubButton asChild isActive={pathname === `/components/${item.name}`} className="overflow-visible">
-                          <Link href={`/components/${item.name}`} className="w-full flex justify-between">
-                            <span className="whitespace-nowrap">{item.title}</span>
-                            {item.label && (
-                              <span className="ml-1 rounded-full px-1.5 py-1 text-[9px] font-medium bg-brand-gradient text-background dark:text-background shrink-0 leading-none whitespace-nowrap">
-                                {item.label}
-                              </span>
-                            )}
+                        <SidebarMenuSubButton asChild isActive={pathname === `/components/${item.name}`} className="w-fit">
+                          <Link href={`/components/${item.name}`} className="flex items-center gap-2">
+                            <div className="flex items-center gap-2 min-w-0 px-0.5">
+                              <span className="whitespace-nowrap">{item.title}</span>
+                              {item.label && (
+                                <span className="rounded-full px-1.5 py-1 text-[9px] font-medium bg-brand-gradient text-background dark:text-background shrink-0 leading-none whitespace-nowrap">
+                                  {item.label}
+                                </span>
+                              )}
+                            </div>
                           </Link>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>

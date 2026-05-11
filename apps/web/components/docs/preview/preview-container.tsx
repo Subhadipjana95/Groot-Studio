@@ -55,7 +55,7 @@ export function PreviewContainer({
         >
           <div
             key={previewKey}
-            className="relative z-10 w-full min-h-[250px] md:min-h-[400px] rounded-lg flex items-center justify-center bg-background p-1 md:p-2 overflow-hidden"
+            className="relative z-10 w-full min-h-[250px] md:min-h-[400px] rounded-lg flex items-center justify-center bg-background p-1 overflow-hidden"
           >
             {children}
           </div>

@@ -103,7 +103,7 @@ export function Navbar() {
                     <Link
                       href={href}
                       className={cn(
-                        "rounded-md px-2 py-2 text-[15px] font-medium transition-colors flex items-center gap-1.5",
+                        "rounded-md px-2 py-1.5 text-[15px] font-medium transition-colors flex items-center gap-1.5",
                         isActive
                           ? "bg-primary/10 text-primary"
                           : "hover:bg-primary/10 hover:text-primary text-foreground"
@@ -111,7 +111,7 @@ export function Navbar() {
                     >
                       {label}
                       {getCount(label) > 0 && (
-                        <span className="flex h-5 w-6 items-center justify-center rounded-full bg-muted-foreground/20 text-[10px] font-bold text-foreground leading-none">
+                        <span className="flex h-5 w-6 items-center justify-center rounded-full bg-muted-foreground/20 text-[10px] font-semibold tracking-wide font-sans text-foreground leading-none">
                           {getCount(label)}
                         </span>
                       )}
