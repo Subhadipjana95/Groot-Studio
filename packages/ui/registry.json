@@ -272,6 +272,22 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "text-outline-glow",
+      "type": "registry:block",
+      "title": "Text Outline Glow",
+      "description": "A very smooth and interactive trail of images that follows your mouse cursor with discrete step interpolation.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/text-outline-glow/text-outline-glow.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }

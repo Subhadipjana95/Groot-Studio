@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-05-10T21:14:01.481Z
+// Last generated: 2026-05-11T16:04:04.688Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -1075,6 +1075,76 @@ export const registry: ComponentConfig[] = [
       {
         "name": "sliding-button.tsx",
         "content": "\"use client\";\r\n\r\nimport React from \"react\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { ArrowUpRight } from \"lucide-react\";\r\nimport { cn } from \"@/lib/utils\";\r\nimport { motion } from \"motion/react\";\r\n\r\nexport interface SlidingButtonProps\r\n  extends Omit<React.ComponentProps<typeof Button>, \"variant\"> {\r\n  children: React.ReactNode;\r\n  iconPosition?: \"left\" | \"right\";\r\n  variant?: keyof typeof BOX_SHADOW;\r\n  className?: string;\r\n}\r\n\r\nconst ICON_PX = 40;\r\nconst GAP_PX = 4;\r\n\r\nconst SPRING_SLIDE = { type: \"spring\", stiffness: 300, damping: 28 } as const;\r\nconst SPRING_ROTATE = { type: \"spring\", stiffness: 400, damping: 20 } as const;\r\n\r\nconst ICON_STYLE = {\r\n  background: \"linear-gradient(to top, #f5f56b, #cc0066)\",\r\n  boxShadow:\r\n    \"0 2px 8px 0 rgba(204,0,102,0.35), 0 1.5px 0 0 rgba(255,255,255,0.25) inset, 0 -2px 8px 0 rgba(204,0,102,0.5) inset, 0 0 0 1px rgba(0,0,0,0.08)\",\r\n} as const;\r\n\r\nconst SHIMMER_STYLE = {\r\n  background:\r\n    \"linear-gradient(180deg,rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 80%,transparent 100%)\",\r\n  filter: \"blur(0.5px)\",\r\n} as const;\r\n\r\nconst INNER_SHADOW_STYLE = {\r\n  boxShadow:\r\n    \"0 0 0 1px rgba(255,255,255,0.15) inset, 0 1.5px 0 0 rgba(255,255,255,0.2) inset, 0 -2px 4px 0 rgba(204,0,102,0.2) inset\",\r\n} as const;\r\n\r\nconst BOX_SHADOW = {\r\n  default:\r\n    \"inset 0 2px 3px 0 rgba(255,255,255,0.15), inset 0 -3px 6px 0 rgba(0,0,0,0.4), inset 0 0 0 1px rgba(255,255,255,0.1)\",\r\n  outline:\r\n    \"inset 0 2px 4px 0 rgba(0,0,0,0.12), inset 0 -2px 2px 0 rgba(255,255,255,0.3), inset 0 0 0 1px rgba(0,0,0,0.06)\",\r\n} as const;\r\n\r\nexport const SlidingButton = React.forwardRef<\r\n  HTMLButtonElement,\r\n  SlidingButtonProps\r\n>(\r\n  (\r\n    { children, className, variant = \"default\", iconPosition = \"right\", ...props },\r\n    externalRef\r\n  ) => {\r\n    const [isHovered, setIsHovered] = React.useState(false);\r\n    const [travelDistance, setTravelDistance] = React.useState(0);\r\n\r\n    const mergedRef = React.useCallback(\r\n      (node: HTMLButtonElement | null) => {\r\n        if (typeof externalRef === \"function\") externalRef(node);\r\n        else if (externalRef)\r\n          (\r\n            externalRef as React.MutableRefObject<HTMLButtonElement | null>\r\n          ).current = node;\r\n\r\n        if (!node) return;\r\n\r\n        const measure = () =>\r\n          setTravelDistance(node.clientWidth - ICON_PX - GAP_PX * 2);\r\n\r\n        measure();\r\n\r\n        const ro = new ResizeObserver(measure);\r\n        ro.observe(node);\r\n      },\r\n      [externalRef]\r\n    );\r\n\r\n    const slideX = isHovered\r\n      ? iconPosition === \"right\"\r\n        ? -travelDistance\r\n        : travelDistance\r\n      : 0;\r\n    const rotateX = isHovered ? 360 : 0;\r\n\r\n    return (\r\n      <Button\r\n        ref={mergedRef}\r\n        variant={variant}\r\n        aria-label={children?.toString()}\r\n        onMouseEnter={() => setIsHovered(true)}\r\n        onMouseLeave={() => setIsHovered(false)}\r\n        className={cn(\r\n          \"relative h-12 w-fit cursor-pointer overflow-hidden rounded-xl p-1 text-sm font-medium transition-all duration-500 flex items-center active:scale-[0.98]\",\r\n          iconPosition === \"right\"\r\n            ? \"ps-6 pe-14 hover:ps-14 hover:pe-6\"\r\n            : \"ps-14 pe-6 hover:ps-6 hover:pe-14\",\r\n          className\r\n        )}\r\n        style={{ boxShadow: BOX_SHADOW[variant as keyof typeof BOX_SHADOW] }}\r\n        {...props}\r\n      >\r\n        <span\r\n          className=\"relative z-10 transition-all duration-500 text-shadow-black/10 text-shadow-lg\"\r\n        >\r\n          {children}\r\n        </span>\r\n\r\n        <motion.div\r\n          aria-hidden\r\n          className={cn(\r\n            \"absolute z-20 flex h-10 w-10 items-center justify-center rounded-lg text-white\",\r\n            iconPosition === \"right\" ? \"right-1\" : \"left-1\"\r\n          )}\r\n          style={ICON_STYLE}\r\n          animate={{ x: slideX, rotate: rotateX }}\r\n          transition={SPRING_SLIDE}\r\n        >\r\n          <span\r\n            className=\"pointer-events-none absolute left-1/2 top-0 z-20 h-2/5 w-[80%] -translate-x-1/2 rounded-t-[inherit]\"\r\n            style={SHIMMER_STYLE}\r\n          />\r\n          <span\r\n            className=\"pointer-events-none absolute inset-0 z-0 rounded-[inherit]\"\r\n            style={INNER_SHADOW_STYLE}\r\n          />\r\n          <motion.span\r\n            className=\"relative z-30 flex items-center justify-center drop-shadow-sm\"\r\n            animate={{ rotate: isHovered ? 45 : 0 }}\r\n            transition={SPRING_ROTATE}\r\n          >\r\n            <ArrowUpRight size={16} />\r\n          </motion.span>\r\n        </motion.div>\r\n      </Button>\r\n    );\r\n  }\r\n);\r\n\r\nSlidingButton.displayName = \"SlidingButton\";\r\n"
+      }
+    ]
+  },
+  {
+    "name": "text-outline-glow",
+    "title": "Text Outline Glow",
+    "description": "An animated text hover effect with glowing outlines and cursor-following reveals.",
+    "category": {
+      "name": "Text Animations",
+      "slug": "text-animations"
+    },
+    "tier": "free",
+    "status": "stable",
+    "label": "New",
+    "image": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777376141/text-outline-glow_light_owphex.webp",
+    "imageDark": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777376141/text-outline-glow_dark_xbvhmf.webp",
+    "tags": [
+      "hover",
+      "glow",
+      "cursor",
+      "gsap"
+    ],
+    "preview": {
+      "disableSSR": false,
+      "height": 300
+    },
+    "registryUrl": "https://grootui.vercel.app/r/text-outline-glow.json",
+    "npmDependencies": [
+      "gsap",
+      "@gsap/react"
+    ],
+    "registryDependencies": [],
+    "usage": {
+      "import": "import { TextHoverEffect } from \"@/components/text-outline-glow\"",
+      "code": "export default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center h-[300px] w-full\">\n      <TextHoverEffect text=\"GROOT\" />\n    </div>\n  )\n}"
+    },
+    "props": [
+      {
+        "name": "text",
+        "type": "string",
+        "default": "undefined",
+        "required": true,
+        "description": "The text to display and animate."
+      },
+      {
+        "name": "duration",
+        "type": "number",
+        "default": "0",
+        "required": false,
+        "description": "The duration of the cursor-following gradient animation."
+      },
+      {
+        "name": "fontSize",
+        "type": "number",
+        "default": "56",
+        "required": false,
+        "description": "The font size of the SVG text."
+      },
+      {
+        "name": "colors",
+        "type": "string[]",
+        "default": "[\"#eab308\", \"#ef4444\", \"#3b82f6\", \"#06b6d4\", \"#8b5cf6\"]",
+        "required": false,
+        "description": "Array of colors for the glowing gradient outline."
+      }
+    ],
+    "files": [
+      {
+        "name": "text-outline-glow.tsx",
+        "content": "import React, { useRef, useState, useEffect } from \"react\"\nimport { useGSAP } from \"@gsap/react\"\nimport gsap from \"gsap\"\n\nexport const TextHoverEffect = ({\n  text,\n  duration,\n  fontSize = 56,\n  colors = [\"#eab308\", \"#ef4444\", \"#3b82f6\", \"#06b6d4\", \"#8b5cf6\"],\n}: {\n  text: string\n  duration?: number\n  fontSize?: number\n  colors?: string[]\n}) => {\n  const svgRef = useRef<SVGSVGElement>(null)\n  const maskGradientRef = useRef(null)\n  const animatedTextRef = useRef(null)\n  const [cursor, setCursor] = useState({ x: 0, y: 0 })\n  const [hovered, setHovered] = useState(false)\n  const [maskPosition, setMaskPosition] = useState({ cx: \"50%\", cy: \"50%\" })\n\n  useGSAP(\n    () => {\n      gsap.fromTo(\n        animatedTextRef.current,\n        { strokeDashoffset: 1000, strokeDasharray: 1000 },\n        {\n          strokeDashoffset: 0,\n          strokeDasharray: 1000,\n          duration: 4,\n          ease: \"power2.inOut\",\n        }\n      )\n    },\n    { scope: svgRef }\n  )\n\n  const updateCursorPosition = (x: number, y: number) => {\n    if (svgRef.current && x !== null && y !== null) {\n      const svgRect = svgRef.current.getBoundingClientRect()\n      const cxPercentage = ((x - svgRect.left) / svgRect.width) * 100\n      const cyPercentage = ((y - svgRect.top) / svgRect.height) * 100\n\n      const newPosition = {\n        cx: `${cxPercentage}%`,\n        cy: `${cyPercentage}%`,\n      }\n\n      setMaskPosition(newPosition)\n\n      gsap.to(maskGradientRef.current, {\n        attr: newPosition,\n        duration: duration ?? 0,\n        ease: \"power2.out\",\n      })\n    }\n  }\n\n  useEffect(() => {\n    updateCursorPosition(cursor.x, cursor.y)\n  }, [cursor, duration])\n\n  const handleMouseEnter = () => setHovered(true)\n  const handleMouseLeave = () => setHovered(false)\n  const handleMouseMove = (e: React.MouseEvent) => {\n    setCursor({ x: e.clientX, y: e.clientY })\n  }\n\n  const handleTouchStart = (e: React.TouchEvent) => {\n    e.preventDefault() \n    setHovered(true)\n    if (e.touches.length > 0) {\n      const touch = e.touches[0]\n      if (touch) {\n        setCursor({ x: touch.clientX, y: touch.clientY })\n      }\n    }\n  }\n\n  const handleTouchMove = (e: React.TouchEvent) => {\n    e.preventDefault()\n    if (e.touches.length > 0) {\n      const touch = e.touches[0]\n      if (touch) {\n        setCursor({ x: touch.clientX, y: touch.clientY })\n      }\n    }\n  }\n\n  const handleTouchEnd = (e: React.TouchEvent) => {\n    e.preventDefault()\n    setHovered(false)\n  }\n\n  return (\n    <svg\n      ref={svgRef}\n      width=\"100%\"\n      height=\"100%\"\n      viewBox=\"0 0 300 100\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      onMouseEnter={handleMouseEnter}\n      onMouseLeave={handleMouseLeave}\n      onMouseMove={handleMouseMove}\n      onTouchStart={handleTouchStart}\n      onTouchMove={handleTouchMove}\n      onTouchEnd={handleTouchEnd}\n      onTouchCancel={handleTouchEnd}\n      className=\"select-none\"\n    >\n      <defs>\n        <linearGradient\n          id=\"textGradient\"\n          gradientUnits=\"userSpaceOnUse\"\n          cx=\"50%\"\n          cy=\"50%\"\n          r=\"20%\"\n        >\n          {hovered && (\n            <>\n              {colors.map((color, idx) => (\n                <stop\n                  key={idx}\n                  offset={\n                    colors.length === 1\n                      ? \"0%\"\n                      : `${(idx / (colors.length - 1)) * 100}%`\n                  }\n                  stopColor={color}\n                />\n              ))}\n            </>\n          )}\n        </linearGradient>\n        <radialGradient\n          id=\"revealMask\"\n          ref={maskGradientRef}\n          gradientUnits=\"userSpaceOnUse\"\n          r=\"25%\"\n          cx={maskPosition.cx}\n          cy={maskPosition.cy}\n        >\n          <stop offset=\"0%\" stopColor=\"white\" />\n          <stop offset=\"100%\" stopColor=\"black\" />\n        </radialGradient>\n        <mask id=\"textMask\">\n          <rect\n            x=\"0\"\n            y=\"0\"\n            width=\"100%\"\n            height=\"100%\"\n            fill=\"url(#revealMask)\"\n          />\n        </mask>\n      </defs>\n\n      {[0, 1, 2].map((_, idx) => (\n        <text\n          key={idx}\n          ref={idx === 1 ? animatedTextRef : undefined}\n          x=\"50%\"\n          y=\"50%\"\n          textAnchor=\"middle\"\n          dominantBaseline=\"middle\"\n          strokeWidth=\"0.8\"\n          className={`fill-transparent font-[helvetica] font-bold ${\n            idx === 0\n              ? \"stroke-neutral-300 dark:stroke-neutral-800\"\n              : idx === 1\n                ? \"stroke-neutral-300 dark:stroke-neutral-800\"\n                : \"\"\n          }`}\n          stroke={idx === 2 ? \"url(#textGradient)\" : undefined}\n          mask={idx === 2 ? \"url(#textMask)\" : undefined}\n          style={{\n            fontSize,\n            opacity: idx === 0 && !hovered ? 0 : idx === 0 ? 0.7 : 1,\n          }}\n        >\n          {text}\n        </text>\n      ))}\n    </svg>\n  )\n}\n"
       }
     ]
   }
