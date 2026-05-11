@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-05-11T16:51:46.011Z
+// Last generated: 2026-05-11T18:13:17.926Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -77,6 +77,86 @@ export const registry: ComponentConfig[] = [
       {
         "name": "3d-button.tsx",
         "content": "import * as React from \"react\";\r\n\r\nimport { cn } from \"@/lib/utils\";\r\n\r\ninterface ThreeDButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {\r\n  href?: string;\r\n  color1: string; // Keep this light color\r\n  color2: string; // Keep this dark color\r\n  children: React.ReactNode;\r\n  openInNewTab?: boolean;\r\n  className?: string;\r\n}\r\n\r\nconst BUTTON_GRADIENT_STYLE = {\r\n  boxShadow:\r\n    \"0 2px 8px 0 rgba(204,0,102,0.35), 0 1.5px 0 0 rgba(255,255,255,0.25) inset, 0 -2px 8px 0 rgba(204,0,102,0.5) inset, 0 0 0 1px rgba(0,0,0,0.08)\",\r\n} as const;\r\n\r\nconst SHIMMER_STYLE = {\r\n  background:\r\n    \"linear-gradient(180deg,rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 80%,transparent 100%)\",\r\n  filter: \"blur(0.5px)\",\r\n} as const;\r\n\r\nconst INNER_SHADOW_STYLE = {\r\n  boxShadow:\r\n    \"0 0 0 1px rgba(255,255,255,0.15) inset, 0 1.5px 0 0 rgba(255,255,255,0.2) inset, 0 -2px 4px 0 rgba(204,0,102,0.2) inset\",\r\n} as const;\r\n\r\nexport const ThreeDButton = React.forwardRef<HTMLAnchorElement, ThreeDButtonProps>(\r\n  ({ href, color1, color2, children, openInNewTab = false, className, style, ...props }, ref) => {\r\n    return (\r\n      <a\r\n        ref={ref}\r\n        href={href}\r\n        target={openInNewTab ? \"_blank\" : undefined}\r\n        rel={openInNewTab ? \"noopener noreferrer\" : undefined}\r\n        className={cn(\r\n          \"relative flex h-9 px-4 items-center justify-center rounded-lg text-white cursor-pointer transition-all duration-200 ease-in-out hover:brightness-110 active:scale-95\",\r\n          className\r\n        )}\r\n        style={{\r\n          ...BUTTON_GRADIENT_STYLE,\r\n          \"--color1\": color1,\r\n          \"--color2\": color2,\r\n          background: `linear-gradient(to top, ${color1}, ${color2})`,\r\n          ...style,\r\n        } as React.CSSProperties}\r\n        {...props}\r\n      >\r\n        <span\r\n          className=\"pointer-events-none absolute left-1/2 top-0 z-20 h-2/5 w-[80%] -translate-x-1/2 rounded-t-[inherit]\"\r\n          style={SHIMMER_STYLE}\r\n        />\r\n        <span\r\n          className=\"pointer-events-none absolute inset-0 z-0 rounded-[inherit]\"\r\n          style={INNER_SHADOW_STYLE}\r\n        />\r\n        <span className=\"relative z-30 flex items-center justify-center drop-shadow-sm text-sm font-medium tracking-wide\">\r\n          {children}\r\n        </span>\r\n      </a>\r\n    );\r\n  }\r\n);\r\n\r\nThreeDButton.displayName = \"ThreeDButton\";\r\n"
+      }
+    ]
+  },
+  {
+    "name": "animated-bars",
+    "title": "Animated Bars",
+    "description": "A dynamic background component with pulsating, gradient bars that create a fluid energy effect.",
+    "category": {
+      "name": "Backgrounds",
+      "slug": "backgrounds"
+    },
+    "tier": "free",
+    "status": "stable",
+    "label": "New",
+    "image": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778520000/animated-bars_light.webp",
+    "imageDark": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778520000/animated-bars_dark.webp",
+    "tags": [
+      "background",
+      "animation",
+      "gradient",
+      "bars"
+    ],
+    "preview": {
+      "disableSSR": false,
+      "height": 400
+    },
+    "registryUrl": "https://grootui.vercel.app/r/animated-bars.json",
+    "npmDependencies": [],
+    "registryDependencies": [],
+    "usage": {
+      "import": "import { AnimatedBars } from \"@/components/animated-bars\"",
+      "code": "export default function Demo() {\n  return (\n    <AnimatedBars numBars={15} gradientFrom=\"rgb(59, 130, 246)\" backgroundColor=\"rgb(2, 6, 23)\">\n      <h1>Energy Waves</h1>\n    </AnimatedBars>\n  )\n}"
+    },
+    "props": [
+      {
+        "name": "numBars",
+        "type": "number",
+        "default": "12",
+        "required": false,
+        "description": "The number of animated bars to render."
+      },
+      {
+        "name": "gradientFrom",
+        "type": "string",
+        "default": "rgb(255, 60, 0)",
+        "required": false,
+        "description": "The starting color of the bar gradient."
+      },
+      {
+        "name": "gradientTo",
+        "type": "string",
+        "default": "transparent",
+        "required": false,
+        "description": "The ending color of the bar gradient."
+      },
+      {
+        "name": "animationDuration",
+        "type": "number",
+        "default": "4",
+        "required": false,
+        "description": "Duration of the pulse animation in seconds."
+      },
+      {
+        "name": "backgroundColor",
+        "type": "string",
+        "default": "rgb(10, 10, 10)",
+        "required": false,
+        "description": "The background color of the container."
+      }
+    ],
+    "examples": [
+      {
+        "title": "Digital Rhythm",
+        "slug": "animated-bars-variant01"
+      }
+    ],
+    "files": [
+      {
+        "name": "animated-bars.tsx",
+        "content": "\"use client\";\n\nimport React from 'react';\nimport { cn } from \"@/lib/utils\";\n\ninterface AnimatedBarsProps {\n    numBars?: number;\n    gradientFrom?: string;\n    gradientTo?: string;\n    animationDuration?: number;\n    className?: string;\n}\n\nconst GradientBars: React.FC<AnimatedBarsProps> = ({\n    numBars = 20,\n    gradientFrom = '#f43f5e',\n    gradientTo = 'transparent',\n    animationDuration = 3,\n    className = '',\n}) => {\n    const calculateHeight = (index: number, total: number) => {\n        const position = index / (total - 1);\n        const maxHeight = 100;\n        const minHeight = 40;\n\n        const center = 0.5;\n        const distanceFromCenter = Math.abs(position - center);\n        const heightPercentage = Math.pow(distanceFromCenter * 2, 1.5);\n\n        return minHeight + (maxHeight - minHeight) * heightPercentage;\n    };\n\n    return (\n        <>\n            <style>{`\n        @keyframes fluidWave {\n          0% { \n            transform: scaleY(var(--initial-scale)); \n            opacity: 0.4;\n            filter: brightness(1);\n          }\n          50% { \n            transform: scaleY(calc(var(--initial-scale) * 1.15)); \n            opacity: 0.8;\n            filter: brightness(1.2);\n          }\n          100% { \n            transform: scaleY(calc(var(--initial-scale) * 0.9)); \n            opacity: 0.5;\n            filter: brightness(0.9);\n          }\n        }\n      `}</style>\n\n            <div className={cn(\"absolute inset-0 z-0 overflow-hidden pointer-events-none\", className)}>\n                <div\n                    className=\"flex h-full items-end\"\n                    style={{\n                        width: '100%',\n                        transform: 'translateZ(0)',\n                        backfaceVisibility: 'hidden',\n                    }}\n                >\n                    {Array.from({ length: numBars }).map((_, index) => {\n                        const height = calculateHeight(index, numBars);\n                        return (\n                            <div\n                                key={index}\n                                className=\"relative\"\n                                style={{\n                                    flex: 1,\n                                    marginLeft: index === 0 ? '0' : '-1px',\n                                    height: '100%',\n                                    background: `linear-gradient(to top, ${gradientFrom}, ${gradientTo})`,\n                                    transform: `scaleY(${height / 100})`,\n                                    transformOrigin: 'bottom',\n                                    animation: `fluidWave ${animationDuration}s ease-in-out infinite alternate`,\n                                    animationDelay: `-${index * (animationDuration / numBars)}s`,\n                                    // @ts-ignore\n                                    '--initial-scale': height / 100,\n                                }}\n                            />\n                        );\n                    })}\n                </div>\n            </div>\n        </>\n    );\n};\n\ninterface AnimatedBarsBackgroundProps {\n    numBars?: number;\n    gradientFrom?: string;\n    gradientTo?: string;\n    animationDuration?: number;\n    backgroundColor?: string;\n    children?: React.ReactNode;\n    className?: string;\n}\n\nexport function AnimatedBars({\n    numBars = 12,\n    gradientFrom = '#f43f5e',\n    gradientTo = 'transparent',\n    animationDuration = 4,\n    backgroundColor = '#0a0a0a',\n    children,\n    className,\n}: AnimatedBarsBackgroundProps) {\n    return (\n        <section\n            className={cn(\"relative min-h-[400px] w-full flex flex-col items-center justify-center overflow-hidden rounded-xl border bg-background\", className)}\n            style={{ backgroundColor }}\n        >\n            <GradientBars\n                numBars={numBars}\n                gradientFrom={gradientFrom}\n                gradientTo={gradientTo}\n                animationDuration={animationDuration}\n            />\n\n            {children && (\n                <div className=\"relative z-10 w-full h-full flex items-center justify-center px-4\">\n                    {children}\n                </div>\n            )}\n        </section>\n    );\n}\n"
       }
     ]
   },
