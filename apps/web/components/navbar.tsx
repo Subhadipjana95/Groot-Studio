@@ -20,10 +20,20 @@ import {
   DrawerClose,
 } from "@workspace/ui/components/drawer"
 import { DATA } from "@/lib/data/Data"
+import { registry } from "@/lib/registry"
 
 export function Navbar() {
   const pathname = usePathname()
   const { setTheme, resolvedTheme } = useTheme()
+
+  const componentsCount = registry.length
+  const templatesCount = 0 // Templates are currently in progress
+
+  const getCount = (label: string) => {
+    if (label === "Components") return componentsCount
+    if (label === "Templates") return templatesCount
+    return 0
+  }
   const [mounted, setMounted] = React.useState(false)
   const [searchOpen, setSearchOpen] = React.useState(false)
 
@@ -93,13 +103,18 @@ export function Navbar() {
                     <Link
                       href={href}
                       className={cn(
-                        "rounded-md px-2 py-2 text-[15px] font-medium transition-colors",
+                        "rounded-md px-2 py-2 text-[15px] font-medium transition-colors flex items-center gap-1.5",
                         isActive
                           ? "bg-primary/10 text-primary"
                           : "hover:bg-primary/10 hover:text-primary text-foreground"
                       )}
                     >
                       {label}
+                      {getCount(label) > 0 && (
+                        <span className="flex h-5 w-6 items-center justify-center rounded-full bg-muted-foreground/20 text-[10px] font-bold text-foreground leading-none">
+                          {getCount(label)}
+                        </span>
+                      )}
                     </Link>
                   </li>
                 )
@@ -181,13 +196,18 @@ export function Navbar() {
                             <Link
                               href={href}
                               className={cn(
-                                "flex items-center px-3 py-4 text-xl font-medium border-b last:border-none transition-colors",
+                                "flex items-center justify-between px-3 py-4 text-xl font-medium border-b last:border-none transition-colors",
                                 isActive
                                   ? "bg-muted text-primary"
                                   : "hover:bg-muted active:bg-muted/80 text-foreground"
                               )}
                             >
                               {label}
+                              {getCount(label) > 0 && (
+                                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
+                                  {getCount(label)}
+                                </span>
+                              )}
                             </Link>
                           </DrawerClose>
                         )
