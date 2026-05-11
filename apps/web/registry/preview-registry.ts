@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:previews
-// Last generated: 2026-05-11T16:51:46.788Z
+// Last generated: 2026-05-11T18:10:03.628Z
 // ─────────────────────────────────────────────────────────────────
 
 import dynamic from "next/dynamic";
@@ -17,6 +17,14 @@ import dynamic from "next/dynamic";
 export const previewRegistry = {
   "3d-button": dynamic(
     () => import("./previews/3d-button/3d-button.preview"),
+    { loading: () => null }
+  ),
+  "animated-bars": dynamic(
+    () => import("./previews/animated-bars/animated-bars.preview"),
+    { loading: () => null }
+  ),
+  "animated-bars-variant01": dynamic(
+    () => import("./previews/animated-bars/animated-bars-variant01.preview"),
     { loading: () => null }
   ),
   "avatar-tooltips": dynamic(
