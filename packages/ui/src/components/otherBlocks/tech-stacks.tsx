@@ -40,7 +40,7 @@ const TechTooltipItem = ({ item }: { item: TechItem }) => {
         }
         transition={{ type: "spring", stiffness: 260, damping: 10 }}
         style={{ translateX, rotate }}
-        className="absolute bottom-14 left-1/2 z-50 flex -translate-x-1/2 flex-col items-center rounded-md border bg-popover px-2 py-1 text-xs text-popover-foreground shadow-xl"
+        className="absolute bottom-14 left-1/2 z-50 flex -translate-x-1/2 flex-col items-center rounded-md border bg-popover/50 backdrop-blur-sm px-2 py-1 text-xs text-popover-foreground shadow-xl"
       >
         <p className="whitespace-nowrap text-sm font-medium">
           {item.name}
@@ -54,7 +54,7 @@ const TechTooltipItem = ({ item }: { item: TechItem }) => {
         onMouseMove={(e) =>
           x.set(e.nativeEvent.offsetX - e.currentTarget.offsetWidth / 2)
         }
-        className="relative flex h-12 w-12 cursor-default items-center justify-center rounded-full border border-border bg-background shadow-sm transition duration-500 group-hover:z-30 group-hover:scale-105"
+        className="relative flex h-12 w-12 cursor-default items-center justify-center rounded-full border border-border bg-background/50 backdrop-blur-sm shadow-sm transition duration-500 group-hover:z-30 group-hover:scale-105"
       >
         <Icon className="size-6" />
       </div>

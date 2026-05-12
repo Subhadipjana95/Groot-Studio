@@ -4,7 +4,7 @@ import React, { useMemo } from "react";
 import { cn } from "@workspace/ui/lib/utils";
 
 interface BadgeTagProps extends React.HTMLAttributes<HTMLDivElement> {
-  version?: string;
+  version?: React.ReactNode;
   text: string;
   icon?: React.ReactNode;
   gradientColors?: string;
