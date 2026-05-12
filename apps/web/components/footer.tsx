@@ -42,11 +42,7 @@ export function Footer() {
         {/* Logo and Description */}
         <div className="col-span-2 md:col-span-4 lg:col-span-3 flex flex-col space-y-4 md:px-2">
           <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-md bg-brand-gradient p-1">
-              <div className="flex h-full w-full items-center justify-center rounded-sm bg-background font-semibold text-foreground text-lg" style={{ fontFamily: 'var(--font-gambarino)' }}>
-                G
-              </div>
-            </div>
+            <img src="/assets/Logo_Transparent.svg" alt="Groot Studio" width={32} height={32} className="h-8 w-8" />
             <span className="text-2xl font-medium tracking-tight">{DATA.title}</span>
           </div>
           <p className="max-w-md text-muted-foreground">

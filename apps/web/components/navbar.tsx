@@ -45,13 +45,9 @@ export function Navbar() {
   }, [mounted, resolvedTheme, setTheme])
 
   const Logo = (
-    <Link href="/" aria-label="Groot Studio home" className="flex items-center gap-2">
-      <div className="flex h-8 w-8 items-center justify-center rounded-md bg-brand-gradient p-[4px]">
-        <div className="flex h-full w-full items-center justify-center rounded-sm bg-background font-extrabold text-foreground text-lg" style={{ fontFamily: 'var(--font-gambarino)' }}>
-          G
-        </div>
-      </div>
-      <span className="text-xl font-medium tracking-tight">Groot Studio</span>
+    <Link href="/" aria-label="Groot Studio home" className="flex items-center gap-1.5">
+      <img src="/assets/Logo_Transparent.svg" alt="Groot Studio" width={32} height={32} className="h-8 w-8" />
+      <span className="text-xl font-medium tracking-tight">Studio.</span>
     </Link>
   )
 
@@ -90,7 +86,7 @@ export function Navbar() {
   return (
     <>
       <nav className="fixed top-0 z-50 w-full border-b bg-background">
-        <div className="max-w-full lg:max-w-[1440px] mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="max-w-full lg:max-w-[1440px] mx-auto flex h-15 items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-8">
             {Logo}
 
