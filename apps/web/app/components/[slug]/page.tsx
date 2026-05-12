@@ -23,11 +23,11 @@ export async function generateMetadata({ params }: ComponentPageProps) {
 
   if (!component) {
     return {
-      title: "Component Not Found - Groot UI",
+      title: "Component Not Found - Groot Studio",
     };
   }
 
-  const title = `${component.title} - Groot UI`;
+  const title = `${component.title} - Groot Studio`;
   const description = component.description;
 
   return {
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: ComponentPageProps) {
       description,
       images: [
         {
-          url: `https://grootui.vercel.app/api/og?title=${encodeURIComponent(component.title)}`,
+          url: `https://grootstudio.vercel.app/api/og?title=${encodeURIComponent(component.title)}`,
           width: 1200,
           height: 630,
         },
@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: ComponentPageProps) {
       card: "summary_large_image",
       title,
       description,
-      images: [`https://grootui.vercel.app/api/og?title=${encodeURIComponent(component.title)}`],
+      images: [`https://grootstudio.vercel.app/api/og?title=${encodeURIComponent(component.title)}`],
     },
   };
 }
@@ -133,8 +133,8 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
       <div className="grid gap-6 md:gap-10">
         <section className="scroll-m-20 w-full min-w-0" id="preview">
           <Heading id="preview" title="Preview" className="sr-only" />
-          <PreviewContainer 
-            usageCode={component.usage.code} 
+          <PreviewContainer
+            usageCode={component.usage.code}
             componentCode={component.files?.[0]?.content}
             previewCode={getPreviewCode(component.name)}
             registryUrl={component.registryUrl}

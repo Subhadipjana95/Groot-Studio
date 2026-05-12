@@ -4,7 +4,7 @@ export default function DiscordOnlinePreview() {
   return (
     <DiscordOnline
       guildId="1234567891487752291"
-      inviteURL="https://discord.com/invite/grootui"
+      inviteURL="https://discord.com/invite/grootstudio"
     />
   );
 }

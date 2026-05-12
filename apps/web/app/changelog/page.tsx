@@ -8,7 +8,7 @@ export default function ChangelogPage() {
         <div className="flex flex-col gap-3">
           <h1 className="text-4xl font-semibold tracking-tight lg:text-5xl">Changelog</h1>
           <p className="text-xl text-muted-foreground">
-            Latest updates and improvements to Groot UI.
+            Latest updates and improvements to Groot Studio.
           </p>
         </div>
 

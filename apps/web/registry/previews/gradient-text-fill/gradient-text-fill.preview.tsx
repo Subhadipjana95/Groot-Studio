@@ -3,7 +3,7 @@ import { GradientText } from "@workspace/ui/registry/radix-nova/gradient-text-fi
 export default function GradientTextFillPreview() {
   return (
     <GradientText className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight">
-      Groot UI
+      Groot Stud
     </GradientText>
   );
 }

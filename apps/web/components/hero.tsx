@@ -31,7 +31,7 @@ export function Hero() {
           colors="#ff6b6b, #ffd93d, #6bcb77, #4d96ff"
           className="text-4xl lg:text-5xl"
         >
-          Groot UI
+          Groot Studio
         </GradientBackgroundText>{" "}Blocks
       </h1>
 

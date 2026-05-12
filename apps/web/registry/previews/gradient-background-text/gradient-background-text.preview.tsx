@@ -2,8 +2,8 @@ import { GradientBackgroundText } from "@workspace/ui/registry/radix-nova/gradie
 
 export default function GradientBackgroundTextPreview() {
   return (
-    <GradientBackgroundText className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight">
-      Groot UI
+    <GradientBackgroundText className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight border border-border">
+      Groot St.
     </GradientBackgroundText>
   );
 }

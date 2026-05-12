@@ -11,7 +11,7 @@ export const config: ComponentConfig = {
   imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777376434/avatar-tooltip_dark_uaapdx.webp",
   tags: ["avatar", "tooltip", "popups", "motion"],
   preview: { disableSSR: true, height: 200 },
-  registryUrl: "https://grootui.vercel.app/r/avatar-tooltips.json",
+  registryUrl: "https://grootstudio.vercel.app/r/avatar-tooltips.json",
   npmDependencies: ["motion/react"],
   registryDependencies: [],
   usage: {

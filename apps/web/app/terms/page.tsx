@@ -15,7 +15,7 @@ export default function TermsPage() {
                         <span className="bg-brand-gradient bg-clip-text text-transparent">Terms</span> of Service
                     </h1>
                     <p className="max-w-2xl text-lg text-muted-foreground leading-relaxed">
-                        Please read these terms carefully before using Groot UI. By using the library, you agree to the following conditions.
+                        Please read these terms carefully before using Groot Studio. By using the library, you agree to the following conditions.
                     </p>
                 </div>
 
@@ -47,7 +47,7 @@ export default function TermsPage() {
                 <p className="mt-12 text-center text-xs text-muted-foreground/60">
                     Groot Labs © {new Date().getFullYear()} · Open source & privacy-first ·{" "}
                     <a
-                        href="https://github.com/Subhadipjana95/Groot-UI/blob/main/LICENSE"
+                        href="https://github.com/Subhadipjana95/groot-studio/blob/main/LICENSE"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-transparent hover:bg-clip-text hover:bg-brand-gradient transition-colors duration-300 cursor-pointer"

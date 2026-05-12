@@ -17,7 +17,7 @@ interface DiscordOnlineProps {
   inviteURL?: string;
 }
 
-const CACHE_KEY = (id: string) => `groot-ui:discord-online:${id}`;
+const CACHE_KEY = (id: string) => `groot-studio:discord-online:${id}`;
 const CACHE_TTL = 60 * 1000;
 
 function getCached(guildId: string): number | null {

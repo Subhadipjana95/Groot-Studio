@@ -2,13 +2,13 @@ import { Twitter, Github, DiscordIcon, Youtube, MotionIcon, TypeScriptIcon, Reac
 import { Shield, Eye, Share2, Lock, RefreshCw, Mail, FileText, Cpu, ShieldAlert, Scale, GitFork, Users, Cookie, BarChart2, Settings, Sparkles, Zap, ShieldCheck, Home, Info, Globe, GitBranch } from "lucide-react"
 
 export const DATA = {
-    title: "Groot UI",
+    title: "Groot Studio",
     description: "Hand-crafted, high-performing, SEO friendly & accessible components designed for modern developers.",
     donateURL: "https://a063.xyz/support",
     GITHUB_USER_NAME: "Subhadipjana95",
-    GITHUB_REPO_LINK: "Subhadipjana95/Groot-UI",
+    GITHUB_REPO_LINK: "Subhadipjana95/groot-ui",
     DISCORD_SERVER_ID: "1487752291602665574",
-    DISCORD_INVITE_LINK: "https://discord.gg/BtXPr8aFf",
+    DISCORD_INVITE_LINK: "https://discord.gg/5nJmZYA5f2",
 
 
     // Changelog Data
@@ -113,7 +113,7 @@ export const DATA = {
             username: '@dillionverma',
             role: 'Software Engineer',
             image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80',
-            quote: "Testing out @grootui's new component blocks. The developer experience is just on another level.",
+            quote: "Testing out @grootstudio's new component blocks. The developer experience is just on another level.",
             verified: true,
             link: '#',
         },
@@ -122,7 +122,7 @@ export const DATA = {
             username: '@marcklingen',
             role: 'CEO @ Langfuse',
             image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80',
-            quote: '@grootui was a godsend when building the current langfuse.com x.com/marcklingen/st...',
+            quote: '@grootstudio was a godsend when building the current langfuse.com x.com/marcklingen/st...',
             verified: true,
             postImage: 'https://res.cloudinary.com/dfjuuwtr6/image/upload/v1776287225/printsyte_horizontal_wogkir.webp',
             link: '#',
@@ -141,7 +141,7 @@ export const DATA = {
             username: '@emilywang',
             role: 'Product Designer',
             image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80',
-            quote: 'Look at this clean UI! All built with @grootui in under an hour. Absolute game changer for my workflow.',
+            quote: 'Look at this clean UI! All built with @grootstudio in under an hour. Absolute game changer for my workflow.',
             verified: true,
             postImage: 'https://res.cloudinary.com/dfjuuwtr6/image/upload/v1776287226/portfolio_dark_paxfd5.webp',
             link: '#',
@@ -151,7 +151,7 @@ export const DATA = {
             username: '@mckaywigley',
             role: 'Developer',
             image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80',
-            quote: 'Need a beautiful landing page? Use Cursor + Groot UI. Install components with 1-line of code and tag them with Cursor Composer to have AI do 100% of the work for you. Watch my workflow - it\'s this easy.',
+            quote: 'Need a beautiful landing page? Use Cursor + Groot Studio. Install components with 1-line of code and tag them with Cursor Composer to have AI do 100% of the work for you. Watch my workflow - it\'s this easy.',
             verified: true,
             postImage: 'https://res.cloudinary.com/dfjuuwtr6/image/upload/v1776286826/Groot-UI_Preview_ojjktb.webp',
             link: '#',
@@ -161,7 +161,7 @@ export const DATA = {
             username: '@aidenybai',
             role: 'Software Engineer',
             image: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=120&q=80',
-            quote: 'we use grootui for Billion.cloud 🤯',
+            quote: 'we use grootstudio for Billion.cloud 🤯',
             verified: true,
             link: '#',
         },
@@ -170,7 +170,7 @@ export const DATA = {
             username: '@saurabh',
             role: 'Indie Hacker',
             image: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=120&q=80',
-            quote: "Finally a UI library that doesn't feel bloated. @grootui is what I use for all my fast-shipping projects.",
+            quote: "Finally a UI library that doesn't feel bloated. @grootstudio is what I use for all my fast-shipping projects.",
             verified: true,
             link: '#',
         },
@@ -179,7 +179,7 @@ export const DATA = {
             username: '@vahaah',
             role: 'Software Engineer',
             image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=120&q=80',
-            quote: 'Thanks, @grootui. This is my new favourite UI library, and their Pro templates look magical.',
+            quote: 'Thanks, @grootstudio. This is my new favourite UI library, and their Pro templates look magical.',
             verified: true,
             postImage: 'https://res.cloudinary.com/dfjuuwtr6/image/upload/v1774162392/Brain.2.png',
             link: '#',
@@ -189,7 +189,7 @@ export const DATA = {
             username: '@jordanphughes',
             role: 'Designer',
             image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80',
-            quote: 'This is awesome, congrats @grootui !',
+            quote: 'This is awesome, congrats @grootstudio !',
             verified: true,
             link: '#',
         },
@@ -198,7 +198,7 @@ export const DATA = {
             username: '@leeerob',
             role: 'VP Product @ Vercel',
             image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80',
-            quote: 'The attention to detail in @grootui is impressive. Great collection for modern web apps.',
+            quote: 'The attention to detail in @grootstudio is impressive. Great collection for modern web apps.',
             verified: true,
             link: '#',
         }
@@ -208,31 +208,31 @@ export const DATA = {
     faq: [
         {
             id: 'item-1',
-            title: 'What is Groot UI?',
+            title: 'What is Groot Studio?',
             content:
-                'Groot UI is a collection of beautifully crafted UI components and templates, designed to help developers build modern web applications with ease.',
+                'Groot Studio is a collection of beautifully crafted UI components and templates, designed to help developers build modern web applications with ease.',
         },
         {
             id: 'item-2',
-            title: 'Who can benefit from Groot UI?',
+            title: 'Who can benefit from Groot Studio?',
             content:
-                'Groot UI is built for developers, founders, product teams, and agencies that want to accelerate idea validation and delivery without sacrificing code quality.',
+                'Groot Studio is built for developers, founders, product teams, and agencies that want to accelerate idea validation and delivery without sacrificing code quality.',
         },
         {
             id: 'item-3',
-            title: 'What features does Groot UI include?',
+            title: 'What features does Groot Studio include?',
             content:
-                'Groot UI offers accessible Radix primitives styled with Tailwind CSS, along with beautiful Framer Motion animations for interactivity. Everything is optimized for Next.js.',
+                'Groot Studio offers accessible Radix primitives styled with Tailwind CSS, along with beautiful Framer Motion animations for interactivity. Everything is optimized for Next.js.',
         },
         {
             id: 'item-4',
-            title: 'Can I customize components in Groot UI?',
+            title: 'Can I customize components in Groot Studio?',
             content:
                 'Absolutely! The philosophy here is "copy and paste" so you own the code. You can easily adjust the Tailwind classes or structure to fit your exact needs.',
         },
         {
             id: 'item-5',
-            title: 'Does Groot UI integrate with my existing tools?',
+            title: 'Does Groot Studio integrate with my existing tools?',
             content:
                 'Yes, it integrates perfectly with standard React toolchains, Next.js, and any framework utilizing Tailwind CSS.',
         },
@@ -251,7 +251,7 @@ export const DATA = {
         { id: "nav-home", title: "Go to Home", description: "Navigate to the home page", category: "Navigation", destination: "/", icon: Home },
         { id: "nav-components", title: "Go to Components", description: "Browse all components", category: "Navigation", destination: "/components", icon: Info },
         { id: "nav-sponsors", title: "Go to Sponsors", description: "Check out our sponsors", category: "Navigation", destination: "/sponsors", icon: Globe },
-        { id: "social-github", title: "Open GitHub", description: "Visit our GitHub repository", category: "Social", destination: "https://github.com/Subhadipjana95/Groot-UI", icon: GitBranch },
+        { id: "social-github", title: "Open GitHub", description: "Visit our GitHub repository", category: "Social", destination: "https://github.com/Subhadipjana95/Groot-Studio", icon: GitBranch },
     ],
 
     // Footer Links
@@ -275,7 +275,7 @@ export const DATA = {
     ],
     socials: [
         { name: "Twitter", href: "https://x.com/Subhadip53874", icon: Twitter },
-        { name: "GitHub", href: "https://github.com/Subhadipjana95/Groot-UI", icon: Github },
+        { name: "GitHub", href: "https://github.com/Subhadipjana95/Groot-Studio", icon: Github },
         { name: "Discord", href: "https://discord.com/channels/1487752291602665574", icon: DiscordIcon },
         { name: "YouTube", href: "#", icon: Youtube },
     ],
@@ -305,12 +305,12 @@ export const DATA = {
         {
             icon: Eye,
             title: "1. Information We Collect",
-            content: "Groot UI is a static, open-source UI component library. We do not require account creation, login, or any personal information to browse or use our components. The only data we may passively collect is standard server-side analytics (e.g., page views, referrer, browser type) through our hosting provider to understand usage patterns and improve the documentation."
+            content: "Groot Studio is a static, open-source UI component library. We do not require account creation, login, or any personal information to browse or use our components. The only data we may passively collect is standard server-side analytics (e.g., page views, referrer, browser type) through our hosting provider to understand usage patterns and improve the documentation."
         },
         {
             icon: Shield,
             title: "2. How We Use Your Information",
-            content: "Any anonymised usage data collected is used solely to improve the Groot UI documentation, prioritise component development, and fix broken pages. We do not build user profiles, run ad targeting, or sell your data. If you voluntarily reach out via Discord, email, or GitHub Issues, the information you share is used only to respond to your request."
+            content: "Any anonymised usage data collected is used solely to improve the Groot Studio documentation, prioritise component development, and fix broken pages. We do not build user profiles, run ad targeting, or sell your data. If you voluntarily reach out via Discord, email, or GitHub Issues, the information you share is used only to respond to your request."
         },
         {
             icon: Share2,
@@ -320,7 +320,7 @@ export const DATA = {
         {
             icon: Lock,
             title: "4. Cookies & Local Storage",
-            content: "Groot UI uses minimal browser storage. Your theme preference (light / dark mode) is saved to localStorage so your setting persists between visits — no cookie banner required. We do not use tracking cookies, session cookies tied to a user account, or any persistent identifiers that could be used to follow you across the web."
+            content: "Groot Studio uses minimal browser storage. Your theme preference (light / dark mode) is saved to localStorage so your setting persists between visits — no cookie banner required. We do not use tracking cookies, session cookies tied to a user account, or any persistent identifiers that could be used to follow you across the web."
         },
         {
             icon: RefreshCw,
@@ -330,7 +330,7 @@ export const DATA = {
         {
             icon: Mail,
             title: "6. Contact",
-            content: "If you have questions, concerns, or requests relating to this Privacy Policy or your data, please reach out via GitHub Discussions at github.com/Subhadipjana95/Groot-UI or through our Discord community. We aim to respond within 48 hours."
+            content: "If you have questions, concerns, or requests relating to this Privacy Policy or your data, please reach out via GitHub Discussions at github.com/Subhadipjana95/groot-studio or through our Discord community. We aim to respond within 48 hours."
         }
     ],
 
@@ -339,42 +339,42 @@ export const DATA = {
         {
             icon: FileText,
             title: "1. Acceptance of Terms",
-            content: "By accessing or using Groot UI — including the website, documentation, component library, and any associated tooling — you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, you may not use the service. These terms apply to all visitors, developers, and organisations who access or use Groot UI."
+            content: "By accessing or using Groot Studio — including the website, documentation, component library, and any associated tooling — you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, you may not use the service. These terms apply to all visitors, developers, and organisations who access or use Groot Studio."
         },
         {
             icon: Cpu,
             title: "2. Use of the Library",
-            content: "Groot UI is a copy-and-paste component library intended for use in personal, commercial, and open-source projects. Free components are available without restriction. Premium components and templates included in paid plans may only be used within the scope of your active licence. You may not redistribute, resell, or share premium assets publicly or with individuals who have not purchased access."
+            content: "Groot Studio is a copy-and-paste component library intended for use in personal, commercial, and open-source projects. Free components are available without restriction. Premium components and templates included in paid plans may only be used within the scope of your active licence. You may not redistribute, resell, or share premium assets publicly or with individuals who have not purchased access."
         },
         {
             icon: GitFork,
             title: "3. Open Source & Licence",
-            content: "The free, open-source tier of Groot UI is released under the MIT Licence. You are free to use, modify, and distribute those components in your own projects with attribution. Premium components are subject to the Groot UI Commercial Licence and are not covered by the MIT Licence. Refer to the repository's LICENCE file and your purchase receipt for the exact scope of your rights."
+            content: "The free, open-source tier of Groot Studio is released under the MIT Licence. You are free to use, modify, and distribute those components in your own projects with attribution. Premium components are subject to the Groot Studio Commercial Licence and are not covered by the MIT Licence. Refer to the repository's LICENCE file and your purchase receipt for the exact scope of your rights."
         },
         {
             icon: ShieldAlert,
             title: "4. Intellectual Property",
-            content: "All design decisions, documentation text, brand assets (including the Groot UI name and logo), and curated component compositions are the intellectual property of Groot UI and its creator. Unsplash images and third-party icons retain their respective licences. You may not use the Groot UI brand name or logo to imply endorsement of your product without prior written permission."
+            content: "All design decisions, documentation text, brand assets (including the Groot Studio name and logo), and curated component compositions are the intellectual property of Groot Studio and its creator. Unsplash images and third-party icons retain their respective licences. You may not use the Groot Studio brand name or logo to imply endorsement of your product without prior written permission."
         },
         {
             icon: Scale,
             title: "5. Limitation of Liability",
-            content: "Groot UI is provided \"as is\" without warranty of any kind. We make no guarantees about the availability, accuracy, or fitness for purpose of any component, template, or documentation. In no event shall Groot UI or its contributors be liable for any direct, indirect, incidental, special, or consequential damages arising from your use of — or inability to use — any part of this library."
+            content: "Groot Studio is provided \"as is\" without warranty of any kind. We make no guarantees about the availability, accuracy, or fitness for purpose of any component, template, or documentation. In no event shall Groot Studio or its contributors be liable for any direct, indirect, incidental, special, or consequential damages arising from your use of — or inability to use — any part of this library."
         },
         {
             icon: Users,
             title: "6. Community & Conduct",
-            content: "Access to the Groot UI Discord community and GitHub Discussions is a privilege, not a right. We expect all members to interact respectfully, constructively, and in good faith. Spam, harassment, or promotion of unlicensed use of premium assets will result in removal from community spaces. We reserve the right to revoke access at any time without notice."
+            content: "Access to the Groot Studio Discord community and GitHub Discussions is a privilege, not a right. We expect all members to interact respectfully, constructively, and in good faith. Spam, harassment, or promotion of unlicensed use of premium assets will result in removal from community spaces. We reserve the right to revoke access at any time without notice."
         },
         {
             icon: RefreshCw,
             title: "7. Changes to These Terms",
-            content: "We reserve the right to modify these Terms of Service at any time. Changes will be effective immediately upon posting the updated terms on this page. The \"Last updated\" date at the top of the page will reflect the most recent revision. Continued use of Groot UI after changes are posted constitutes your acceptance of the revised terms."
+            content: "We reserve the right to modify these Terms of Service at any time. Changes will be effective immediately upon posting the updated terms on this page. The \"Last updated\" date at the top of the page will reflect the most recent revision. Continued use of Groot Studio after changes are posted constitutes your acceptance of the revised terms."
         },
         {
             icon: Mail,
             title: "8. Contact",
-            content: "For questions about these Terms of Service, licensing queries, or business enquiries, please open a GitHub Discussion at github.com/Subhadipjana95/Groot-UI or reach out through our Discord community. We aim to respond within 48 hours on business days."
+            content: "For questions about these Terms of Service, licensing queries, or business enquiries, please open a GitHub Discussion at github.com/Subhadipjana95/groot-studio or reach out through our Discord community. We aim to respond within 48 hours on business days."
         }
     ],
 
@@ -383,7 +383,7 @@ export const DATA = {
         {
             icon: Cookie,
             title: "1. What Are Cookies?",
-            content: "Cookies are small text files stored in your browser when you visit a website. They help websites remember your preferences and understand how you interact with pages. Groot UI uses a minimal set of storage mechanisms — we only store what is strictly necessary to deliver a pleasant experience."
+            content: "Cookies are small text files stored in your browser when you visit a website. They help websites remember your preferences and understand how you interact with pages. Groot Studio uses a minimal set of storage mechanisms — we only store what is strictly necessary to deliver a pleasant experience."
         },
         {
             icon: Lock,
@@ -398,12 +398,12 @@ export const DATA = {
         {
             icon: Share2,
             title: "4. Third-Party Cookies",
-            content: "Groot UI does not embed third-party advertising, social-sharing buttons, or analytics SDKs that would set cookies from external domains. Images served from Cloudinary and Unsplash are loaded directly via their CDN URLs; those providers may set their own cookies subject to their respective privacy policies, which are outside our control."
+            content: "Groot Studio does not embed third-party advertising, social-sharing buttons, or analytics SDKs that would set cookies from external domains. Images served from Cloudinary and Unsplash are loaded directly via their CDN URLs; those providers may set their own cookies subject to their respective privacy policies, which are outside our control."
         },
         {
             icon: Settings,
             title: "5. Managing Your Preferences",
-            content: "Because we do not set tracking or persistent cookies, there is nothing to opt out of on our side. You can clear your localStorage theme preference at any time through your browser's developer tools (Application → Local Storage → grootui.com). You can also configure your browser to block all cookies from third-party domains for additional peace of mind."
+            content: "Because we do not set tracking or persistent cookies, there is nothing to opt out of on our side. You can clear your localStorage theme preference at any time through your browser's developer tools (Application → Local Storage → grootstudio.com). You can also configure your browser to block all cookies from third-party domains for additional peace of mind."
         },
         {
             icon: RefreshCw,

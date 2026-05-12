@@ -15,13 +15,13 @@ export const config: ComponentConfig = {
   imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777377361/gradient-text-fill_dark_vp5qbx.webp",
   tags: ["text", "gradient", "motion"],
   preview: { disableSSR: true, height: 400 },
-  registryUrl: "https://grootui.vercel.app/r/gradient-text-fill.json",
+  registryUrl: "https://grootstudio.vercel.app/r/gradient-text-fill.json",
   npmDependencies: ["motion/react"],
   registryDependencies: [],
   usage: {
     import: `import { GradientText } from "@/components/gradient-text"`,
     code: `export default function Demo() {
-  return <GradientText>Groot UI</GradientText>
+  return <GradientText>Groot Studio</GradientText>
 }`,
   },
   props: [

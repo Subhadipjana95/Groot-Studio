@@ -12,7 +12,7 @@ export const config: ComponentConfig = {
   imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777419755/sliding-button_dark_pwd8ks.webp",
   tags: ["button", "sliding", "motion"],
   preview: { disableSSR: false, height: 200 },
-  registryUrl: "https://grootui.vercel.app/r/sliding-button.json",
+  registryUrl: "https://grootstudio.vercel.app/r/sliding-button.json",
   npmDependencies: ["motion/react", "lucide-react"],
   registryDependencies: ["button"],
   usage: {

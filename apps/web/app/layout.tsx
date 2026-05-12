@@ -21,10 +21,10 @@ const gambarino = localFont({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://grootui.vercel.app"),
+  metadataBase: new URL("https://grootstudio.vercel.app"),
   title: {
-    default: "Groot UI - High-performing, SEO friendly UI Components & Blocks for Modern Web",
-    template: "%s | Groot UI",
+    default: "Groot Studio - High-performing, SEO friendly UI Components & Blocks for Modern Web",
+    template: "%s | Groot Studio",
   },
   description:
     "Hand-crafted, high-performing, SEO friendly & accessible UI components and blocks designed for modern developers. Built with React, Next.js, Tailwind CSS & Radix UI.",
@@ -40,17 +40,17 @@ export const metadata: Metadata = {
     "web development",
     "design system",
   ],
-  authors: [{ name: "Groot UI", url: "https://grootui.vercel.app" }],
-  creator: "Groot UI",
-  publisher: "Groot UI",
+  authors: [{ name: "Groot Studio", url: "https://grootstudio.vercel.app" }],
+  creator: "Groot Studio",
+  publisher: "Groot Studio",
 
   // Open Graph
   openGraph: {
-    title: "Groot UI - High-performing, SEO friendly UI Components & Blocks",
+    title: "Groot Studio - High-performing, SEO friendly UI Components & Blocks",
     description:
       "Hand-crafted, high-performing, SEO friendly & accessible components designed for modern developers.",
-    url: "https://grootui.vercel.app",
-    siteName: "Groot UI",
+    url: "https://grootstudio.vercel.app",
+    siteName: "Groot Studio",
     locale: "en_US",
     type: "website",
   },
@@ -58,10 +58,10 @@ export const metadata: Metadata = {
   // Twitter
   twitter: {
     card: "summary_large_image",
-    title: "Groot UI - Premium UI Components & Blocks",
+    title: "Groot Studio - Premium UI Components & Blocks",
     description:
       "Hand-crafted, high-performing, SEO friendly & accessible components designed for modern developers.",
-    creator: "@groot_ui",
+    creator: "@groot_studio",
   },
 
   // Robots
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
 
   // Alternates
   alternates: {
-    canonical: "https://grootui.vercel.app",
+    canonical: "https://grootstudio.vercel.app",
   },
 };
 

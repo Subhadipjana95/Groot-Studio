@@ -12,7 +12,7 @@ export const config: ComponentConfig = {
   imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778443195/cursor-trail_dark_jdzcdz.webp",
   tags: ["cursor", "trail", "mouse", "effect", "animation"],
   preview: { disableSSR: false, height: 400 },
-  registryUrl: "https://grootui.vercel.app/r/cursor-trail.json",
+  registryUrl: "https://grootstudio.vercel.app/r/cursor-trail.json",
   npmDependencies: [],
   registryDependencies: [],
   usage: {
@@ -54,7 +54,7 @@ export const config: ComponentConfig = {
       required: false,
       description: "The width and height of the trail images in pixels.",
     },
-    { 
+    {
       name: "className",
       type: "string",
       default: "undefined",

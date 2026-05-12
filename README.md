@@ -1,24 +1,24 @@
 
-<h1>Groot UI</h1>
+<h1>Groot Studio</h1>
 <p>A premium, open-source component registry for high-performance React applications.</p>
 <br/>
 
-<img src="https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777610235/Groot_Preview_Banner_fzv87q.webp" alt="Groot UI Banner" width="100%" />
+<img src="https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777610235/Groot_Preview_Banner_fzv87q.webp" alt="Groot Studio Banner" width="100%" />
 
 <br/>
   
-![badge](https://shieldcn.dev/github/Subhadipjana95/Groot-UI/stars.svg?font=geist) ![badge](https://shieldcn.dev/github/Subhadipjana95/Groot-UI/forks.svg?variant=secondary&font=geist) ![badge](https://shieldcn.dev/github/Subhadipjana95/Groot-UI/issues.svg?variant=destructive&font=geist) ![badge](https://shieldcn.dev/github/Subhadipjana95/Groot-UI/license.svg?font=geist)
+![badge](https://shieldcn.dev/github/Subhadipjana95/groot-studio/stars.svg?font=geist) ![badge](https://shieldcn.dev/github/Subhadipjana95/groot-studio/forks.svg?variant=secondary&font=geist) ![badge](https://shieldcn.dev/github/Subhadipjana95/groot-studio/issues.svg?variant=destructive&font=geist) ![badge](https://shieldcn.dev/github/Subhadipjana95/groot-studio/license.svg?font=geist)
 
 
  
 
-[Website](https://grootui.vercel.app) | [Documentation](https://grootui.vercel.app/docs) | [Report Bug](https://github.com/Subhadipjana95/Groot-UI/issues/new) | [Request Feature](https://github.com/Subhadipjana95/Groot-UI/issues/new)
+[Website](https://grootstudio.vercel.app) | [Documentation](https://grootstudio.vercel.app/docs) | [Report Bug](https://github.com/Subhadipjana95/groot-studio/issues/new) | [Request Feature](https://github.com/Subhadipjana95/groot-studio/issues/new)
 
 ---
 
-## ✦ What is Groot UI?
+## ✦ What is Groot Studio?
 
-Groot UI is a decentralized component registry built on top of **shadcn/ui**. Unlike traditional component libraries that bundle everything into a heavy `node_modules` package, Groot UI allows you to **own your code**. 
+Groot Studio is a decentralized component registry built on top of **shadcn/ui**. Unlike traditional component libraries that bundle everything into a heavy `node_modules` package, Groot Studio allows you to **own your code**. 
 
 By using our registry, you can copy components directly into your project with a single command. This architecture ensures:
 - **Zero Version Lock-in**: You control the source code of every component.
@@ -29,7 +29,7 @@ By using our registry, you can copy components directly into your project with a
 
 ## 🛠️ Tech Stack
 
-Groot UI is built with the latest industry standards to ensure longevity and performance:
+Groot Studio is built with the latest industry standards to ensure longevity and performance:
 
 - **Core**: [Next.js 16](https://nextjs.org/) (App Router), [React 19](https://react.dev/)
 - **Logic**: [TypeScript](https://www.typescriptlang.org/)
@@ -45,7 +45,7 @@ Groot UI is built with the latest industry standards to ensure longevity and per
 This repository is a **Turborepo** monorepo designed for scale and developer velocity:
 
 ```bash
-groot-ui/
+groot-studio/
 ├── apps/
 │   └── web/                  # Documentation & Landing Page (Next.js 16)
 ├── packages/
@@ -69,22 +69,22 @@ Ensure your project environment meets the following:
 - **shadcn/ui**: Initialized (`npx shadcn@latest init`)
 
 ### 2. Add a Component
-Groot UI components are installed via the shadcn CLI using their registry URLs. For example, to add the `Sliding Button` :
+Groot Studio components are installed via the shadcn CLI using their registry URLs. For example, to add the `Sliding Button` :
 
 ```bash
-npx shadcn@latest add https://grootui.vercel.app/r/sliding-button.json
+npx shadcn@latest add https://grootstudio.vercel.app/r/sliding-button.json
 ```
 
 ---
 
 ## 💻 Local Development
 
-Follow these steps to contribute or run Groot UI locally:
+Follow these steps to contribute or run Groot Studio locally:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Subhadipjana95/Groot-UI.git
-   cd Groot-UI
+   git clone https://github.com/Subhadipjana95/groot-studio.git
+   cd groot-studio
    ```
 
 2. **Install dependencies**

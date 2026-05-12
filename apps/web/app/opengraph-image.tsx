@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 // Image metadata
-export const alt = 'Groot UI - High-performing, SEO friendly UI Components & Blocks';
+export const alt = 'Groot Studio - High-performing, SEO friendly UI Components & Blocks';
 export const size = {
   width: 1200,
   height: 630,
@@ -65,7 +65,7 @@ export default async function Image() {
               </svg>
             </div>
             <div style={{ display: 'flex', fontSize: 36, fontWeight: 700, color: '#ffffff', letterSpacing: '-0.5px' }}>
-              Groot UI
+              Groot Studio
             </div>
           </div>
 

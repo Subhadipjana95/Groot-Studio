@@ -2,14 +2,14 @@
 
 ## Supported versions
 
-| Version | Supported |
-|---|---|
-| Latest (main) | Yes |
-| Older branches | No |
+| Version        | Supported |
+| -------------- | --------- |
+| Latest (main)  | Yes       |
+| Older branches | No        |
 
 ## Reporting a vulnerability
 
-If you discover a security vulnerability in Groot UI, please do **not** open a public GitHub issue.
+If you discover a security vulnerability in Groot Studio, please do **not** open a public GitHub issue.
 
 Instead, report it privately by emailing:
 
@@ -25,7 +25,7 @@ You will receive a response within 48 hours. We take all security reports seriou
 
 ## Scope
 
-Groot UI is a client-side component library. Security concerns most relevant to this project include:
+Groot Studio is a client-side component library. Security concerns most relevant to this project include:
 
 - XSS vulnerabilities in component output
 - Unsafe use of `dangerouslySetInnerHTML`

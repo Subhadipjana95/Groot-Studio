@@ -52,12 +52,12 @@ export function Footer() {
           <p className="max-w-md text-muted-foreground">
             {DATA.description}
           </p>
-          <div className="hidden md:flex flex-col space-y-2 pt-2 text-sm">
-            <p className="text-muted-foreground group">A product by <span className="text-foreground font-medium underline underline-offset-4 decoration-border/50 group-hover:decoration-foreground">Groot Labs</span></p>
+          <div className="hidden md:flex flex-col space-y-1 pt-2 text-sm">
+            {/* <p className="text-muted-foreground group">A product by <span className="text-foreground font-medium underline underline-offset-4 decoration-border/50 group-hover:decoration-foreground">Groot Labs</span></p> */}
             <Link href="https://x.com/Subhadip53874" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
               Designed & Built by <span className="bg-brand-gradient bg-clip-text text-transparent font-medium">@Subhadip</span>
             </Link>
-            <p>© {new Date().getFullYear()} Groot UI Inc.</p>
+            <p>© {new Date().getFullYear()} Groot Studio Inc.</p>
           </div>
         </div>
 
@@ -116,7 +116,7 @@ export function Footer() {
             <Link href="https://x.com/Subhadip53874" target="_blank" rel="noopener noreferrer" className="text-right text-muted-foreground hover:text-foreground transition-colors">
               Designed & Built by <span className="bg-brand-gradient bg-clip-text text-transparent font-medium">@Subhadip</span>
             </Link>
-            <p>© {new Date().getFullYear()} Groot UI Inc.</p>
+            <p>© {new Date().getFullYear()} Groot Studio Inc.</p>
           </div>
         </div>
       </div>
@@ -131,7 +131,7 @@ export function Footer() {
           {/* Massive dipped text */}
           <div className="absolute -bottom-5 md:-bottom-16 left-0 right-0 pointer-events-none select-none overflow-hidden mask-[linear-gradient(to_top,transparent_0%,black_60%)]">
             <h2 className="text-[20vw] sm:text-[16vw] md:text-[14rem] xl:text-[16rem] font-bold uppercase text-center leading-none text-foreground/10 dark:text-foreground/20 tracking-tighter whitespace-nowrap md:translate-y-[12%] xl:translate-y-[15%]">
-              {DATA.title}
+              Groot St.
             </h2>
           </div>
         </div>

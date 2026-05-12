@@ -12,7 +12,7 @@ export const config: ComponentConfig = {
   imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777378486/client-marquee_dark_vbkxfs.webp",
   tags: ["marquee", "logos"],
   preview: { disableSSR: true, height: 300 },
-  registryUrl: "https://grootui.vercel.app/r/logo-marquee.json",
+  registryUrl: "https://grootstudio.vercel.app/r/logo-marquee.json",
   npmDependencies: ["motion/react", "react-use-measure"],
   registryDependencies: [],
   usage: {

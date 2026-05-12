@@ -14,13 +14,13 @@ export const config: ComponentConfig = {
   hasReactVariant: true,
   // Server component — fetches data server-side, so SSR must stay enabled
   preview: { disableSSR: false, height: 300 },
-  registryUrl: "https://grootui.vercel.app/r/github-stars.json",
+  registryUrl: "https://grootstudio.vercel.app/r/github-stars.json",
   npmDependencies: ["lucide-react"],
   registryDependencies: ["Tooltip", "Button"],
   usage: {
     import: `import { GitHubStars } from "@/components/github-stars"`,
     code: `export default function Demo() {
-  return <GitHubStars repo="Subhadipjana95/Groot-UI" />
+  return <GitHubStars repo="Subhadipjana95/groot-studio" />
 }`,
   },
   props: [

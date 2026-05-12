@@ -12,13 +12,13 @@ export const config: ComponentConfig = {
   imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777377127/gradient-background-text_dark_jyhqpj.webp",
   tags: ["text", "gradient", "3d"],
   preview: { disableSSR: true, height: 400 },
-  registryUrl: "https://grootui.vercel.app/r/gradient-background-text.json",
+  registryUrl: "https://grootstudio.vercel.app/r/gradient-background-text.json",
   npmDependencies: ["motion/react"],
   registryDependencies: [],
   usage: {
     import: `import { GradientBackgroundText } from "@/components/gradient-background-text"`,
     code: `export default function Demo() {
-  return <GradientBackgroundText>Groot UI</GradientBackgroundText>
+  return <GradientBackgroundText>Groot Studio</GradientBackgroundText>
 }`,
   },
   props: [

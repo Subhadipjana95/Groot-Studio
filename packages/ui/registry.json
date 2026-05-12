@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "groot-ui",
-  "homepage": "https://grootui.vercel.app",
+  "name": "groot-studio",
+  "homepage": "https://grootstudio.vercel.app",
   "items": [
     {
       "name": "glow-card",
@@ -303,4 +303,3 @@
     }
   ]
 }
-

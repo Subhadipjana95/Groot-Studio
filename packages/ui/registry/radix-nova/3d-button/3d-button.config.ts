@@ -11,7 +11,7 @@ export const config: ComponentConfig = {
   imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777376141/3d-button_dark_xbvhmf.webp",
   tags: ["button", "3d", "gradient", "shimmer"],
   preview: { disableSSR: false, height: 200 },
-  registryUrl: "https://grootui.vercel.app/r/3d-button.json",
+  registryUrl: "https://grootstudio.vercel.app/r/3d-button.json",
   npmDependencies: [],
   registryDependencies: [],
   usage: {
@@ -58,12 +58,12 @@ export const config: ComponentConfig = {
       required: false,
       description: "Whether to open the link in a new tab.",
     },
-    { 
-        name: "className",
-        type: "string",
-        default: "undefined",
-        required: false,
-        description: "Optional class names for custom styling.",
+    {
+      name: "className",
+      type: "string",
+      default: "undefined",
+      required: false,
+      description: "Optional class names for custom styling.",
     }
   ],
 };

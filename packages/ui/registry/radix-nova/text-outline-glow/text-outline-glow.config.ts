@@ -12,7 +12,7 @@ export const config: ComponentConfig = {
   imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778518238/text-outline_dark_r0wuob.webp",
   tags: ["hover", "glow", "cursor", "gsap"],
   preview: { disableSSR: false, height: 300 },
-  registryUrl: "https://grootui.vercel.app/r/text-outline-glow.json",
+  registryUrl: "https://grootstudio.vercel.app/r/text-outline-glow.json",
   npmDependencies: ["gsap", "@gsap/react"],
   registryDependencies: [],
   usage: {

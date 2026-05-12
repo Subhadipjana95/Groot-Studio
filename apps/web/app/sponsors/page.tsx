@@ -33,10 +33,10 @@ export default async function SponsorsPage() {
         <div className="mb-12 space-y-4 max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-medium tracking-tight">
             Support the future of{" "}
-            <span className="bg-brand-gradient bg-clip-text text-transparent">Groot UI</span>
+            <span className="bg-brand-gradient bg-clip-text text-transparent">Groot Studio</span>
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            Groot UI is sustained by the community. Your sponsorship helps us build high-quality components for everyone.
+            Groot Studio is sustained by the community. Your sponsorship helps us build high-quality components for everyone.
           </p>
         </div>
 
@@ -140,7 +140,7 @@ export default async function SponsorsPage() {
             href="/about"
             className="hover:text-transparent hover:bg-clip-text hover:bg-brand-gradient transition-colors duration-200"
           >
-            About Groot UI →
+            About Groot Studio →
           </Link>
         </p>
       </main>

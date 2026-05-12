@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-05-11T21:30:28.065Z
+// Last generated: 2026-05-12T14:50:23.825Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -29,7 +29,7 @@ export const registry: ComponentConfig[] = [
       "disableSSR": false,
       "height": 200
     },
-    "registryUrl": "https://grootui.vercel.app/r/3d-button.json",
+    "registryUrl": "https://grootstudio.vercel.app/r/3d-button.json",
     "npmDependencies": [],
     "registryDependencies": [],
     "usage": {
@@ -102,7 +102,7 @@ export const registry: ComponentConfig[] = [
       "disableSSR": false,
       "height": 400
     },
-    "registryUrl": "https://grootui.vercel.app/r/animated-bars.json",
+    "registryUrl": "https://grootstudio.vercel.app/r/animated-bars.json",
     "npmDependencies": [],
     "registryDependencies": [],
     "usage": {
@@ -154,7 +154,7 @@ export const registry: ComponentConfig[] = [
     "files": [
       {
         "name": "animated-bars.tsx",
-        "content": "\"use client\";\r\n\r\nimport React from 'react';\r\nimport { cn } from \"@/lib/utils\";\r\n\r\ninterface AnimatedBarsProps {\r\n    numBars?: number;\r\n    gradientFrom?: string;\r\n    gradientTo?: string;\r\n    animationDuration?: number;\r\n    className?: string;\r\n}\r\n\r\nconst GradientBars: React.FC<AnimatedBarsProps> = ({\r\n    numBars = 20,\r\n    gradientFrom = '#f43f5e',\r\n    gradientTo = 'transparent',\r\n    animationDuration = 3,\r\n    className = '',\r\n}) => {\r\n    const calculateHeight = (index: number, total: number) => {\r\n        const position = index / (total - 1);\r\n        const maxHeight = 100;\r\n        const minHeight = 40;\r\n\r\n        const center = 0.5;\r\n        const distanceFromCenter = Math.abs(position - center);\r\n        const heightPercentage = Math.pow(distanceFromCenter * 2, 1.5);\r\n\r\n        return minHeight + (maxHeight - minHeight) * heightPercentage;\r\n    };\r\n\r\n    return (\r\n        <>\r\n            <style>{`\r\n        @keyframes fluidWave {\r\n          0% { \r\n            transform: scaleY(var(--initial-scale)); \r\n            opacity: 0.4;\r\n            filter: brightness(1);\r\n          }\r\n          50% { \r\n            transform: scaleY(calc(var(--initial-scale) * 1.15)); \r\n            opacity: 0.8;\r\n            filter: brightness(1.2);\r\n          }\r\n          100% { \r\n            transform: scaleY(calc(var(--initial-scale) * 0.9)); \r\n            opacity: 0.5;\r\n            filter: brightness(0.9);\r\n          }\r\n        }\r\n      `}</style>\r\n\r\n            <div className={cn(\"absolute inset-0 z-0 overflow-hidden pointer-events-none\", className)}>\r\n                <div\r\n                    className=\"flex h-full items-end\"\r\n                    style={{\r\n                        width: '100%',\r\n                        transform: 'translateZ(0)',\r\n                        backfaceVisibility: 'hidden',\r\n                    }}\r\n                >\r\n                    {Array.from({ length: numBars }).map((_, index) => {\r\n                        const height = calculateHeight(index, numBars);\r\n                        return (\r\n                            <div\r\n                                key={index}\r\n                                className=\"relative border-x border-white/10 backdrop-blur-md\"\r\n                                style={{\r\n                                    flex: 1,\r\n                                    marginLeft: index === 0 ? '0' : '-1px',\r\n                                    height: '100%',\r\n                                    background: `linear-gradient(to top, ${gradientFrom}, ${gradientTo})`,\r\n                                    transform: `scaleY(${height / 100})`,\r\n                                    transformOrigin: 'bottom',\r\n                                    animation: `fluidWave ${animationDuration}s ease-in-out infinite alternate`,\r\n                                    animationDelay: `-${index * (animationDuration / numBars)}s`,\r\n                                    // @ts-ignore\r\n                                    '--initial-scale': height / 100,\r\n                                }}\r\n                            />\r\n                        );\r\n                    })}\r\n                </div>\r\n            </div>\r\n        </>\r\n    );\r\n};\r\n\r\ninterface AnimatedBarsBackgroundProps {\r\n    numBars?: number;\r\n    gradientFrom?: string;\r\n    gradientTo?: string;\r\n    animationDuration?: number;\r\n    backgroundColor?: string;\r\n    children?: React.ReactNode;\r\n    className?: string;\r\n}\r\n\r\nexport function AnimatedBars({\r\n    numBars = 12,\r\n    gradientFrom = '#f43f5e',\r\n    gradientTo = 'transparent',\r\n    animationDuration = 4,\r\n    backgroundColor,\r\n    children,\r\n    className,\r\n}: AnimatedBarsBackgroundProps) {\r\n    return (\r\n        <section\r\n            className={cn(\"relative min-h-[400px] w-full flex flex-col items-center justify-center overflow-hidden rounded-lg border bg-background\", className)}\r\n            style={backgroundColor ? { backgroundColor } : undefined}\r\n        >\r\n            <GradientBars\r\n                numBars={numBars}\r\n                gradientFrom={gradientFrom}\r\n                gradientTo={gradientTo}\r\n                animationDuration={animationDuration}\r\n            />\r\n\r\n            {children && (\r\n                <div className=\"relative z-10 w-full h-full flex items-center justify-center px-4\">\r\n                    {children}\r\n                </div>\r\n            )}\r\n        </section>\r\n    );\r\n}\r\n"
+        "content": "\"use client\";\r\n\r\nimport React from 'react';\r\nimport { cn } from \"@/lib/utils\";\r\n\r\ninterface AnimatedBarsProps {\r\n    numBars?: number;\r\n    gradientFrom?: string;\r\n    gradientTo?: string;\r\n    animationDuration?: number;\r\n    className?: string;\r\n}\r\n\r\nconst GradientBars: React.FC<AnimatedBarsProps> = ({\r\n    numBars = 20,\r\n    gradientFrom = '#f43f5e',\r\n    gradientTo = 'transparent',\r\n    animationDuration = 3,\r\n    className = '',\r\n}) => {\r\n    const calculateHeight = (index: number, total: number) => {\r\n        const position = index / (total - 1);\r\n        const maxHeight = 100;\r\n        const minHeight = 40;\r\n\r\n        const center = 0.5;\r\n        const distanceFromCenter = Math.abs(position - center);\r\n        const heightPercentage = Math.pow(distanceFromCenter * 2, 1.5);\r\n\r\n        return minHeight + (maxHeight - minHeight) * heightPercentage;\r\n    };\r\n\r\n    return (\r\n        <>\r\n            <style>{`\r\n        @keyframes fluidWave {\r\n          0% { \r\n            transform: scaleY(var(--initial-scale)); \r\n            opacity: 0.4;\r\n            filter: brightness(1);\r\n          }\r\n          50% { \r\n            transform: scaleY(calc(var(--initial-scale) * 1.15)); \r\n            opacity: 0.8;\r\n            filter: brightness(1.2);\r\n          }\r\n          100% { \r\n            transform: scaleY(calc(var(--initial-scale) * 0.9)); \r\n            opacity: 0.5;\r\n            filter: brightness(0.9);\r\n          }\r\n        }\r\n      `}</style>\r\n\r\n            <div className={cn(\"absolute inset-0 z-0 overflow-hidden pointer-events-none\", className)}>\r\n                <div\r\n                    className=\"flex h-full items-end\"\r\n                    style={{\r\n                        width: '100%',\r\n                        transform: 'translateZ(0)',\r\n                        backfaceVisibility: 'hidden',\r\n                    }}\r\n                >\r\n                    {Array.from({ length: numBars }).map((_, index) => {\r\n                        const height = calculateHeight(index, numBars);\r\n                        return (\r\n                            <div\r\n                                key={index}\r\n                                className=\"relative\"\r\n                                style={{\r\n                                    flex: 1,\r\n                                    marginLeft: index === 0 ? '0' : '-1px',\r\n                                    height: '100%',\r\n                                    background: `linear-gradient(to top, ${gradientFrom}, ${gradientTo})`,\r\n                                    transform: `scaleY(${height / 100})`,\r\n                                    transformOrigin: 'bottom',\r\n                                    animation: `fluidWave ${animationDuration}s ease-in-out infinite alternate`,\r\n                                    animationDelay: `-${index * (animationDuration / numBars)}s`,\r\n                                    // @ts-ignore\r\n                                    '--initial-scale': height / 100,\r\n                                }}\r\n                            />\r\n                        );\r\n                    })}\r\n                </div>\r\n            </div>\r\n        </>\r\n    );\r\n};\r\n\r\ninterface AnimatedBarsBackgroundProps {\r\n    numBars?: number;\r\n    gradientFrom?: string;\r\n    gradientTo?: string;\r\n    animationDuration?: number;\r\n    backgroundColor?: string;\r\n    children?: React.ReactNode;\r\n    className?: string;\r\n}\r\n\r\nexport function AnimatedBars({\r\n    numBars = 12,\r\n    gradientFrom = '#f43f5e',\r\n    gradientTo = 'transparent',\r\n    animationDuration = 4,\r\n    backgroundColor,\r\n    children,\r\n    className,\r\n}: AnimatedBarsBackgroundProps) {\r\n    return (\r\n        <section\r\n            className={cn(\"relative min-h-[400px] w-full flex flex-col items-center justify-center overflow-hidden rounded-lg border bg-background\", className)}\r\n            style={backgroundColor ? { backgroundColor } : undefined}\r\n        >\r\n            <GradientBars\r\n                numBars={numBars}\r\n                gradientFrom={gradientFrom}\r\n                gradientTo={gradientTo}\r\n                animationDuration={animationDuration}\r\n            />\r\n\r\n            {children && (\r\n                <div className=\"relative z-10 w-full h-full flex items-center justify-center px-4\">\r\n                    {children}\r\n                </div>\r\n            )}\r\n        </section>\r\n    );\r\n}\r\n"
       }
     ]
   },
@@ -180,7 +180,7 @@ export const registry: ComponentConfig[] = [
       "disableSSR": true,
       "height": 200
     },
-    "registryUrl": "https://grootui.vercel.app/r/avatar-tooltips.json",
+    "registryUrl": "https://grootstudio.vercel.app/r/avatar-tooltips.json",
     "npmDependencies": [
       "motion/react"
     ],
@@ -233,7 +233,7 @@ export const registry: ComponentConfig[] = [
       "disableSSR": true,
       "height": 300
     },
-    "registryUrl": "https://grootui.vercel.app/r/blurred-marquee.json",
+    "registryUrl": "https://grootstudio.vercel.app/r/blurred-marquee.json",
     "npmDependencies": [
       "motion/react",
       "react-use-measure",
@@ -289,7 +289,7 @@ export const registry: ComponentConfig[] = [
       "disableSSR": false,
       "height": 400
     },
-    "registryUrl": "https://grootui.vercel.app/r/cursor-trail.json",
+    "registryUrl": "https://grootstudio.vercel.app/r/cursor-trail.json",
     "npmDependencies": [],
     "registryDependencies": [],
     "usage": {
@@ -361,7 +361,7 @@ export const registry: ComponentConfig[] = [
       "disableSSR": false,
       "height": 300
     },
-    "registryUrl": "https://grootui.vercel.app/r/discord-online.json",
+    "registryUrl": "https://grootstudio.vercel.app/r/discord-online.json",
     "npmDependencies": [
       "lucide-react"
     ],
@@ -427,7 +427,7 @@ export const registry: ComponentConfig[] = [
       "disableSSR": false,
       "height": 250
     },
-    "registryUrl": "https://grootui.vercel.app/r/drag-button.json",
+    "registryUrl": "https://grootstudio.vercel.app/r/drag-button.json",
     "npmDependencies": [
       "motion/react",
       "lucide-react"
@@ -512,7 +512,7 @@ export const registry: ComponentConfig[] = [
       "disableSSR": true,
       "height": 400
     },
-    "registryUrl": "https://grootui.vercel.app/r/github-calendar.json",
+    "registryUrl": "https://grootstudio.vercel.app/r/github-calendar.json",
     "npmDependencies": [
       "lucide-react"
     ],
@@ -639,7 +639,7 @@ export const registry: ComponentConfig[] = [
       "disableSSR": false,
       "height": 300
     },
-    "registryUrl": "https://grootui.vercel.app/r/github-stars.json",
+    "registryUrl": "https://grootstudio.vercel.app/r/github-stars.json",
     "npmDependencies": [
       "lucide-react"
     ],
@@ -649,7 +649,7 @@ export const registry: ComponentConfig[] = [
     ],
     "usage": {
       "import": "import { GitHubStars } from \"@/components/github-stars\"",
-      "code": "export default function Demo() {\n  return <GitHubStars repo=\"Subhadipjana95/Groot-UI\" />\n}"
+      "code": "export default function Demo() {\n  return <GitHubStars repo=\"Subhadipjana95/groot-studio\" />\n}"
     },
     "props": [
       {
@@ -697,12 +697,12 @@ export const registry: ComponentConfig[] = [
       "disableSSR": true,
       "height": 400
     },
-    "registryUrl": "https://grootui.vercel.app/r/glow-card.json",
+    "registryUrl": "https://grootstudio.vercel.app/r/glow-card.json",
     "npmDependencies": [],
     "registryDependencies": [],
     "usage": {
       "import": "import { GlowCard } from \"@/components/glow-card\"",
-      "code": "export default function Demo() {\n  return (\n    <GlowCard className=\"p-6\">\n      <h3 className=\"text-xl font-bold\">Groot UI</h3>\n      <p className=\"text-muted-foreground\">Interactive glowing cards.</p>\n    </GlowCard>\n  )\n}"
+      "code": "export default function Demo() {\n  return (\n    <GlowCard className=\"p-6\">\n      <h3 className=\"text-xl font-bold\">Groot Studio</h3>\n      <p className=\"text-muted-foreground\">Interactive glowing cards.</p>\n    </GlowCard>\n  )\n}"
     },
     "props": [
       {
@@ -751,14 +751,14 @@ export const registry: ComponentConfig[] = [
       "disableSSR": true,
       "height": 400
     },
-    "registryUrl": "https://grootui.vercel.app/r/gradient-background-text.json",
+    "registryUrl": "https://grootstudio.vercel.app/r/gradient-background-text.json",
     "npmDependencies": [
       "motion/react"
     ],
     "registryDependencies": [],
     "usage": {
       "import": "import { GradientBackgroundText } from \"@/components/gradient-background-text\"",
-      "code": "export default function Demo() {\n  return <GradientBackgroundText>Groot UI</GradientBackgroundText>\n}"
+      "code": "export default function Demo() {\n  return <GradientBackgroundText>Groot Studio</GradientBackgroundText>\n}"
     },
     "props": [
       {
@@ -808,14 +808,14 @@ export const registry: ComponentConfig[] = [
       "disableSSR": true,
       "height": 400
     },
-    "registryUrl": "https://grootui.vercel.app/r/gradient-text-fill.json",
+    "registryUrl": "https://grootstudio.vercel.app/r/gradient-text-fill.json",
     "npmDependencies": [
       "motion/react"
     ],
     "registryDependencies": [],
     "usage": {
       "import": "import { GradientText } from \"@/components/gradient-text\"",
-      "code": "export default function Demo() {\n  return <GradientText>Groot UI</GradientText>\n}"
+      "code": "export default function Demo() {\n  return <GradientText>Groot Studio</GradientText>\n}"
     },
     "props": [
       {
@@ -872,7 +872,7 @@ export const registry: ComponentConfig[] = [
       "disableSSR": false,
       "height": 600
     },
-    "registryUrl": "https://grootui.vercel.app/r/image-trail.json",
+    "registryUrl": "https://grootstudio.vercel.app/r/image-trail.json",
     "npmDependencies": [],
     "registryDependencies": [],
     "usage": {
@@ -951,7 +951,7 @@ export const registry: ComponentConfig[] = [
       "disableSSR": true,
       "height": 400
     },
-    "registryUrl": "https://grootui.vercel.app/r/logo-grid.json",
+    "registryUrl": "https://grootstudio.vercel.app/r/logo-grid.json",
     "npmDependencies": [
       "lucide-react"
     ],
@@ -1001,7 +1001,7 @@ export const registry: ComponentConfig[] = [
       "disableSSR": true,
       "height": 300
     },
-    "registryUrl": "https://grootui.vercel.app/r/logo-marquee.json",
+    "registryUrl": "https://grootstudio.vercel.app/r/logo-marquee.json",
     "npmDependencies": [
       "motion/react",
       "react-use-measure"
@@ -1053,7 +1053,7 @@ export const registry: ComponentConfig[] = [
       "disableSSR": false,
       "height": 200
     },
-    "registryUrl": "https://grootui.vercel.app/r/press-button.json",
+    "registryUrl": "https://grootstudio.vercel.app/r/press-button.json",
     "usage": {
       "import": "import { PressButton } from \"@/components/press-button\"",
       "code": "export default function Demo() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <PressButton>Default</PressButton>\n\n      <PressButton className=\"bg-indigo-600 text-white shadow-[4px_4px_0_0_#3730a3] border-[#3730a3]\">\n        Custom Indigo\n      </PressButton>\n    </div>\n  )\n}"
@@ -1107,7 +1107,7 @@ export const registry: ComponentConfig[] = [
       "disableSSR": false,
       "height": 200
     },
-    "registryUrl": "https://grootui.vercel.app/r/sliding-button.json",
+    "registryUrl": "https://grootstudio.vercel.app/r/sliding-button.json",
     "npmDependencies": [
       "motion/react",
       "lucide-react"
@@ -1179,7 +1179,7 @@ export const registry: ComponentConfig[] = [
       "disableSSR": false,
       "height": 300
     },
-    "registryUrl": "https://grootui.vercel.app/r/text-outline-glow.json",
+    "registryUrl": "https://grootstudio.vercel.app/r/text-outline-glow.json",
     "npmDependencies": [
       "gsap",
       "@gsap/react"

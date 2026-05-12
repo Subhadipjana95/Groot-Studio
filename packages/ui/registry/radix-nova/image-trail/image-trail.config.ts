@@ -11,7 +11,7 @@ export const config: ComponentConfig = {
   imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778445439/image_trail_dark_qne2hh.webp",
   tags: ["image", "trail", "mouse", "effect", "animation"],
   preview: { disableSSR: false, height: 600 },
-  registryUrl: "https://grootui.vercel.app/r/image-trail.json",
+  registryUrl: "https://grootstudio.vercel.app/r/image-trail.json",
   npmDependencies: [],
   registryDependencies: [],
   usage: {
@@ -57,14 +57,14 @@ export const config: ComponentConfig = {
       required: false,
       description: "Whether to automatically fade out the image after 1.5 seconds regardless of trail length.",
     },
-    { 
+    {
       name: "className",
       type: "string",
       default: "undefined",
       required: false,
       description: "Optional class names for the container section.",
     },
-    { 
+    {
       name: "imgClass",
       type: "string",
       default: '"w-40 h-48"',

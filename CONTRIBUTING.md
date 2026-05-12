@@ -1,18 +1,18 @@
-# Contributing to Groot UI
+# Contributing to Groot Studio
 
 Thank you for your interest in contributing. This document explains how to get started.
 
 ## Ways to contribute
 
-- Report bugs via [GitHub Issues](https://github.com/Subhadipjana95/Groot-UI/issues)
-- Request new components via [GitHub Issues](https://github.com/Subhadipjana95/Groot-UI/issues)
+- Report bugs via [GitHub Issues](https://github.com/Subhadipjana95/groot-studio/issues)
+- Request new components via [GitHub Issues](https://github.com/Subhadipjana95/groot-studio/issues)
 - Submit a new component via Pull Request
 - Improve documentation
 
 ## Development setup
 ```bash
-git clone https://github.com/Subhadipjana95/Groot-UI.git
-cd Groot-UI
+git clone https://github.com/Subhadipjana95/groot-studio.git
+cd groot-studio
 npm install
 npm run dev
 ```

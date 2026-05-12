@@ -10,7 +10,7 @@ export const SPONSOR_TIERS = [
     name: "Diamond",
     icon: DiamondIcon,
     color: "text-blue-400",
-    description: "The ultimate level of support for Groot UI.",
+    description: "The ultimate level of support for Groot Studio.",
     minAmount: 100,
     sponsorUrl: `${DATA.donateURL}`
   },

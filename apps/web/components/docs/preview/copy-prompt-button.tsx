@@ -27,7 +27,7 @@ export function CopyPromptButton({ registryUrl }: { registryUrl?: string }) {
     if (!registryUrl) return;
 
     try {
-      // Extract the relative path from the registryUrl (e.g., https://grootui.com/r/name.json -> /r/name.json)
+      // Extract the relative path from the registryUrl (e.g., https://grootstudio.com/r/name.json -> /r/name.json)
       let fetchPath = registryUrl;
       if (registryUrl.startsWith("http")) {
         const url = new URL(registryUrl);

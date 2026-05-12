@@ -30,7 +30,7 @@ interface GitHubStarsProps extends VariantProps<typeof githubStarsVariants> {
   className?: string; // Optional class name for Styling
 }
 
-const CACHE_KEY = (repo: string) => `groot-ui:github-stars:${repo}`;
+const CACHE_KEY = (repo: string) => `groot-studio:github-stars:${repo}`;
 const CACHE_TTL = 86400 * 1000;
 
 function getCached(repo: string): number | null {

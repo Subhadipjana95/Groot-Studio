@@ -11,7 +11,7 @@ export const config: ComponentConfig = {
   imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777378889/glow-card_dark_lzl9me.webp",
   tags: ["card", "glow", "effect"],
   preview: { disableSSR: true, height: 400 },
-  registryUrl: "https://grootui.vercel.app/r/glow-card.json",
+  registryUrl: "https://grootstudio.vercel.app/r/glow-card.json",
   npmDependencies: [],
   registryDependencies: [],
   usage: {
@@ -19,7 +19,7 @@ export const config: ComponentConfig = {
     code: `export default function Demo() {
   return (
     <GlowCard className="p-6">
-      <h3 className="text-xl font-bold">Groot UI</h3>
+      <h3 className="text-xl font-bold">Groot Studio</h3>
       <p className="text-muted-foreground">Interactive glowing cards.</p>
     </GlowCard>
   )

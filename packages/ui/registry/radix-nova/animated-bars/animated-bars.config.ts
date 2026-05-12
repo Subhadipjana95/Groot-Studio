@@ -12,7 +12,7 @@ export const config: ComponentConfig = {
   imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778525113/animated_bar_dark_w8tvej.webp",
   tags: ["background", "gradient", "bars"],
   preview: { disableSSR: false, height: 400 },
-  registryUrl: "https://grootui.vercel.app/r/animated-bars.json",
+  registryUrl: "https://grootstudio.vercel.app/r/animated-bars.json",
   npmDependencies: [],
   registryDependencies: [],
   usage: {

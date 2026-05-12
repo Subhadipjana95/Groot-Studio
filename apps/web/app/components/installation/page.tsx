@@ -51,7 +51,7 @@ export default function InstallationPage() {
             <p className="text-muted-foreground">
               You can now start adding components to your project.
             </p>
-            <InstallBlock command="https://grootui.vercel.app/r/3d-button.json" type="add" />
+            <InstallBlock command="https://grootstudio.vercel.app/r/3d-button.json" type="add" />
           </div>
         </section>
 

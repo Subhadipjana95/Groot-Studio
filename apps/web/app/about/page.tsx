@@ -17,7 +17,7 @@ export default function AboutPage() {
                         <span className="bg-brand-gradient bg-clip-text text-transparent">by a developer</span>
                     </h1>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        Groot UI is an open-source component library and design system built for modern web developers.
+                        Groot Studio is an open-source component library and design system built for modern web developers.
                         Every component is handcrafted with Next.js, Tailwind CSS, and Framer Motion — ready to copy,
                         paste, and ship.
                     </p>
@@ -43,7 +43,7 @@ export default function AboutPage() {
                     <h2 className="text-base font-semibold text-foreground tracking-tight">Mission</h2>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                         The goal is simple: eliminate repetitive UI work. Instead of rebuilding the same hero,
-                        pricing table, or testimonial section from scratch on every project, Groot UI gives you
+                        pricing table, or testimonial section from scratch on every project, Groot Studio gives you
                         battle-tested, accessible, production-ready starting points you actually own — no proprietary
                         runtime, no lock-in, just code.
                     </p>

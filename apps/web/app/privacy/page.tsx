@@ -17,7 +17,7 @@ export default function PrivacyPage() {
                         <span className="bg-brand-gradient bg-clip-text text-transparent">Privacy</span> Policy
                     </h1>
                     <p className="max-w-2xl text-lg text-muted-foreground leading-relaxed">
-                        Groot UI is built for developers, by developers. We believe in minimal data collection, full transparency and zero hidden tracking.
+                        Groot Studio is built for developers, by developers. We believe in minimal data collection, full transparency and zero hidden tracking.
                     </p>
                 </div>
 
@@ -47,7 +47,7 @@ export default function PrivacyPage() {
 
                 {/* Footer note */}
                 <p className="mt-12 text-center text-xs text-muted-foreground/60">
-                    Groot Labs © {new Date().getFullYear()} · Open source & privacy-first · <a href="https://github.com/Subhadipjana95/Groot-UI/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="hover:text-transparent hover:bg-clip-text hover:bg-brand-gradient transition-colors duration-300 cursor-pointer">MIT License</a>
+                    Groot Labs © {new Date().getFullYear()} · Open source & privacy-first · <a href="https://github.com/Subhadipjana95/groot-studio/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="hover:text-transparent hover:bg-clip-text hover:bg-brand-gradient transition-colors duration-300 cursor-pointer">MIT License</a>
                 </p>
             </main>
         </PageWrapper>

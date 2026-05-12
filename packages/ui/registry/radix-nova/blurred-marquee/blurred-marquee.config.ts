@@ -12,7 +12,7 @@ export const config: ComponentConfig = {
   imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777378662/client-marquee-blur_dark_duu30j.webp",
   tags: ["marquee", "logos", "blurred"],
   preview: { disableSSR: true, height: 300 },
-  registryUrl: "https://grootui.vercel.app/r/blurred-marquee.json",
+  registryUrl: "https://grootstudio.vercel.app/r/blurred-marquee.json",
   npmDependencies: ["motion/react", "react-use-measure", "lucide-react"],
   registryDependencies: [],
   usage: {

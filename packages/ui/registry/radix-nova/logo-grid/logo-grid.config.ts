@@ -11,7 +11,7 @@ export const config: ComponentConfig = {
   imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777378066/client-grid_dark_ei9qu3.webp",
   tags: ["grid", "logos", "layout"],
   preview: { disableSSR: true, height: 400 },
-  registryUrl: "https://grootui.vercel.app/r/logo-grid.json",
+  registryUrl: "https://grootstudio.vercel.app/r/logo-grid.json",
   npmDependencies: ["lucide-react"],
   registryDependencies: [],
   usage: {

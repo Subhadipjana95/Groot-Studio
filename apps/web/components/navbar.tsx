@@ -45,13 +45,13 @@ export function Navbar() {
   }, [mounted, resolvedTheme, setTheme])
 
   const Logo = (
-    <Link href="/" aria-label="Groot UI home" className="flex items-center gap-2">
+    <Link href="/" aria-label="Groot Studio home" className="flex items-center gap-2">
       <div className="flex h-8 w-8 items-center justify-center rounded-md bg-brand-gradient p-[4px]">
         <div className="flex h-full w-full items-center justify-center rounded-sm bg-background font-extrabold text-foreground text-lg" style={{ fontFamily: 'var(--font-gambarino)' }}>
           G
         </div>
       </div>
-      <span className="text-xl font-medium tracking-tight">Groot UI</span>
+      <span className="text-xl font-medium tracking-tight">Groot Studio</span>
     </Link>
   )
 
@@ -163,7 +163,7 @@ export function Navbar() {
               <GradientButton 
                 href={DATA.donateURL!}
                 openInNewTab={true}
-                aria-label="Support Groot UI"
+                aria-label="Support Groot Studio"
               >
                 Donate
               </GradientButton>
@@ -240,7 +240,7 @@ export function Navbar() {
                           <GradientButton
                             href={DATA.donateURL!}
                             openInNewTab={true}
-                            aria-label="Support Groot UI"
+                            aria-label="Support Groot Studio"
                           >
                             Donate
                           </GradientButton>

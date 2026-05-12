@@ -16,7 +16,7 @@ export function FAQ() {
             Frequently Asked <span className="bg-brand-gradient bg-clip-text text-transparent">Questions</span>
           </h2>
           <p className="text-muted-foreground text-md md:text-lg max-w-2xl mx-auto">
-            Everything you need to know about Groot UI.
+            Everything you need to know about Groot Studio.
           </p>
         </div>
         <Accordion

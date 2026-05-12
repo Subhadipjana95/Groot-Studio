@@ -15,7 +15,7 @@ export default function CookiePolicyPage() {
                         <span className="bg-brand-gradient bg-clip-text text-transparent">Cookie</span> Policy
                     </h1>
                     <p className="max-w-2xl text-lg text-muted-foreground leading-relaxed">
-                        Groot UI is a lightweight, open-source component library. We keep our use of browser storage to an absolute minimum — here&apos;s exactly what we store and why.
+                        Groot Studio is a lightweight, open-source component library. We keep our use of browser storage to an absolute minimum — here&apos;s exactly what we store and why.
                     </p>
                 </div>
 
@@ -47,7 +47,7 @@ export default function CookiePolicyPage() {
                 <p className="mt-12 text-center text-xs text-muted-foreground/60">
                     Groot Labs © {new Date().getFullYear()} · Open source & privacy-first ·{" "}
                     <a
-                        href="https://github.com/Subhadipjana95/Groot-UI/blob/main/LICENSE"
+                        href="https://github.com/Subhadipjana95/groot-studio/blob/main/LICENSE"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-transparent hover:bg-clip-text hover:bg-brand-gradient transition-colors duration-300 cursor-pointer"
