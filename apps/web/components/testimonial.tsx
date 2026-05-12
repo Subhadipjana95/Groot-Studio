@@ -9,7 +9,7 @@ export function Testimonials() {
     const [expanded, setExpanded] = useState(false)
 
     return (
-        <section className="pt-12 pb-8 md:py-24 overflow-hidden select-none border-b border-border/60">
+        <section className="pt-12 pb-8 md:py-18 overflow-hidden select-none border-b border-border/60">
             <div className="mx-auto max-w-7xl px-4 md:px-12">
 
                 {/* Title */}

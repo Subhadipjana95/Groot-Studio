@@ -9,7 +9,7 @@ import { DATA } from "@/lib/data/Data"
 
 export function FAQ() {
   return (
-    <section className="container mx-auto px-4 py-12 md:py-24 sm:px-6 lg:px-8">
+    <section className="container mx-auto px-4 py-12 md:py-18 sm:px-6 lg:px-8">
       <div className="mx-auto w-full max-w-4xl">
         <div className="space-y-2 md:space-y-4 text-center mb-8 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-medium tracking-tight lg:text-5xl">
