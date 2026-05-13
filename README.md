@@ -3,7 +3,7 @@
 <p>A premium, open-source component registry for high-performance React applications.</p>
 <br/>
 
-<img src="https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777610235/Groot_Preview_Banner_fzv87q.webp" alt="Groot Studio Banner" width="100%" />
+<img src="https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778696696/Groot_Preview_Banner_1_sfuldr.webp" alt="Groot Studio Banner" width="100%" />
 
 <br/>
   
