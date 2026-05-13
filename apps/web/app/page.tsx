@@ -12,7 +12,7 @@ export default function Page() {
         <main className="max-w-7xl mx-auto overflow-x-hidden">
           <Hero />
           <ComponentPreviews />
-          <Testimonials />
+          {/* <Testimonials /> */}
           <FAQ />
         </main>
       </PageWrapper>
