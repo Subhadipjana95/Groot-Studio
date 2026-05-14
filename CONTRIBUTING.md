@@ -9,6 +9,36 @@ Thank you for your interest in contributing. This document explains how to get s
 - Submit a new component via Pull Request
 - Improve documentation
 
+## Tech Stack
+
+Groot Studio is built with the latest industry standards to ensure longevity and performance:
+
+- **Core**: [Next.js 16](https://nextjs.org/) (App Router), [React 19](https://react.dev/)
+- **Logic**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Primitives**: [Radix UI](https://www.radix-ui.com/)
+- **Animations**: [Motion](https://motion.dev/)
+- **Base Components**: [shadcn/ui](https://ui.shadcn.com/)
+
+
+## Project Structure
+
+This repository is a **Turborepo** monorepo designed for scale and developer velocity:
+
+```bash
+groot-studio/
+├── apps/
+│   └── web/                  # Documentation & Landing Page (Next.js 16)
+├── packages/
+│   ├── ui/                   # The Core Registry
+│   │   ├── registry/         # High-fidelity component implementations
+│   │   ├── src/components/   # Foundational shadcn base components
+│   │   └── registry.json     # Registry manifest for CLI integration
+│   ├── eslint-config/        # Shared code quality standards
+│   └── typescript-config/    # Shared compiler configurations
+└── turbo.json                # Monorepo orchestration
+```
+
 ## Development setup
 ```bash
 git clone https://github.com/Subhadipjana95/groot-studio.git
