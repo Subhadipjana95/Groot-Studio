@@ -7,7 +7,7 @@
 
 <br/>
   
-![badge](https://shieldcn.dev/github/Subhadipjana95/groot-studio/stars.svg?font=geist) ![badge](https://shieldcn.dev/github/Subhadipjana95/groot-studio/forks.svg?variant=secondary&font=geist) ![badge](https://shieldcn.dev/github/Subhadipjana95/groot-studio/issues.svg?variant=destructive&font=geist) ![badge](https://shieldcn.dev/github/Subhadipjana95/groot-studio/license.svg?font=geist)
+![badge](https://shieldcn.dev/github/Subhadipjana95/Groot-Studio/stars.svg?font=geist) ![badge](https://shieldcn.dev/github/Subhadipjana95/Groot-Studio/forks.svg?variant=secondary&font=geist) ![badge](https://shieldcn.dev/github/Subhadipjana95/Groot-Studio/issues.svg?variant=destructive&font=geist) ![badge](https://shieldcn.dev/github/Subhadipjana95/Groot-Studio/license.svg?font=geist)
 
 
  
