@@ -14,7 +14,6 @@
 
 [Website](https://grootstudio.vercel.app) | [Documentation](https://grootstudio.vercel.app/docs) | [Report Bug](https://github.com/Subhadipjana95/groot-studio/issues/new) | [Request Feature](https://github.com/Subhadipjana95/groot-studio/issues/new)
 
----
 
 ## ✦ What is Groot Studio?
 
@@ -25,40 +24,7 @@ By using our registry, you can copy components directly into your project with a
 - **Maximum Performance**: No unused code or bloated dependencies.
 - **Full Customizability**: Every pixel is under your control via Tailwind CSS v4.
 
----
 
-## 🛠️ Tech Stack
-
-Groot Studio is built with the latest industry standards to ensure longevity and performance:
-
-- **Core**: [Next.js 16](https://nextjs.org/) (App Router), [React 19](https://react.dev/)
-- **Logic**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
-- **Primitives**: [Radix UI](https://www.radix-ui.com/)
-- **Animations**: [Motion](https://motion.dev/)
-- **Base Components**: [shadcn/ui](https://ui.shadcn.com/)
-
----
-
-## 📂 Project Structure
-
-This repository is a **Turborepo** monorepo designed for scale and developer velocity:
-
-```bash
-groot-studio/
-├── apps/
-│   └── web/                  # Documentation & Landing Page (Next.js 16)
-├── packages/
-│   ├── ui/                   # The Core Registry
-│   │   ├── registry/         # High-fidelity component implementations
-│   │   ├── src/components/   # Foundational shadcn base components
-│   │   └── registry.json     # Registry manifest for CLI integration
-│   ├── eslint-config/        # Shared code quality standards
-│   └── typescript-config/    # Shared compiler configurations
-└── turbo.json                # Monorepo orchestration
-```
-
----
 
 ## 🚀 Installation
 
@@ -74,42 +40,32 @@ Groot Studio components are installed via the shadcn CLI using their registry UR
 ```bash
 npx shadcn@latest add https://grootstudio.vercel.app/r/sliding-button.json
 ```
+Once installed, you can import the component in your files:
+```typescript
+import { SlidingButton } from "@/components/sliding-button"
+```
+and use it like this:
+```typescript
+export default function Page() {
+  return (
+    <div className="w-full h-screen">
+      <SlidingButton variant="default">
+        Get Started
+      </SlidingButton>
+    </div>
+  )
+}
+```
+**Note:** The import path `@/components/ui/sliding-button` assumes your project has a path alias configured (common in Next.js and similar frameworks). Adjust the path to match your project's structure if needed.
 
----
-
-## 💻 Local Development
-
-Follow these steps to contribute or run Groot Studio locally:
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Subhadipjana95/groot-studio.git
-   cd groot-studio
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start development server**
-   ```bash
-   npm run dev
-   ```
-   Access the documentation at `http://localhost:3000`.
-
-4. **Build the registry**
-   ```bash
-   npm run registry
-   ```
-
----
-
-## ⚖️ License
-
-Distributed under the **MIT License**. See `LICENSE` for more information.
-
-<div align="center">
+<p align="center">
   <br />
-  <p>Built with 💚 by <a href="https://github.com/Subhadipjana95">Subhadip Jana</a></p>
-</div>
+  <img src="https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778798978/sliding-button_dark_pwd8ks-removebg-preview2_pmf9xi.png" alt="Groot Studio Button example" />
+</p>
+
+## 🌟 Star History
+
+[![RepoStars](https://repostars.dev/api/embed?repo=Subhadipjana95%2FGroot-Studio&theme=8bit)](https://repostars.dev/?repos=Subhadipjana95%2FGroot-Studio&theme=8bit)
+
+<br />
+<p>Built with 💚 by <a href="https://github.com/Subhadipjana95">Subhadip Jana</a></p>
