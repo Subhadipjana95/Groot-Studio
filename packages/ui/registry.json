@@ -300,6 +300,22 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "animated-layout",
+      "type": "registry:block",
+      "title": "Animated Layout",
+      "description": "A modern and dynamic layout component featuring fluid animations, smooth transitions, and a responsive grid system.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/animated-layout/animated-layout.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }
