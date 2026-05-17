@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:previews
-// Last generated: 2026-05-17T02:38:32.259Z
+// Last generated: 2026-05-17T20:45:19.074Z
 // ─────────────────────────────────────────────────────────────────
 
 import dynamic from "next/dynamic";
@@ -110,6 +110,10 @@ export const previewRegistry = {
   "text-outline-glow": dynamic(
     () => import("./previews/text-outline-glow/text-outline-glow.preview"),
     { loading: () => null }
+  ),
+  "theme-toggler": dynamic(
+    () => import("./previews/theme-toggler/theme-toggler.preview"),
+    { ssr: false, loading: () => null }
   )
 } as const;
 
