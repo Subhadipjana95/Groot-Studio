@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { registry } from "@/lib/registry";
 import { cn } from "@/lib/utils";
+import { CategoryFilter } from "@/components/docs/blocks/category-filter";
 
 export default function ComponentsPage() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -31,41 +32,16 @@ export default function ComponentsPage() {
   return (
     <div className="container max-w-5xl py-10">
       <div className="flex flex-col gap-6 mb-12">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 overflow-hidden">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <h1 className="text-3xl font-medium tracking-tight lg:text-5xl text-transparent bg-clip-text bg-brand-gradient shrink-0">
             Components
           </h1>
 
-          {/* Category Filter */}
-          <div className="relative flex items-center flex-1 min-w-0 w-full md:max-w-[50%] bg-muted/40 pr-1.5 pl-0.5 py-0.5 border border-dashed border-border/50 rounded-lg group">
-            <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide pl-1 py-1 select-none scroll-smooth mask-[linear-gradient(to_right,transparent,black_12px,black_calc(100%-100px),transparent)]">
-              <button
-                onClick={() => setSelectedCategory(null)}
-                className={cn(
-                  "px-2.5 py-1 text-sm font-medium rounded-full transition-all border shrink-0",
-                  selectedCategory === null
-                    ? "bg-brand-gradient opacity-90 text-background border-background"
-                    : "bg-muted text-muted-foreground hover:text-foreground border-border/60"
-                )}
-              >
-                All
-              </button>
-              {categoryNames.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={cn(
-                    "px-2.5 py-1 text-sm font-medium rounded-full transition-all border shrink-0",
-                    selectedCategory === category
-                      ? "bg-brand-gradient opacity-90 text-background border-background"
-                      : "bg-muted text-muted-foreground hover:text-foreground border-border/60"
-                  )}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-          </div>
+          <CategoryFilter
+            categoryNames={categoryNames}
+            selectedCategory={selectedCategory}
+            onSelectCategory={setSelectedCategory}
+          />
         </div>
       </div>
 
