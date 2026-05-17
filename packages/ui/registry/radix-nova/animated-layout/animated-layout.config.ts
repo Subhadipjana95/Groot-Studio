@@ -9,6 +9,8 @@ export const config: ComponentConfig = {
   tier: "free",
   status: "stable",
   label: "New",
+  image: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778985964/animated-layout_light_ayg6jq.webp",
+  imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778985964/animated-layout_dark_kqvre9.webp",
   tags: ["layout", "animation", "motion"],
   preview: { disableSSR: false, height: 500 },
   registryUrl: "https://grootstudio.vercel.app/r/animated-layout.json",

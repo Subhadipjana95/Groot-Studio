@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-05-17T02:38:31.519Z
+// Last generated: 2026-05-17T02:47:37.774Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -169,6 +169,8 @@ export const registry: ComponentConfig[] = [
     "tier": "free",
     "status": "stable",
     "label": "New",
+    "image": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778985964/animated-layout_light_ayg6jq.webp",
+    "imageDark": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778985964/animated-layout_dark_kqvre9.webp",
     "tags": [
       "layout",
       "animation",
