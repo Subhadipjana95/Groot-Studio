@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:previews
-// Last generated: 2026-05-12T14:50:24.646Z
+// Last generated: 2026-05-17T02:38:32.259Z
 // ─────────────────────────────────────────────────────────────────
 
 import dynamic from "next/dynamic";
@@ -25,6 +25,10 @@ export const previewRegistry = {
   ),
   "animated-bars-variant01": dynamic(
     () => import("./previews/animated-bars/animated-bars-variant01.preview"),
+    { loading: () => null }
+  ),
+  "animated-layout": dynamic(
+    () => import("./previews/animated-layout/animated-layout.preview"),
     { loading: () => null }
   ),
   "avatar-tooltips": dynamic(
