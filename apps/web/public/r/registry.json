@@ -316,6 +316,21 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "theme-toggler",
+      "type": "registry:block",
+      "title": "Theme Toggler",
+      "description": "A minimal theme toggle button with a cinematic full-screen curtain wipe animation. Supports vertical and horizontal directions.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/theme-toggler/theme-toggler.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }
