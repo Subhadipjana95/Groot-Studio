@@ -1,6 +1,7 @@
 "use client"
 
-import { createRef, useRef, type ReactNode } from "react"
+import { useRef, useEffect, type ReactNode } from "react"
+import { animate } from "motion/react"
 import { cn } from "@/lib/utils"
 
 interface ImageMouseTrailProps {
@@ -10,99 +11,146 @@ interface ImageMouseTrailProps {
   imgClass?: string
   distance?: number
   maxNumberOfImages?: number
-  fadeAnimation?: boolean
 }
 
 export default function ImageCursorTrail({
-  items,
+  items = [],
   children,
   className,
-  maxNumberOfImages = 5,
   imgClass = "w-40 h-48",
-  distance = 20,
-  fadeAnimation = false,
+  distance = 40,
+  maxNumberOfImages = 8,
 }: ImageMouseTrailProps) {
   const containerRef = useRef<HTMLDivElement>(null)
-  const refs = useRef(items.map(() => createRef<HTMLImageElement>()))
-  const currentZIndexRef = useRef(1)
+  const lastPositionRef = useRef({ x: 0, y: 0 })
+  const globalIndexRef = useRef(0)
+  const zIndexRef = useRef(1)
+  const timeoutsRef = useRef<Set<ReturnType<typeof setTimeout>>>(new Set())
 
-  let globalIndex = 0
-  let last = { x: 0, y: 0 }
+  useEffect(() => {
+    const handleMove = (e: MouseEvent | TouchEvent) => {
+      const clientX = "touches" in e ? e.touches[0]?.clientX : e.clientX
+      const clientY = "touches" in e ? e.touches[0]?.clientY : e.clientY
 
-  const activate = (image: HTMLImageElement, x: number, y: number) => {
-    const containerRect = containerRef.current?.getBoundingClientRect()
-    if (!containerRect) return
-    const relativeX = x - containerRect.left
-    const relativeY = y - containerRect.top
-    image.style.left = `${relativeX}px`
-    image.style.top = `${relativeY}px`
+      if (clientX === undefined || clientY === undefined) return
 
-    if (currentZIndexRef.current > 40) {
-      currentZIndexRef.current = 1
+      const lastX = lastPositionRef.current.x
+      const lastY = lastPositionRef.current.y
+      
+      if (lastX === 0 && lastY === 0) {
+        lastPositionRef.current = { x: clientX, y: clientY }
+        return
+      }
+
+      const dist = Math.hypot(clientX - lastX, clientY - lastY)
+
+      if (dist > distance) {
+        const count = Math.floor(dist / distance)
+        
+        for (let i = 1; i <= count; i++) {
+          const t = i / count
+          const x = lastX + (clientX - lastX) * t
+          const y = lastY + (clientY - lastY) * t
+          activateImage(x, y)
+        }
+        
+        lastPositionRef.current = { x: clientX, y: clientY }
+      }
     }
-    image.style.zIndex = String(currentZIndexRef.current)
-    currentZIndexRef.current++
 
-    image.dataset.status = "active"
-    if (fadeAnimation) {
-      setTimeout(() => {
-        image.dataset.status = "inactive"
-      }, 1500)
+    window.addEventListener("mousemove", handleMove)
+    window.addEventListener("touchmove", handleMove)
+    
+    return () => {
+      window.removeEventListener("mousemove", handleMove)
+      window.removeEventListener("touchmove", handleMove)
+      timeoutsRef.current.forEach((t) => clearTimeout(t))
+      timeoutsRef.current.clear()
     }
-    last = { x, y }
-  }
+  }, [distance, items, maxNumberOfImages])
 
-  const distanceFromLast = (x: number, y: number) =>
-    Math.hypot(x - last.x, y - last.y)
+  const activateImage = (clientX: number, clientY: number) => {
+    if (!containerRef.current || !items || items.length === 0) return
 
-  const deactivate = (image: HTMLImageElement) => {
-    image.dataset.status = "inactive"
-  }
-
-  const handleOnMove = (clientX: number, clientY: number) => {
-    if (distanceFromLast(clientX, clientY) > window.innerWidth / distance) {
-      const lead = refs.current[globalIndex % refs.current.length]?.current
-      const tail =
-        refs.current[
-          (globalIndex - maxNumberOfImages) % refs.current.length
-        ]?.current
-      if (lead) activate(lead, clientX, clientY)
-      if (tail) deactivate(tail)
-      globalIndex++
+    const containerRect = containerRef.current.getBoundingClientRect()
+    const relativeX = clientX - containerRect.left
+    const relativeY = clientY - containerRect.top
+    
+    const img = document.createElement("img")
+    img.src = items[globalIndexRef.current % items.length]!
+    img.alt = ""
+    img.setAttribute("aria-hidden", "true")
+    img.className = cn(
+      "pointer-events-none absolute rounded-3xl object-cover shadow-xl",
+      imgClass
+    )
+    
+    Object.assign(img.style, {
+      left: `${relativeX}px`,
+      top: `${relativeY}px`,
+      zIndex: String(zIndexRef.current),
+      position: "absolute",
+      transform: "translate(-50%, -50%) scale(0)",
+      opacity: "0",
+    })
+    
+    containerRef.current.appendChild(img)
+    
+    const activeImages = containerRef.current.querySelectorAll("img")
+    if (activeImages.length > maxNumberOfImages) {
+      activeImages[0]?.remove()
     }
+    
+    const rotation = Math.random() * 20 - 10
+
+    animate(img, 
+      { 
+        scale: [0, 1],
+        opacity: [0, 1],
+        rotate: [rotation - 10, rotation]
+      }, 
+      { 
+        type: "spring",
+        stiffness: 400,
+        damping: 20,
+        mass: 0.8
+      }
+    )
+
+    const timer = setTimeout(() => {
+      const controls = animate(img, 
+        { 
+          scale: 0,
+          opacity: 0,
+          rotate: rotation + 10
+        }, 
+        { 
+          duration: 0.4, 
+          ease: "backIn" 
+        }
+      )
+      
+      controls.then(() => {
+        img.remove()
+        timeoutsRef.current.delete(timer)
+      })
+    }, 1000)
+
+    timeoutsRef.current.add(timer)
+    
+    globalIndexRef.current++
+    zIndexRef.current = (zIndexRef.current % 10000) + 1
   }
 
   return (
-    <section
-      onMouseMove={(e) => handleOnMove(e.clientX, e.clientY)}
-      onTouchMove={(e) => {
-        const touch = e.touches[0]
-        if (touch) {
-          handleOnMove(touch.clientX, touch.clientY)
-        }
-      }}
+    <div
       ref={containerRef}
       className={cn(
-        "relative grid h-[600px] w-full place-content-center overflow-hidden rounded-lg",
+        "relative grid w-full isolate place-content-center bg-transparent",
         className
       )}
     >
-      {items.map((item, index) => (
-        <img
-          key={index}
-          className={cn(
-            "opacity-0 data-[status='active']:ease-out-expo absolute -translate-x-[50%] -translate-y-[50%] scale-0 rounded-3xl object-cover transition-transform duration-300 data-[status='active']:scale-100 data-[status='active']:opacity-100 data-[status='active']:duration-500",
-            imgClass
-          )}
-          data-index={index}
-          data-status="inactive"
-          src={item}
-          alt=""
-          aria-hidden="true"
-          ref={refs.current[index]}
-        />
-      ))}
-      {children}
-    </section>
+      <div className="relative z-10001">{children}</div>
+    </div>
   )
 }
