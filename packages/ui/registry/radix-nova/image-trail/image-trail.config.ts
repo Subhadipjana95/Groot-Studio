@@ -9,10 +9,10 @@ export const config: ComponentConfig = {
   status: "stable",
   image: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778445439/image_trail_light_yo7x8b.webp",
   imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778445439/image_trail_dark_qne2hh.webp",
-  tags: ["image", "trail", "mouse", "effect", "animation"],
+  tags: ["image", "trail", "mouse", "animation"],
   preview: { disableSSR: false, height: 600 },
   registryUrl: "https://grootstudio.vercel.app/r/image-trail.json",
-  npmDependencies: [],
+  npmDependencies: ["motion/react"],
   registryDependencies: [],
   usage: {
     import: `import { ImageCursorTrail } from "@/components/image-trail"`,
@@ -21,7 +21,7 @@ export const config: ComponentConfig = {
     <ImageCursorTrail
       items={["/image1.jpg", "/image2.jpg"]}
       maxNumberOfImages={5}
-      distance={25}
+      distance={45}
       imgClass="sm:w-40 w-28 sm:h-48 h-36"
       className="max-w-4xl rounded-3xl"
     />
@@ -39,7 +39,7 @@ export const config: ComponentConfig = {
     {
       name: "distance",
       type: "number",
-      default: "20",
+      default: "40",
       required: false,
       description: "The fraction of the window width required to trigger spawning a new image. Larger numbers mean closer images.",
     },
@@ -49,13 +49,6 @@ export const config: ComponentConfig = {
       default: "5",
       required: false,
       description: "The maximum number of images that can be visible on the screen at the same time.",
-    },
-    {
-      name: "fadeAnimation",
-      type: "boolean",
-      default: "false",
-      required: false,
-      description: "Whether to automatically fade out the image after 1.5 seconds regardless of trail length.",
     },
     {
       name: "className",
