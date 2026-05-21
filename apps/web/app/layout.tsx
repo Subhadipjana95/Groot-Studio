@@ -110,7 +110,7 @@ export default function RootLayout({
         <ThemeProvider>
           <LenisProvider>
             <Navbar />
-            <div className="relative flex min-h-screen flex-col font-sans bg-brand-background selection:bg-primary selection:text-primary-foreground">
+            <div className="relative flex min-h-screen flex-col font-sans bg-brand-background selection:bg-primary/15 selection:text-primary">
               {children}
               <Footer />
             </div>
