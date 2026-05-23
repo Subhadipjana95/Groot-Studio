@@ -21,13 +21,14 @@ import {
 } from "@workspace/ui/components/drawer"
 import { DATA } from "@/lib/data/Data"
 import { registry } from "@/lib/registry"
+import { templateRegistry } from "@/lib/template-registry"
 
 export function Navbar() {
   const pathname = usePathname()
   const { setTheme, resolvedTheme } = useTheme()
 
   const componentsCount = registry.length
-  const templatesCount = 0 // Templates are currently in progress
+  const templatesCount = templateRegistry.length
 
   const getCount = (label: string) => {
     if (label === "Components") return componentsCount
