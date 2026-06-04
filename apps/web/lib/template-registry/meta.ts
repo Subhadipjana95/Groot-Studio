@@ -1,1 +1,1 @@
-export const templatesCount = 2
+export const templatesCount = 1

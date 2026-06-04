@@ -15,6 +15,7 @@ export const config: ComponentConfig = {
   // Server component — fetches data server-side, SSR must stay on
   preview: { disableSSR: false, height: 300 },
   registryUrl: "https://grootstudio.vercel.app/r/discord-online.json",
+  installAlias: "discord-online",
   npmDependencies: ["lucide-react"],
   registryDependencies: ["Button", "Tooltip"],
   usage: {

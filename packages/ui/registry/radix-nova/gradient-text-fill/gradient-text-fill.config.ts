@@ -16,6 +16,7 @@ export const config: ComponentConfig = {
   tags: ["text", "gradient", "motion"],
   preview: { disableSSR: true, height: 400 },
   registryUrl: "https://grootstudio.vercel.app/r/gradient-text-fill.json",
+  installAlias: "gradient-text-fill",
   npmDependencies: ["motion/react"],
   registryDependencies: [],
   usage: {

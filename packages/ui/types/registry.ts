@@ -58,6 +58,7 @@ export interface ComponentConfig {
 
   // ── Installation
   registryUrl: string;
+  installAlias?: string;
   npmDependencies?: string[];
   registryDependencies?: string[];
 

@@ -14,6 +14,7 @@ export const config: ComponentConfig = {
   tags: ["github", "calendar", "contributions"],
   preview: { disableSSR: true, height: 400 },
   registryUrl: "https://grootstudio.vercel.app/r/github-calendar.json",
+  installAlias: "github-calendar",
   npmDependencies: ["lucide-react"],
   registryDependencies: [],
   examples: [

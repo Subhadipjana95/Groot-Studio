@@ -12,6 +12,7 @@ export const config: ComponentConfig = {
   tags: ["avatar", "tooltip", "popups", "motion"],
   preview: { disableSSR: true, height: 200 },
   registryUrl: "https://grootstudio.vercel.app/r/avatar-tooltips.json",
+  installAlias: "avatar-tooltips",
   npmDependencies: ["motion/react"],
   registryDependencies: [],
   usage: {

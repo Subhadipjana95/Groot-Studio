@@ -13,6 +13,7 @@ export const config: ComponentConfig = {
   tags: ["marquee", "logos"],
   preview: { disableSSR: true, height: 300 },
   registryUrl: "https://grootstudio.vercel.app/r/logo-marquee.json",
+  installAlias: "logo-marquee",
   npmDependencies: ["motion/react", "react-use-measure"],
   registryDependencies: [],
   usage: {

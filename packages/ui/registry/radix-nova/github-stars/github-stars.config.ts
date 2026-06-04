@@ -15,6 +15,7 @@ export const config: ComponentConfig = {
   // Server component — fetches data server-side, so SSR must stay enabled
   preview: { disableSSR: false, height: 300 },
   registryUrl: "https://grootstudio.vercel.app/r/github-stars.json",
+  installAlias: "github-stars",
   npmDependencies: ["lucide-react"],
   registryDependencies: ["Tooltip", "Button"],
   usage: {

@@ -16,11 +16,13 @@ const packageManagers: { id: PackageManager; label: string }[] = [
 
 export function InstallBlock({
   command: slug,
+  installAlias,
   type = "add",
   className,
   hasReactVariant = false
 }: {
   command: string;
+  installAlias?: string;
   type?: "add" | "init" | "install";
   className?: string;
   hasReactVariant?: boolean;
@@ -30,8 +32,16 @@ export function InstallBlock({
 
   const getCommand = (pm: PackageManager) => {
     let currentSlug = slug;
-    if (framework === "reactjs" && hasReactVariant) {
-      currentSlug = slug.replace(".json", "-react.json");
+    
+    if (installAlias) {
+      currentSlug = `@grootstudio/${installAlias}`;
+      if (framework === "reactjs" && hasReactVariant) {
+        currentSlug = `${currentSlug}-react`;
+      }
+    } else {
+      if (framework === "reactjs" && hasReactVariant) {
+        currentSlug = slug.replace(".json", "-react.json");
+      }
     }
 
     if (type === "install") {

@@ -12,6 +12,7 @@ export const config: ComponentConfig = {
   tags: ["image", "trail", "mouse", "animation"],
   preview: { disableSSR: false, height: 600 },
   registryUrl: "https://grootstudio.vercel.app/r/image-trail.json",
+  installAlias: "image-trail",
   npmDependencies: ["motion/react"],
   registryDependencies: [],
   usage: {

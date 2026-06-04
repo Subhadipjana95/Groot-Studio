@@ -13,6 +13,7 @@ export const config: ComponentConfig = {
   tags: ["background", "gradient", "bars"],
   preview: { disableSSR: false, height: 400 },
   registryUrl: "https://grootstudio.vercel.app/r/animated-bars.json",
+  installAlias: "animated-bars",
   npmDependencies: [],
   registryDependencies: [],
   usage: {

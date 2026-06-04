@@ -12,6 +12,7 @@ export const config: ComponentConfig = {
   tags: ["card", "glow", "effect"],
   preview: { disableSSR: true, height: 400 },
   registryUrl: "https://grootstudio.vercel.app/r/glow-card.json",
+  installAlias: "glow-card",
   npmDependencies: [],
   registryDependencies: [],
   usage: {
