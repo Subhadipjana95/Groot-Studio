@@ -11,6 +11,7 @@ export const config: ComponentConfig = {
   tags: ["button", "3d", "press", "neobrutalism"],
   preview: { disableSSR: false, height: 200 },
   registryUrl: "https://grootstudio.vercel.app/r/press-button.json",
+  installAlias: "press-button",
   usage: {
     import: `import { PressButton } from "@/components/press-button"`,
     code: `export default function Demo() {

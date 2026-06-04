@@ -13,6 +13,7 @@ export const config: ComponentConfig = {
   tags: ["marquee", "logos", "blurred"],
   preview: { disableSSR: true, height: 300 },
   registryUrl: "https://grootstudio.vercel.app/r/blurred-marquee.json",
+  installAlias: "blurred-marquee",
   npmDependencies: ["motion/react", "react-use-measure", "lucide-react"],
   registryDependencies: [],
   usage: {

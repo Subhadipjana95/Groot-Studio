@@ -13,6 +13,7 @@ export const config: ComponentConfig = {
   tags: ["hover", "glow", "cursor", "gsap"],
   preview: { disableSSR: false, height: 300 },
   registryUrl: "https://grootstudio.vercel.app/r/text-outline-glow.json",
+  installAlias: "text-outline-glow",
   npmDependencies: ["gsap", "@gsap/react"],
   registryDependencies: [],
   usage: {

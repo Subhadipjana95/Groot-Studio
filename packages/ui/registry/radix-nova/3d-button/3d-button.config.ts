@@ -12,6 +12,7 @@ export const config: ComponentConfig = {
   tags: ["button", "3d", "gradient", "shimmer"],
   preview: { disableSSR: false, height: 200 },
   registryUrl: "https://grootstudio.vercel.app/r/3d-button.json",
+  installAlias: "3d-button",
   npmDependencies: [],
   registryDependencies: [],
   usage: {

@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-05-21T19:23:00.283Z
+// Last generated: 2026-06-04T12:03:26.067Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -30,6 +30,7 @@ export const registry: ComponentConfig[] = [
       "height": 200
     },
     "registryUrl": "https://grootstudio.vercel.app/r/3d-button.json",
+    "installAlias": "3d-button",
     "npmDependencies": [],
     "registryDependencies": [],
     "usage": {
@@ -103,6 +104,7 @@ export const registry: ComponentConfig[] = [
       "height": 400
     },
     "registryUrl": "https://grootstudio.vercel.app/r/animated-bars.json",
+    "installAlias": "animated-bars",
     "npmDependencies": [],
     "registryDependencies": [],
     "usage": {
@@ -181,6 +183,7 @@ export const registry: ComponentConfig[] = [
       "height": 500
     },
     "registryUrl": "https://grootstudio.vercel.app/r/animated-layout.json",
+    "installAlias": "animated-layout",
     "npmDependencies": [
       "motion",
       "lucide-react"
@@ -248,6 +251,7 @@ export const registry: ComponentConfig[] = [
       "height": 200
     },
     "registryUrl": "https://grootstudio.vercel.app/r/avatar-tooltips.json",
+    "installAlias": "avatar-tooltips",
     "npmDependencies": [
       "motion/react"
     ],
@@ -301,6 +305,7 @@ export const registry: ComponentConfig[] = [
       "height": 300
     },
     "registryUrl": "https://grootstudio.vercel.app/r/blurred-marquee.json",
+    "installAlias": "blurred-marquee",
     "npmDependencies": [
       "motion/react",
       "react-use-measure",
@@ -357,6 +362,7 @@ export const registry: ComponentConfig[] = [
       "height": 400
     },
     "registryUrl": "https://grootstudio.vercel.app/r/cursor-trail.json",
+    "installAlias": "cursor-trail",
     "npmDependencies": [],
     "registryDependencies": [],
     "usage": {
@@ -429,6 +435,7 @@ export const registry: ComponentConfig[] = [
       "height": 300
     },
     "registryUrl": "https://grootstudio.vercel.app/r/discord-online.json",
+    "installAlias": "discord-online",
     "npmDependencies": [
       "lucide-react"
     ],
@@ -495,6 +502,7 @@ export const registry: ComponentConfig[] = [
       "height": 250
     },
     "registryUrl": "https://grootstudio.vercel.app/r/drag-button.json",
+    "installAlias": "drag-button",
     "npmDependencies": [
       "motion/react",
       "lucide-react"
@@ -580,6 +588,7 @@ export const registry: ComponentConfig[] = [
       "height": 400
     },
     "registryUrl": "https://grootstudio.vercel.app/r/github-calendar.json",
+    "installAlias": "github-calendar",
     "npmDependencies": [
       "lucide-react"
     ],
@@ -707,6 +716,7 @@ export const registry: ComponentConfig[] = [
       "height": 300
     },
     "registryUrl": "https://grootstudio.vercel.app/r/github-stars.json",
+    "installAlias": "github-stars",
     "npmDependencies": [
       "lucide-react"
     ],
@@ -765,6 +775,7 @@ export const registry: ComponentConfig[] = [
       "height": 400
     },
     "registryUrl": "https://grootstudio.vercel.app/r/glow-card.json",
+    "installAlias": "glow-card",
     "npmDependencies": [],
     "registryDependencies": [],
     "usage": {
@@ -819,6 +830,7 @@ export const registry: ComponentConfig[] = [
       "height": 400
     },
     "registryUrl": "https://grootstudio.vercel.app/r/gradient-background-text.json",
+    "installAlias": "gradient-background-text",
     "npmDependencies": [
       "motion/react"
     ],
@@ -876,6 +888,7 @@ export const registry: ComponentConfig[] = [
       "height": 400
     },
     "registryUrl": "https://grootstudio.vercel.app/r/gradient-text-fill.json",
+    "installAlias": "gradient-text-fill",
     "npmDependencies": [
       "motion/react"
     ],
@@ -939,6 +952,7 @@ export const registry: ComponentConfig[] = [
       "height": 600
     },
     "registryUrl": "https://grootstudio.vercel.app/r/image-trail.json",
+    "installAlias": "image-trail",
     "npmDependencies": [
       "motion/react"
     ],
@@ -987,7 +1001,7 @@ export const registry: ComponentConfig[] = [
     "files": [
       {
         "name": "image-trail.tsx",
-        "content": "\"use client\"\n\nimport { useRef, useEffect, type ReactNode } from \"react\"\nimport { animate } from \"motion/react\"\nimport { cn } from \"@/lib/utils\"\n\ninterface ImageMouseTrailProps {\n  items: string[]\n  children?: ReactNode\n  className?: string\n  imgClass?: string\n  distance?: number\n  maxNumberOfImages?: number\n}\n\nexport default function ImageCursorTrail({\n  items = [],\n  children,\n  className,\n  imgClass = \"w-40 h-48\",\n  distance = 40,\n  maxNumberOfImages = 8,\n}: ImageMouseTrailProps) {\n  const containerRef = useRef<HTMLDivElement>(null)\n  const lastPositionRef = useRef({ x: 0, y: 0 })\n  const globalIndexRef = useRef(0)\n  const zIndexRef = useRef(1)\n  const timeoutsRef = useRef<Set<ReturnType<typeof setTimeout>>>(new Set())\n\n  useEffect(() => {\n    const handleMove = (e: MouseEvent | TouchEvent) => {\n      const clientX = \"touches\" in e ? e.touches[0]?.clientX : e.clientX\n      const clientY = \"touches\" in e ? e.touches[0]?.clientY : e.clientY\n\n      if (clientX === undefined || clientY === undefined) return\n\n      const lastX = lastPositionRef.current.x\n      const lastY = lastPositionRef.current.y\n      \n      if (lastX === 0 && lastY === 0) {\n        lastPositionRef.current = { x: clientX, y: clientY }\n        return\n      }\n\n      const dist = Math.hypot(clientX - lastX, clientY - lastY)\n\n      if (dist > distance) {\n        const count = Math.floor(dist / distance)\n        \n        for (let i = 1; i <= count; i++) {\n          const t = i / count\n          const x = lastX + (clientX - lastX) * t\n          const y = lastY + (clientY - lastY) * t\n          activateImage(x, y)\n        }\n        \n        lastPositionRef.current = { x: clientX, y: clientY }\n      }\n    }\n\n    window.addEventListener(\"mousemove\", handleMove)\n    window.addEventListener(\"touchmove\", handleMove)\n    \n    return () => {\n      window.removeEventListener(\"mousemove\", handleMove)\n      window.removeEventListener(\"touchmove\", handleMove)\n      timeoutsRef.current.forEach((t) => clearTimeout(t))\n      timeoutsRef.current.clear()\n    }\n  }, [distance, items, maxNumberOfImages])\n\n  const activateImage = (clientX: number, clientY: number) => {\n    if (!containerRef.current || !items || items.length === 0) return\n\n    const containerRect = containerRef.current.getBoundingClientRect()\n    const relativeX = clientX - containerRect.left\n    const relativeY = clientY - containerRect.top\n    \n    const img = document.createElement(\"img\")\n    img.src = items[globalIndexRef.current % items.length]!\n    img.alt = \"\"\n    img.setAttribute(\"aria-hidden\", \"true\")\n    img.className = cn(\n      \"pointer-events-none absolute rounded-3xl object-cover shadow-xl\",\n      imgClass\n    )\n    \n    Object.assign(img.style, {\n      left: `${relativeX}px`,\n      top: `${relativeY}px`,\n      zIndex: String(zIndexRef.current),\n      position: \"absolute\",\n      transform: \"translate(-50%, -50%) scale(0)\",\n      opacity: \"0\",\n    })\n    \n    containerRef.current.appendChild(img)\n    \n    const activeImages = containerRef.current.querySelectorAll(\"img\")\n    if (activeImages.length > maxNumberOfImages) {\n      activeImages[0]?.remove()\n    }\n    \n    const rotation = Math.random() * 20 - 10\n\n    animate(img, \n      { \n        scale: [0, 1],\n        opacity: [0, 1],\n        rotate: [rotation - 10, rotation]\n      }, \n      { \n        type: \"spring\",\n        stiffness: 400,\n        damping: 20,\n        mass: 0.8\n      }\n    )\n\n    const timer = setTimeout(() => {\n      const controls = animate(img, \n        { \n          scale: 0,\n          opacity: 0,\n          rotate: rotation + 10\n        }, \n        { \n          duration: 0.4, \n          ease: \"backIn\" \n        }\n      )\n      \n      controls.then(() => {\n        img.remove()\n        timeoutsRef.current.delete(timer)\n      })\n    }, 1000)\n\n    timeoutsRef.current.add(timer)\n    \n    globalIndexRef.current++\n    zIndexRef.current = (zIndexRef.current % 10000) + 1\n  }\n\n  return (\n    <div\n      ref={containerRef}\n      className={cn(\n        \"relative grid w-full isolate place-content-center bg-transparent\",\n        className\n      )}\n    >\n      <div className=\"relative z-10001\">{children}</div>\n    </div>\n  )\n}\n"
+        "content": "\"use client\"\r\n\r\nimport { useRef, useEffect, type ReactNode } from \"react\"\r\nimport { animate } from \"motion/react\"\r\nimport { cn } from \"@/lib/utils\"\r\n\r\ninterface ImageMouseTrailProps {\r\n  items: string[]\r\n  children?: ReactNode\r\n  className?: string\r\n  imgClass?: string\r\n  distance?: number\r\n  maxNumberOfImages?: number\r\n}\r\n\r\nexport default function ImageCursorTrail({\r\n  items = [],\r\n  children,\r\n  className,\r\n  imgClass = \"w-40 h-48\",\r\n  distance = 40,\r\n  maxNumberOfImages = 8,\r\n}: ImageMouseTrailProps) {\r\n  const containerRef = useRef<HTMLDivElement>(null)\r\n  const lastPositionRef = useRef({ x: 0, y: 0 })\r\n  const globalIndexRef = useRef(0)\r\n  const zIndexRef = useRef(1)\r\n  const timeoutsRef = useRef<Set<ReturnType<typeof setTimeout>>>(new Set())\r\n\r\n  useEffect(() => {\r\n    const handleMove = (e: MouseEvent | TouchEvent) => {\r\n      const clientX = \"touches\" in e ? e.touches[0]?.clientX : e.clientX\r\n      const clientY = \"touches\" in e ? e.touches[0]?.clientY : e.clientY\r\n\r\n      if (clientX === undefined || clientY === undefined) return\r\n\r\n      const lastX = lastPositionRef.current.x\r\n      const lastY = lastPositionRef.current.y\r\n      \r\n      if (lastX === 0 && lastY === 0) {\r\n        lastPositionRef.current = { x: clientX, y: clientY }\r\n        return\r\n      }\r\n\r\n      const dist = Math.hypot(clientX - lastX, clientY - lastY)\r\n\r\n      if (dist > distance) {\r\n        const count = Math.floor(dist / distance)\r\n        \r\n        for (let i = 1; i <= count; i++) {\r\n          const t = i / count\r\n          const x = lastX + (clientX - lastX) * t\r\n          const y = lastY + (clientY - lastY) * t\r\n          activateImage(x, y)\r\n        }\r\n        \r\n        lastPositionRef.current = { x: clientX, y: clientY }\r\n      }\r\n    }\r\n\r\n    window.addEventListener(\"mousemove\", handleMove)\r\n    window.addEventListener(\"touchmove\", handleMove)\r\n    \r\n    return () => {\r\n      window.removeEventListener(\"mousemove\", handleMove)\r\n      window.removeEventListener(\"touchmove\", handleMove)\r\n      timeoutsRef.current.forEach((t) => clearTimeout(t))\r\n      timeoutsRef.current.clear()\r\n    }\r\n  }, [distance, items, maxNumberOfImages])\r\n\r\n  const activateImage = (clientX: number, clientY: number) => {\r\n    if (!containerRef.current || !items || items.length === 0) return\r\n\r\n    const containerRect = containerRef.current.getBoundingClientRect()\r\n    const relativeX = clientX - containerRect.left\r\n    const relativeY = clientY - containerRect.top\r\n    \r\n    const img = document.createElement(\"img\")\r\n    img.src = items[globalIndexRef.current % items.length]!\r\n    img.alt = \"\"\r\n    img.setAttribute(\"aria-hidden\", \"true\")\r\n    img.className = cn(\r\n      \"pointer-events-none absolute rounded-3xl object-cover shadow-xl\",\r\n      imgClass\r\n    )\r\n    \r\n    Object.assign(img.style, {\r\n      left: `${relativeX}px`,\r\n      top: `${relativeY}px`,\r\n      zIndex: String(zIndexRef.current),\r\n      position: \"absolute\",\r\n      transform: \"translate(-50%, -50%) scale(0)\",\r\n      opacity: \"0\",\r\n    })\r\n    \r\n    containerRef.current.appendChild(img)\r\n    \r\n    const activeImages = containerRef.current.querySelectorAll(\"img\")\r\n    if (activeImages.length > maxNumberOfImages) {\r\n      activeImages[0]?.remove()\r\n    }\r\n    \r\n    const rotation = Math.random() * 20 - 10\r\n\r\n    animate(img, \r\n      { \r\n        scale: [0, 1],\r\n        opacity: [0, 1],\r\n        rotate: [rotation - 10, rotation]\r\n      }, \r\n      { \r\n        type: \"spring\",\r\n        stiffness: 400,\r\n        damping: 20,\r\n        mass: 0.8\r\n      }\r\n    )\r\n\r\n    const timer = setTimeout(() => {\r\n      const controls = animate(img, \r\n        { \r\n          scale: 0,\r\n          opacity: 0,\r\n          rotate: rotation + 10\r\n        }, \r\n        { \r\n          duration: 0.4, \r\n          ease: \"backIn\" \r\n        }\r\n      )\r\n      \r\n      controls.then(() => {\r\n        img.remove()\r\n        timeoutsRef.current.delete(timer)\r\n      })\r\n    }, 1000)\r\n\r\n    timeoutsRef.current.add(timer)\r\n    \r\n    globalIndexRef.current++\r\n    zIndexRef.current = (zIndexRef.current % 10000) + 1\r\n  }\r\n\r\n  return (\r\n    <div\r\n      ref={containerRef}\r\n      className={cn(\r\n        \"relative grid w-full isolate place-content-center bg-transparent\",\r\n        className\r\n      )}\r\n    >\r\n      <div className=\"relative z-10001\">{children}</div>\r\n    </div>\r\n  )\r\n}\r\n"
       }
     ]
   },
@@ -1013,6 +1027,7 @@ export const registry: ComponentConfig[] = [
       "height": 400
     },
     "registryUrl": "https://grootstudio.vercel.app/r/logo-grid.json",
+    "installAlias": "logo-grid",
     "npmDependencies": [
       "lucide-react"
     ],
@@ -1063,6 +1078,7 @@ export const registry: ComponentConfig[] = [
       "height": 300
     },
     "registryUrl": "https://grootstudio.vercel.app/r/logo-marquee.json",
+    "installAlias": "logo-marquee",
     "npmDependencies": [
       "motion/react",
       "react-use-measure"
@@ -1115,6 +1131,7 @@ export const registry: ComponentConfig[] = [
       "height": 200
     },
     "registryUrl": "https://grootstudio.vercel.app/r/press-button.json",
+    "installAlias": "press-button",
     "usage": {
       "import": "import { PressButton } from \"@/components/press-button\"",
       "code": "export default function Demo() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <PressButton>Default</PressButton>\n\n      <PressButton className=\"bg-indigo-600 text-white shadow-[4px_4px_0_0_#3730a3] border-[#3730a3]\">\n        Custom Indigo\n      </PressButton>\n    </div>\n  )\n}"
@@ -1169,6 +1186,7 @@ export const registry: ComponentConfig[] = [
       "height": 200
     },
     "registryUrl": "https://grootstudio.vercel.app/r/sliding-button.json",
+    "installAlias": "sliding-button",
     "npmDependencies": [
       "motion/react",
       "lucide-react"
@@ -1241,6 +1259,7 @@ export const registry: ComponentConfig[] = [
       "height": 300
     },
     "registryUrl": "https://grootstudio.vercel.app/r/text-outline-glow.json",
+    "installAlias": "text-outline-glow",
     "npmDependencies": [
       "gsap",
       "@gsap/react"
@@ -1310,6 +1329,7 @@ export const registry: ComponentConfig[] = [
       "height": 300
     },
     "registryUrl": "https://grootstudio.vercel.app/r/theme-toggler.json",
+    "installAlias": "theme-toggler",
     "npmDependencies": [
       "lucide-react"
     ],

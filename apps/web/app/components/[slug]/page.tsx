@@ -145,6 +145,7 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
 
         <InstallationSection
           registryUrl={component.registryUrl}
+          installAlias={component.installAlias}
           componentName={component.name}
           componentCode={component.files?.[0]?.content}
           npmDependencies={component.npmDependencies}

@@ -9,6 +9,7 @@ type InstallMode = "cli" | "manual";
 
 interface InstallationSectionProps {
   registryUrl: string;
+  installAlias?: string;
   componentName: string;
   componentCode?: string;
   npmDependencies?: string[];
@@ -18,6 +19,7 @@ interface InstallationSectionProps {
 
 export function InstallationSection({
   registryUrl,
+  installAlias,
   componentName,
   componentCode,
   npmDependencies,
@@ -62,7 +64,11 @@ export function InstallationSection({
       </div>
 
       {mode === "cli" ? (
-        <InstallBlock command={registryUrl} hasReactVariant={hasReactVariant} />
+        <InstallBlock 
+          command={registryUrl} 
+          installAlias={installAlias} 
+          hasReactVariant={hasReactVariant} 
+        />
       ) : (
         componentCode && (
           <ManualInstallBlock

@@ -14,6 +14,7 @@ export const config: ComponentConfig = {
   tags: ["theme", "dark-mode", "toggle"],
   preview: { disableSSR: true, height: 300 },
   registryUrl: "https://grootstudio.vercel.app/r/theme-toggler.json",
+  installAlias: "theme-toggler",
   npmDependencies: ["lucide-react"],
   registryDependencies: [],
   usage: {

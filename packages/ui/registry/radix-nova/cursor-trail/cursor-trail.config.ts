@@ -13,6 +13,7 @@ export const config: ComponentConfig = {
   tags: ["cursor", "trail", "mouse", "effect", "animation"],
   preview: { disableSSR: false, height: 400 },
   registryUrl: "https://grootstudio.vercel.app/r/cursor-trail.json",
+  installAlias: "cursor-trail",
   npmDependencies: [],
   registryDependencies: [],
   usage: {

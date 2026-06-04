@@ -13,6 +13,7 @@ export const config: ComponentConfig = {
   tags: ["button", "sliding", "motion"],
   preview: { disableSSR: false, height: 200 },
   registryUrl: "https://grootstudio.vercel.app/r/sliding-button.json",
+  installAlias: "sliding-button",
   npmDependencies: ["motion/react", "lucide-react"],
   registryDependencies: ["button"],
   usage: {

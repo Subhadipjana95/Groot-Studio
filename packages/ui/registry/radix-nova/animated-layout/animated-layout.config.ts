@@ -14,6 +14,7 @@ export const config: ComponentConfig = {
   tags: ["layout", "animation", "motion"],
   preview: { disableSSR: false, height: 500 },
   registryUrl: "https://grootstudio.vercel.app/r/animated-layout.json",
+  installAlias: "animated-layout",
   npmDependencies: ["motion", "lucide-react"],
   registryDependencies: [],
   usage: {

@@ -12,6 +12,7 @@ export const config: ComponentConfig = {
   tags: ["grid", "logos", "layout"],
   preview: { disableSSR: true, height: 400 },
   registryUrl: "https://grootstudio.vercel.app/r/logo-grid.json",
+  installAlias: "logo-grid",
   npmDependencies: ["lucide-react"],
   registryDependencies: [],
   usage: {

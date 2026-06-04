@@ -13,6 +13,7 @@ export const config: ComponentConfig = {
   tags: ["text", "gradient", "3d"],
   preview: { disableSSR: true, height: 400 },
   registryUrl: "https://grootstudio.vercel.app/r/gradient-background-text.json",
+  installAlias: "gradient-background-text",
   npmDependencies: ["motion/react"],
   registryDependencies: [],
   usage: {
