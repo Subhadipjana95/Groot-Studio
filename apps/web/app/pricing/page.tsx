@@ -2,7 +2,7 @@ import { Button } from "@workspace/ui/components/button";
 import { Check } from "lucide-react";
 import { cn } from "@workspace/ui/lib/utils";
 import { PageWrapper } from "@/components/utilities/page-wrapper";
-import { DATA } from "@/lib/data/Data"
+import { DATA } from "@/data/Data"
 
 const Pricing = () => {
   return (
@@ -59,8 +59,8 @@ const Pricing = () => {
                 <Button
                   className={cn(
                     "w-full h-12 rounded-md text-sm font-semibold",
-                    'featured' in plan && plan.featured 
-                      ? "bg-brand-gradient text-background hover:shadow-xl hover:shadow-brand1/10" 
+                    'featured' in plan && plan.featured
+                      ? "bg-brand-gradient text-background hover:shadow-xl hover:shadow-brand1/10"
                       : "bg-secondary-foreground hover:bg-secondary-foreground/80 border border-foreground"
                   )}
                 >

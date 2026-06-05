@@ -19,7 +19,7 @@ import {
   DrawerTrigger,
   DrawerClose,
 } from "@workspace/ui/components/drawer"
-import { DATA } from "@/lib/data/Data"
+import { DATA } from "@/data/Data"
 import { registry } from "@/lib/registry"
 import { templatesCount } from "@/lib/template-registry/meta"
 import BrandButton from "@workspace/ui/components/buttonVarients/BrandButton"

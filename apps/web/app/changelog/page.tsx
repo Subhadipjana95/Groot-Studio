@@ -1,5 +1,5 @@
 import { PageWrapper } from "@/components/utilities/page-wrapper";
-import { DATA } from "@/lib/data/Data";
+import { DATA } from "@/data/Data";
 
 export default function ChangelogPage() {
   return (
@@ -29,8 +29,8 @@ export default function ChangelogPage() {
               <div className="flex flex-col md:flex-row gap-8 items-start w-full">
                 {'image' in item && item.image && (
                   <div className="shrink-0 w-full md:w-80 aspect-video md:aspect-video relative rounded-lg overflow-hidden border border-border/50 bg-muted/20">
-                    <img 
-                      src={item.image} 
+                    <img
+                      src={item.image}
                       alt={item.title}
                       className="object-cover w-full h-full"
                     />

@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@workspace/ui/components/accordion";
-import { DATA } from "@/lib/data/Data"
+import { DATA } from "@/data/Data"
 
 export function FAQ() {
   return (
@@ -22,8 +22,8 @@ export function FAQ() {
       <div className="w-full mx-auto text-left">
         <Accordion type="single" collapsible className="w-full">
           {DATA.faq.map((item) => (
-            <AccordionItem 
-              key={item.id} 
+            <AccordionItem
+              key={item.id}
               value={item.id}
               className="border-b border-border py-1 last:border-b-0 pl-10 pr-6"
             >

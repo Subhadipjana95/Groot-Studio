@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { DATA } from "@/lib/data/Data"
+import { DATA } from "@/data/Data"
 import { PageWrapper } from "@/components/utilities/page-wrapper"
 
 export default function AboutPage() {
