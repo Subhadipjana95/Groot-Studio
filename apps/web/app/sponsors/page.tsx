@@ -4,6 +4,7 @@ import { SPONSOR_TIERS, DEMO_SPONSORS } from "@/lib/data/SponsorsData"
 import { DATA } from "@/lib/data/Data"
 import { Users, ExternalLink, Plus, Heart } from "lucide-react"
 import { GitHubIcon } from "@/components/ui/icons/icon"
+import SectionDivider from "@/components/utilities/SectionDivider"
 
 async function getSponsors() {
   try {
@@ -26,14 +27,14 @@ export default async function SponsorsPage() {
   const githubSponsors = await getSponsors()
 
   return (
-    <PageWrapper className="overflow-hidden">
-      <main className="max-w-4xl mx-auto px-6 md:px-12 relative pt-20 pb-20 md:pt-24 lg:pt-32">
+    <div className="overflow-x-clip w-full">
+      <main className="max-w-6xl mx-auto px-6 md:px-12 relative pt-20 pb-20 md:pt-24 lg:pt-32 border-x">
 
         {/* Hero */}
         <div className="mb-12 space-y-4 max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-medium tracking-tight">
-            Support the future of{" "}
-            <span className="bg-brand-gradient bg-clip-text text-transparent">Groot Studio</span>
+          <h1 className="font-normal font-sans text-4xl tracking-tight sm:text-5xl text-foreground">
+            <span className="text-brand1 [text-shadow:0_0_12px_var(--brand1)] font-[gambarino] font-medium">Support</span> the future of{" "}
+            <span className="text-brand1 font-[gambarino] font-medium">Groot Studio</span>
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
             Groot Studio is sustained by the community. Your sponsorship helps us build high-quality components for everyone.
@@ -46,16 +47,16 @@ export default async function SponsorsPage() {
             <div key={tier.id} className="space-y-8">
               <div className="flex items-center">
                 <div className="flex items-center gap-3 bg-muted/30 border border-dashed border-border/40 rounded-md p-1.5 pr-3">
-                <div className="flex justify-center items-center p-1.5 border rounded-sm bg-muted/50 shadow-md">
-                  <tier.icon className={cn("size-6", tier.color)} />
-                </div>
-                <h2 className="text-2xl font-medium tracking-tight text-shadow-lg">
-                  {tier.name} Sponsors
-                </h2>
+                  <div className="flex justify-center items-center p-1.5 border rounded-sm bg-muted/50 shadow-md">
+                    <tier.icon className={cn("size-6", tier.color)} />
+                  </div>
+                  <h2 className="text-2xl font-medium tracking-tight text-shadow-lg">
+                    {tier.name} Sponsors
+                  </h2>
                 </div>
                 <div className="h-px flex-1 border-t border-dashed border-border/60 dark:border-border/40" />
                 <div className="h-6 w-6 p-[2px] bg-muted/30 border border-dashed border-border/40 rounded-[3px]">
-                <div className="h-full w-full bg-muted/30 border border-dashed border-border/40 rounded-xs" />
+                  <div className="h-full w-full bg-muted/30 border border-dashed border-border/40 rounded-xs" />
                 </div>
               </div>
 
@@ -81,16 +82,16 @@ export default async function SponsorsPage() {
           <div className="space-y-8">
             <div className="flex items-center">
               <div className="flex items-center gap-3 bg-muted/30 border border-dashed border-border/40 rounded-md p-1.5 pr-3">
-              <div className="flex justify-center items-center p-1.5 border rounded-sm bg-muted/50 shadow-md">
-                <GitHubIcon className="size-6 text-brand2" />
-              </div>
-              <h2 className="text-2xl font-medium tracking-tight text-shadow-lg">
-                GitHub Sponsors
-              </h2>
+                <div className="flex justify-center items-center p-1.5 border rounded-sm bg-muted/50 shadow-md">
+                  <GitHubIcon className="size-6 text-brand2" />
+                </div>
+                <h2 className="text-2xl font-medium tracking-tight text-shadow-lg">
+                  GitHub Sponsors
+                </h2>
               </div>
               <div className="h-px flex-1 border-t border-dashed border-border/60 dark:border-border/40" />
               <div className="h-6 w-6 p-[2px] bg-muted/30 border border-dashed border-border/40 rounded-[3px]">
-              <div className="h-full w-full bg-muted/30 border border-dashed border-border/40 rounded-xs" />
+                <div className="h-full w-full bg-muted/30 border border-dashed border-border/40 rounded-xs" />
               </div>
             </div>
 
@@ -144,7 +145,8 @@ export default async function SponsorsPage() {
           </Link>
         </p>
       </main>
-    </PageWrapper>
+      <SectionDivider />
+    </div>
   )
 }
 
