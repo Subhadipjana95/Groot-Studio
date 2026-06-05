@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactLenis } from "lenis/react";
+import "lenis/dist/lenis.css";
 
 export function LenisProvider({ children }: { children: React.ReactNode }) {
   return (

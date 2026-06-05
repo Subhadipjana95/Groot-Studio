@@ -22,18 +22,11 @@ import {
 import { DATA } from "@/lib/data/Data"
 import { registry } from "@/lib/registry"
 import { templatesCount } from "@/lib/template-registry/meta"
+import BrandButton from "@workspace/ui/components/buttonVarients/BrandButton"
 
 export function Navbar() {
   const pathname = usePathname()
   const { setTheme, resolvedTheme } = useTheme()
-
-  const componentsCount = registry.length
-
-  const getCount = (label: string) => {
-    if (label === "Components") return componentsCount
-    if (label === "Templates") return templatesCount
-    return 0
-  }
   const [mounted, setMounted] = React.useState(false)
   const [searchOpen, setSearchOpen] = React.useState(false)
 
@@ -45,9 +38,9 @@ export function Navbar() {
   }, [mounted, resolvedTheme, setTheme])
 
   const Logo = (
-    <Link href="/" aria-label="Groot Studio home" className="flex items-center gap-1.5">
-      <img src="/assets/Logo_Transparent.svg" alt="Groot Studio" width={32} height={32} className="h-8 w-8" />
-      <span className="text-xl font-medium tracking-tight">Studio.</span>
+    <Link href="/" aria-label="Groot Studio home" className="flex items-center gap-1.5 group h-full">
+      <img src="/assets/Logo_Transparent.svg" alt="Groot Studio" className="h-7 w-7" />
+      <span className="text-lg text-muted-foreground tracking-tight group-hover:text-primary">Studio.</span>
     </Link>
   )
 
@@ -57,7 +50,7 @@ export function Navbar() {
       size="icon"
       onClick={toggleTheme}
       aria-label="Toggle theme"
-      className="h-9 w-9 cursor-pointer rounded-full bg-secondary dark:bg-muted/80 hover:border hover:border-input"
+      className="h-9 w-9 cursor-pointer bg-transparent text-muted-foreground hover:bg-transparent group-hover:text-primary"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +59,7 @@ export function Navbar() {
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2"
+        strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
         className="size-4.5"
@@ -86,31 +79,28 @@ export function Navbar() {
   return (
     <>
       <nav className="fixed top-0 z-50 w-full border-b bg-background">
-        <div className="max-w-full lg:max-w-[1440px] mx-auto flex h-15 items-center justify-between px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-8">
+        <div className={cn("hidden mx-auto sm:flex h-16 items-center justify-between",
+          pathname.includes("/components") ? "max-w-full lg:max-w-332 border-x pl-6" : "border-x max-w-96 lg:max-w-6xl px-2"
+        )}>
+          <div className="flex items-center h-full gap-4">
             {Logo}
 
             {/* Nav Links - Desktop */}
-            <ul className="hidden list-none items-center gap-4 md:flex">
+            <ul className="hidden list-none h-full md:grid grid-cols-3 divide-x divide-border border-x">
               {DATA.NAV_LINKS.map(({ href, label }) => {
                 const isActive = pathname === href || ((href as string) !== "/" && pathname.startsWith(href))
                 return (
-                  <li key={href}>
+                  <li key={href} className="h-full flex items-center justify-center">
                     <Link
                       href={href}
                       className={cn(
-                        "rounded-md px-2 py-1.5 text-[15px] font-medium transition-colors flex items-center gap-1.5",
+                        "h-full w-full text-[15px] transition-colors flex items-center justify-center gap-1 px-2 ",
                         isActive
                           ? "bg-primary/10 text-primary"
-                          : "hover:bg-primary/10 hover:text-primary text-foreground"
+                          : "hover:bg-primary/10 hover:text-primary text-muted-foreground"
                       )}
                     >
                       {label}
-                      {getCount(label) > 0 && (
-                        <span className="flex h-5 w-6 items-center justify-center rounded-full bg-muted-foreground/20 text-[10px] font-semibold tracking-wide font-sans text-foreground leading-none">
-                          {getCount(label)}
-                        </span>
-                      )}
                     </Link>
                   </li>
                 )
@@ -118,136 +108,112 @@ export function Navbar() {
             </ul>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="grid grid-cols-5 w-[25%] h-full divide-x divide-border border-l">
             {/* Search Button - Desktop */}
-            <Button
-              variant="outline"
+            <div className="col-span-1 h-full flex items-center justify-center hover:bg-primary/10 cursor-pointer group"
               aria-label="Open search"
-              className="relative hidden h-9 w-20 lg:w-36 xl:w-52 cursor-pointer justify-between border-input bg-muted/60 pl-3 pr-1 py-1 text-muted-foreground md:flex lg:flex"
               onClick={() => setSearchOpen(true)}
             >
-              <span className="inline-flex items-center gap-2">
-                <SearchIcon className="size-4" aria-hidden />
-                Search...
-              </span>
-              <kbd className="pointer-events-none inline-flex h-[26px] select-none items-center gap-1 rounded-sm border bg-background px-1.5 font-mono text-[10px] font-medium text-muted-foreground">
-                <span className="text-xs">⌘</span>K
-              </kbd>
-            </Button>
-
-            {/* Mode Toggler - Shared */}
-            {ModeToggler}
-
-            <div className="hidden items-center gap-2 md:flex">
-              {/* Social Stats- Desktop Only */}
-              <div className="flex gap-2 rounded-lg border border-input px-2">
-                <GitHubStars repo={DATA.GITHUB_REPO_LINK} className="border-none hover:bg-transparent dark:hover:bg-transparent" />
-                <DiscordOnline guildId={DATA.DISCORD_SERVER_ID} inviteURL={DATA.DISCORD_INVITE_LINK} className="border-none hover:bg-transparent dark:hover:bg-transparent" />
-              </div>
-
-              {/* Auth & Pricing Button - hidden until auth implemented */}
-              <div className="gap-2 hidden">
-                <Link href="/auth">
-                  <Button variant="secondary" className="h-10 cursor-pointer">Login</Button>
-                </Link>
-                <Link href="/pricing">
-                  <Button className="h-10 cursor-pointer">Get All Access</Button>
-                </Link>
-              </div>
-
-              {/* Donate Button */}
-              <GradientButton 
-                href={DATA.donateURL!}
-                openInNewTab={true}
-                aria-label="Support Groot Studio"
-              >
-                Donate
-              </GradientButton>
+              <SearchIcon className="size-4 text-muted-foreground group-hover:text-primary" aria-hidden />
             </div>
 
-            {/* Mobile Hamburger Menu */}
-            <div className="md:hidden">
-              <Drawer direction="right">
-                <DrawerTrigger asChild>
-                  <Button variant="ghost" size="icon" className="h-9 w-9 bg-secondary dark:bg-muted/80 cursor-pointer">
-                    <Menu className="size-6" />
-                  </Button>
-                </DrawerTrigger>
-                <DrawerContent
-                  className="h-full w-[280px] sm:w-[350px]"
-                  onCloseAutoFocus={(e) => e.preventDefault()}
-                >
-                  <div className="flex flex-col h-full bg-background">
-                    <DrawerHeader className="w-full px-6 py-4 mb-4 text-left border-b">
-                      <DrawerTitle>
-                        {Logo}
-                      </DrawerTitle>
-                    </DrawerHeader>
+            {/* Mode Toggler - Desktop */}
+            <div className="col-span-1 h-full flex items-center justify-center hover:bg-primary/10 cursor-pointer group">
+              {ModeToggler}
+            </div>
 
-                    <nav className="flex flex-col border rounded-lg mt-4 mx-6 overflow-hidden">
-                      {DATA.NAV_LINKS.map(({ href, label }) => {
-                        const isActive = pathname === href || ((href as string) !== "/" && pathname.startsWith(href))
-                        return (
-                          <DrawerClose key={href} asChild>
-                            <Link
-                              href={href}
-                              className={cn(
-                                "flex items-center justify-between px-3 py-4 text-xl font-medium border-b last:border-none transition-colors",
-                                isActive
-                                  ? "bg-muted text-primary"
-                                  : "hover:bg-muted active:bg-muted/80 text-foreground"
-                              )}
-                            >
-                              {label}
-                              {getCount(label) > 0 && (
-                                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
-                                  {getCount(label)}
-                                </span>
-                              )}
-                            </Link>
-                          </DrawerClose>
-                        )
-                      })}
-                    </nav>
+            <GitHubStars repo={DATA.GITHUB_REPO_LINK} className="col-span-1 border-none h-full rounded-none hover:bg-primary/10 hover:text-primary text-muted-foreground" />
 
-                    <div className="mt-auto space-y-2 mx-6 pt-8 pb-10">
-                      <div className="w-full flex justify-end gap-2">
-                        <GitHubStars repo={DATA.GITHUB_REPO_LINK} className="px-2 h-9" />
-                        <DiscordOnline guildId={DATA.DISCORD_SERVER_ID} inviteURL={DATA.DISCORD_INVITE_LINK} className="px-2 h-9" />
-                      </div>
-
-                      {/* Auth & Pricing Button - hidden until auth implemented */}
-                      <div className="hidden gap-3 flex-col">
-                        <DrawerClose asChild>
-                          <Link href="/auth" className="w-full">
-                            <Button variant="secondary" className="w-full h-11 text-base">Login</Button>
-                          </Link>
-                        </DrawerClose>
-                        <DrawerClose asChild>
-                          <Link href="/pricing" className="w-full">
-                            <Button className="w-full h-11 text-base">Get All Access</Button>
-                          </Link>
-                        </DrawerClose>
-                      </div>
-
-                      {/* Donate Button */}
-                      <DrawerClose asChild>
-                        <Link href={DATA.donateURL!}>
-                          <GradientButton
-                            href={DATA.donateURL!}
-                            openInNewTab={true}
-                            aria-label="Support Groot Studio"
-                          >
-                            Donate
-                          </GradientButton>
-                        </Link>
-                      </DrawerClose>
-                    </div>
-                  </div>
-                </DrawerContent>
-              </Drawer>
+            {/* Donate Button */}
+            <div className="col-span-2 h-full flex items-center justify-center border-l">
+              <BrandButton
+                href={DATA.donateURL!}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Support Groot Studio"
+                label="Donate"
+                className="font-medium ml-1.5"
+              />
             </div>
           </div>
+        </div>
+
+        {/* Mobile Hamburger Menu */}
+        <div className="md:hidden">
+          <Drawer direction="right">
+            <DrawerTrigger asChild>
+              <Button variant="ghost" size="icon" className="h-9 w-9 bg-secondary dark:bg-muted/80 cursor-pointer">
+                <Menu className="size-6" />
+              </Button>
+            </DrawerTrigger>
+            <DrawerContent
+              className="h-full w-[280px] sm:w-[350px]"
+              onCloseAutoFocus={(e) => e.preventDefault()}
+            >
+              <div className="flex flex-col h-full bg-background">
+                <DrawerHeader className="w-full px-6 py-4 mb-4 text-left border-b">
+                  <DrawerTitle>
+                    {Logo}
+                  </DrawerTitle>
+                </DrawerHeader>
+
+                <nav className="flex flex-col border rounded-lg mt-4 mx-6 overflow-hidden">
+                  {DATA.NAV_LINKS.map(({ href, label }) => {
+                    const isActive = pathname === href || ((href as string) !== "/" && pathname.startsWith(href))
+                    return (
+                      <DrawerClose key={href} asChild>
+                        <Link
+                          href={href}
+                          className={cn(
+                            "flex items-center justify-between px-3 py-4 text-xl font-medium border-b last:border-none transition-colors",
+                            isActive
+                              ? "bg-muted text-primary"
+                              : "hover:bg-muted active:bg-muted/80 text-foreground"
+                          )}
+                        >
+                          {label}
+                        </Link>
+                      </DrawerClose>
+                    )
+                  })}
+                </nav>
+
+                <div className="mt-auto space-y-2 mx-6 pt-8 pb-10">
+                  <div className="w-full flex justify-end gap-2">
+                    <GitHubStars repo={DATA.GITHUB_REPO_LINK} className="px-2 h-9" />
+                    <DiscordOnline guildId={DATA.DISCORD_SERVER_ID} inviteURL={DATA.DISCORD_INVITE_LINK} className="px-2 h-9" />
+                  </div>
+
+                  {/* Auth & Pricing Button - hidden until auth implemented */}
+                  <div className="hidden gap-3 flex-col">
+                    <DrawerClose asChild>
+                      <Link href="/auth" className="w-full">
+                        <Button variant="secondary" className="w-full h-11 text-base">Login</Button>
+                      </Link>
+                    </DrawerClose>
+                    <DrawerClose asChild>
+                      <Link href="/pricing" className="w-full">
+                        <Button className="w-full h-11 text-base">Get All Access</Button>
+                      </Link>
+                    </DrawerClose>
+                  </div>
+
+                  {/* Donate Button */}
+                  <DrawerClose asChild>
+                    <Link href={DATA.donateURL!}>
+                      <GradientButton
+                        href={DATA.donateURL!}
+                        openInNewTab={true}
+                        aria-label="Support Groot Studio"
+                      >
+                        Donate
+                      </GradientButton>
+                    </Link>
+                  </DrawerClose>
+                </div>
+              </div>
+            </DrawerContent>
+          </Drawer>
         </div>
       </nav>
 
