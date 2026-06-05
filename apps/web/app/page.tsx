@@ -1,21 +1,28 @@
 
 import { Hero } from "@/components/hero"
 import { ComponentPreviews } from "@/components/componentPreviews"
-import { Testimonials } from "@/components/testimonial"
 import { FAQ } from "@/components/faq"
-import { PageWrapper } from "@/components/utilities/page-wrapper"
+import SectionDivider from "@/components/utilities/SectionDivider"
+import TechStacks from "@/components/TechStacks"
 
 export default function Page() {
   return (
-    <>
-      <PageWrapper>
-        <main className="max-w-7xl mx-auto overflow-x-hidden">
-          <Hero />
-          <ComponentPreviews />
-          {/* <Testimonials /> */}
-          <FAQ />
-        </main>
-      </PageWrapper>
-    </>
+    <div className="overflow-x-clip w-full">
+      <main className="mx-auto relative max-w-6xl border-x border-border">
+        <Hero />
+        <SectionDivider />
+        <TechStacks />
+        <SectionDivider />
+        <ComponentPreviews />
+        <SectionDivider />
+        {/* <Testimonials /> */}
+        <FAQ />
+        <SectionDivider />
+      </main>
+    </div>
   )
 }
+
+
+{/* <PageWrapper>
+</PageWrapper> */}

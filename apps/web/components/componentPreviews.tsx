@@ -2,12 +2,10 @@
 
 import React from "react"
 import { BentoGrid, type BentoItem } from "@workspace/ui/components/otherBlocks/bento-grid"
-import ImageCursorTrail from "@workspace/ui/registry/radix-nova/image-trail/image-trail"
 import { ThreeDButton } from "@workspace/ui/registry/radix-nova/3d-button/3d-button"
 import { AvatarTooltips } from "@workspace/ui/registry/radix-nova/avatar-tooltips/avatar-tooltips"
 import { DragButton } from "@workspace/ui/registry/radix-nova/drag-button/drag-button"
 import { TextHoverEffect } from "@workspace/ui/registry/radix-nova/text-outline-glow/text-outline-glow"
-import { GlowCard } from "@workspace/ui/registry/radix-nova/glow-card/glow-card"
 import { GradientBackgroundText } from "@workspace/ui/registry/radix-nova/gradient-background-text/gradient-background-text"
 import { GitHubStars } from "@workspace/ui/registry/radix-nova/github-stars-react/github-stars-react"
 import { GithubCalendar } from "@workspace/ui/registry/radix-nova/github-calendar/github-calendar"
@@ -15,18 +13,6 @@ import { LogoGrid } from "@workspace/ui/registry/radix-nova/logo-grid/logo-grid"
 import { AnimatedBars } from "@workspace/ui/registry/radix-nova/animated-bars/animated-bars"
 import { Github, Twitter, DiscordIcon, Youtube, MessageCircle } from "@workspace/ui/components/icons/icon"
 
-
-const images = [
-    "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=1200&auto=format",
-    "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1200&auto=format",
-    "https://images.unsplash.com/photo-1542224566-6e85f2e6772f?q=80&w=1200&auto=format",
-    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format",
-    "https://images.unsplash.com/photo-1465101162946-4377e57745c3?q=80&w=1200&auto=format",
-    "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1200&auto=format",
-    "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?q=80&w=1200&auto=format",
-    "https://images.unsplash.com/photo-1433086966358-54859d0ed716?q=80&w=1200&auto=format",
-    "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format",
-]
 
 const PREVIEW_ITEMS: BentoItem[] = [
     {
@@ -85,11 +71,8 @@ const PREVIEW_ITEMS: BentoItem[] = [
         id: 3,
         content: (
             <div className="w-full h-full flex flex-col gap-4 items-center justify-center p-6 bg-muted/20 group-hover:bg-muted/10 transition-colors duration-500 overflow-hidden">
-                <GradientBackgroundText className="text-5xl md:text-6xl lg:text-7xl">
-                    Groot
-                </GradientBackgroundText>
-                <GradientBackgroundText className="text-5xl md:text-6xl lg:text-7xl">
-                    Studio
+                <GradientBackgroundText className="text-4xl md:text-5xl lg:text-6xl">
+                    Groot Stud
                 </GradientBackgroundText>
             </div>
         ),
@@ -179,15 +162,15 @@ const PREVIEW_ITEMS: BentoItem[] = [
 
 export function ComponentPreviews() {
     return (
-        <section className="relative py-18 overflow-hidden border-b border-border/60">
-            <div className="mx-auto max-w-full lg:max-w-[1440px] px-4 sm:px-6 lg:px-8 relative z-10">
+        <section className="relative pt-16 overflow-hidden border-b border-border/60">
+            <div className="mx-auto max-w-full lg:max-w-6xl relative z-10">
                 <BentoGrid
                     items={PREVIEW_ITEMS}
                     header={{
                         title: (
-                            <span className="font-semibold">
-                                Everything you need to <span className="bg-brand-gradient bg-clip-text text-transparent">Ship Faster</span>
-                            </span>
+                            <h1 className="font-normal font-sans text-4xl tracking-tight sm:text-5xl text-foreground">
+                                Everything you need to <span className="text-brand1 font-[gambarino] font-medium">Ship Faster</span>
+                            </h1>
                         ) as unknown as string,
                         subtitle: "A boutique collection of UI blocks, templates, and components meticulously crafted for the modern web."
                     }}

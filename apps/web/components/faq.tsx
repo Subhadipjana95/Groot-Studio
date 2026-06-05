@@ -9,43 +9,33 @@ import { DATA } from "@/lib/data/Data"
 
 export function FAQ() {
   return (
-    <section className="container mx-auto px-4 py-12 md:py-18 sm:px-6 lg:px-8">
-      <div className="mx-auto w-full max-w-4xl">
-        <div className="space-y-2 md:space-y-4 text-center mb-8 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-medium tracking-tight lg:text-5xl">
-            Frequently Asked <span className="bg-brand-gradient bg-clip-text text-transparent">Questions</span>
-          </h2>
-          <p className="text-muted-foreground text-md md:text-lg max-w-2xl mx-auto">
-            Everything you need to know about Groot Studio.
-          </p>
-        </div>
-        <Accordion
-          type="single"
-          collapsible
-          className="bg-card dark:bg-card/50 w-full rounded-2xl border border-border/70 shadow-xl overflow-hidden"
-          defaultValue="item-1"
-        >
+    <section className="relative isolate w-full overflow-hidden text-center">
+      <div className="flex flex-col justify-center items-center w-full gap-3 sm:gap-4 border-b border-border pt-16 py-12 px-6">
+        <h1 className="text-2xl md:text-5xl font-normal text-foreground">
+          Frequently <span className="text-brand1 font-[gambarino] font-medium">Asked</span> Questions
+        </h1>
+        <p className='text-md text-muted-foreground max-w-sm'>
+          Here are answers to some of the most common questions about our platform
+        </p>
+      </div>
+
+      <div className="w-full mx-auto text-left">
+        <Accordion type="single" collapsible className="w-full">
           {DATA.faq.map((item) => (
-            <AccordionItem
+            <AccordionItem 
+              key={item.id} 
               value={item.id}
-              key={item.id}
-              className="relative px-6 border-b border-border/70 last:border-0"
+              className="border-b border-border py-1 last:border-b-0 pl-10 pr-6"
             >
-              <AccordionTrigger className="py-6 text-left text-[17px] font-medium hover:underline hover:underline-offset-4">
+              <AccordionTrigger className="hover:no-underline text-foreground text-sm sm:text-base md:text-lg py-4">
                 {item.title}
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground pb-6 text-[15px] leading-relaxed">
+              <AccordionContent className="text-muted-foreground text-xs sm:text-sm leading-relaxed pb-4">
                 {item.content}
               </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
-        <p className="text-center text-muted-foreground font-medium mt-8">
-          Can't find what you're looking for? Contact our{' '}
-          <a href="mailto:[codesubhadip95@gmail.com]" className="font-semibold bg-brand-gradient bg-clip-text text-transparent hover:underline hover:underline-offset-4 transition-colors">
-            customer support team
-          </a>
-        </p>
       </div>
     </section>
   );
