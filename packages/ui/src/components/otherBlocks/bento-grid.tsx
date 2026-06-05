@@ -49,12 +49,10 @@ export function BentoGrid({ items, className, header }: BentoGridProps) {
     return (
         <div className={cn("relative w-full", className)}>
             {header && (
-                <div className="text-center space-y-4 mb-16 px-4">
-                    <h2 className="text-4xl font-medium tracking-tight sm:text-5xl text-foreground">
-                        {header.title}
-                    </h2>
+                <div className="text-center space-y-4 mb-12 px-4">
+                    {header.title}
                     {header.subtitle && (
-                        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                        <p className="text-muted-foreground text-md max-w-lg mx-auto">
                             {header.subtitle}
                         </p>
                     )}
@@ -64,7 +62,8 @@ export function BentoGrid({ items, className, header }: BentoGridProps) {
             <div 
                 className={cn(
                     "grid grid-cols-1 md:grid-cols-12 gap-2 auto-rows-[minmax(120px,auto)]",
-                    "p-1" // Small padding to not clip hover shadows
+                    "border-t",
+                    "p-2"
                 )}
                 role="list"
                 aria-label="Component preview grid"
