@@ -36,7 +36,7 @@ export function Sidebar() {
   return (
     <SidebarProvider className="min-h-0 w-full">
       <BaseSidebar collapsible="none" className="w-full bg-transparent border-none">
-        <SidebarContent className="scrollbar-hide pb-6 overflow-visible">
+        <SidebarContent className="scrollbar-hide pb-2 overflow-visible">
           <SidebarGroup className="pt-0 w-full flex flex-col items-start overflow-visible">
             <SidebarMenu className="items-start">
               <SidebarMenuItem>
