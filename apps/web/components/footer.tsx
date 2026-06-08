@@ -5,7 +5,6 @@ import Link from "next/link"
 import { footerHeader, footerColumns, footerBottom } from "@/data/Footer.data"
 import BrandButton from "@workspace/ui/components/buttonVarients/BrandButton"
 import { Logo } from "@workspace/ui/components/icons/logo"
-import { PageWrapper } from "@/components/utilities/page-wrapper"
 import SectionDivider from "./utilities/SectionDivider"
 import { usePathname } from "next/navigation"
 import { cn } from "@workspace/ui/lib/utils"
@@ -31,7 +30,7 @@ const LinkedinIcon = () => (
 export function Footer() {
   const pathname = usePathname()
   return (
-    <footer className={cn("relative overflow-hidden w-full",
+    <footer className={cn("relative overflow-hidden w-full selection:bg-brand1/15 selection:text-brand1/75",
       pathname.includes("/components") ? "border-t border-border" : ""
     )}>
 

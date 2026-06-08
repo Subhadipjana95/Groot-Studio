@@ -52,7 +52,6 @@ export function Hero() {
           <Link href="/components" />
         </BrandButton>
       </div>
-      {/* <TechStacks items={DATA.TECH_STACK} /> */}
     </section>
   )
 }

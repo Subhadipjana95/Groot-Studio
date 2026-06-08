@@ -103,7 +103,7 @@
     --brand-color-1: #ed909b;
     --brand-color-2: #f02d5e;
     --brand-color-3: #e01e4e;
-    --brand-gradient: radial-gradient(in oklch, var(--brand-color-3) 30%, var(--brand-color-1) 80%);
+    --brand-gradient3: radial-gradient(in oklch, var(--brand-color-3) 30%, var(--brand-color-1) 80%);
 }
 
 .dark {

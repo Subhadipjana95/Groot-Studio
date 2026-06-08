@@ -23,6 +23,7 @@ import { DATA } from "@/data/Data"
 import { registry } from "@/lib/registry"
 import { templatesCount } from "@/lib/template-registry/meta"
 import BrandButton from "@workspace/ui/components/buttonVarients/BrandButton"
+import { Logo as LogoIcon } from "@/components/ui/icons/logo"
 
 export function Navbar() {
   const pathname = usePathname()
@@ -38,8 +39,16 @@ export function Navbar() {
   }, [mounted, resolvedTheme, setTheme])
 
   const Logo = (
-    <Link href="/" aria-label="Groot Studio home" className="flex items-center gap-1.5 group h-full">
-      <img src="/assets/Logo_Transparent.svg" alt="Groot Studio" className="h-7 w-7" />
+    <Link href="/" aria-label="Groot Studio home" className="flex items-center group h-full">
+      <svg className="absolute h-0 w-0 overflow-hidden" aria-hidden="true">
+        <defs>
+          <linearGradient id="brand-gradient2-svg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="var(--brand-color-2)" />
+            <stop offset="100%" stopColor="var(--brand-color-3)" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <LogoIcon className="w-7 h-7 [&_path]:fill-[url(#brand-gradient2-svg)] [&_path]:stroke-[url(#brand-gradient2-svg)]" />
       <span className="text-lg text-muted-foreground tracking-tight group-hover:text-primary">Studio.</span>
     </Link>
   )
@@ -78,7 +87,7 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 z-50 w-full border-b bg-background">
+      <nav className="fixed top-0 z-50 w-full border-b bg-background selection:bg-brand1/15 selection:text-brand1/75">
         <div className={cn("hidden mx-auto sm:flex h-16 items-center justify-between",
           pathname.includes("/components") ? "max-w-full lg:max-w-332 border-x pl-6" : "border-x max-w-96 lg:max-w-6xl px-2"
         )}>
