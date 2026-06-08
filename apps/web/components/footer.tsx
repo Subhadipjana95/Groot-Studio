@@ -30,12 +30,11 @@ const LinkedinIcon = () => (
 export function Footer() {
   const pathname = usePathname()
   return (
-    <footer className={cn("relative overflow-hidden w-full selection:bg-brand1/15 selection:text-brand1/75",
-      pathname.includes("/components") ? "border-t border-border" : ""
+    <footer className={cn("relative overflow-hidden w-full selection:bg-brand1/15 selection:text-brand1/75"
     )}>
 
       <div className={cn("mx-auto relative border-x border-border",
-        pathname.includes("/components") ? "max-w-332" : "max-w-6xl"
+        pathname.includes("/components") ? "max-w-216" : "max-w-6xl"
       )}>
 
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 py-4 px-6">
@@ -128,7 +127,7 @@ export function Footer() {
         </div>
       </div>
 
-      <SectionDivider innerClassName={pathname.includes("/components") ? "md:max-w-332" : ""} />
+      <SectionDivider innerClassName={pathname.includes("/components") ? "md:max-w-216" : ""} />
       {/* --- Lower Portion - Desktop Specific --- */}
       <div className="relative pb-22 md:pb-44 mx-auto">
         {/* Massive dipped text */}

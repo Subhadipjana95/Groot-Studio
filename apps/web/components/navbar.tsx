@@ -89,7 +89,7 @@ export function Navbar() {
     <>
       <nav className="fixed top-0 z-50 w-full border-b bg-background selection:bg-brand1/15 selection:text-brand1/75">
         <div className={cn("hidden mx-auto sm:flex h-16 items-center justify-between",
-          pathname.includes("/components") ? "max-w-full lg:max-w-332 border-x pl-6" : "border-x max-w-96 lg:max-w-6xl px-2"
+          pathname.includes("/components") ? "max-w-full lg:max-w-216 border-x px-2" : "border-x max-w-96 lg:max-w-6xl px-2"
         )}>
           <div className="flex items-center h-full gap-4">
             {Logo}
@@ -117,7 +117,9 @@ export function Navbar() {
             </ul>
           </div>
 
-          <div className="grid grid-cols-5 w-[25%] h-full divide-x divide-border border-l">
+          <div className={cn("grid grid-cols-5  h-full divide-x divide-border border-l",
+            pathname.includes("/components") ? "w-[33%]" : "w-[25%]"
+          )}>
             {/* Search Button - Desktop */}
             <div className="col-span-1 h-full flex items-center justify-center hover:bg-primary/10 cursor-pointer group"
               aria-label="Open search"
