@@ -7,22 +7,27 @@ import SectionDivider from "@/components/utilities/SectionDivider";
 export default function TemplatesPage() {
   return (
     <div className="overflow-x-clip w-full">
-      <div className="max-w-6xl min-h-screen pt-20 py-16 px-4 md:px-8 mx-auto border-x">
-        <div className="flex flex-col gap-2 mb-12">
-          <h1 className="text-3xl font-medium tracking-tight lg:text-5xl text-transparent bg-clip-text bg-brand-gradient">
-            Templates
+      <div className="max-w-6xl min-h-screen pt-24 py-16 mx-auto border-x">
+        {/* Hero */}
+        <div className="mb-6 space-y-4 max-w-3xl mx-auto text-center">
+          <h1 className="font-normal font-sans text-4xl tracking-tight sm:text-5xl text-foreground">
+            <span className="text-brand1 [text-shadow:0_0_12px_var(--brand1)] font-[gambarino] font-medium">Templates</span> for your{" "}
+            <span className="text-brand1 font-[gambarino] font-medium">next project</span>
           </h1>
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            Beautifully crafted, production-ready website templates to jumpstart your development workflow.
+          </p>
         </div>
 
-        <div className="flex flex-col gap-8 w-full">
+        <div className="flex flex-col gap-8 w-full px-4 md:px-8 py-8">
           {templateRegistry.map((template) => (
             <div
               key={template.name}
-              className="flex flex-col md:flex-row gap-6 p-4 md:p-6 rounded-xl border bg-card hover:border-border/80 ring-3 ring-primary/10 transition-colors w-full"
+              className="flex flex-col md:flex-row gap-6 p-2 rounded-xl border bg-card/60 hover:border-border/80 ring-2 ring-primary/10 transition-colors w-full"
             >
-              <div className="flex flex-col flex-1 justify-center space-y-4 md:px-4">
+              <div className="flex flex-col flex-1 justify-center space-y-4 md:pl-8 md:pr-4 md:py-4">
                 <div>
-                  <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">{template.title}</h2>
+                  <h2 className="text-2xl md:text-3xl font-medium tracking-tight">{template.title}</h2>
                   <p className="text-muted-foreground mt-3 text-base md:text-lg leading-snug">
                     {template.description}
                   </p>
@@ -59,7 +64,7 @@ export default function TemplatesPage() {
                 </div>
               </div>
 
-              <div className="w-full md:w-[50%] lg:w-[55%] shrink-0 border rounded-lg overflow-hidden bg-muted aspect-16/10 relative group">
+              <div className="w-full md:w-[50%] lg:w-[55%] shrink-0 border border-border/50 rounded-lg overflow-hidden bg-muted aspect-16/10 relative group">
                 {template.image || template.imageDark ? (
                   <>
                     {template.image && (
