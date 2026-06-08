@@ -35,7 +35,7 @@ export default function ComponentsPage() {
         <div className="flex flex-col md:items-center justify-between gap-4">
           <h1 className="font-normal font-sans text-4xl tracking-tight sm:text-5xl text-foreground">
             <span className="text-brand1 [text-shadow:0_0_12px_var(--brand1)] font-[gambarino] font-medium">Components</span> for your{" "}
-            <span className="text-brand1 font-[gambarino] font-medium">next app</span>
+            <span className="text-brand1 font-[gambarino] font-medium">Next App</span>
           </h1>
 
           {/* <CategoryFilter
