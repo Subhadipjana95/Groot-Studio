@@ -32,16 +32,17 @@ export default function ComponentsPage() {
   return (
     <div className="container max-w-5xl py-10">
       <div className="flex flex-col gap-6 mb-12">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <h1 className="text-3xl font-medium tracking-tight lg:text-5xl text-transparent bg-clip-text bg-brand-gradient shrink-0">
-            Components
+        <div className="flex flex-col md:items-center justify-between gap-4">
+          <h1 className="font-normal font-sans text-4xl tracking-tight sm:text-5xl text-foreground">
+            <span className="text-brand1 [text-shadow:0_0_12px_var(--brand1)] font-[gambarino] font-medium">Components</span> for your{" "}
+            <span className="text-brand1 font-[gambarino] font-medium">next app</span>
           </h1>
 
-          <CategoryFilter
+          {/* <CategoryFilter
             categoryNames={categoryNames}
             selectedCategory={selectedCategory}
             onSelectCategory={setSelectedCategory}
-          />
+          /> */}
         </div>
       </div>
 

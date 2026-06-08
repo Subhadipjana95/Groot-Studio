@@ -78,7 +78,7 @@ export function Sidebar() {
                             <div className="flex items-center gap-2 min-w-0 px-0.5">
                               <span className="whitespace-nowrap">{item.title}</span>
                               {item.label && (
-                                <span className="rounded-full px-1.5 py-1 text-[9px] font-medium bg-brand-gradient text-background dark:text-background shrink-0 leading-none whitespace-nowrap">
+                                <span className="rounded-full px-1.5 py-1 text-[9px] font-medium bg-brand-gradient dark:bg-brand-gradient2 text-background dark:text-background shrink-0 leading-none whitespace-nowrap">
                                   {item.label}
                                 </span>
                               )}

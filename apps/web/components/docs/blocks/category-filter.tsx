@@ -102,7 +102,7 @@ export function CategoryFilter({
           className={cn(
             "px-2.5 py-1 text-sm font-medium rounded-full transition-all border shrink-0 cursor-pointer",
             selectedCategory === null
-              ? "bg-brand-gradient opacity-90 text-background border-background"
+              ? "bg-brand-gradient dark:bg-brand-gradient2 opacity-90 text-background border-background"
               : "bg-muted text-muted-foreground hover:text-foreground border-border/60"
           )}
         >
@@ -115,7 +115,7 @@ export function CategoryFilter({
             className={cn(
               "px-2.5 py-1 text-sm font-medium rounded-full transition-all border shrink-0 cursor-pointer",
               selectedCategory === category
-                ? "bg-brand-gradient opacity-90 text-background border-background"
+                ? "bg-brand-gradient dark:bg-brand-gradient2 opacity-90 text-background border-background"
                 : "bg-muted text-muted-foreground hover:text-foreground border-border/60"
             )}
           >
