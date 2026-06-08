@@ -1,23 +1,23 @@
 import { Button } from "@workspace/ui/components/button";
 import { Check } from "lucide-react";
 import { cn } from "@workspace/ui/lib/utils";
-import { PageWrapper } from "@/components/utilities/page-wrapper";
 import { DATA } from "@/data/Data"
+import SectionDivider from "@/components/utilities/SectionDivider";
 
 const Pricing = () => {
   return (
-    <PageWrapper className="overflow-hidden min-h-screen">
-      <main className='max-w-7xl mx-auto px-6 md:px-12 relative flex flex-col items-center pt-24 pb-6 md:pt-32 md:pb-16'>
-        <div className="w-full mb-12 space-y-4">
-          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">
-            Simple Transparent Pricing
+    <div className="overflow-x-clip w-full">
+      <main className='max-w-6xl mx-auto relative pt-20 py-12 md:pt-24 border-x'>
+        <div className="mb-6 space-y-4 mx-auto text-center">
+          <h1 className="font-normal font-sans text-4xl tracking-tight sm:text-5xl text-foreground">
+            Simple Transparent <span className="text-brand1 [text-shadow:0_0_12px_var(--brand1)] font-[gambarino] font-medium">Pricing</span>
           </h1>
-          <p className="max-w-2xl text-lg text-muted-foreground leading-relaxed">
+          <p className="max-w-lg text-lg text-muted-foreground leading-normal mx-auto">
             Choose the plan that best fits your workflow. From solo makers to world-class agencies.
           </p>
         </div>
 
-        <div className="w-full grid grid-cols-1 gap-4 md:grid-cols-3 items-start pb-12">
+        <div className="w-full grid grid-cols-1 gap-4 md:grid-cols-3 items-start py-4 px-6 md:px-12">
           {DATA.plans.map((plan) => (
             <div
               key={plan.name}
@@ -27,7 +27,7 @@ const Pricing = () => {
               )}
             >
               {'featured' in plan && plan.featured && (
-                <div className="absolute top-6 right-6 transform rounded-sm bg-brand-gradient px-2 py-1 text-[10px] font-bold text-background uppercase tracking-widest shadow-lg">
+                <div className="absolute top-6 right-6 transform rounded-sm bg-brand-gradient dark:bg-brand-gradient2 px-2 py-1 text-[10px] font-bold text-background uppercase tracking-widest shadow-lg">
                   Most popular
                 </div>
               )}
@@ -60,7 +60,7 @@ const Pricing = () => {
                   className={cn(
                     "w-full h-12 rounded-md text-sm font-semibold",
                     'featured' in plan && plan.featured
-                      ? "bg-brand-gradient text-background hover:shadow-xl hover:shadow-brand1/10"
+                      ? "bg-brand-gradient dark:bg-brand-gradient2 text-background hover:shadow-xl hover:shadow-brand1/10"
                       : "bg-secondary-foreground hover:bg-secondary-foreground/80 border border-foreground"
                   )}
                 >
@@ -84,7 +84,8 @@ const Pricing = () => {
           ))}
         </div>
       </main>
-    </PageWrapper>
+      <SectionDivider />
+    </div>
   );
 };
 
