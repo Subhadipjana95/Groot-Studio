@@ -18,12 +18,12 @@ export default function InstallationPage() {
             </div>
             <div className="absolute top-8 bottom-[-48px] w-px bg-border" />
           </div>
-          <div className="flex flex-col gap-4 w-full min-w-0">
+          <div className="flex flex-col gap-1 w-full min-w-0">
             <h2 id="create-project" className="text-2xl font-medium tracking-tight scroll-m-20">Create project</h2>
             <p className="text-muted-foreground">
               Run the <code className="bg-muted px-1.5 py-0.5 rounded-sm font-mono text-sm leading-none">init</code> command to create a new Next.js project or to setup an existing one:
             </p>
-            <InstallBlock command="" type="init" />
+            <InstallBlock command="" type="init" className="mt-2" />
           </div>
         </section>
 
@@ -35,12 +35,12 @@ export default function InstallationPage() {
             </div>
             <div className="absolute top-8 bottom-[-48px] w-px bg-border" />
           </div>
-          <div className="flex flex-col gap-4 w-full min-w-0">
+          <div className="flex flex-col gap-1 w-full min-w-0">
             <h2 id="add-components" className="text-2xl font-medium tracking-tight scroll-m-20">Add components</h2>
             <p className="text-muted-foreground">
               You can now start adding components to your project.
             </p>
-            <InstallBlock command="@grootstudio/3d-button" type="add" />
+            <InstallBlock command="@grootstudio/3d-button" type="add" className="mt-2" />
           </div>
         </section>
 
@@ -52,13 +52,14 @@ export default function InstallationPage() {
             </div>
             {/* No line after the last step */}
           </div>
-          <div className="flex flex-col gap-4 w-full min-w-0">
+          <div className="flex flex-col gap-1 w-full min-w-0">
             <h2 id="import-component" className="text-2xl font-medium tracking-tight scroll-m-20">Import component</h2>
             <p className="text-muted-foreground">
               The command above will add the <code className="bg-muted px-1.5 py-0.5 rounded-sm font-mono text-sm">ThreeDButton</code> component to your project. You can then import it like this:
             </p>
             <div className="mt-2 text-sm">
               <CodeBlock
+                className="mt-2"
                 code={`import { ThreeDButton } from "@/components/3d-button"
 
 export default function Demo() {
