@@ -12,7 +12,7 @@ export default function TemplatesPage() {
         <div className="mb-6 space-y-4 max-w-3xl mx-auto text-center">
           <h1 className="font-normal font-sans text-4xl tracking-tight sm:text-5xl text-foreground">
             <span className="text-brand1 [text-shadow:0_0_12px_var(--brand1)] font-[gambarino] font-medium">Templates</span> for your{" "}
-            <span className="text-brand1 font-[gambarino] font-medium">next project</span>
+            <span className="text-brand1 font-[gambarino] font-medium">Next Project</span>
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
             Beautifully crafted, production-ready website templates to jumpstart your development workflow.
