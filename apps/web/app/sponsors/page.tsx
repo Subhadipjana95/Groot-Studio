@@ -2,7 +2,7 @@ import Link from "next/link"
 import { PageWrapper } from "@/components/utilities/page-wrapper"
 import { SPONSOR_TIERS, DEMO_SPONSORS } from "@/data/SponsorsData"
 import { DATA } from "@/data/Data"
-import { Users, ExternalLink, Plus, Heart } from "lucide-react"
+import { ExternalLink, Plus, Heart } from "lucide-react"
 import { GitHubIcon } from "@/components/ui/icons/icon"
 import SectionDivider from "@/components/utilities/SectionDivider"
 
@@ -28,10 +28,10 @@ export default async function SponsorsPage() {
 
   return (
     <div className="overflow-x-clip w-full">
-      <main className="max-w-6xl mx-auto px-6 md:px-12 relative pt-20 pb-20 md:pt-24 lg:pt-32 border-x">
+      <main className="max-w-6xl mx-auto relative pt-20 py-12 md:pt-24 border-x">
 
         {/* Hero */}
-        <div className="mb-12 space-y-4 max-w-3xl mx-auto text-center">
+        <div className="mb-6 space-y-4 max-w-3xl mx-auto text-center">
           <h1 className="font-normal font-sans text-4xl tracking-tight sm:text-5xl text-foreground">
             <span className="text-brand1 [text-shadow:0_0_12px_var(--brand1)] font-[gambarino] font-medium">Support</span> the future of{" "}
             <span className="text-brand1 font-[gambarino] font-medium">Groot Studio</span>
@@ -41,7 +41,7 @@ export default async function SponsorsPage() {
           </p>
         </div>
 
-        <div className="space-y-12">
+        <div className="w-full space-y-12 px-6 md:px-12 pt-8">
           {/* Manual Tiers */}
           {SPONSOR_TIERS.map((tier) => (
             <div key={tier.id} className="space-y-8">
