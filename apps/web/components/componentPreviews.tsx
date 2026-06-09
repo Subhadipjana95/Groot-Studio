@@ -20,28 +20,20 @@ const PREVIEW_ITEMS: BentoItem[] = [
         content: (
             <div className="w-full h-full flex items-center justify-center bg-muted/10 group-hover:bg-muted/20 transition-colors duration-500 overflow-hidden">
                 <AnimatedBars 
-                    numBars={40} 
-                    gradientFrom="rgb(59, 130, 246)" 
-                    backgroundColor="rgb(2, 6, 23)"
-                    animationDuration={2}
+                    numBars={30} 
+                    animationDuration={5}
                     className="w-full h-full border-none"
                 >
                     <div className="max-w-xl text-center relative z-10 px-6 space-y-6">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-medium backdrop-blur-md">
-                            <span className="size-1.5 rounded-full bg-blue-400 animate-pulse" />
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-medium backdrop-blur-md">
+                            <span className="size-1.5 rounded-full bg-rose-400 animate-pulse" />
                             Introducing Groot Studio
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight leading-[1.1]">
-                            Build your next <span className="text-blue-400">big idea</span> faster.
+                        <h2 className="text-4xl md:text-6xl font-bold text-foreground tracking-tight leading-[1.1]">
+                            Build your next <span className="text-rose-800">big idea</span> faster.
                         </h2>
-                        <p className="text-blue-100/50 text-lg max-w-md mx-auto">
-                            The ultimate component library for modern SaaS brands. Meticulously crafted for speed and elegance.
-                        </p>
                         <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-                            <ThreeDButton color1="#3b82f6" color2="#2563eb" className="scale-90 md:scale-100">
-                                Get Started
-                            </ThreeDButton>
-                            <button className="px-6 py-2 rounded-lg text-sm font-medium text-foreground hover:text-foreground bg-card hover:shadow-2xl hover:shadow-primary/5 transition-all">
+                            <button className="px-6 py-2 rounded-lg text-sm font-medium text-foreground hover:text-foreground bg-card border hover:shadow-2xl hover:shadow-primary/5 transition-all cursor-pointer active:scale-95">
                                 View Docs
                             </button>
                         </div>
@@ -49,7 +41,7 @@ const PREVIEW_ITEMS: BentoItem[] = [
                 </AnimatedBars>
             </div>
         ),
-        className: "md:col-span-6 lg:col-span-8 lg:row-span-4 min-h-[500px]"
+        className: "md:col-span-6 lg:col-span-8 lg:row-span-4 min-h-[300px]"
     },
     {
         id: 2,
@@ -76,7 +68,7 @@ const PREVIEW_ITEMS: BentoItem[] = [
                 </GradientBackgroundText>
             </div>
         ),
-        className: "md:col-span-6 lg:col-span-4 lg:row-span-2 min-h-[360px]"
+        className: "md:col-span-6 lg:col-span-4 lg:row-span-2 min-h-[120px]"
     },
     {
         id: 4,
@@ -92,7 +84,7 @@ const PREVIEW_ITEMS: BentoItem[] = [
                 </DragButton>
             </div>
         ),
-        className: "md:col-span-3 lg:col-span-3 lg:row-span-2 min-h-[250px]"
+        className: "md:col-span-3 lg:col-span-3 lg:row-span-2 min-h-[120px]"
     },
     {
         id: 5,
@@ -103,7 +95,7 @@ const PREVIEW_ITEMS: BentoItem[] = [
                 </div>
             </div>
         ),
-        className: "md:col-span-6 lg:col-span-5 lg:row-span-2 min-h-[250px]"
+        className: "md:col-span-6 lg:col-span-5 lg:row-span-2 min-h-[200px]"
     },
     {
         id: 6,
@@ -131,8 +123,8 @@ const PREVIEW_ITEMS: BentoItem[] = [
     {
         id: 8,
         content: (
-            <div className="w-full h-full flex items-center justify-center py-6 px-[1.3rem] bg-muted/10 group-hover:bg-muted/20 transition-colors duration-500 overflow-hidden">
-                <GithubCalendar username="Subhadipjana95" theme="sunset" className="border-none bg-transparent" />
+            <div className="w-full h-full flex items-center justify-center py-3 sm:py-6 px-2 sm:px-[1.3rem] bg-muted/10 group-hover:bg-muted/20 transition-colors duration-500 overflow-hidden">
+                <GithubCalendar username="Subhadipjana95" theme="sunset" showStats={false} className="border-none bg-transparent" />
             </div>
         ),
         className: "md:col-span-12 lg:col-span-8 lg:row-span-2 min-h-[240px]"
@@ -140,7 +132,7 @@ const PREVIEW_ITEMS: BentoItem[] = [
     {
         id: 9,
         content: (
-            <div className="w-full h-full flex items-center justify-center p-6 bg-muted/20 group-hover:bg-muted/10 transition-colors duration-500 overflow-hidden">
+            <div className="w-full h-full flex items-center justify-center p-2 bg-muted/20 group-hover:bg-muted/10 transition-colors duration-500 overflow-hidden">
                 <LogoGrid
                     logos={[
                         { src: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg", alt: "React" },
@@ -151,28 +143,33 @@ const PREVIEW_ITEMS: BentoItem[] = [
                         { src: "https://svgl.app/library/angular.svg", alt: "Angular" },
                         { src: "https://svgl.app/library/figma.svg", alt: "Figma" },
                         { src: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg", alt: "Slack" },
+                        { src: "https://svgl.app/library/angular.svg", alt: "Angular" }
                     ]}
-                    className="border-none"
+                    className="border-none grid-cols-4 w-full"
                 />
             </div>
         ),
-        className: "md:col-span-12 lg:col-span-4 lg:row-span-2 min-h-[240px]"
+        className: "md:col-span-12 lg:col-span-4 lg:row-span-2 min-h-[140px]"
     },
 ]
 
 export function ComponentPreviews() {
     return (
-        <section className="relative pt-16 overflow-hidden border-b border-border/60">
+        <section className="relative pt-8 sm:pt-16 overflow-hidden border-b border-border/60">
             <div className="mx-auto max-w-full lg:max-w-6xl relative z-10">
                 <BentoGrid
                     items={PREVIEW_ITEMS}
                     header={{
                         title: (
-                            <h1 className="font-normal font-sans text-4xl tracking-tight sm:text-5xl text-foreground">
+                            <h1 className="text-3xl md:text-5xl font-normal text-foreground">
                                 Everything you need to <span className="text-brand1 font-[gambarino] font-medium">Ship Faster</span>
                             </h1>
                         ) as unknown as string,
-                        subtitle: "A boutique collection of UI blocks, templates, and components meticulously crafted for the modern web."
+                        subtitle: (
+                            <p className="text-center max-w-[18rem] sm:max-w-lg text-muted-foreground text-sm sm:text-lg leading-snug mx-auto">
+                                A boutique collection of UI blocks, templates, and components <span className="hidden sm:inline-block">meticulously crafted for the modern web</span>
+                            </p>
+                        ) as unknown as string
                     }}
                 />
             </div>

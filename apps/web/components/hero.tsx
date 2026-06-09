@@ -11,7 +11,7 @@ import HeroGlow from "@workspace/ui/components/otherBlocks/HeroGlow"
 export function Hero() {
 
   return (
-    <section className="relative flex flex-1 flex-col items-center justify-center gap-8 overflow-hidden pt-32 py-18 isolate">
+    <section className="relative flex flex-1 flex-col items-center justify-center gap-6 sm:gap-8 overflow-hidden pt-24 sm:pt-32 py-12 sm:py-18 isolate">
       <HeroGlow />
 
       <Link href="/components">
@@ -21,21 +21,21 @@ export function Hero() {
         />
       </Link>
 
-      <div className="text-center flex flex-col items-center gap-6">
+      <div className="text-center flex flex-col items-center gap-4 sm:gap-6">
         <h1 className="text-center text-4xl md:text-6xl max-w-xl font-[gambarino]">
           <span className="text-brand1 [text-shadow:0_0_12px_var(--brand1)]">Beautifully</span> Crafted Blocks for <span className="text-brand1 [text-shadow:0_0_12px_var(--brand1)]">Modern</span> UI
         </h1>
-        <p className="text-center max-w-lg text-muted-foreground text-sm sm:text-lg leading-snug">
-          Groot Studio - a Library of High-Performing, SEO Friendly Components designed for Modern Developers.
+        <p className="text-center max-w-xs sm:max-w-lg text-muted-foreground text-sm sm:text-lg leading-snug">
+          Groot Studio - <span className="hidden sm:inline-block">a</span> Library of High-Performing, SEO Friendly Components designed for Modern <span className="hidden sm:inline-block">Developers</span> <span className="inline-block sm:hidden">Devs</span>
         </p>
       </div>
 
-      <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+      <div className="flex  items-center justify-center gap-3 flex-row">
         <NeutralButton
           asChild
           label="Templates"
           className="font-medium"
-          innerClassName="py-[9px]"
+          innerClassName="py-[11px] sm:py-[9px]"
         >
           <Link href="/templates" />
         </NeutralButton>

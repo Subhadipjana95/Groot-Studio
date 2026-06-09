@@ -12,7 +12,7 @@ import { DATA } from "@/data/Data"
 function TechStacks() {
   return (
     <section className='relative flex items-center justify-between overflow-hidden isolate'>
-      <div className="flex flex-1 px-4 max-w-xs">
+      <div className="hidden sm:flex flex-1 px-4 max-w-xs">
         <p className="text-muted-foreground text-sm leading-snug max-w-xs">
           Powering modern web interfaces with industry-leading technologies
         </p>

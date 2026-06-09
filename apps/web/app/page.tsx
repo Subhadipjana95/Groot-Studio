@@ -8,7 +8,7 @@ import TechStacks from "@/components/TechStacks"
 export default function Page() {
   return (
     <div className="overflow-x-clip w-full">
-      <main className="mx-auto relative max-w-6xl border-x border-border">
+      <main className="mx-auto relative max-w-96 sm:max-w-6xl border-x border-border">
         <Hero />
         <SectionDivider />
         <TechStacks />
