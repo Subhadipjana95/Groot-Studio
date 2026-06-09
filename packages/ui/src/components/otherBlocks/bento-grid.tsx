@@ -49,17 +49,13 @@ export function BentoGrid({ items, className, header }: BentoGridProps) {
     return (
         <div className={cn("relative w-full", className)}>
             {header && (
-                <div className="text-center space-y-4 mb-12 px-4">
+                <div className="text-center space-y-3 sm:space-y-4 mb-6 sm:mb-12 px-4">
                     {header.title}
-                    {header.subtitle && (
-                        <p className="text-muted-foreground text-md max-w-lg mx-auto">
-                            {header.subtitle}
-                        </p>
-                    )}
+                    {header.subtitle}
                 </div>
             )}
 
-            <div 
+            <div
                 className={cn(
                     "grid grid-cols-1 md:grid-cols-12 gap-2 auto-rows-[minmax(120px,auto)]",
                     "border-t",

@@ -21,7 +21,7 @@ const NeutralButton = React.forwardRef<HTMLAnchorElement, NeutralButtonProps>(
         {...props}
       >
         <Slottable>{children}</Slottable>
-        <span className={cn("rounded-md border bg-radial from-background to-accent/60 text-muted-foreground transition-colors ring-1 ring-accent text-shadow-md px-1.5 sm:px-3 py-1.5 text-xs sm:text-sm", innerClassName)}>
+        <span className={cn("rounded-md border bg-radial from-background to-accent/60 text-muted-foreground transition-colors ring-1 ring-accent text-shadow-md px-3 py-1.5 text-xs sm:text-sm", innerClassName)}>
           {label}
         </span>
       </Comp>

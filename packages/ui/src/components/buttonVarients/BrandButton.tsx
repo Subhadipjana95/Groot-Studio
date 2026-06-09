@@ -6,11 +6,12 @@ type BrandButtonProps = {
   href?: string
   label: React.ReactNode
   className?: string
+  innerClassName?: string
   asChild?: boolean
 } & React.ComponentPropsWithoutRef<"a">
 
 const BrandButton = React.forwardRef<HTMLAnchorElement, BrandButtonProps>(
-  ({ href, label, className, asChild = false, children, ...props }, ref) => {
+  ({ href, label, className, innerClassName, asChild = false, children, ...props }, ref) => {
     const Comp = asChild ? Slot : "a"
     return (
       <Comp
@@ -20,7 +21,7 @@ const BrandButton = React.forwardRef<HTMLAnchorElement, BrandButtonProps>(
         {...props}
       >
         <Slottable>{children}</Slottable>
-        <span className="w-full flex items-center justify-center gap-1 rounded-md bg-brand-gradient2 px-1.5 sm:px-3 py-1.5 sm:py-1.5 text-xs sm:text-sm text-background ring-1 ring-brand-color-1 text-shadow-md">
+        <span className={cn("w-full flex items-center justify-center gap-1 rounded-md bg-brand-gradient2 px-1.5 sm:px-3 py-1.5 sm:py-1.5 text-xs sm:text-sm text-background ring-1 ring-brand-color-1 text-shadow-md", innerClassName)}>
           {label}
         </span>
       </Comp>
