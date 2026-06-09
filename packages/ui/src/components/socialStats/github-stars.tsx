@@ -30,16 +30,47 @@ interface GitHubStarsProps extends VariantProps<typeof githubStarsVariants> {
   className?: string;
 }
 
+const CACHE_KEY = (repo: string) => `groot-studio:github-stars:${repo}`;
+const CACHE_TTL = 86400 * 1000; // 24 hours
+
+function getCached(repo: string): number | null {
+  try {
+    const raw = localStorage.getItem(CACHE_KEY(repo));
+    if (!raw) return null;
+    const { value, timestamp } = JSON.parse(raw);
+    if (Date.now() - timestamp > CACHE_TTL) return null;
+    return value;
+  } catch {
+    return null;
+  }
+}
+
+function setCache(repo: string, value: number) {
+  try {
+    localStorage.setItem(
+      CACHE_KEY(repo),
+      JSON.stringify({ value, timestamp: Date.now() }),
+    );
+  } catch {}
+}
+
 export function GitHubStars({
   repo,
   locales = "en-US",
   className,
   size
 }: GitHubStarsProps) {
-  const [count, setCount] = React.useState(0);
+  const [count, setCount] = React.useState<number | null>(null);
 
   React.useEffect(() => {
     let cancelled = false;
+
+    const cached = getCached(repo);
+    if (cached !== null) {
+      setCount(cached);
+      return;
+    }
+
     fetch(`https://api.github.com/repos/${repo}`, {
       headers: { "Accept": "application/vnd.github.v3+json" },
     })
@@ -49,23 +80,32 @@ export function GitHubStars({
       })
       .then((data) => {
         if (!cancelled && data?.stargazers_count != null) {
-          setCount(Number(data.stargazers_count));
+          const stars = Number(data.stargazers_count);
+          setCount(stars);
+          setCache(repo, stars);
         }
       })
       .catch((err) => {
         console.warn("[GitHubStars] Failed to fetch:", err.message);
+        setCount(0);
       });
     return () => { cancelled = true; };
   }, [repo]);
 
-  const formatted = new Intl.NumberFormat(locales, {
-    notation: "compact",
-    compactDisplay: "short",
-  })
-    .format(count)
-    .toLowerCase();
+  const formatted =
+    count === null
+      ? "..."
+      : new Intl.NumberFormat(locales, {
+          notation: "compact",
+          compactDisplay: "short",
+        })
+          .format(count)
+          .toLowerCase();
 
-  const full = new Intl.NumberFormat(locales).format(count);
+  const full =
+    count === null
+      ? "Loading..."
+      : new Intl.NumberFormat(locales).format(count);
 
   return (
     <TooltipProvider>
