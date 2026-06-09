@@ -4,7 +4,7 @@ import SectionDivider from "@/components/utilities/SectionDivider"
 export default function TermsPage() {
     return (
         <div className="overflow-x-clip w-full">
-            <main className='max-w-6xl mx-auto relative pt-20 py-12 md:pt-24 border-x px-6 md:px-12'>
+            <main className='max-w-6xl mx-auto relative pt-20 py-12 md:pt-24 sm:border-x px-6 md:px-12'>
 
                 {/* Header */}
                 <div className="mb-12 space-y-4 max-w-3xl">
@@ -44,7 +44,7 @@ export default function TermsPage() {
                 </div>
 
                 {/* Footer note */}
-                <p className="mt-12 text-center text-xs text-muted-foreground/60">
+                <p className="mt-8 sm:mt-12 text-center text-xs text-muted-foreground/60">
                     Groot Labs © {new Date().getFullYear()} · Open source & privacy-first ·{" "}
                     <a
                         href="https://github.com/Subhadipjana95/groot-studio/blob/main/LICENSE"

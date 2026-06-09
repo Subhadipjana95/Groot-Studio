@@ -7,12 +7,12 @@ import SectionDivider from "@/components/utilities/SectionDivider";
 const Pricing = () => {
   return (
     <div className="overflow-x-clip w-full">
-      <main className='max-w-6xl mx-auto relative pt-20 py-12 md:pt-24 border-x'>
+      <main className='max-w-96 sm:max-w-6xl mx-auto relative pt-20 py-12 md:pt-24 border-x'>
         <div className="mb-6 space-y-4 mx-auto text-center">
           <h1 className="font-normal font-sans text-4xl tracking-tight sm:text-5xl text-foreground">
             Simple Transparent <span className="text-brand1 [text-shadow:0_0_12px_var(--brand1)] font-[gambarino] font-medium">Pricing</span>
           </h1>
-          <p className="max-w-lg text-lg text-muted-foreground leading-normal mx-auto">
+          <p className="hidden sm:block max-w-lg text-lg text-muted-foreground leading-normal mx-auto">
             Choose the plan that best fits your workflow. From solo makers to world-class agencies.
           </p>
         </div>
@@ -32,7 +32,7 @@ const Pricing = () => {
                 </div>
               )}
 
-              <div className="bg-muted/50 p-2 rounded-xl px-3 mb-6 space-y-4 shadow-lg border border-border">
+              <div className="bg-muted/50 p-2 rounded-xl px-3 mb-3 sm:mb-6 space-y-4 shadow-lg border border-border">
                 <div className="space-y-1">
                   <h3 className="text-2xl font-bold tracking-tight text-foreground">
                     {plan.name}
@@ -68,7 +68,7 @@ const Pricing = () => {
                 </Button>
               </div>
 
-              <div className="mt-auto space-y-4 px-4 pt-6 pb-3">
+              <div className="mt-auto space-y-3 sm:space-y-4 px-4 pt-4 pb-2 sm:pt-6 sm:pb-3">
                 {plan.features.map((feature) => (
                   <div key={feature} className="flex items-start gap-3 group/feature">
                     <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-muted-foreground/10">

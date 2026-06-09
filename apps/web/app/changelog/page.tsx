@@ -4,18 +4,18 @@ import { DATA } from "@/data/Data";
 export default function ChangelogPage() {
   return (
     <div className="overflow-x-clip w-full">
-      <div className="max-w-6xl min-h-screen pt-24 py-16 mx-auto border-x">
-        <div className="mb-6 space-y-4 max-w-3xl mx-auto text-center">
+      <div className="max-w-96 sm:max-w-6xl min-h-screen pt-20 sm:pt-24 py-16 mx-auto border-x">
+        <div className="mb-1 sm:mb-6 space-y-4 max-w-3xl mx-auto text-center">
           <h1 className="font-normal font-sans text-4xl tracking-tight sm:text-5xl text-foreground">
             Latest <span className="text-brand1 [text-shadow:0_0_12px_var(--brand1)] font-[gambarino] font-medium">Updates</span> &{" "}
             <span className="text-brand1 font-[gambarino] font-medium">Improvements</span>
           </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+          <p className="hidden sm:block text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
             Latest updates and improvements to Groot Studio.
           </p>
         </div>
 
-        <div className="flex flex-col gap-8 w-full px-8 md:px-16 py-12">
+        <div className="flex flex-col gap-8 w-full px-3 sm:px-8 md:px-16 py-6 sm:py-12">
           {DATA.changelog.map((item, index) => (
             <div key={index} className="flex gap-4 md:gap-12 items-start group">
               {/* Date Badge */}

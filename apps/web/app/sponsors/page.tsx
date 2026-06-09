@@ -28,15 +28,15 @@ export default async function SponsorsPage() {
 
   return (
     <div className="overflow-x-clip w-full">
-      <main className="max-w-6xl mx-auto relative pt-20 py-12 md:pt-24 border-x">
+      <main className="max-w-96 sm:max-w-6xl mx-auto relative pt-20 py-12 md:pt-24 border-x">
 
         {/* Hero */}
-        <div className="mb-6 space-y-4 max-w-3xl mx-auto text-center">
-          <h1 className="font-normal font-sans text-4xl tracking-tight sm:text-5xl text-foreground">
+        <div className="mb-4 sm:mb-6 space-y-3 sm:space-y-4 max-w-88 sm:max-w-3xl mx-auto text-center">
+          <h1 className="font-normal font-sans text-3xl tracking-tight sm:text-5xl text-foreground">
             <span className="text-brand1 [text-shadow:0_0_12px_var(--brand1)] font-[gambarino] font-medium">Support</span> the future of{" "}
-            <span className="text-brand1 font-[gambarino] font-medium">Groot Studio</span>
+            <span className="text-brand1 font-[gambarino] font-medium">Groot <span className="hidden sm:inline-block">Studio</span></span>
           </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+          <p className="text-center max-w-sm sm:max-w-lg text-muted-foreground text-sm sm:text-lg leading-snug mx-auto">
             Groot Studio is sustained by the community. Your sponsorship helps us build high-quality components for everyone.
           </p>
         </div>
@@ -135,11 +135,11 @@ export default async function SponsorsPage() {
         </div>
 
         {/* Footer note */}
-        <p className="mt-12 text-xs text-muted-foreground/50 text-center">
+        <p className="mt-12 text-xs text-muted-foreground/50 mx-auto text-center max-w-xs sm:max-w-full">
           Groot Labs © {new Date().getFullYear()} · Open Source & privacy-first ·{" "}
           <Link
             href="/about"
-            className="hover:text-transparent hover:bg-clip-text hover:bg-brand-gradient transition-colors duration-200"
+            className="hover:text-brand1 transition-colors duration-200"
           >
             About Groot Studio →
           </Link>

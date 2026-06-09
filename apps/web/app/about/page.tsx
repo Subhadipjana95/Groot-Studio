@@ -5,7 +5,7 @@ import SectionDivider from "@/components/utilities/SectionDivider"
 export default function AboutPage() {
     return (
         <div className="overflow-x-clip w-full">
-            <main className='max-w-6xl mx-auto relative pt-20 py-12 md:pt-24 border-x px-6 md:px-12'>
+            <main className='max-w-6xl mx-auto relative pt-20 py-12 md:pt-24 sm:border-x px-6 md:px-12'>
 
                 {/* Hero */}
                 <div className="mb-12 space-y-4 max-w-3xl">
@@ -48,7 +48,7 @@ export default function AboutPage() {
 
                 {/* Find us */}
                 <div className="space-y-3">
-                    <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest">Find us</p>
+                    <p className="text-sm font-medium text-muted-foreground">Find Us</p>
                     <div className="flex flex-wrap gap-3">
                         {DATA.socials.map(({ name, href, icon: Icon }) => (
                             <Link
@@ -68,7 +68,7 @@ export default function AboutPage() {
                 </div>
 
                 {/* Footer note */}
-                <p className="mt-14 text-xs text-muted-foreground/50 text-center">
+                <p className="mt-6 sm:mt-14 text-xs text-muted-foreground/50 text-center">
                     Groot Labs © {new Date().getFullYear()} · Open Source & privacy-first ·{" "}
                     <Link
                         href="/sponsors"
