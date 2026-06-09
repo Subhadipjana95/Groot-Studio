@@ -33,11 +33,11 @@ export function Footer() {
     <footer className={cn("relative overflow-hidden w-full selection:bg-brand1/15 selection:text-brand1/75"
     )}>
 
-      <div className={cn("mx-auto relative border-x border-border",
-        pathname.includes("/components") ? "max-w-216" : "max-w-6xl"
+      <div className={cn("mx-auto relative max-w-96 border-x border-border",
+        pathname.includes("/components") ? "sm:max-w-216" : "sm:max-w-6xl"
       )}>
 
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 py-4 px-6">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-4 py-4 px-6">
           <div className="flex flex-col text-left">
             <h3 className="text-md font-medium text-foreground">{footerHeader.title}</h3>
             <p className="text-xs sm:text-sm text-muted-foreground">{footerHeader.description}</p>
@@ -98,7 +98,7 @@ export function Footer() {
             </span>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center md:justify-end gap-6 sm:gap-8">
+          <div className="hidden md:flex flex-wrap items-center justify-center md:justify-end gap-6 sm:gap-8">
             <div className="flex gap-4">
               {footerBottom.links.map((link, index) => (
                 <Link
@@ -121,7 +121,6 @@ export function Footer() {
                 <LinkedinIcon />
               </a>
             </div>
-
           </div>
 
         </div>
@@ -129,7 +128,7 @@ export function Footer() {
 
       <SectionDivider innerClassName={pathname.includes("/components") ? "md:max-w-216" : ""} />
       {/* --- Lower Portion - Desktop Specific --- */}
-      <div className="relative pb-22 md:pb-44 mx-auto">
+      <div className="hidden sm:block relative pb-22 md:pb-44 mx-auto">
         {/* Massive dipped text */}
         <div className="absolute -bottom-5 md:-bottom-16 left-0 right-0 pointer-events-none select-none overflow-hidden mask-[linear-gradient(to_top,transparent_0%,black_60%)]">
           <h2 className="text-[20vw] md:text-[11rem] xl:text-[13rem] font-sans font-bold uppercase text-center tracking-tighter leading-none text-foreground/10 dark:text-foreground/20 whitespace-nowrap translate-x-[-0.75%] md:translate-y-[5.25%] xl:translate-y-[7.4%]">

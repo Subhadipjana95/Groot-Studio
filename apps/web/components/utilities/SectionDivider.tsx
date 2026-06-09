@@ -14,7 +14,7 @@ const SectionDivider = ({ className, innerClassName }: SectionDividerProps) => {
         className
       )}
     >
-      <div className={cn("relative mx-auto h-full w-full max-w-88 md:max-w-6xl border-x",
+      <div className={cn("relative mx-auto h-full w-full max-w-96 md:max-w-6xl border-x",
         innerClassName
       )}>
         <div className="absolute -top-2 left-0 h-4 sm:h-5 w-4 sm:w-5 -translate-x-1/2 rounded-[4px] sm:rounded-sm border border-border/70 bg-background z-10" />
