@@ -31,7 +31,7 @@ Ensure your project environment meets the following:
 Groot Studio components are installed via the shadcn CLI using their registry URLs. For example, to add the `Sliding Button` :
 
 ```bash
-npx shadcn@latest add https://grootstudio.vercel.app/r/sliding-button.json
+npx shadcn@latest add @grootstudio/sliding-button
 ```
 Once installed, you can import the component in your files:
 ```typescript

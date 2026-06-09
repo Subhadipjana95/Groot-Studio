@@ -1,5 +1,5 @@
 import { AvatarTooltips } from "@workspace/ui/registry/radix-nova/avatar-tooltips/avatar-tooltips";
-import { DATA } from "@/lib/data/Data"
+import { DATA } from "@/data/Data"
 
 export default function Demo() {
   return (

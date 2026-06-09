@@ -1,24 +1,21 @@
 import Link from "next/link"
-import { DATA } from "@/lib/data/Data"
-import { PageWrapper } from "@/components/utilities/page-wrapper"
+import { DATA } from "@/data/Data"
+import SectionDivider from "@/components/utilities/SectionDivider"
 
 export default function AboutPage() {
     return (
-        <PageWrapper className="overflow-hidden">
-            <main className="max-w-4xl mx-auto px-6 md:px-12 relative pt-20 pb-20 md:pt-28 lg:pt-36">
+        <div className="overflow-x-clip w-full">
+            <main className='max-w-6xl mx-auto relative pt-20 py-12 md:pt-24 sm:border-x px-6 md:px-12'>
 
                 {/* Hero */}
-                <div className="mb-14 space-y-4 max-w-2xl">
-                    <p className="text-xs font-medium tracking-wide text-muted-foreground">
-                        About the project
-                    </p>
-                    <h1 className="text-4xl md:text-5xl font-medium tracking-tight">
-                        Built for developers,{" "}
-                        <span className="bg-brand-gradient bg-clip-text text-transparent">by a developer</span>
+                <div className="mb-12 space-y-4 max-w-3xl">
+                    <h1 className="font-normal font-sans text-4xl tracking-tight sm:text-5xl text-foreground">
+                        Built for developers, by a{" "}
+                        <span className="text-brand1 [text-shadow:0_0_12px_var(--brand1)] font-[gambarino] font-medium"> developer</span>
                     </h1>
-                    <p className="text-lg text-muted-foreground leading-relaxed">
+                    <p className="text-lg text-muted-foreground">
                         Groot Studio is an open-source component library and design system built for modern web developers.
-                        Every component is handcrafted with Next.js, Tailwind CSS, and Framer Motion — ready to copy,
+                        Every component is handcrafted with Next.js, Tailwind CSS, and Framer Motion - ready to copy,
                         paste, and ship.
                     </p>
                 </div>
@@ -30,7 +27,7 @@ export default function AboutPage() {
                             key={label}
                             className="rounded-xl border border-border/50 bg-card p-5 space-y-1"
                         >
-                            <p className="text-3xl font-semibold tracking-tight bg-brand-gradient bg-clip-text text-transparent">
+                            <p className="text-3xl font-semibold tracking-tight text-brand1/80">
                                 {value}
                             </p>
                             <p className="text-xs text-muted-foreground leading-tight">{label}</p>
@@ -40,18 +37,18 @@ export default function AboutPage() {
 
                 {/* Mission */}
                 <div className="rounded-xl border border-border/50 bg-card p-7 mb-10 space-y-3">
-                    <h2 className="text-base font-semibold text-foreground tracking-tight">Mission</h2>
+                    <h2 className="text-base font-medium text-foreground tracking-tight">Mission</h2>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                         The goal is simple: eliminate repetitive UI work. Instead of rebuilding the same hero,
                         pricing table, or testimonial section from scratch on every project, Groot Studio gives you
-                        battle-tested, accessible, production-ready starting points you actually own — no proprietary
+                        battle-tested, accessible, production-ready starting points you actually own - no proprietary
                         runtime, no lock-in, just code.
                     </p>
                 </div>
 
                 {/* Find us */}
                 <div className="space-y-3">
-                    <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest">Find us</p>
+                    <p className="text-sm font-medium text-muted-foreground">Find Us</p>
                     <div className="flex flex-wrap gap-3">
                         {DATA.socials.map(({ name, href, icon: Icon }) => (
                             <Link
@@ -71,16 +68,17 @@ export default function AboutPage() {
                 </div>
 
                 {/* Footer note */}
-                <p className="mt-14 text-xs text-muted-foreground/50 text-center">
+                <p className="mt-6 sm:mt-14 text-xs text-muted-foreground/50 text-center">
                     Groot Labs © {new Date().getFullYear()} · Open Source & privacy-first ·{" "}
                     <Link
                         href="/sponsors"
-                        className="hover:text-transparent hover:bg-clip-text hover:bg-brand-gradient transition-colors duration-200"
+                        className="hover:text-brand1 transition-colors duration-200"
                     >
                         Support the project →
                     </Link>
                 </p>
             </main>
-        </PageWrapper>
+            <SectionDivider />
+        </div>
     )
 }

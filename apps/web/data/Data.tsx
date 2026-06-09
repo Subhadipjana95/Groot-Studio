@@ -6,7 +6,7 @@ export const DATA = {
     description: "Hand-crafted, high-performing, SEO friendly & accessible components designed for modern developers.",
     donateURL: "https://a063.xyz/support",
     GITHUB_USER_NAME: "Subhadipjana95",
-    GITHUB_REPO_LINK: "Subhadipjana95/groot-ui",
+    GITHUB_REPO_LINK: "Subhadipjana95/groot-studio",
     DISCORD_SERVER_ID: "1487752291602665574",
     DISCORD_INVITE_LINK: "https://discord.gg/5nJmZYA5f2",
 
@@ -242,7 +242,7 @@ export const DATA = {
     NAV_LINKS: [
         { href: "/components", label: "Components" },
         { href: "/templates", label: "Templates" },
-        { href: "/changelog", label: "Changelog" },
+        // { href: "/changelog", label: "Changelog" },
         { href: "/sponsors", label: "Sponsors" },
     ],
 

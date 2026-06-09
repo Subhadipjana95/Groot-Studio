@@ -3,73 +3,63 @@ import { CodeBlock } from "@/components/docs/shared/code-block";
 
 export default function InstallationPage() {
   return (
-    <div className="flex flex-col gap-8">
-      {/* Breadcrumbs */}
-      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-        <span>Docs</span>
-        <span>/</span>
-        <span className="text-foreground font-medium">Installation</span>
-      </div>
+    <div className="flex flex-col gap-4 sm:gap-8 pt-8 sm:pt-12">
 
       {/* Header */}
-      <div className="flex flex-col gap-3">
-        <h1 className="text-4xl font-semibold tracking-tight lg:text-5xl">Installation</h1>
-        <p className="text-xl text-muted-foreground max-w-[65ch]">
-          How to install dependencies and structure your app.
-        </p>
-      </div>
+      <h1 className="font-normal font-sans text-4xl tracking-tight sm:text-5xl text-foreground text-center"><span className="text-brand1 [text-shadow:0_0_12px_var(--brand1)] font-[gambarino] font-medium">Installation </span>Guide</h1>
 
       {/* Steps */}
-      <div className="flex flex-col gap-12 mt-4 pb-20">
+      <div className="flex flex-col gap-12 mt-2">
         {/* Step 1 */}
-        <section className="flex gap-6 relative group">
+        <section className="flex gap-2 sm:gap-4` relative group">
           <div className="relative flex flex-col items-center flex-none">
             <div className="h-8 w-8 rounded-full bg-muted border border-border flex items-center justify-center font-bold text-sm z-10 shrink-0">
               1
             </div>
             <div className="absolute top-8 bottom-[-48px] w-px bg-border" />
           </div>
-          <div className="flex flex-col gap-4 w-full min-w-0">
-            <h2 id="create-project" className="text-2xl font-semibold tracking-tight scroll-m-20">Create project</h2>
+          <div className="flex flex-col gap-1 w-full min-w-0">
+            <h2 id="create-project" className="text-2xl font-medium tracking-tight scroll-m-20">Create project</h2>
             <p className="text-muted-foreground">
               Run the <code className="bg-muted px-1.5 py-0.5 rounded-sm font-mono text-sm leading-none">init</code> command to create a new Next.js project or to setup an existing one:
             </p>
-            <InstallBlock command="" type="init" />
+            <InstallBlock command="" type="init" className="mt-2" />
           </div>
         </section>
 
         {/* Step 2 */}
-        <section className="flex gap-6 relative group">
+        <section className="flex gap-2 sm:gap-4` relative group">
           <div className="relative flex flex-col items-center flex-none">
             <div className="h-8 w-8 rounded-full bg-muted border border-border flex items-center justify-center font-bold text-sm z-10 shrink-0">
               2
             </div>
             <div className="absolute top-8 bottom-[-48px] w-px bg-border" />
           </div>
-          <div className="flex flex-col gap-4 w-full min-w-0">
-            <h2 id="add-components" className="text-2xl font-semibold tracking-tight scroll-m-20">Add components</h2>
+          <div className="flex flex-col gap-1 w-full min-w-0">
+            <h2 id="add-components" className="text-2xl font-medium tracking-tight scroll-m-20">Add components</h2>
             <p className="text-muted-foreground">
               You can now start adding components to your project.
             </p>
-            <InstallBlock command="https://grootstudio.vercel.app/r/3d-button.json" type="add" />
+            <InstallBlock command="@grootstudio/3d-button" type="add" className="mt-2" />
           </div>
         </section>
 
         {/* Step 3 */}
-        <section className="flex gap-6 relative group">
+        <section className="flex gap-2 sm:gap-4` relative group">
           <div className="relative flex flex-col items-center flex-none">
             <div className="h-8 w-8 rounded-full bg-muted border border-border flex items-center justify-center font-bold text-sm z-10 shrink-0">
               3
             </div>
             {/* No line after the last step */}
           </div>
-          <div className="flex flex-col gap-4 w-full min-w-0">
-            <h2 id="import-component" className="text-2xl font-semibold tracking-tight scroll-m-20">Import component</h2>
+          <div className="flex flex-col gap-1 w-full min-w-0">
+            <h2 id="import-component" className="text-2xl font-medium tracking-tight scroll-m-20">Import component</h2>
             <p className="text-muted-foreground">
               The command above will add the <code className="bg-muted px-1.5 py-0.5 rounded-sm font-mono text-sm">ThreeDButton</code> component to your project. You can then import it like this:
             </p>
             <div className="mt-2 text-sm">
               <CodeBlock
+                className="mt-2"
                 code={`import { ThreeDButton } from "@/components/3d-button"
 
 export default function Demo() {

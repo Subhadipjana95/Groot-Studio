@@ -13,7 +13,7 @@ import { Dialog, DialogContent, DialogTitle } from "@workspace/ui/components/dia
 import { SearchIcon } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { DATA } from "@/lib/data/Data"
+import { DATA } from "@/data/Data"
 import { registry } from "@/lib/registry"
 
 

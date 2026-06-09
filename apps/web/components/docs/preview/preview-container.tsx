@@ -49,7 +49,7 @@ export function PreviewContainer({
       <div className={cn(view !== "preview" && "hidden")}>
         <div
           className={cn(
-            "relative mt-2 max-w-3xl mx-auto w-full overflow-hidden rounded-xl border bg-muted/30 dark:bg-card flex items-center justify-center p-1 md:p-2",
+            "relative mt-2 max-w-5xl mx-auto w-full overflow-hidden rounded-xl border bg-muted/30 dark:bg-card flex items-center justify-center p-1 md:p-2",
             className
           )}
         >
@@ -63,7 +63,7 @@ export function PreviewContainer({
       </div>
 
       <div className={cn(view !== "code" && "hidden")}>
-        <div className="relative mt-2 max-w-3xl mx-auto w-full">
+        <div className="relative mt-2 max-w-5xl mx-auto w-full">
           {codeToShow && (
             <CodeBlock
               code={codeToShow}

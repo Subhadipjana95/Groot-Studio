@@ -47,7 +47,7 @@ export function BadgeTag({
   text, 
   icon, 
   className,
-  gradientColors = "#cc0066, #f5f56b",
+  gradientColors = "#e01e4e,  #ed909b",
   ...props 
 }: BadgeTagProps) {
     const colorArray = useMemo(
@@ -65,7 +65,7 @@ export function BadgeTag({
         >
             <style dangerouslySetInnerHTML={{ __html: keyframesStyle }} />
             <div className="relative overflow-hidden bg-background border border-border shadow-sm shadow-accent rounded-full px-2 py-1 flex items-center justify-center">
-                <span className="relative z-10 text-xs font-semibold tracking-wide text-foreground/80 dark:text-foreground drop-shadow-sm">{version}</span>
+                <span className="relative z-10 text-xs font-semibold tracking-wide text-background drop-shadow-sm">{version}</span>
                 <span
                   aria-hidden
                   className="pointer-events-none absolute inset-0 opacity-100"
@@ -88,7 +88,7 @@ export function BadgeTag({
                   />
                 </span>
             </div>
-            <p className="pr-3 pl- text-sm font-medium text-muted-foreground transition-colors group-hover:text-foreground">
+            <p className="pr-3 text-sm text-muted-foreground transition-colors group-hover:text-foreground">
                 {text}
             </p>
             {icon && <div className="pr-2 text-muted-foreground">{icon}</div>}

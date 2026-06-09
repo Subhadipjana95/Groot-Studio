@@ -1,5 +1,5 @@
 import { Heart, Trophy, Medal, Star } from "lucide-react"
-import { DATA } from "@/lib/data/Data"
+import { DATA } from "@/data/Data"
 import { DiamondIcon, GoldIcon, SilverIcon, BronzeIcon } from "@workspace/ui/components/icons/icon"
 
 
