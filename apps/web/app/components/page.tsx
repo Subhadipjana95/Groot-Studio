@@ -30,8 +30,8 @@ export default function ComponentsPage() {
     : sortedCategories;
 
   return (
-    <div className="container max-w-5xl py-10">
-      <div className="flex flex-col gap-6 mb-12">
+    <div className="container max-w-5xl py-6 sm:py-10">
+      <div className="flex flex-col gap-6 mb-8 sm:mb-12">
         <div className="flex flex-col md:items-center justify-between gap-4">
           <h1 className="font-normal font-sans text-4xl tracking-tight sm:text-5xl text-foreground">
             <span className="text-brand1 [text-shadow:0_0_12px_var(--brand1)] font-[gambarino] font-medium">Components</span> for your{" "}
@@ -46,7 +46,7 @@ export default function ComponentsPage() {
         </div>
       </div>
 
-      <div className="grid gap-12">
+      <div className="grid gap-8 sm:gap-12">
         {filteredCategories.map(([category, items]) => (
           <section key={category}>
             <h2 id={category.toLowerCase().replace(/\s+/g, '-')} className="text-2xl font-medium mb-3 pb-1 scroll-m-20">{category}</h2>

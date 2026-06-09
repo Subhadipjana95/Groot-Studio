@@ -3,7 +3,7 @@ import { CodeBlock } from "@/components/docs/shared/code-block";
 
 export default function InstallationPage() {
   return (
-    <div className="flex flex-col gap-8 pt-12">
+    <div className="flex flex-col gap-4 sm:gap-8 pt-8 sm:pt-12">
 
       {/* Header */}
       <h1 className="font-normal font-sans text-4xl tracking-tight sm:text-5xl text-foreground text-center"><span className="text-brand1 [text-shadow:0_0_12px_var(--brand1)] font-[gambarino] font-medium">Installation </span>Guide</h1>
@@ -11,7 +11,7 @@ export default function InstallationPage() {
       {/* Steps */}
       <div className="flex flex-col gap-12 mt-2">
         {/* Step 1 */}
-        <section className="flex gap-6 relative group">
+        <section className="flex gap-2 sm:gap-4` relative group">
           <div className="relative flex flex-col items-center flex-none">
             <div className="h-8 w-8 rounded-full bg-muted border border-border flex items-center justify-center font-bold text-sm z-10 shrink-0">
               1
@@ -28,7 +28,7 @@ export default function InstallationPage() {
         </section>
 
         {/* Step 2 */}
-        <section className="flex gap-6 relative group">
+        <section className="flex gap-2 sm:gap-4` relative group">
           <div className="relative flex flex-col items-center flex-none">
             <div className="h-8 w-8 rounded-full bg-muted border border-border flex items-center justify-center font-bold text-sm z-10 shrink-0">
               2
@@ -45,7 +45,7 @@ export default function InstallationPage() {
         </section>
 
         {/* Step 3 */}
-        <section className="flex gap-6 relative group">
+        <section className="flex gap-2 sm:gap-4` relative group">
           <div className="relative flex flex-col items-center flex-none">
             <div className="h-8 w-8 rounded-full bg-muted border border-border flex items-center justify-center font-bold text-sm z-10 shrink-0">
               3

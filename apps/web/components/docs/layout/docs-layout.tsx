@@ -24,7 +24,7 @@ export function DocsLayout({ children }: { children: ReactNode }) {
           </div>
 
           {/* Main Components Content */}
-          <main className="relative mx-auto w-full max-w-4xl pt-12 py-6 lg:py-12 px-4 md:px-8 min-w-0 border-x">
+          <main className="relative mx-auto w-full max-w-4xl pt-12 py-6 lg:py-12 px-0 md:px-8 min-w-0 sm:border-x">
             {children}
           </main>
 

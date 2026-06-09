@@ -105,7 +105,7 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
   }
 
   return (
-    <div className="container max-w-full py-10 lg:py-12">
+    <div className="container max-w-full py-8 md:py-12">
       <div className="flex flex-col gap-2 mb-6">
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <span className="hover:text-foreground transition-colors cursor-default">Components</span>
