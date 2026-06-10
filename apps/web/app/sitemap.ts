@@ -37,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE_URL}/blocks`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.4,
     },
     {
       url: `${BASE_URL}/pricing`,
@@ -49,13 +49,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE_URL}/changelog`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.5,
+      priority: 0.4,
     },
     {
       url: `${BASE_URL}/sponsors`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.4,
+      priority: 0.5,
     },
     {
       url: `${BASE_URL}/about`,
