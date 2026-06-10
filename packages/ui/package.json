@@ -50,6 +50,7 @@
     "@workspace/eslint-config": "*",
     "@workspace/typescript-config": "*",
     "eslint": "^9.39.2",
+    "next": "^16.2.1",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3"
   },

@@ -2,8 +2,14 @@
   "extends": "@workspace/typescript-config/react-library.json",
   "compilerOptions": {
     "baseUrl": ".",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "types": ["next", "node"],
     "paths": {
-      "@workspace/ui/*": ["./src/*"]
+      "@workspace/ui/*": ["./src/*"],
+      "@/components/ui/*": ["./src/components/*"],
+      "@/lib/utils": ["./src/lib/utils"],
+      "@/*": ["./src/*"]
     }
   },
   "include": ["."],
