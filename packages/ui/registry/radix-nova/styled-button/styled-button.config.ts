@@ -12,6 +12,8 @@ export const config: ComponentConfig = {
   preview: { disableSSR: false, height: 160 },
   registryUrl: "https://grootstudio.vercel.app/r/styled-button.json",
   installAlias: "styled-button",
+  image: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1781080509/Styled_Button_light_m8jwor.webp",
+  imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1781080509/Styled_Button_dark_jyefju.webp",
   usage: {
     import: `import { StyledButton } from "@/components/styled-button"`,
     code: `export default function Demo() {
