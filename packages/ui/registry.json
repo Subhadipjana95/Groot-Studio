@@ -334,6 +334,18 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "styled-button",
+      "type": "registry:block",
+      "title": "Styled Button",
+      "description": "An elegant styled button with vibrant radial gradients, shadow glows, and smooth active transitions.",
+      "files": [
+        {
+          "path": "registry/radix-nova/styled-button/styled-button.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }
