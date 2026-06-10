@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-06-04T12:03:26.067Z
+// Last generated: 2026-06-10T08:36:02.305Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -1232,6 +1232,74 @@ export const registry: ComponentConfig[] = [
       {
         "name": "sliding-button.tsx",
         "content": "\"use client\";\r\n\r\nimport React from \"react\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { ArrowUpRight } from \"lucide-react\";\r\nimport { cn } from \"@/lib/utils\";\r\nimport { motion } from \"motion/react\";\r\n\r\nexport interface SlidingButtonProps\r\n  extends Omit<React.ComponentProps<typeof Button>, \"variant\"> {\r\n  children: React.ReactNode;\r\n  iconPosition?: \"left\" | \"right\";\r\n  variant?: keyof typeof BOX_SHADOW;\r\n  className?: string;\r\n}\r\n\r\nconst ICON_PX = 40;\r\nconst GAP_PX = 4;\r\n\r\nconst SPRING_SLIDE = { type: \"spring\", stiffness: 300, damping: 28 } as const;\r\nconst SPRING_ROTATE = { type: \"spring\", stiffness: 400, damping: 20 } as const;\r\n\r\nconst ICON_STYLE = {\r\n  background: \"linear-gradient(to top, #f5f56b, #cc0066)\",\r\n  boxShadow:\r\n    \"0 2px 8px 0 rgba(204,0,102,0.35), 0 1.5px 0 0 rgba(255,255,255,0.25) inset, 0 -2px 8px 0 rgba(204,0,102,0.5) inset, 0 0 0 1px rgba(0,0,0,0.08)\",\r\n} as const;\r\n\r\nconst SHIMMER_STYLE = {\r\n  background:\r\n    \"linear-gradient(180deg,rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 80%,transparent 100%)\",\r\n  filter: \"blur(0.5px)\",\r\n} as const;\r\n\r\nconst INNER_SHADOW_STYLE = {\r\n  boxShadow:\r\n    \"0 0 0 1px rgba(255,255,255,0.15) inset, 0 1.5px 0 0 rgba(255,255,255,0.2) inset, 0 -2px 4px 0 rgba(204,0,102,0.2) inset\",\r\n} as const;\r\n\r\nconst BOX_SHADOW = {\r\n  default:\r\n    \"inset 0 2px 3px 0 rgba(255,255,255,0.15), inset 0 -3px 6px 0 rgba(0,0,0,0.4), inset 0 0 0 1px rgba(255,255,255,0.1)\",\r\n  outline:\r\n    \"inset 0 2px 4px 0 rgba(0,0,0,0.12), inset 0 -2px 2px 0 rgba(255,255,255,0.3), inset 0 0 0 1px rgba(0,0,0,0.06)\",\r\n} as const;\r\n\r\nexport const SlidingButton = React.forwardRef<\r\n  HTMLButtonElement,\r\n  SlidingButtonProps\r\n>(\r\n  (\r\n    { children, className, variant = \"default\", iconPosition = \"right\", ...props },\r\n    externalRef\r\n  ) => {\r\n    const [isHovered, setIsHovered] = React.useState(false);\r\n    const [travelDistance, setTravelDistance] = React.useState(0);\r\n\r\n    const mergedRef = React.useCallback(\r\n      (node: HTMLButtonElement | null) => {\r\n        if (typeof externalRef === \"function\") externalRef(node);\r\n        else if (externalRef)\r\n          (\r\n            externalRef as React.MutableRefObject<HTMLButtonElement | null>\r\n          ).current = node;\r\n\r\n        if (!node) return;\r\n\r\n        const measure = () =>\r\n          setTravelDistance(node.clientWidth - ICON_PX - GAP_PX * 2);\r\n\r\n        measure();\r\n\r\n        const ro = new ResizeObserver(measure);\r\n        ro.observe(node);\r\n      },\r\n      [externalRef]\r\n    );\r\n\r\n    const slideX = isHovered\r\n      ? iconPosition === \"right\"\r\n        ? -travelDistance\r\n        : travelDistance\r\n      : 0;\r\n    const rotateX = isHovered ? 360 : 0;\r\n\r\n    return (\r\n      <Button\r\n        ref={mergedRef}\r\n        variant={variant}\r\n        aria-label={children?.toString()}\r\n        onMouseEnter={() => setIsHovered(true)}\r\n        onMouseLeave={() => setIsHovered(false)}\r\n        className={cn(\r\n          \"relative h-12 w-fit cursor-pointer overflow-hidden rounded-xl p-1 text-sm font-medium transition-all duration-500 flex items-center active:scale-[0.98]\",\r\n          iconPosition === \"right\"\r\n            ? \"ps-6 pe-14 hover:ps-14 hover:pe-6\"\r\n            : \"ps-14 pe-6 hover:ps-6 hover:pe-14\",\r\n          className\r\n        )}\r\n        style={{ boxShadow: BOX_SHADOW[variant as keyof typeof BOX_SHADOW] }}\r\n        {...props}\r\n      >\r\n        <span\r\n          className=\"relative z-10 transition-all duration-500 text-shadow-black/10 text-shadow-lg\"\r\n        >\r\n          {children}\r\n        </span>\r\n\r\n        <motion.div\r\n          aria-hidden\r\n          className={cn(\r\n            \"absolute z-20 flex h-10 w-10 items-center justify-center rounded-lg text-white\",\r\n            iconPosition === \"right\" ? \"right-1\" : \"left-1\"\r\n          )}\r\n          style={ICON_STYLE}\r\n          animate={{ x: slideX, rotate: rotateX }}\r\n          transition={SPRING_SLIDE}\r\n        >\r\n          <span\r\n            className=\"pointer-events-none absolute left-1/2 top-0 z-20 h-2/5 w-[80%] -translate-x-1/2 rounded-t-[inherit]\"\r\n            style={SHIMMER_STYLE}\r\n          />\r\n          <span\r\n            className=\"pointer-events-none absolute inset-0 z-0 rounded-[inherit]\"\r\n            style={INNER_SHADOW_STYLE}\r\n          />\r\n          <motion.span\r\n            className=\"relative z-30 flex items-center justify-center drop-shadow-sm\"\r\n            animate={{ rotate: isHovered ? 45 : 0 }}\r\n            transition={SPRING_ROTATE}\r\n          >\r\n            <ArrowUpRight size={16} />\r\n          </motion.span>\r\n        </motion.div>\r\n      </Button>\r\n    );\r\n  }\r\n);\r\n\r\nSlidingButton.displayName = \"SlidingButton\";\r\n"
+      }
+    ]
+  },
+  {
+    "name": "styled-button",
+    "title": "Styled Button",
+    "description": "An elegant styled button with vibrant radial gradients, shadow glows, and smooth active transitions.",
+    "category": {
+      "name": "Buttons",
+      "slug": "buttons"
+    },
+    "tier": "free",
+    "status": "stable",
+    "tags": [
+      "button",
+      "radial-gradient"
+    ],
+    "label": "new",
+    "preview": {
+      "disableSSR": false,
+      "height": 160
+    },
+    "registryUrl": "https://grootstudio.vercel.app/r/styled-button.json",
+    "installAlias": "styled-button",
+    "image": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1781080509/Styled_Button_light_m8jwor.webp",
+    "imageDark": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1781080509/Styled_Button_dark_jyefju.webp",
+    "usage": {
+      "import": "import { StyledButton } from \"@/components/styled-button\"",
+      "code": "export default function Demo() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <StyledButton href=\"/dashborad\" variant=\"rose\">\n        Dashboard\n      </StyledButton>\n    </div>\n  )\n}"
+    },
+    "props": [
+      {
+        "name": "href",
+        "type": "string",
+        "required": true,
+        "description": "The URL or path that the button links to."
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "description": "The content to display inside the button."
+      },
+      {
+        "name": "variant",
+        "type": "'neutral' | 'rose' | 'blue'",
+        "default": "neutral",
+        "required": false,
+        "description": "The background color scheme and border color of the button."
+      },
+      {
+        "name": "size",
+        "type": "'sm' | 'md' | 'lg'",
+        "default": "md",
+        "required": false,
+        "description": "The height and padding size of the button."
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Additional CSS classes for custom styling."
+      }
+    ],
+    "files": [
+      {
+        "name": "styled-button.tsx",
+        "content": "import * as React from \"react\";\r\nimport Link from \"next/link\";\r\nimport {cva, VariantProps} from \"class-variance-authority\";\r\nimport {cn} from \"@/lib/utils\";\r\n\r\nconst buttonVariants = cva(\r\n    \"inline-flex shrink-0 items-center justify-center rounded-md text-sm font-semibold text-shadow-lg shadow-accent border hoveractive:scale-95 transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 select-none antialiased\",\r\n    {\r\n        variants: {\r\n            size: {\r\n                sm: \"h-8 px-3\",\r\n                md: \"h-10 px-4\",\r\n                lg: \"h-12 px-6\",\r\n            },\r\n            variant:{\r\n                default: \"bg-radial from-foreground/50 to-muted/80 ring-2 ring-foreground/20 border-foreground/60\",\r\n                rose: \"text-background bg-radial from-rose-500 to-rose-800 border-rose-400 ring-2 ring-rose-800 hover:bg-radial hover:from-rose-600 hover:to-rose-900\",\r\n                blue: \"text-background bg-radial from-blue-500 to-blue-800 border-blue-400 ring-2 ring-blue-800 hover:bg-radial hover:from-blue-500 hover:to-blue-900\",\r\n            }\r\n        },\r\n        defaultVariants: {\r\n            size: \"md\",\r\n            variant: \"default\"\r\n        },\r\n    }\r\n);\r\n\r\ntype StyledButtonProps = VariantProps<typeof buttonVariants> & {\r\n    href: string;\r\n    children: React.ReactNode;\r\n    className?: string;\r\n};\r\n\r\nconst StyledButton = React.forwardRef<HTMLAnchorElement, StyledButtonProps>(\r\n    ({ href, children, className, size, variant, ...props }, ref) => {\r\n        return (\r\n            <Link\r\n                href={href}\r\n                className={cn(buttonVariants({ size, variant, className }))}\r\n                ref={ref}\r\n                {...props}\r\n            >\r\n                {children}\r\n            </Link>\r\n        );\r\n    }\r\n);\r\n\r\nStyledButton.displayName = \"StyledButton\";\r\n\r\nexport { StyledButton, buttonVariants };"
       }
     ]
   },
