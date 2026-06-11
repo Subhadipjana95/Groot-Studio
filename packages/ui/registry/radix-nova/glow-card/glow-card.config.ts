@@ -7,6 +7,7 @@ export const config: ComponentConfig = {
   category: { name: "Components", slug: "components" },
   tier: "free",
   status: "stable",
+  visibility: false,
   image: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777378888/glow-card_light_ucxzze.webp",
   imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777378889/glow-card_dark_lzl9me.webp",
   tags: ["card", "glow", "effect"],
