@@ -22,7 +22,3 @@ export default function Page() {
     </div>
   )
 }
-
-
-{/* <PageWrapper>
-</PageWrapper> */}

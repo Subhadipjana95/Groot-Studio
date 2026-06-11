@@ -2,16 +2,33 @@
 
 import React from "react"
 import { BentoGrid, type BentoItem } from "@workspace/ui/components/otherBlocks/bento-grid"
-import { ThreeDButton } from "@workspace/ui/registry/radix-nova/3d-button/3d-button"
+import { StyledButton } from "@workspace/ui/registry/radix-nova/styled-button/styled-button"
 import { AvatarTooltips } from "@workspace/ui/registry/radix-nova/avatar-tooltips/avatar-tooltips"
 import { DragButton } from "@workspace/ui/registry/radix-nova/drag-button/drag-button"
 import { TextHoverEffect } from "@workspace/ui/registry/radix-nova/text-outline-glow/text-outline-glow"
-import { GradientBackgroundText } from "@workspace/ui/registry/radix-nova/gradient-background-text/gradient-background-text"
 import { GitHubStars } from "@workspace/ui/registry/radix-nova/github-stars-react/github-stars-react"
 import { GithubCalendar } from "@workspace/ui/registry/radix-nova/github-calendar/github-calendar"
 import { LogoGrid } from "@workspace/ui/registry/radix-nova/logo-grid/logo-grid"
 import { AnimatedBars } from "@workspace/ui/registry/radix-nova/animated-bars/animated-bars"
 import { Github, Twitter, DiscordIcon, Youtube, MessageCircle } from "@workspace/ui/components/icons/icon"
+import { Logo } from "@/components/ui/icons/logo"
+import NeutralButton from "@/components/ui/buttonVarients/NeutralButton"
+import ImageCursorTrail from "@workspace/ui/registry/radix-nova/image-trail/image-trail"
+import { GradientText } from "@/components/ui/textAnimations/gradient-text"
+import { DiscordOnline } from "@/components/ui/socialStats/discord-online"
+
+
+const images = [
+    "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1779383165/8a93491afd90a09985eaddce102b329b_efq8me.jpg",
+    "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1779383230/e5b9651df49a4940fbe124fd0a8df131_gvdvvx.jpg",
+    "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1779383249/3cfb769f842fb198f4e04e2a3d10be30_c8z9w4.jpg",
+    "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1779383361/ac04f0cd44103b4842b42e3d3eeb56d8_idq2x6.jpg",
+    "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1779383590/4967f9c721decc9415f4727448c5dd91_x3cgv3.jpg",
+    "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1779383546/4776e136af2fca9f4fce218289953224_szaihc.jpg",
+    "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1779383714/8c3b369438f3ea034311f6ad63cea0ba_loyee8.jpg",
+    "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1779383627/b5e62228f6f5a2b99dee39063b8238b4_tgve5o.jpg",
+    "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1779383508/e4e2e5463ccfefc3905eb5363edc6117_y1wowo.jpg",
+];
 
 
 const PREVIEW_ITEMS: BentoItem[] = [
@@ -19,53 +36,54 @@ const PREVIEW_ITEMS: BentoItem[] = [
         id: 1,
         content: (
             <div className="w-full h-full flex items-center justify-center bg-muted/10 group-hover:bg-muted/20 transition-colors duration-500 overflow-hidden">
-                <AnimatedBars 
-                    numBars={30} 
+                <AnimatedBars
+                    numBars={30}
                     animationDuration={5}
                     className="w-full h-full border-none"
                 >
                     <div className="max-w-xl text-center relative z-10 px-6 space-y-6">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-medium backdrop-blur-md">
-                            <span className="size-1.5 rounded-full bg-rose-400 animate-pulse" />
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-400/10 dark:bg-rose-800/10 border border-rose-600/20 text-rose-500/60 text-xs font-medium backdrop-blur-md">
+                            <span className="size-1.5 rounded-full bg-rose-600/60 animate-pulse" />
                             Introducing Groot Studio
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-bold text-foreground tracking-tight leading-[1.1]">
-                            Build your next <span className="text-rose-800">big idea</span> faster.
+                        <h2 className="text-4xl md:text-6xl font-medium text-foreground tracking-tight leading-tight font-[gambarino]">
+                            Build your next <span className="text-rose-800 ">Big Idea</span> faster
                         </h2>
                         <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-                            <button className="px-6 py-2 rounded-lg text-sm font-medium text-foreground hover:text-foreground bg-card border hover:shadow-2xl hover:shadow-primary/5 transition-all cursor-pointer active:scale-95">
-                                View Docs
-                            </button>
+                            <NeutralButton label="Explore Docs" className="font-medium hover:shadow-none select-none cursor-pointer"
+                                innerClassName="py-[11px] sm:py-[9px]" />
                         </div>
                     </div>
                 </AnimatedBars>
             </div>
         ),
-        className: "md:col-span-6 lg:col-span-8 lg:row-span-4 min-h-[300px]"
+        className: "md:col-span-6 lg:col-span-8 lg:row-span-2 min-h-[120px]"
     },
     {
         id: 2,
         content: (
-            <div className="w-full h-full flex items-center justify-center p-6 bg-muted/20 group-hover:bg-muted/10 transition-colors duration-500 overflow-hidden">
-                <AvatarTooltips
-                    items={[
-                        { id: 1, name: "GitHub", designation: "Developer Platform", icon: Github },
-                        { id: 2, name: "Twitter", designation: "Social Media", icon: Twitter },
-                        { id: 3, name: "Discord", designation: "Community", icon: DiscordIcon },
-                        { id: 4, name: "YouTube", designation: "Content", icon: Youtube },
-                    ]}
+            <div className="relative w-full h-full flex items-center justify-center p-2 bg-muted/20 group-hover:bg-muted/10 transition-colors duration-500 overflow-hidden">
+                <p className="font-medium pointer-events-none absolute top-1/2 left-1/2 z-30 -translate-x-1/2 -translate-y-1/2 text-sm tracking-tight text-center p-1 px-2 bg-muted/30 border rounded-md">
+                    Wiggle your mouse around
+                </p>
+                <ImageCursorTrail
+                    items={images}
+                    maxNumberOfImages={6}
+                    distance={30}
+                    imgClass="sm:w-20 w-14 sm:h-24 h-18 border border-background"
+                    className="z-50 pointer-events-none"
                 />
             </div>
         ),
-        className: "md:col-span-6 lg:col-span-4 lg:row-span-2 min-h-[120px]"
+        className: "md:col-span-6 lg:col-span-4 lg:row-span-2 min-h-[200px]"
     },
     {
         id: 3,
         content: (
             <div className="w-full h-full flex flex-col gap-4 items-center justify-center p-6 bg-muted/20 group-hover:bg-muted/10 transition-colors duration-500 overflow-hidden">
-                <GradientBackgroundText className="text-4xl md:text-5xl lg:text-6xl">
-                    Groot Stud
-                </GradientBackgroundText>
+                <GradientText className="text-6xl sm:text-[5rem]">
+                    GROOT
+                </GradientText>
             </div>
         ),
         className: "md:col-span-6 lg:col-span-4 lg:row-span-2 min-h-[120px]"
@@ -91,7 +109,7 @@ const PREVIEW_ITEMS: BentoItem[] = [
         content: (
             <div className="w-full h-full flex items-center justify-center p-6 bg-muted/20 group-hover:bg-muted/10 transition-colors duration-500">
                 <div className="w-full h-full flex items-center justify-center">
-                    <TextHoverEffect text="HOVER" fontSize={80} />
+                    <TextHoverEffect text="GROOT" fontSize={80} />
                 </div>
             </div>
         ),
@@ -101,12 +119,10 @@ const PREVIEW_ITEMS: BentoItem[] = [
         id: 6,
         content: (
             <div className="w-full h-full flex items-center justify-center gap-4 p-4 bg-muted/20 group-hover:bg-muted/10 transition-colors duration-500 overflow-hidden">
-                <ThreeDButton color1="#6366f1" color2="#4f46e5">
-                    Primary
-                </ThreeDButton>
-                <ThreeDButton color1="#2dd4bf" color2="#14b8a6" className="text-foreground dark:text-background">
-                    Secondary
-                </ThreeDButton>
+                <StyledButton href="#" variant="blue" size="md" className='flex items-center gap-1 px-3 pr-4'>
+                    <Logo className='w-5 h-5 text-background' />
+                    Groot Studio
+                </StyledButton>
             </div>
         ),
         className: "md:col-span-3 lg:col-span-4 lg:row-span-1 min-h-[120px]"
@@ -114,14 +130,35 @@ const PREVIEW_ITEMS: BentoItem[] = [
     {
         id: 7,
         content: (
-            <div className="w-full h-full flex items-center justify-center p-4 bg-muted/20 group-hover:bg-muted/10 transition-colors duration-500 overflow-hidden">
-                <GitHubStars repo="vercel/next.js" size="lg" className="bg-background" />
+            <div className="flex w-full h-full items-center justify-center gap-2">
+                <div className="w-full h-full flex items-center justify-center p-2 border rounded-xl bg-muted/20 group-hover:bg-muted/10 transition-colors duration-500 overflow-hidden">
+                    <GitHubStars repo="vercel/next.js" size="lg" className="bg-background" />
+                </div>
+                <div className="w-full h-full flex items-center justify-center p-2 border rounded-xl bg-muted/20 group-hover:bg-muted/10 transition-colors duration-500 overflow-hidden">
+                    <DiscordOnline guildId="1151315619246002176" inviteURL="https://discord.gg/5nJmZYA5f2" className="bg-background" />
+                </div>
             </div>
         ),
-        className: "md:col-span-3 lg:col-span-4 lg:row-span-1 min-h-[100px]"
+        className: "md:col-span-3 lg:col-span-4 lg:row-span-1 min-h-[100px] border-none"
     },
     {
         id: 8,
+        content: (
+            <div className="w-full h-full flex items-center justify-center p-4 bg-muted/20 group-hover:bg-muted/10 transition-colors duration-500 overflow-hidden relative">
+                <AvatarTooltips
+                    items={[
+                        { id: 1, name: "GitHub", icon: Github },
+                        { id: 2, name: "Twitter", icon: Twitter },
+                        { id: 3, name: "Discord", icon: DiscordIcon },
+                        { id: 4, name: "YouTube", icon: Youtube },
+                    ]}
+                />
+            </div>
+        ),
+        className: "md:col-span-6 lg:col-span-4 lg:row-span-1 min-h-[100px]"
+    },
+    {
+        id: 9,
         content: (
             <div className="w-full h-full flex items-center justify-center py-3 sm:py-6 px-2 sm:px-[1.3rem] bg-muted/10 group-hover:bg-muted/20 transition-colors duration-500 overflow-hidden">
                 <GithubCalendar username="Subhadipjana95" theme="sunset" showStats={false} className="border-none bg-transparent" />
@@ -130,7 +167,7 @@ const PREVIEW_ITEMS: BentoItem[] = [
         className: "md:col-span-12 lg:col-span-8 lg:row-span-2 min-h-[240px]"
     },
     {
-        id: 9,
+        id: 10,
         content: (
             <div className="w-full h-full flex items-center justify-center p-2 bg-muted/20 group-hover:bg-muted/10 transition-colors duration-500 overflow-hidden">
                 <LogoGrid
