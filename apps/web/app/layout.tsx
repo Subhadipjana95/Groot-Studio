@@ -7,6 +7,7 @@ import { LenisProvider } from "@/components/utilities/lenis-provider"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { cn } from "@workspace/ui/lib/utils";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -21,13 +22,13 @@ const gambarino = localFont({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://grootstudio.vercel.app"),
+  metadataBase: new URL("https://grootstudio.dev"),
   title: {
-    default: "Groot Studio - High-performing, SEO friendly UI Components & Blocks for Modern Web",
+    default: "Groot Studio - UI Component Library",
     template: "%s | Groot Studio",
   },
   description:
-    "Hand-crafted, high-performing, SEO friendly & accessible UI components and blocks designed for modern developers. Built with React, Next.js, Tailwind CSS & Radix UI.",
+    "High-performing, SEO optimised UI components and blocks designed for modern developers. Built with Next.js, TypeScript, Tailwind CSS, Motion & Radix UI.",
   keywords: [
     "ui components",
     "react components",
@@ -40,16 +41,16 @@ export const metadata: Metadata = {
     "web development",
     "design system",
   ],
-  authors: [{ name: "Groot Studio", url: "https://grootstudio.vercel.app" }],
+  authors: [{ name: "Groot Studio", url: "https://grootstudio.dev" }],
   creator: "Groot Studio",
   publisher: "Groot Studio",
 
   // Open Graph
   openGraph: {
-    title: "Groot Studio - High-performing, SEO friendly UI Components & Blocks",
+    title: "Groot Studio - UI Component Library",
     description:
-      "Hand-crafted, high-performing, SEO friendly & accessible components designed for modern developers.",
-    url: "https://grootstudio.vercel.app",
+      "High-performing, SEO optimised UI components and blocks designed for modern developers.",
+    url: "https://grootstudio.dev",
     siteName: "Groot Studio",
     locale: "en_US",
     type: "website",
@@ -58,9 +59,9 @@ export const metadata: Metadata = {
   // Twitter
   twitter: {
     card: "summary_large_image",
-    title: "Groot Studio - Premium UI Components & Blocks",
+    title: "Groot Studio - UI Components Library",
     description:
-      "Hand-crafted, high-performing, SEO friendly & accessible components designed for modern developers.",
+      "High-performing, SEO optimised UI components and blocks designed for modern developers.",
     creator: "@groot_studio",
   },
 
@@ -91,7 +92,7 @@ export const metadata: Metadata = {
 
   // Alternates
   alternates: {
-    canonical: "https://grootstudio.vercel.app",
+    canonical: "https://grootstudio.dev",
   },
 };
 
@@ -117,6 +118,7 @@ export default function RootLayout({
           </LenisProvider>
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
     </html>
   )
 }
