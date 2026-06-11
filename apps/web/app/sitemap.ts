@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { registry } from '@/lib/registry'
 
-const BASE_URL = 'https://grootstudio.vercel.app'
+const BASE_URL = 'https://grootstudio.dev'
 
 export default function sitemap(): MetadataRoute.Sitemap {
 

@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: ComponentPageProps) {
       description,
       images: [
         {
-          url: `https://grootstudio.vercel.app/api/og?title=${encodeURIComponent(component.title)}`,
+          url: `https://grootstudio.dev/api/og?title=${encodeURIComponent(component.title)}`,
           width: 1200,
           height: 630,
         },
@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: ComponentPageProps) {
       card: "summary_large_image",
       title,
       description,
-      images: [`https://grootstudio.vercel.app/api/og?title=${encodeURIComponent(component.title)}`],
+      images: [`https://grootstudio.dev/api/og?title=${encodeURIComponent(component.title)}`],
     },
   };
 }
