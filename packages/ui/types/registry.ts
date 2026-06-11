@@ -78,6 +78,14 @@ export interface ComponentConfig {
     previewHeight?: number;
   }[];
 
+  // ── Visibility
+  /**
+   * Whether this component is visible on the public site.
+   * Defaults to `true` when omitted. Set to `false` to hide
+   * from the components page, slug routes, and sitemap.
+   */
+  visibility?: boolean;
+
   // ── Framework Support
   hasReactVariant?: boolean;
 

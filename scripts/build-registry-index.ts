@@ -75,7 +75,16 @@ async function buildIndex() {
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
 
-export const registry: ComponentConfig[] = ${JSON.stringify(configs, null, 2)};
+/** Complete registry including hidden components. */
+export const fullRegistry: ComponentConfig[] = ${JSON.stringify(configs, null, 2)};
+
+/**
+ * Public registry — only components with visibility !== false.
+ * All page-level consumers should use this export.
+ */
+export const registry: ComponentConfig[] = fullRegistry.filter(
+  (c) => c.visibility !== false,
+);
 
 // ── Filtered views ──────────────────────────────────────────────
 export const freeComponents    = registry.filter((c) => c.tier === "free");

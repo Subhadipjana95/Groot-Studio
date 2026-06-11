@@ -34,7 +34,7 @@ export function Hero() {
         <NeutralButton
           asChild
           label="Templates"
-          className="font-medium"
+          className="font-medium select-none cursor-pointer"
           innerClassName="py-[11px] sm:py-[9px]"
         >
           <Link href="/templates" />
@@ -47,7 +47,7 @@ export function Hero() {
               <span>Components</span>
             </>
           }
-          className="font-medium"
+          className="font-medium select-none cursor-pointer"
         >
           <Link href="/components" />
         </BrandButton>
