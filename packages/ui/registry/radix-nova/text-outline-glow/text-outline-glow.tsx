@@ -7,11 +7,13 @@ export const TextHoverEffect = ({
   duration,
   fontSize = 56,
   colors = ["#eab308", "#ef4444", "#3b82f6", "#06b6d4", "#8b5cf6"],
+  textFill,
 }: {
   text: string
   duration?: number
   fontSize?: number
   colors?: string[]
+  textFill?: string
 }) => {
   const svgRef = useRef<SVGSVGElement>(null)
   const maskGradientRef = useRef(null)
@@ -164,7 +166,7 @@ export const TextHoverEffect = ({
           textAnchor="middle"
           dominantBaseline="middle"
           strokeWidth="0.8"
-          className={`fill-transparent font-[helvetica] font-bold ${
+          className={`${textFill ? '' : 'fill-muted'} font-[helvetica] font-bold ${
             idx === 0
               ? "stroke-neutral-300 dark:stroke-neutral-800"
               : idx === 1
@@ -174,6 +176,7 @@ export const TextHoverEffect = ({
           stroke={idx === 2 ? "url(#textGradient)" : undefined}
           mask={idx === 2 ? "url(#textMask)" : undefined}
           style={{
+            ...(textFill ? { fill: textFill } : {}),
             fontSize,
             opacity: idx === 0 && !hovered ? 0 : idx === 0 ? 0.7 : 1,
           }}
