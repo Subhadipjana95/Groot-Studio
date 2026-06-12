@@ -41,7 +41,7 @@ const PREVIEW_ITEMS: BentoItem[] = [
                     animationDuration={5}
                     className="w-full h-full border-none"
                 >
-                    <div className="max-w-xl text-center relative z-10 px-6 space-y-6">
+                    <div className="max-w-xl text-center relative z-10 px-6 space-y-3 sm:space-y-6">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-400/10 dark:bg-rose-800/10 border border-rose-600/20 text-rose-500/60 text-xs font-medium backdrop-blur-md">
                             <span className="size-1.5 rounded-full bg-rose-600/60 animate-pulse" />
                             Introducing Groot Studio
@@ -57,7 +57,7 @@ const PREVIEW_ITEMS: BentoItem[] = [
                 </AnimatedBars>
             </div>
         ),
-        className: "md:col-span-6 lg:col-span-8 lg:row-span-2 min-h-[120px]"
+        className: "row-span-1 md:col-span-6 lg:col-span-8 lg:row-span-2 min-h-[120px]"
     },
     {
         id: 2,
@@ -192,7 +192,7 @@ const PREVIEW_ITEMS: BentoItem[] = [
 
 export function ComponentPreviews() {
     return (
-        <section className="relative pt-8 sm:pt-16 overflow-hidden border-b border-border/60">
+        <section className="relative pt-6 sm:pt-16 overflow-hidden border-b border-border/60">
             <div className="mx-auto max-w-full lg:max-w-6xl relative z-10">
                 <BentoGrid
                     items={PREVIEW_ITEMS}
@@ -203,7 +203,7 @@ export function ComponentPreviews() {
                             </h1>
                         ) as unknown as string,
                         subtitle: (
-                            <p className="text-center max-w-[18rem] sm:max-w-lg text-muted-foreground text-sm sm:text-lg leading-snug mx-auto">
+                            <p className="hidden sm:block text-center max-w-[18rem] sm:max-w-lg text-muted-foreground text-sm sm:text-lg leading-snug mx-auto">
                                 A boutique collection of UI blocks, templates, and components <span className="hidden sm:inline-block">meticulously crafted for the modern web</span>
                             </p>
                         ) as unknown as string

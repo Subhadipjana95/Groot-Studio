@@ -53,11 +53,11 @@ export function Footer() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 border-y divide-y sm:divide-y-0 md:divide-x divide-border">
           {footerColumns.map((col, index) => (
-            <div key={index} className="p-6 sm:p-8 flex flex-col gap-4 text-left">
+            <div key={index} className="p-6 sm:p-8 flex flex-col gap-3 sm:gap-4 text-left">
               <h4 className="text-xs font-semibold tracking-widest text-muted-foreground uppercase">
                 {col.title}
               </h4>
-              <ul className="flex flex-col gap-2.5">
+              <ul className="flex flex-col gap-1.5 sm:gap-2.5">
                 {col.links.map((link, idx) => {
                   const isExternal = link.href.startsWith("http");
                   return (

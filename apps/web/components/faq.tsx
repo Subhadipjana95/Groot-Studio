@@ -10,11 +10,11 @@ import { DATA } from "@/data/Data"
 export function FAQ() {
   return (
     <section className="relative isolate w-full overflow-hidden text-center">
-      <div className="flex flex-col justify-center items-center w-full gap-3 sm:gap-4 border-b border-border pt-8 sm:pt-16 py-6 sm:py-12 px-3 sm:px-6">
+      <div className="flex flex-col justify-center items-center w-full gap-3 sm:gap-4 border-b border-border sm:pt-16 py-6 sm:py-12 px-3 sm:px-6">
         <h1 className="text-3xl md:text-5xl font-normal text-foreground">
           Frequently <span className="text-brand1 font-[gambarino] font-medium">Asked</span> Questions
         </h1>
-        <p className="text-center max-w-xs sm:max-w-lg text-muted-foreground text-sm sm:text-lg leading-snug mx-auto">
+        <p className="hidden sm:block text-center max-w-xs sm:max-w-lg text-muted-foreground text-sm sm:text-lg leading-snug mx-auto">
           Here are answers to some of the most common questions about our platform
         </p>
       </div>
