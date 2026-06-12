@@ -1,6 +1,6 @@
 export const footerHeader = {
   title: "Start crafting beautiful user interfaces.",
-  description: "Premium, SEO-friendly, and accessible components designed for modern web developers.",
+  description: "High-performing & SEO-optimised components designed for modern developers.",
   ctaButton: {
     label: "Browse Templates",
     href: "/templates",

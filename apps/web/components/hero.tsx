@@ -26,7 +26,7 @@ export function Hero() {
           <span className="text-brand1 [text-shadow:0_0_12px_var(--brand1)]">Beautifully</span> Crafted Blocks for <span className="text-brand1 [text-shadow:0_0_12px_var(--brand1)]">Modern</span> UI
         </h1>
         <p className="text-center max-w-xs sm:max-w-lg text-muted-foreground text-sm sm:text-lg leading-snug">
-          Groot Studio - <span className="hidden sm:inline-block">a</span> Library of High-Performing, SEO Friendly Components designed for Modern <span className="hidden sm:inline-block">Developers</span> <span className="inline-block sm:hidden">Devs</span>
+          Groot Studio - <span className="hidden sm:inline-block">a</span> Library of High-Performing, SEO <span className="inline-block sm:hidden">Friendly </span><span className="hidden sm:inline-block">Optimised</span>  Components Designed for Modern <span className="hidden sm:inline-block">Developers</span> <span className="inline-block sm:hidden">Devs</span>
         </p>
       </div>
 
