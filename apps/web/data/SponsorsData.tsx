@@ -11,8 +11,8 @@ export const SPONSOR_TIERS = [
     icon: DiamondIcon,
     color: "text-blue-400",
     description: "The ultimate level of support for Groot Studio.",
-    minAmount: 100,
-    sponsorUrl: `${DATA.donateURL}`
+    minAmount: 50,
+    sponsorUrl: "https://buy.polar.sh/polar_cl_2FP0jQNoZm2WktPebV1CEFsVaJ6sBE8PajSMu39fTnN"
   },
   {
     id: "gold",
@@ -20,8 +20,8 @@ export const SPONSOR_TIERS = [
     icon: GoldIcon,
     color: "text-yellow-400",
     description: "High-impact sponsorship for major features.",
-    minAmount: 50,
-    sponsorUrl: `${DATA.donateURL}`
+    minAmount: 40,
+    sponsorUrl: "https://buy.polar.sh/polar_cl_AWXfZ0JpVWFWMlrcJC0hLBPMwRt9sVWPqkFfq0VZdEB"
   },
   {
     id: "silver",
@@ -29,8 +29,8 @@ export const SPONSOR_TIERS = [
     icon: SilverIcon,
     color: "text-slate-300",
     description: "Helping us maintain and grow the library.",
-    minAmount: 20,
-    sponsorUrl: `${DATA.donateURL}`
+    minAmount: 30,
+    sponsorUrl: "https://buy.polar.sh/polar_cl_rfTM8TF98FsCw8qTMJelIbuFuw88d7A6hz2uq2g2rUl"
   },
   {
     id: "bronze",
@@ -38,8 +38,8 @@ export const SPONSOR_TIERS = [
     icon: BronzeIcon,
     color: "text-orange-400",
     description: "Supporting the community and open source.",
-    minAmount: 1,
-    sponsorUrl: `${DATA.donateURL}`
+    minAmount: 20,
+    sponsorUrl: "https://buy.polar.sh/polar_cl_cN2lS1AIkSL9k9zhtega2raCmLKryUR7Z4rvH4MpZjr"
   }
 ]
 
