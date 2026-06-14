@@ -14,7 +14,7 @@ export const footerColumns = [
       { label: "Components", href: "/components" },
       { label: "Templates", href: "/templates" },
       { label: "Pricing", href: "/pricing" },
-      { label: "Blocks", href: "/components" },
+      { label: "Blocks", href: "/blocks" },
     ],
   },
   {
@@ -30,27 +30,24 @@ export const footerColumns = [
     title: "Company",
     links: [
       { label: "About Us", href: "/about" },
-      { label: "Cookie Policy", href: "/cookie-policy" },
-      { label: "Privacy Policy", href: "/privacy" },
-      { label: "Terms of Service", href: "/terms" },
+      { label: "Email", href: "mailto:queries@grootstudio.dev" },
+      { label: "Github", href: "https://github.com/Subhadipjana95/Groot-Studio" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/subhadipjana095" },
+      { label: "Discord", href: "https://discord.gg/5nJmZYA5f2" },
     ],
   },
   {
-    title: "Socials",
+    title: "Legal",
     links: [
-      { label: "GitHub", href: "https://github.com/Subhadipjana95/Groot-Studio" },
-      { label: "Twitter", href: "https://x.com/Subhadip53874" },
-      { label: "Discord", href: "https://discord.gg/5nJmZYA5f2" },
-      { label: "YouTube", href: "#" },
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms of Service", href: "/terms" },
+      { label: "Cookie Policy", href: "/cookie-policy" },
+      { label: "Refund Policy", href: "/refund-policy" },
+      { label: "Sponsorship Terms", href: "/sponsorship-terms" },
     ],
-  },
+  }
 ];
 
 export const footerBottom = {
-  copyright: `© ${new Date().getFullYear()} Groot Studio Inc. All rights reserved.`,
-  links: [
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms of Service", href: "/terms" },
-    { label: "Cookie Policy", href: "/cookie-policy" },
-  ],
+  copyright: `© ${new Date().getFullYear()} Groot Studio. All rights reserved.`,
 };
