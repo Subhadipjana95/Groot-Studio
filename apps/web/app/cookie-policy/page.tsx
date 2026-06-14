@@ -1,4 +1,4 @@
-import { DATA } from "@/data/Data"
+import { cookiePolicy } from "@/data/CookiePolicy.data"
 import SectionDivider from "@/components/utilities/SectionDivider"
 
 export default function CookiePolicyPage() {
@@ -21,7 +21,7 @@ export default function CookiePolicyPage() {
 
                 {/* Sections */}
                 <div className="space-y-4 md:space-y-6">
-                    {DATA.cookiePolicy.map(({ icon: Icon, title, content }) => (
+                    {cookiePolicy.map(({ icon: Icon, title, content }) => (
                         <div
                             key={title}
                             className="group flex gap-5 rounded-xl border border-border/50 bg-card p-6 transition-all duration-300 hover:border-border/80 hover:bg-card/80"
@@ -35,9 +35,9 @@ export default function CookiePolicyPage() {
                                 <h2 className="text-base font-medium text-foreground tracking-tight">
                                     {title}
                                 </h2>
-                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                <div className="text-sm text-muted-foreground leading-relaxed">
                                     {content}
-                                </p>
+                                </div>
                             </div>
                         </div>
                     ))}

@@ -1,5 +1,7 @@
 import Link from "next/link"
-import { DATA } from "@/data/Data"
+import { DATA } from "@/data/Root.data"
+import { aboutData } from "@/data/About.data"
+import { navbarData } from "@/data/Navbar.data"
 import SectionDivider from "@/components/utilities/SectionDivider"
 
 export default function AboutPage() {
@@ -22,7 +24,7 @@ export default function AboutPage() {
 
                 {/* Stats row */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-14">
-                    {DATA.stats.map(({ label, value }) => (
+                    {aboutData.stats.map(({ label, value }) => (
                         <div
                             key={label}
                             className="rounded-xl border border-border/50 bg-card p-5 space-y-1"
@@ -37,12 +39,9 @@ export default function AboutPage() {
 
                 {/* Mission */}
                 <div className="rounded-xl border border-border/50 bg-card p-7 mb-10 space-y-3">
-                    <h2 className="text-base font-medium text-foreground tracking-tight">Mission</h2>
+                    <h2 className="text-base font-medium text-foreground tracking-tight">{aboutData.mission.title}</h2>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                        The goal is simple: eliminate repetitive UI work. Instead of rebuilding the same hero,
-                        pricing table, or testimonial section from scratch on every project, Groot Studio gives you
-                        battle-tested, accessible, production-ready starting points you actually own - no proprietary
-                        runtime, no lock-in, just code.
+                        {aboutData.mission.content}
                     </p>
                 </div>
 
@@ -50,7 +49,7 @@ export default function AboutPage() {
                 <div className="space-y-3">
                     <p className="text-sm font-medium text-muted-foreground">Find Us</p>
                     <div className="flex flex-wrap gap-3">
-                        {DATA.socials.map(({ name, href, icon: Icon }) => (
+                        {navbarData.socials.map(({ name, href, icon: Icon }) => (
                             <Link
                                 key={name}
                                 href={href}

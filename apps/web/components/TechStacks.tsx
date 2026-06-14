@@ -7,7 +7,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@workspace/ui/components/tooltip"
-import { DATA } from "@/data/Data"
+import { DATA } from "@/data/Root.data"
 
 function TechStacks() {
   return (

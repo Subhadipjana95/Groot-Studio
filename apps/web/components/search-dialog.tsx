@@ -13,7 +13,7 @@ import { Dialog, DialogContent, DialogTitle } from "@workspace/ui/components/dia
 import { SearchIcon } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { DATA } from "@/data/Data"
+import { navbarData } from "@/data/Navbar.data"
 import { registry } from "@/lib/registry"
 
 
@@ -44,7 +44,7 @@ export function NavSearchDialog({ open, onOpenChange }: NavSearchDialogProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className="gap-0 p-0 sm:max-w-lg border-6 border-input rounded-xl overflow-hidden"
+        className="gap-0 p-0 sm:max-w-lg border ring-4 ring-muted border-input rounded-2xl overflow-hidden"
         showCloseButton={false}
       >
         <DialogTitle className="sr-only">Search</DialogTitle>
@@ -59,7 +59,7 @@ export function NavSearchDialog({ open, onOpenChange }: NavSearchDialogProps) {
               <p className="text-xs text-muted-foreground">No results found</p>
             </CommandEmpty>
             <CommandGroup heading="Quick Actions">
-              {DATA.SEARCH_DATA.map((item) => {
+              {navbarData.SEARCH_DATA.map((item) => {
                 const { id, title, description, category, icon: Icon } = item;
                 const destination = 'destination' in item ? item.destination as string : undefined;
                 const isExternal = destination?.startsWith("http")

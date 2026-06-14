@@ -1,7 +1,7 @@
 import { Button } from "@workspace/ui/components/button";
 import { Check } from "lucide-react";
 import { cn } from "@workspace/ui/lib/utils";
-import { DATA } from "@/data/Data"
+import { DATA } from "@/data/Root.data"
 import SectionDivider from "@/components/utilities/SectionDivider";
 
 const Pricing = () => {
