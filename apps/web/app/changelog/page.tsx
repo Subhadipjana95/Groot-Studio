@@ -1,5 +1,5 @@
 import SectionDivider from "@/components/utilities/SectionDivider";
-import { DATA } from "@/data/Data";
+import { DATA } from "@/data/Root.data";
 
 export default function ChangelogPage() {
   return (

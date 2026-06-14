@@ -18,27 +18,28 @@ import {
   DrawerTrigger,
   DrawerClose,
 } from "@workspace/ui/components/drawer"
-import { DATA } from "@/data/Data"
+import { DATA } from "@/data/Root.data"
+import { navbarData } from "@/data/Navbar.data"
 import BrandButton from "@workspace/ui/components/buttonVarients/BrandButton"
 import { Logo as LogoIcon } from "@/components/ui/icons/logo"
 
 const menuLinks = [
-  { label: "Documentation", href: DATA.resources.find((r) => r.name === "Docs")?.href || "/components/installation" },
-  { label: "Components", href: DATA.product.find((p) => p.name === "Components")?.href || "/components" },
-  { label: "Templates", href: DATA.product.find((p) => p.name === "Templates")?.href || "/templates" },
-  { label: "Sponsors", href: DATA.resources.find((r) => r.name === "Sponsors")?.href || "/sponsors" },
-  { label: "Changelog", href: DATA.resources.find((r) => r.name === "Changelog")?.href || "/changelog" },
-  { label: "Blog", href: DATA.resources.find((r) => r.name === "Blog")?.href || "https://www.a063.xyz/blog" },
-  { label: "Pricing", href: DATA.product.find((p) => p.name === "Pricing")?.href || "/pricing" }
+  { label: "Documentation", href: navbarData.resources.find((r) => r.name === "Docs")?.href || "/components/installation" },
+  { label: "Components", href: navbarData.product.find((p) => p.name === "Components")?.href || "/components" },
+  { label: "Templates", href: navbarData.product.find((p) => p.name === "Templates")?.href || "/templates" },
+  { label: "Sponsors", href: navbarData.resources.find((r) => r.name === "Sponsors")?.href || "/sponsors" },
+  { label: "Changelog", href: navbarData.resources.find((r) => r.name === "Changelog")?.href || "/changelog" },
+  { label: "Blog", href: navbarData.resources.find((r) => r.name === "Blog")?.href || "https://www.a063.xyz/blog" },
+  { label: "Pricing", href: navbarData.product.find((p) => p.name === "Pricing")?.href || "/pricing" }
 ]
 
 const sectionLinks = [
-  { label: "About Us", href: DATA.company.find((c) => c.name === "About Us")?.href || "/about" },
-  { label: "Cookie Policy", href: DATA.company.find((c) => c.name === "Cookie Policy")?.href || "/cookie-policy" },
-  { label: "Privacy Policy", href: DATA.company.find((c) => c.name === "Privacy Policy")?.href || "/privacy" },
-  { label: "Terms of Service", href: DATA.company.find((c) => c.name === "Service Terms")?.href || "/terms" },
-  { label: "GitHub", href: DATA.socials.find((s) => s.name === "GitHub")?.href || "https://github.com/Subhadipjana95/Groot-Studio" },
-  { label: "Twitter", href: DATA.socials.find((s) => s.name === "Twitter")?.href || "https://x.com/Subhadip53874" },
+  { label: "About Us", href: navbarData.company.find((c) => c.name === "About Us")?.href || "/about" },
+  { label: "Cookie Policy", href: navbarData.company.find((c) => c.name === "Cookie Policy")?.href || "/cookie-policy" },
+  { label: "Privacy Policy", href: navbarData.company.find((c) => c.name === "Privacy Policy")?.href || "/privacy" },
+  { label: "Terms of Service", href: navbarData.company.find((c) => c.name === "Service Terms")?.href || "/terms" },
+  { label: "GitHub", href: navbarData.socials.find((s) => s.name === "GitHub")?.href || "https://github.com/Subhadipjana95/Groot-Studio" },
+  { label: "Twitter", href: navbarData.socials.find((s) => s.name === "Twitter")?.href || "https://x.com/Subhadip53874" },
   { label: "Discord", href: DATA.DISCORD_INVITE_LINK || "https://discord.gg/5nJmZYA5f2" },
 ]
 
@@ -114,7 +115,7 @@ export function Navbar() {
 
             {/* Nav Links - Desktop */}
             <ul className="hidden list-none h-full md:grid grid-cols-3 divide-x divide-border border-x">
-              {DATA.NAV_LINKS.map(({ href, label }) => {
+              {navbarData.NAV_LINKS.map(({ href, label }) => {
                 const isActive = pathname === href || ((href as string) !== "/" && pathname.startsWith(href))
                 return (
                   <li key={href} className="h-full flex items-center justify-center">

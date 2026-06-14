@@ -1,7 +1,7 @@
-import { cookiePolicy } from "@/data/CookiePolicy.data"
+import { sponsorshipTerms } from "@/data/SponsorshipTerms.data"
 import SectionDivider from "@/components/utilities/SectionDivider"
 
-export default function CookiePolicyPage() {
+export default function SponsorshipTermsPage() {
     return (
         <div className="overflow-x-clip w-full">
             <main className='max-w-6xl mx-auto relative pt-20 py-12 md:pt-24 sm:border-x px-6 md:px-12'>
@@ -12,16 +12,16 @@ export default function CookiePolicyPage() {
                         Last updated {new Date().toLocaleDateString()}
                     </p>
                     <h1 className="font-normal font-sans text-4xl tracking-tight sm:text-5xl text-foreground">
-                        <span className="text-brand1 [text-shadow:0_0_12px_var(--brand1)] font-[gambarino] font-medium">Cookie</span> Policy
+                        <span className="text-brand1 [text-shadow:0_0_12px_var(--brand1)] font-[gambarino] font-medium">Sponsorship</span> Terms
                     </h1>
                     <p className="max-w-2xl text-lg text-muted-foreground">
-                        Groot Studio is a lightweight, open-source component library. We keep our use of browser storage to an absolute minimum - here&apos;s exactly what we store and why.
+                        Please review the terms and conditions that govern the Groot Studio sponsorship program.
                     </p>
                 </div>
 
                 {/* Sections */}
                 <div className="space-y-4 md:space-y-6">
-                    {cookiePolicy.map(({ icon: Icon, title, content }) => (
+                    {sponsorshipTerms.map(({ icon: Icon, title, content }) => (
                         <div
                             key={title}
                             className="group flex gap-5 rounded-xl border border-border/50 bg-card p-6 transition-all duration-300 hover:border-border/80 hover:bg-card/80"

@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { TestimonialCard } from "@/components/ui/otherBlocks/testimonial-card"
-import { DATA } from "@/data/Data"
+import { DATA } from "@/data/Root.data"
 import { ChevronDown } from "lucide-react"
 
 export function Testimonials() {
