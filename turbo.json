@@ -4,6 +4,15 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
+      "env": [
+        "RESEND_API_KEY",
+        "SPONSOR_NOTIFY_EMAIL",
+        "SPONSOR_FROM_EMAIL",
+        "SPONSOR_BCC_EMAIL",
+        "IMAGEKIT_PUBLIC_KEY",
+        "IMAGEKIT_PRIVATE_KEY",
+        "IMAGEKIT_URL_ENDPOINT"
+      ],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
