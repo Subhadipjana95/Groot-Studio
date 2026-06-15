@@ -70,7 +70,7 @@ export default async function SponsorsPage() {
                 ))}
 
                 {/* Placeholder Template Cards */}
-                {Array.from({ length: tier.id === "diamond" ? 1 : tier.id === "gold" ? 2 : tier.id === "silver" ? 3 : tier.id === "bronze" ? 4 : 0 }).map((_, i) => (
+                {Array.from({ length: tier.id === "diamond" ? 4 : tier.id === "gold" ? 8 : tier.id === "silver" ? 10 : tier.id === "bronze" ? 12 : 0 }).map((_, i) => (
                   <PlaceholderCard key={i} tier={tier} />
                 ))}
               </div>
@@ -192,15 +192,17 @@ function PlaceholderCard({ tier }: { tier: any }) {
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "group relative flex flex-col items-center justify-center rounded-lg border border-dashed border-border/50 bg-muted/20 transition-all duration-300 dark:hover:border-brand2/40 hover:border-brand1/40 hover:bg-muted/10 hover:shadow-xl dark:hover:shadow-brand2/5 hover:shadow-brand1/5",
-        tier.id === "diamond" ? "min-h-[180px] p-6 gap-7" : tier.id === "gold" ? "min-h-[160px] gap-8" : "min-h-[140px] gap-8"
+        "group relative flex flex-col items-center justify-center rounded-lg border border-dashed border-border/50 bg-muted/20 transition-all duration-300  hover:border-brand1/40 hover:bg-muted/10 hover:shadow-xl hover:shadow-brand1/5",
+        tier.id === "diamond" ? "min-h-[260px] p-6 gap-8" : tier.id === "gold" ? "min-h-[220px] gap-7" : tier.id === "silver" ? "min-h-[180px] gap-6" : "min-h-[140px] gap-4"
       )}
     >
       <div className={cn(
         "relative flex items-center justify-center rounded-full bg-background group-hover:bg-muted/40",
-        tier.id === "diamond" ? "size-20" : tier.id === "gold" ? "size-16" : "size-12"
+        tier.id === "diamond" ? "size-40" : tier.id === "gold" ? "size-30" : tier.id === "silver" ? "size-20" : "size-16"
       )}>
-        <Plus className="size-6 text-muted-foreground dark:group-hover:text-brand2 group-hover:text-brand1 transition-all duration-300 group-hover:rotate-180 ease-in-out" />
+        <Plus className={cn("size-6 text-muted-foreground group-hover:text-brand1 transition-all duration-300 group-hover:rotate-180 ease-in-out",
+          tier.id === "diamond" ? "size-10" : tier.id === "gold" ? "size-8" : tier.id === "silver" ? "size-6" : "size-4"
+         )}/>
       </div>
 
       <div className="text-center space-y-0.5">

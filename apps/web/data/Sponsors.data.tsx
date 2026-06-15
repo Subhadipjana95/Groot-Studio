@@ -12,7 +12,8 @@ export const SPONSOR_TIERS = [
     color: "text-blue-400",
     description: "The ultimate level of support for Groot Studio.",
     minAmount: 50,
-    sponsorUrl: "https://dodo.pe/dncu4yj8ye"
+    sponsorUrl: "https://dodo.pe/dncu4yj8ye?redirect_url=https%3A%2F%2Fgrootstudio.dev%2Fsponsors%2Fonboarding%3Ftier%3Ddiamond"
+    // Success URL - https://grootstudio.dev/sponsors/onboarding?tier=diamond
   },
   {
     id: "gold",
@@ -21,7 +22,8 @@ export const SPONSOR_TIERS = [
     color: "text-yellow-400",
     description: "High-impact sponsorship for major features.",
     minAmount: 40,
-    sponsorUrl: "https://dodo.pe/3q13u7cebuq"
+    sponsorUrl: "https://dodo.pe/3q13u7cebuq?redirect_url=https%3A%2F%2Fgrootstudio.dev%2Fsponsors%2Fonboarding%3Ftier%3Dgold"
+    // Success URL - https://grootstudio.dev/sponsors/onboarding?tier=gold
   },
   {
     id: "silver",
@@ -30,7 +32,9 @@ export const SPONSOR_TIERS = [
     color: "text-slate-300",
     description: "Helping us maintain and grow the library.",
     minAmount: 30,
-    sponsorUrl: "https://dodo.pe/qchi8b30zi"
+    sponsorUrl: "https://dodo.pe/qchi8b30zi?redirect_url=https%3A%2F%2Fgrootstudio.dev%2Fsponsors%2Fonboarding%3Ftier%3Dsilver"
+    // Success URL - https://grootstudio.dev/sponsors/onboarding?tier=silver
+
   },
   {
     id: "bronze",
@@ -39,7 +43,8 @@ export const SPONSOR_TIERS = [
     color: "text-orange-400",
     description: "Supporting the community and open source.",
     minAmount: 20,
-    sponsorUrl: "https://dodo.pe/78qionx2a8c"
+    sponsorUrl: "https://dodo.pe/78qionx2a8c?redirect_url=https%3A%2F%2Fgrootstudio.dev%2Fsponsors%2Fonboarding%3Ftier%3Dbronze"
+    // Success URL - https://grootstudio.dev/sponsors/onboarding?tier=bronze
   }
 ]
 
