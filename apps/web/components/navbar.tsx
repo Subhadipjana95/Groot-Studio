@@ -22,6 +22,7 @@ import { DATA } from "@/data/Root.data"
 import { navbarData } from "@/data/Navbar.data"
 import BrandButton from "@workspace/ui/components/buttonVarients/BrandButton"
 import { Logo as LogoIcon } from "@/components/ui/icons/logo"
+import { SponsorDialog } from "@/components/sponsor-dialog"
 
 const menuLinks = [
   { label: "Documentation", href: navbarData.resources.find((r) => r.name === "Docs")?.href || "/components/installation" },
@@ -48,6 +49,7 @@ export function Navbar() {
   const { setTheme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)
   const [searchOpen, setSearchOpen] = React.useState(false)
+  const [sponsorOpen, setSponsorOpen] = React.useState(false)
 
   React.useEffect(() => { setMounted(true) }, [])
 
@@ -67,7 +69,7 @@ export function Navbar() {
         </defs>
       </svg>
       <LogoIcon className="w-7 h-7 [&_path]:fill-[url(#brand-gradient2-svg)] [&_path]:stroke-[url(#brand-gradient2-svg)]" />
-      <span className="text-lg text-muted-foreground tracking-tight group-hover:text-primary">Studio.</span>
+      <span className="text-lg text-muted-foreground tracking-tight group-hover:text-primary">Studio</span>
     </Link>
   )
 
@@ -155,14 +157,12 @@ export function Navbar() {
             <GitHubStars repo={DATA.GITHUB_REPO_LINK} className="col-span-1 border-none h-full rounded-none hover:bg-primary/10 hover:text-primary text-muted-foreground" />
 
             {/* Donate Button */}
-            <div className="col-span-2 h-full flex items-center justify-center border-l">
+            <div className="col-span-2 h-full flex items-center justify-center border-l px-1">
               <BrandButton
-                href={DATA.donateURL!}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Support Groot Studio"
-                label="Donate"
-                className="font-medium ml-1.5"
+                onClick={() => setSponsorOpen(true)}
+                aria-label="Sponsor Groot Studio"
+                label="Sponsor Us"
+                className="font-medium ml-1.5 cursor-pointer"
               />
             </div>
           </div>
@@ -312,12 +312,10 @@ export function Navbar() {
                 <div className="p-6 border-t mt-auto shrink-0 bg-background/50 backdrop-blur-xs flex justify-center">
                   <DrawerClose asChild>
                     <BrandButton
-                      href={DATA.donateURL!}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      onClick={() => setSponsorOpen(true)}
                       aria-label="Support Groot Studio"
-                      label="Donate"
-                      className="w-full font-medium"
+                      label="Sponsor Us"
+                      className="w-full font-medium cursor-pointer"
                       innerClassName="text-lg"
                     />
                   </DrawerClose>
@@ -329,6 +327,7 @@ export function Navbar() {
       </nav>
 
       <NavSearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
+      <SponsorDialog open={sponsorOpen} onOpenChange={setSponsorOpen} />
     </>
   )
 }
