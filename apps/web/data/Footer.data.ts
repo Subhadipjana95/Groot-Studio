@@ -9,11 +9,12 @@ export const footerHeader = {
 
 export const footerColumns = [
   {
-    title: "Product",
+    title: "Studio",
     links: [
+      { label: "Overview", href: "/" },
       { label: "Components", href: "/components" },
       { label: "Templates", href: "/templates" },
-      { label: "Pricing", href: "/pricing" },
+      // { label: "Pricing", href: "/pricing" },
       { label: "Blocks", href: "/blocks" },
     ],
   },
@@ -21,9 +22,9 @@ export const footerColumns = [
     title: "Resources",
     links: [
       { label: "Documentation", href: "/components/installation" },
-      { label: "Sponsors", href: "/sponsors" },
       { label: "Changelog", href: "/changelog" },
-      { label: "Blog", href: "https://www.a063.xyz/blog" },
+      { label: "Sponsors", href: "/sponsors" },
+      { label: "Blog", href: "https://blog.a063.xyz" },
     ],
   },
   {

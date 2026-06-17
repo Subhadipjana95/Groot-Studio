@@ -36,6 +36,11 @@ export function FAQ() {
             </AccordionItem>
           ))}
         </Accordion>
+        <div className="py-6 pl-4 sm:pl-10 pr-3 sm:pr-6 border-t border-border">
+          <p className="text-sm sm:text-base">
+            Couldn't find answer to your question? Ask your query on <a href="mailto:queries@grootstudio.dev" className="hover:text-brand1/80 underline underline-offset-2 font-medium">queries@grootstudio.dev</a>
+          </p>
+        </div>
       </div>
     </section>
   );
