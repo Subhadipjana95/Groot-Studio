@@ -50,7 +50,8 @@ export default function Page() {
   )
 }
 ```
-**Note:** The import path `@/components/ui/sliding-button` assumes your project has a path alias configured (common in **[Next.js](https://nextjs.org/docs)** and similar frameworks). Adjust the path to match your project's structure if needed.
+> [!Note]
+> The import path `@/components/ui/sliding-button` assumes your project has a path alias configured (common in **[Next.js](https://nextjs.org/docs)** and similar frameworks). Adjust the path to match your project's structure if needed.
 
 <p align="center">
   <br />
