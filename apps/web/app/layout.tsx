@@ -9,6 +9,7 @@ import { Footer } from "@/components/footer"
 import { cn } from "@workspace/ui/lib/utils";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next"
+import { Toaster } from "@workspace/ui/registry/radix-nova/pebble-toast/pebble-toast";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -114,6 +115,7 @@ export default function RootLayout({
             <Navbar />
             <div className="relative flex flex-col w-full min-h-dvh font-sans bg-background selection:bg-brand1/15 selection:text-brand1/75">
               {children}
+              <Toaster />
             </div>
             <Footer />
           </LenisProvider>
