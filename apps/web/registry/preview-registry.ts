@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:previews
-// Last generated: 2026-06-11T19:17:01.077Z
+// Last generated: 2026-07-05T11:20:27.231Z
 // ─────────────────────────────────────────────────────────────────
 
 import dynamic from "next/dynamic";
@@ -97,6 +97,14 @@ export const previewRegistry = {
   ),
   "logo-marquee": dynamic(
     () => import("./previews/logo-marquee/logo-marquee.preview"),
+    { ssr: false, loading: () => null }
+  ),
+  "pebble-toast": dynamic(
+    () => import("./previews/pebble-toast/pebble-toast.preview"),
+    { ssr: false, loading: () => null }
+  ),
+  "pebble-toast-variant01": dynamic(
+    () => import("./previews/pebble-toast/pebble-toast-variant01.preview"),
     { ssr: false, loading: () => null }
   ),
   "press-button": dynamic(

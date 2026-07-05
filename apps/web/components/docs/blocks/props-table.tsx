@@ -1,6 +1,32 @@
 import type { PropDefinition } from "@workspace/ui/types/registry";
 import { Check, X } from "lucide-react";
 
+function splitType(typeStr: string): string[] {
+  const result: string[] = [];
+  let current = "";
+  let depth = 0;
+
+  for (let i = 0; i < typeStr.length; i++) {
+    const char = typeStr[i];
+    if (char === "(" || char === "<" || char === "{") {
+      depth++;
+      current += char;
+    } else if (char === ")" || char === ">" || char === "}") {
+      depth = Math.max(0, depth - 1);
+      current += char;
+    } else if (char === "|" && depth === 0) {
+      result.push(current.trim());
+      current = "";
+    } else {
+      current += char;
+    }
+  }
+  if (current) {
+    result.push(current.trim());
+  }
+  return result;
+}
+
 export function PropsTable({ props }: { props: PropDefinition[] }) {
   if (!props || props.length === 0) {
     return (
@@ -27,15 +53,31 @@ export function PropsTable({ props }: { props: PropDefinition[] }) {
             <tr key={prop.name} className="border-b transition-colors hover:bg-muted/30">
               <td className="p-2 md:p-4 align-middle font-mono font-bold text-primary">{prop.name}</td>
               <td className="p-2 md:p-4 align-middle">
-                <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs text-secondary-foreground">
-                  {prop.type}
-                </code>
+                <div className="flex flex-wrap gap-1 items-center font-mono text-xs">
+                  {splitType(prop.type).map((t, idx) => (
+                    <span key={idx} className="inline-flex items-center gap-1 w-fit">
+                      {idx > 0 && <span className="text-muted-foreground/40 font-sans">|</span>}
+                      <code className="inline-block rounded bg-muted px-1 py-0.5 text-secondary-foreground/80 border max-w-[240px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[500px] wrap-break-word whitespace-normal">
+                        {t}
+                      </code>
+                    </span>
+                  ))}
+                </div>
               </td>
               <td className="p-2 md:p-4 align-middle font-mono text-xs text-muted-foreground">
-                {prop.default !== "-" ? (
-                  <code className="rounded bg-muted/50 px-1.5 py-0.5">{prop.default}</code>
+                {prop.default && prop.default !== "-" ? (
+                  <div className="flex flex-wrap gap-1 items-center">
+                    {splitType(prop.default).map((d, idx) => (
+                      <span key={idx} className="inline-flex items-center gap-1 w-fit">
+                        {idx > 0 && <span className="text-muted-foreground/40 font-sans">|</span>}
+                        <code className="inline-block rounded bg-muted/50 px-1 py-0.5 border w-fit whitespace-nowrap">
+                          {d}
+                        </code>
+                      </span>
+                    ))}
+                  </div>
                 ) : (
-                  "-"
+                  <code className="inline-block rounded bg-muted/50 px-1 py-0.5 border w-fit whitespace-nowrap">-</code>
                 )}
               </td>
               <td className="p-2 md:p-4 align-middle text-center">

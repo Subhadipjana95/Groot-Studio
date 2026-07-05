@@ -83,13 +83,13 @@ export const config: ComponentConfig = {
     },
     {
       name: "cellShape",
-      type: "'rounded' | 'circle'",
+      type: "rounded | circle",
       default: "rounded",
       description: "Visual shape of the contribution cells",
     },
     {
       name: "theme",
-      type: "string | ThemeColors",
+      type: "string | ThemeColors{{}}",
       default: "github",
       description:
         "Color theme (github, blue, sunset, purple, gray) or custom object",

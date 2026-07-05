@@ -72,8 +72,8 @@ export const config: ComponentConfig = {
     },
     {
       name: "variant",
-      type: "'default' | 'outline'",
-      default: "'default'",
+      type: "default | outline",
+      default: "default",
       required: false,
       description: "The visual style of the button.",
     },

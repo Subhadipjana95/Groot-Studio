@@ -50,15 +50,15 @@ export const config: ComponentConfig = {
     },
     {
       name: "defaultView",
-      type: "'list' | 'card' | 'pack'",
-      default: "'list'",
+      type: "list | card | pack",
+      default: "list",
       required: false,
       description: "The initial view mode on first render.",
     },
     {
       name: "heading",
       type: "string",
-      default: "'My Tasks'",
+      default: "My Tasks",
       required: false,
       description: "Section heading rendered above the tab bar.",
     },

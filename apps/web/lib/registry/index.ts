@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-06-11T19:17:00.105Z
+// Last generated: 2026-07-05T12:22:10.092Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -92,7 +92,6 @@ export const fullRegistry: ComponentConfig[] = [
     },
     "tier": "free",
     "status": "stable",
-    "label": "New",
     "image": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778525114/animated_bar_light_bmbgq1.webp",
     "imageDark": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778525113/animated_bar_dark_w8tvej.webp",
     "tags": [
@@ -203,15 +202,15 @@ export const fullRegistry: ComponentConfig[] = [
       },
       {
         "name": "defaultView",
-        "type": "'list' | 'card' | 'pack'",
-        "default": "'list'",
+        "type": "list | card | pack",
+        "default": "list",
         "required": false,
         "description": "The initial view mode on first render."
       },
       {
         "name": "heading",
         "type": "string",
-        "default": "'My Tasks'",
+        "default": "My Tasks",
         "required": false,
         "description": "Section heading rendered above the tab bar."
       },
@@ -349,7 +348,6 @@ export const fullRegistry: ComponentConfig[] = [
     },
     "tier": "free",
     "status": "stable",
-    "label": "New",
     "image": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778443195/cursor-trail_light_f7ug7e.webp",
     "imageDark": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778443195/cursor-trail_dark_jdzcdz.webp",
     "tags": [
@@ -547,8 +545,8 @@ export const fullRegistry: ComponentConfig[] = [
       },
       {
         "name": "variant",
-        "type": "'default' | 'outline'",
-        "default": "'default'",
+        "type": "default | outline",
+        "default": "default",
         "required": false,
         "description": "The visual style of the button."
       },
@@ -659,13 +657,13 @@ export const fullRegistry: ComponentConfig[] = [
       },
       {
         "name": "cellShape",
-        "type": "'rounded' | 'circle'",
+        "type": "rounded | circle",
         "default": "rounded",
         "description": "Visual shape of the contribution cells"
       },
       {
         "name": "theme",
-        "type": "string | ThemeColors",
+        "type": "string | ThemeColors{{}}",
         "default": "github",
         "description": "Color theme (github, blue, sunset, purple, gray) or custom object"
       },
@@ -852,7 +850,7 @@ export const fullRegistry: ComponentConfig[] = [
       {
         "name": "colors",
         "type": "string",
-        "default": "'#cc0066, #1aff53, #004d99, #f5f56b, #a600e6'",
+        "default": "#cc0066 | #1aff53 | #004d99 | #f5f56b | #a600e6",
         "description": "Gradient colors for background animation"
       },
       {
@@ -910,7 +908,7 @@ export const fullRegistry: ComponentConfig[] = [
       {
         "name": "colors",
         "type": "string",
-        "default": "'#cc0066, #1aff53, #004d99, #f5f56b, #a600e6'",
+        "default": "#cc0066 | #1aff53 | #004d99 | #f5f56b | #a600e6",
         "description": "Comma-separated hex colors for the orbs"
       },
       {
@@ -942,6 +940,7 @@ export const fullRegistry: ComponentConfig[] = [
     },
     "tier": "free",
     "status": "stable",
+    "label": "New",
     "image": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778445439/image_trail_light_yo7x8b.webp",
     "imageDark": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778445439/image_trail_dark_qne2hh.webp",
     "tags": [
@@ -1113,6 +1112,119 @@ export const fullRegistry: ComponentConfig[] = [
     ]
   },
   {
+    "name": "pebble-toast",
+    "title": "Pebble Toast",
+    "description": "A stack style notification toast with micro-animations and dynamic gradients.",
+    "category": {
+      "name": "Components",
+      "slug": "components"
+    },
+    "tier": "free",
+    "status": "stable",
+    "label": "new",
+    "tags": [
+      "toast",
+      "notification",
+      "micro-interaction",
+      "motion"
+    ],
+    "image": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1783242560/pebble-toast_light_sfxw62.webp",
+    "imageDark": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1783242560/pebble-toast_dark_qogrrq.webp",
+    "preview": {
+      "disableSSR": true,
+      "height": 100
+    },
+    "registryUrl": "https://grootstudio.vercel.app/r/pebble-toast.json",
+    "installAlias": "pebble-toast",
+    "npmDependencies": [
+      "sonner",
+      "motion",
+      "lucide-react"
+    ],
+    "registryDependencies": [],
+    "usage": {
+      "extra": [
+        {
+          "title": "Add the Toaster component.",
+          "fileName": "app/layout.tsx",
+          "code": "import { Toaster } from \"@/components/ui/sonner\"\n\nexport default function RootLayout({ children }) {\n  return (\n    <html lang=\"en\">\n      <head />\n      <body>\n        <main>{children}</main>\n        <Toaster position=\"bottom-right\" />\n      </body>\n    </html>\n  )\n}",
+          "highlightLines": [
+            1,
+            9
+          ]
+        }
+      ],
+      "import": "\"use client\"\nimport { toast } from \"sonner\"",
+      "importHighlightLines": [
+        2
+      ],
+      "code": "export default function Demo() {\n  return (\n    <div className=\"w-full  h-screen flex justify-center items-center\">\n      <button onClick={() => { toast(\"Event has been created\") }}>\n        Render Toast\n      </button>\n    </div>\n  )\n}"
+    },
+    "examples": [
+      {
+        "title": "Toast Positions",
+        "slug": "pebble-toast-variant01"
+      }
+    ],
+    "props": [
+      {
+        "name": "success",
+        "type": "(message: string | React.ReactNode, options?: ToastOptions) => void",
+        "default": "-",
+        "required": false,
+        "description": "Function to trigger a success toast variant with a green gradient."
+      },
+      {
+        "name": "warning",
+        "type": "(message: string | React.ReactNode, options?: ToastOptions) => void",
+        "default": "-",
+        "required": false,
+        "description": "Function to trigger a warning toast variant with a yellow gradient."
+      },
+      {
+        "name": "error",
+        "type": "(message: string | React.ReactNode, options?: ToastOptions) => void",
+        "default": "-",
+        "required": false,
+        "description": "Function to trigger an error toast variant with a red gradient."
+      },
+      {
+        "name": "info",
+        "type": "(message: string | React.ReactNode, options?: ToastOptions) => void",
+        "default": "-",
+        "required": false,
+        "description": "Function to trigger an info toast variant with a blue gradient."
+      },
+      {
+        "name": "promise",
+        "type": "(promise: Promise<any>, options: PromiseOptions) => void",
+        "default": "-",
+        "required": false,
+        "description": "Function to trigger a promise-based toast that updates dynamically on resolution/rejection."
+      },
+      {
+        "name": "duration",
+        "type": "number",
+        "default": "6000",
+        "required": false,
+        "description": "Default duration of the toast in milliseconds."
+      },
+      {
+        "name": "position",
+        "type": "top-left | top-center | top-right | bottom-left | bottom-center | bottom-right",
+        "default": "bottom-right",
+        "required": false,
+        "description": "Default position of the toast stack."
+      }
+    ],
+    "files": [
+      {
+        "name": "pebble-toast.tsx",
+        "content": "\"use client\"\r\n\r\nimport { useState, useEffect, useMemo, memo } from \"react\"\r\nimport { useTheme } from \"next-themes\"\r\nimport {\r\n    Toaster as Sonner,\r\n    useSonner,\r\n    toast,\r\n    type ToasterProps,\r\n    type ToastT,\r\n} from \"sonner\"\r\nimport { X } from \"lucide-react\"\r\nimport { motion, AnimatePresence } from \"motion/react\"\r\n\r\ntype ToastPosition =\r\n    | \"top-left\"\r\n    | \"top-center\"\r\n    | \"top-right\"\r\n    | \"bottom-left\"\r\n    | \"bottom-center\"\r\n    | \"bottom-right\"\r\n\r\nconst POSITION_CLASSES: Record<ToastPosition, string> = {\r\n    \"top-left\": \"top-6 left-6\",\r\n    \"top-center\": \"top-6 left-1/2 -translate-x-1/2\",\r\n    \"top-right\": \"top-6 right-6\",\r\n    \"bottom-left\": \"bottom-6 left-6\",\r\n    \"bottom-center\": \"bottom-6 left-1/2 -translate-x-1/2\",\r\n    \"bottom-right\": \"bottom-6 right-6\",\r\n}\r\n\r\nconst ALL_POSITIONS: ToastPosition[] = [\r\n    \"top-left\",\r\n    \"top-center\",\r\n    \"top-right\",\r\n    \"bottom-left\",\r\n    \"bottom-center\",\r\n    \"bottom-right\",\r\n]\r\n\r\nconst TOAST_GRADIENTS: Record<string, string> = {\r\n    success: \"radial-gradient(circle at center, #34d399, #047857)\",\r\n    warning: \"radial-gradient(circle at center, #fbbf24, #b45309)\",\r\n    error: \"radial-gradient(circle at center, #f43f5e, #be123c)\",\r\n    info: \"radial-gradient(circle at center, #38bdf8, #1d4ed8)\",\r\n    default: \"radial-gradient(circle at center, #a1a1aa, #3f3f46)\",\r\n    normal: \"radial-gradient(circle at center, #a1a1aa, #3f3f46)\",\r\n    loading: \"radial-gradient(circle at center, #818cf8, #4338ca)\",\r\n}\r\n\r\nconst getGradient = (t: ToastT) => TOAST_GRADIENTS[t.type || \"default\"] || TOAST_GRADIENTS.default\r\n\r\nconst getTitle = (t: ToastT) => {\r\n    const title = t.title\r\n    if (typeof title === \"function\") {\r\n        const res = title()\r\n        return typeof res === \"string\" ? res : \"Notification\"\r\n    }\r\n    return typeof title === \"string\" ? title : \"Notification\"\r\n}\r\n\r\nconst getDescription = (t: ToastT) => {\r\n    const desc = t.description\r\n    if (typeof desc === \"function\") {\r\n        const res = desc()\r\n        return typeof res === \"string\" ? res : null\r\n    }\r\n    return typeof desc === \"string\" ? desc : null\r\n}\r\n\r\ninterface ToastStackProps {\r\n    position: ToastPosition\r\n    items: ToastT[]\r\n}\r\n\r\nconst ToastStack = memo(\r\n    ({ position, items }: ToastStackProps) => {\r\n        const [hoveredId, setHoveredId] = useState<number | string | null>(null)\r\n        const [fullyExpandedId, setFullyExpandedId] = useState<number | string | null>(null)\r\n\r\n        useEffect(() => {\r\n            if (hoveredId !== null && !items.some((t) => t.id === hoveredId)) {\r\n                setHoveredId(null)\r\n                setFullyExpandedId(null)\r\n            }\r\n        }, [items, hoveredId])\r\n\r\n        const displayedItems = useMemo(() => [...items].reverse(), [items])\r\n        const positionClass = POSITION_CLASSES[position] || POSITION_CLASSES[\"bottom-right\"]\r\n        const isLeftAligned = position.includes(\"left\")\r\n        const initialX = isLeftAligned ? -12 : 12\r\n\r\n        return (\r\n            <div className={`fixed z-9999 pointer-events-none ${positionClass}`}>\r\n                <div className=\"flex flex-row items-center justify-center\">\r\n                    <AnimatePresence initial={false}>\r\n                        {displayedItems.map((item, idx) => {\r\n                            const isFirst = idx === 0\r\n                            const isHovered = hoveredId === item.id\r\n                            const isExpanded = hoveredId !== null ? isHovered : idx === displayedItems.length - 1\r\n                            const isFullyExpanded = fullyExpandedId === item.id\r\n\r\n                            const hoveredIndex = displayedItems.findIndex((i) => i.id === hoveredId)\r\n                            const isRightOfHovered = hoveredIndex !== -1 && idx === hoveredIndex + 1\r\n\r\n                            const marginLeft = isHovered || isRightOfHovered ? 6 : -12\r\n                            const gradient = getGradient(item)\r\n\r\n                            return (\r\n                                <motion.div\r\n                                    key={item.id}\r\n                                    onMouseEnter={() => setHoveredId(item.id)}\r\n                                    onMouseLeave={() => {\r\n                                        setHoveredId(null)\r\n                                        setFullyExpandedId(null)\r\n                                    }}\r\n                                    onAnimationComplete={() => isExpanded && setFullyExpandedId(item.id)}\r\n                                    initial={{\r\n                                        width: 40,\r\n                                        scale: 1,\r\n                                        marginLeft: isFirst ? 0 : -24,\r\n                                        opacity: 0,\r\n                                        x: initialX,\r\n                                        filter: \"blur(2px)\",\r\n                                    }}\r\n                                    animate={{\r\n                                        width: isExpanded ? \"auto\" : 40,\r\n                                        scale: isExpanded ? 1.05 : 1,\r\n                                        marginLeft: isFirst ? 0 : marginLeft,\r\n                                        opacity: 1,\r\n                                        x: 0,\r\n                                        filter: \"blur(0px)\",\r\n                                    }}\r\n                                    exit={{\r\n                                        width: 0,\r\n                                        scale: 0.8,\r\n                                        opacity: 0,\r\n                                        marginLeft: 0,\r\n                                        x: initialX,\r\n                                        filter: \"blur(2px)\",\r\n                                    }}\r\n                                    transition={{\r\n                                        type: \"spring\",\r\n                                        stiffness: 180,\r\n                                        damping: 25,\r\n                                        filter: { ease: \"easeOut\", duration: 0.3 },\r\n                                        opacity: { ease: \"easeOut\", duration: 0.3 },\r\n                                    }}\r\n                                    style={{ zIndex: isHovered ? 50 : idx + 1 }}\r\n                                    className=\"relative h-10 p-0.75 pr-3 flex items-center justify-start border bg-card rounded-4xl cursor-pointer overflow-hidden shrink-0 select-none shadow-sm hover:shadow-lg transition-shadow duration-300 pointer-events-auto\"\r\n                                >\r\n                                    <div className=\"relative w-8 h-8 border border-white/10 rounded-full overflow-hidden shrink-0 group/avatar shadow-inner cursor-pointer\">\r\n                                        <AnimatePresence mode=\"popLayout\" initial={false}>\r\n                                            <motion.div\r\n                                                key={gradient}\r\n                                                initial={{ filter: \"blur(2px)\", opacity: 0 }}\r\n                                                animate={{ filter: \"blur(0px)\", opacity: 1 }}\r\n                                                exit={{ filter: \"blur(2px)\", opacity: 0 }}\r\n                                                transition={{ duration: 0.3, ease: \"easeOut\" }}\r\n                                                style={{ backgroundImage: gradient }}\r\n                                                className=\"absolute inset-0\"\r\n                                            />\r\n                                        </AnimatePresence>\r\n                                        <div\r\n                                            className=\"absolute inset-0 opacity-[0.18] mix-blend-overlay pointer-events-none z-10\"\r\n                                            style={{\r\n                                                backgroundImage: `url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")`\r\n                                            }}\r\n                                        />\r\n                                        {item.type === \"loading\" && (\r\n                                            <div className=\"absolute inset-0 flex items-center justify-center bg-black/35 z-20\">\r\n                                                <div className=\"sonner-loading-wrapper\" style={{ position: \"relative\", inset: \"auto\", \"--size\": \"16px\" } as React.CSSProperties}>\r\n                                                    <div className=\"sonner-spinner\">\r\n                                                        {Array(12).fill(0).map((_, i) => (\r\n                                                            <div\r\n                                                                className=\"sonner-loading-bar\"\r\n                                                                key={i}\r\n                                                                style={{\r\n                                                                    background: \"white\",\r\n                                                                    animationDelay: `${-1.2 + i * 0.1}s`,\r\n                                                                    transform: `rotate(${i * 30}deg) translate(146%)`\r\n                                                                }}\r\n                                                            />\r\n                                                        ))}\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                        )}\r\n                                        {isFullyExpanded && (\r\n                                            <div\r\n                                                onClick={(e) => {\r\n                                                    e.stopPropagation()\r\n                                                    setHoveredId(null)\r\n                                                    setFullyExpandedId(null)\r\n                                                    toast.dismiss(item.id)\r\n                                                }}\r\n                                                className=\"absolute inset-0 bg-background/60 flex items-center justify-center cursor-pointer opacity-0 group-hover/avatar:opacity-100 transition-opacity duration-200 z-30\"\r\n                                            >\r\n                                                <X className=\"w-4 h-4 text-foreground/80 stroke-[2.5]\" />\r\n                                            </div>\r\n                                        )}\r\n                                    </div>\r\n\r\n                                    <motion.div\r\n                                        initial={false}\r\n                                        animate={{ opacity: isExpanded ? 1 : 0, x: isExpanded ? 0 : -10 }}\r\n                                        transition={{ duration: 0.2, ease: \"easeInOut\" }}\r\n                                        className=\"flex flex-col items-start justify-center ml-2 shrink-0 select-none text-left cursor-default\"\r\n                                    >\r\n                                        <AnimatePresence mode=\"wait\">\r\n                                            {isExpanded && (\r\n                                                <motion.div\r\n                                                    key={`${item.id}-${getTitle(item)}-${getDescription(item) || \"\"}`}\r\n                                                    initial={{ opacity: 0, filter: \"blur(2px)\", y: 4, x: -4 }}\r\n                                                    animate={{ opacity: 1, filter: \"blur(0px)\", y: 0, x: 0 }}\r\n                                                    exit={{ opacity: 0, filter: \"blur(2px)\", y: 4, x: -4 }}\r\n                                                    transition={{ duration: 0.2, ease: \"easeOut\" }}\r\n                                                >\r\n                                                    <p className=\"text-muted-foreground text-[13px] font-medium leading-none\">\r\n                                                        {getTitle(item)}\r\n                                                    </p>\r\n                                                    {getDescription(item) && (\r\n                                                        <p className=\"text-muted-foreground text-[10px] font-normal leading-tight mt-0.5 line-clamp-1\">\r\n                                                            {getDescription(item)}\r\n                                                        </p>\r\n                                                    )}\r\n                                                </motion.div>\r\n                                            )}\r\n                                        </AnimatePresence>\r\n                                    </motion.div>\r\n                                </motion.div>\r\n                            )\r\n                        })}\r\n                    </AnimatePresence>\r\n                </div>\r\n            </div>\r\n        )\r\n    },\r\n    (prev, next) =>\r\n        prev.position === next.position &&\r\n        prev.items.length === next.items.length &&\r\n        prev.items.every((item, i) => {\r\n            const nextItem = next.items[i]\r\n            return (\r\n                item.id === nextItem?.id &&\r\n                item.type === nextItem?.type &&\r\n                item.title === nextItem?.title &&\r\n                item.description === nextItem?.description\r\n            )\r\n        })\r\n)\r\n\r\nconst Toaster = ({\r\n    duration = 6000,\r\n    position = \"bottom-right\",\r\n    ...props\r\n}: ToasterProps) => {\r\n    const { theme = \"system\" } = useTheme()\r\n    const { toasts: rawToasts } = useSonner()\r\n\r\n    const groups = useMemo(() => {\r\n        const items = rawToasts.filter((t): t is ToastT => \"title\" in t || !(\"dismiss\" in t))\r\n        return items.reduce((acc, item) => {\r\n            const pos = (item.position || position || \"bottom-right\") as ToastPosition\r\n            if (!acc[pos]) acc[pos] = []\r\n            acc[pos].push(item)\r\n            return acc\r\n        }, {} as Record<ToastPosition, ToastT[]>)\r\n    }, [rawToasts, position])\r\n\r\n    return (\r\n        <>\r\n            <div\r\n                aria-hidden=\"true\"\r\n                style={{\r\n                    position: \"fixed\",\r\n                    width: 1,\r\n                    height: 1,\r\n                    overflow: \"hidden\",\r\n                    clip: \"rect(0 0 0 0)\",\r\n                    clipPath: \"inset(50%)\",\r\n                    whiteSpace: \"nowrap\",\r\n                }}\r\n            >\r\n                <Sonner\r\n                    theme={theme as ToasterProps[\"theme\"]}\r\n                    duration={duration}\r\n                    position={position}\r\n                    {...props}\r\n                />\r\n            </div>\r\n\r\n            {ALL_POSITIONS.map((pos) => (\r\n                <ToastStack\r\n                    key={pos}\r\n                    position={pos}\r\n                    items={groups[pos] || []}\r\n                />\r\n            ))}\r\n        </>\r\n    )\r\n}\r\n\r\nexport { Toaster }"
+      }
+    ]
+  },
+  {
     "name": "press-button",
     "title": "Press Button",
     "description": "An industry-grade neobrutalist button with a 3D press effect and highly flexible theming.",
@@ -1176,7 +1288,6 @@ export const fullRegistry: ComponentConfig[] = [
     },
     "tier": "free",
     "status": "stable",
-    "label": "new",
     "image": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777419754/sliding-button_light_ishowx.webp",
     "imageDark": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777419755/sliding-button_dark_pwd8ks.webp",
     "tags": [
@@ -1211,15 +1322,15 @@ export const fullRegistry: ComponentConfig[] = [
       },
       {
         "name": "variant",
-        "type": "'default' | 'outline'",
-        "default": "'default'",
+        "type": "default | outline",
+        "default": "default",
         "required": false,
         "description": "The visual style of the button."
       },
       {
         "name": "iconPosition",
-        "type": "'left' | 'right'",
-        "default": "'right'",
+        "type": "left | right",
+        "default": "right",
         "required": false,
         "description": "Which side the sliding icon should appear on."
       },
@@ -1252,7 +1363,6 @@ export const fullRegistry: ComponentConfig[] = [
       "button",
       "radial-gradient"
     ],
-    "label": "new",
     "preview": {
       "disableSSR": false,
       "height": 160
@@ -1280,14 +1390,14 @@ export const fullRegistry: ComponentConfig[] = [
       },
       {
         "name": "variant",
-        "type": "'neutral' | 'rose' | 'blue'",
+        "type": "neutral | rose | blue",
         "default": "neutral",
         "required": false,
         "description": "The background color scheme and border color of the button."
       },
       {
         "name": "size",
-        "type": "'sm' | 'md' | 'lg'",
+        "type": "sm | md | lg",
         "default": "md",
         "required": false,
         "description": "The height and padding size of the button."
@@ -1364,8 +1474,8 @@ export const fullRegistry: ComponentConfig[] = [
       },
       {
         "name": "colors",
-        "type": "string[]",
-        "default": "[\"#eab308\", \"#ef4444\", \"#3b82f6\", \"#06b6d4\", \"#8b5cf6\"]",
+        "type": "colorArray[] | string",
+        "default": "#eab308 | #ef4444 | #3b82f6 | #06b6d4 | #8b5cf6",
         "required": false,
         "description": "Array of colors for the glowing gradient outline."
       }
@@ -1412,8 +1522,8 @@ export const fullRegistry: ComponentConfig[] = [
     "props": [
       {
         "name": "direction",
-        "type": "'vertical' | 'horizontal'",
-        "default": "'vertical'",
+        "type": "vertical | horizontal",
+        "default": "vertical",
         "required": false,
         "description": "Direction of animation: Vertical sweeps top-to-bottom, horizontal sweeps left-to-right."
       },
@@ -1426,8 +1536,8 @@ export const fullRegistry: ComponentConfig[] = [
       },
       {
         "name": "defaultTheme",
-        "type": "'light' | 'dark'",
-        "default": "'light'",
+        "type": "light | dark",
+        "default": "light",
         "required": false,
         "description": "Initial theme. Auto-detected from the document's dark class."
       },

@@ -50,8 +50,8 @@ export const config: ComponentConfig = {
     },
     {
       name: "colors",
-      type: "string[]",
-      default: '["#eab308", "#ef4444", "#3b82f6", "#06b6d4", "#8b5cf6"]',
+      type: "colorArray[] | string",
+      default: "#eab308 | #ef4444 | #3b82f6 | #06b6d4 | #8b5cf6",
       required: false,
       description: "Array of colors for the glowing gradient outline.",
     }

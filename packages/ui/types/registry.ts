@@ -68,7 +68,17 @@ export interface ComponentConfig {
   // ── Usage code shown in docs
   usage: {
     import: string;
+    importFileName?: string;
+    importHighlightLines?: number[];
     code: string;
+    codeFileName?: string;
+    codeHighlightLines?: number[];
+    extra?: {
+      title?: string;
+      code: string;
+      fileName?: string;
+      highlightLines?: number[];
+    }[];
   };
 
   // ── Examples (Variants)

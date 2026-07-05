@@ -346,6 +346,21 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "pebble-toast",
+      "type": "registry:block",
+      "title": "Pebble Toast",
+      "description": "A premium notification stack with beautiful center/corner positioning, micro-animations, and dynamic gradients.",
+      "registryDependencies": [
+        "sonner", "lucide-react", "motion/react"
+      ],
+      "files": [
+        {
+          "path": "registry/radix-nova/pebble-toast/pebble-toast.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }

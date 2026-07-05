@@ -32,7 +32,7 @@ export const config: ComponentConfig = {
     {
       name: "colors",
       type: "string",
-      default: "'#cc0066, #1aff53, #004d99, #f5f56b, #a600e6'",
+      default: "#cc0066 | #1aff53 | #004d99 | #f5f56b | #a600e6",
       description: "Gradient colors for background animation",
     },
     {
