@@ -16,10 +16,11 @@ export default function PebbleToastPreview() {
                 }
             `}</style>
             
-            <div className="w-full relative min-h-[300px] overflow-hidden" style={{ transform: "translate(0, 0)" }}>
+            <div className="w-full relative min-h-[300px] overflow-hidden flex flex-col items-center justify-center gap-4" style={{ transform: "translate(0, 0)" }}>
                 <Toaster position="top-center" />
+                <p className="text-center text-muted-foreground/60"> Click the buttons to trigger toasts</p>
             </div>
-            <div className="flex flex-wrap h-fit w-full items-center justify-center gap-1.5 border-t px-2 py-3">
+            <div className="flex flex-wrap h-fit w-full items-center justify-center gap-1.5  px-2 py-3">
                 <Button
                     variant="outline"
                     onClick={() => { toast("This is a toast")}}

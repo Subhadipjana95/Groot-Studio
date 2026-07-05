@@ -9,6 +9,8 @@ export const config: ComponentConfig = {
   status: "stable",
   label: "new",
   tags: ["toast", "notification", "micro-interaction", "motion"],
+  image: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1783242560/pebble-toast_light_sfxw62.webp",
+  imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1783242560/pebble-toast_dark_qogrrq.webp",
   preview: { disableSSR: true, height: 100 },
   registryUrl: "https://grootstudio.vercel.app/r/pebble-toast.json",
   installAlias: "pebble-toast",

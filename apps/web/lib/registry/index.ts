@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-05T08:37:42.192Z
+// Last generated: 2026-07-05T09:10:07.132Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -1129,6 +1129,8 @@ export const fullRegistry: ComponentConfig[] = [
       "micro-interaction",
       "motion"
     ],
+    "image": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1783242560/pebble-toast_light_sfxw62.webp",
+    "imageDark": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1783242560/pebble-toast_dark_qogrrq.webp",
     "preview": {
       "disableSSR": true,
       "height": 100
