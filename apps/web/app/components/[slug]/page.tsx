@@ -153,6 +153,11 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
           hasReactVariant={component.hasReactVariant}
         />
 
+        <section className="scroll-m-20 w-full min-w-0">
+          <Heading title="Usage" />
+          <UsageBlock usage={component.usage} />
+        </section>
+
         <ExamplesSection
           examples={component.examples?.map((ex) => ({
             ...ex,
@@ -161,14 +166,6 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
           componentCode={component.files?.[0]?.content}
           registryUrl={component.registryUrl}
         />
-
-        <section className="scroll-m-20 w-full min-w-0">
-          <Heading title="Usage" />
-          <UsageBlock
-            importCode={component.usage.import}
-            usageCode={component.usage.code}
-          />
-        </section>
 
         <section className="scroll-m-20 w-full min-w-0">
           <Heading title="Props" />

@@ -17,11 +17,11 @@ export function ExamplesSection({ examples, componentCode, registryUrl }: Exampl
 
   return (
     <section className="scroll-m-20 w-full min-w-0" id="examples">
-      <Heading title="Examples" className="mb-4" />
+      {/* <Heading title="Examples" className="mb-4" /> */}
       <div className="space-y-4">
         {examples.map((example) => (
           <div key={example.slug} className="space-y-2 pt-8 border-t border-border/40 first:border-t-0 first:pt-0">
-            <h3 id={example.slug} className="text-lg font-medium tracking-tight scroll-m-20">
+            <h3 id={example.slug} className="text-2xl font-medium tracking-tight scroll-m-20">
               {example.title}
             </h3>
             <PreviewContainer

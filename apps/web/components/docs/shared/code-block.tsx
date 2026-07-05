@@ -14,6 +14,7 @@ interface CodeBlockProps {
   expandable?: boolean;
   collapsedHeight?: number;
   fileName?: string;
+  highlightLines?: number[];
 }
 
 export function CodeBlock({
@@ -22,7 +23,8 @@ export function CodeBlock({
   language = "tsx",
   expandable = false,
   collapsedHeight = 400,
-  fileName
+  fileName,
+  highlightLines,
 }: CodeBlockProps) {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
@@ -118,6 +120,20 @@ export function CodeBlock({
               opacity: 0.8,
               userSelect: "none",
               borderRight: "none",
+            }}
+            wrapLines={true}
+            lineProps={(lineNumber) => {
+              const isHighlighted = highlightLines?.includes(lineNumber);
+              return {
+                style: {
+                  display: "block",
+                  width: "100%",
+                  backgroundColor: isHighlighted ? "rgba(255, 255, 255, 0.05)" : "transparent",
+                  borderLeft: isHighlighted ? "2px solid var(--ring)" : "2px solid transparent",
+                  paddingLeft: "0.25rem",
+                  margin: "0 -1rem",
+                },
+              };
             }}
           >
             {code.trim()}
