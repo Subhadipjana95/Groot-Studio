@@ -17,16 +17,36 @@ export const config: ComponentConfig = {
   npmDependencies: ["sonner", "motion", "lucide-react"],
   registryDependencies: [],
   usage: {
-    import: `import { Toaster } from "@/components/pebble-toast"; // For Global usage, place this import line on root layout.tsx file
-import { toast } from "sonner";`,
+    extra:[
+      {
+        title: "Add the Toaster component.",
+        fileName: "app/layout.tsx",
+        code: `import { Toaster } from "@/components/ui/sonner"
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <head />
+      <body>
+        <main>{children}</main>
+        <Toaster position="bottom-right" />
+      </body>
+    </html>
+  )
+}`,
+  highlightLines: [1, 9],
+      }
+    ],
+    import: `"use client"
+import { toast } from "sonner"`,
+    importHighlightLines: [2],
     code: `export default function Demo() {
   return (
-    <>
-      <Toaster position="bottom-right" /> {/* For Global use render this component once in your root layout file below {children} */}
+    <div className="w-full  h-screen flex justify-center items-center">
       <button onClick={() => { toast("Event has been created") }}>
         Render Toast
       </button>
-    </>
+    </div>
   )
 }`,
   },
@@ -37,6 +57,41 @@ import { toast } from "sonner";`,
     }],
   props: [
     {
+      name: "success",
+      type: "(message: string | React.ReactNode, options?: ToastOptions) => void",
+      default: "-",
+      required: false,
+      description: "Function to trigger a success toast variant with a green gradient.",
+    },
+    {
+      name: "warning",
+      type: "(message: string | React.ReactNode, options?: ToastOptions) => void",
+      default: "-",
+      required: false,
+      description: "Function to trigger a warning toast variant with a yellow gradient.",
+    },
+    {
+      name: "error",
+      type: "(message: string | React.ReactNode, options?: ToastOptions) => void",
+      default: "-",
+      required: false,
+      description: "Function to trigger an error toast variant with a red gradient.",
+    },
+    {
+      name: "info",
+      type: "(message: string | React.ReactNode, options?: ToastOptions) => void",
+      default: "-",
+      required: false,
+      description: "Function to trigger an info toast variant with a blue gradient.",
+    },
+    {
+      name: "promise",
+      type: "(promise: Promise<any>, options: PromiseOptions) => void",
+      default: "-",
+      required: false,
+      description: "Function to trigger a promise-based toast that updates dynamically on resolution/rejection.",
+    },
+    {
       name: "duration",
       type: "number",
       default: "6000",
@@ -45,8 +100,8 @@ import { toast } from "sonner";`,
     },
     {
       name: "position",
-      type: "'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'",
-      default: "'bottom-right'",
+      type: "top-left | top-center | top-right | bottom-left | bottom-center | bottom-right",
+      default: "bottom-right",
       required: false,
       description: "Default position of the toast stack.",
     },

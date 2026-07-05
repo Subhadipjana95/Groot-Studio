@@ -7,7 +7,6 @@ export const config: ComponentConfig = {
   category: { name: "Effects", slug: "effects" },
   tier: "free",
   status: "stable",
-  label: "New",
   image: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778443195/cursor-trail_light_f7ug7e.webp",
   imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778443195/cursor-trail_dark_jdzcdz.webp",
   tags: ["cursor", "trail", "mouse", "effect", "animation"],

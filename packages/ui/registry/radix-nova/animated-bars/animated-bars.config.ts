@@ -7,7 +7,6 @@ export const config: ComponentConfig = {
   category: { name: "Backgrounds", slug: "backgrounds" },
   tier: "free",
   status: "stable",
-  label: "New",
   image: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778525114/animated_bar_light_bmbgq1.webp",
   imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778525113/animated_bar_dark_w8tvej.webp",
   tags: ["background", "gradient", "bars"],

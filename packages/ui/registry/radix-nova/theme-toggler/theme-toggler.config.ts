@@ -26,8 +26,8 @@ export const config: ComponentConfig = {
   props: [
     {
       name: "direction",
-      type: "'vertical' | 'horizontal'",
-      default: "'vertical'",
+      type: "vertical | horizontal",
+      default: "vertical",
       required: false,
       description:
         "Direction of animation: Vertical sweeps top-to-bottom, horizontal sweeps left-to-right.",
@@ -41,8 +41,8 @@ export const config: ComponentConfig = {
     },
     {
       name: "defaultTheme",
-      type: "'light' | 'dark'",
-      default: "'light'",
+      type: "light | dark",
+      default: "light",
       required: false,
       description: "Initial theme. Auto-detected from the document's dark class.",
     },

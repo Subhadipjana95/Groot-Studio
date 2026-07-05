@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-05T09:10:07.132Z
+// Last generated: 2026-07-05T12:22:10.092Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -92,7 +92,6 @@ export const fullRegistry: ComponentConfig[] = [
     },
     "tier": "free",
     "status": "stable",
-    "label": "New",
     "image": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778525114/animated_bar_light_bmbgq1.webp",
     "imageDark": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778525113/animated_bar_dark_w8tvej.webp",
     "tags": [
@@ -203,15 +202,15 @@ export const fullRegistry: ComponentConfig[] = [
       },
       {
         "name": "defaultView",
-        "type": "'list' | 'card' | 'pack'",
-        "default": "'list'",
+        "type": "list | card | pack",
+        "default": "list",
         "required": false,
         "description": "The initial view mode on first render."
       },
       {
         "name": "heading",
         "type": "string",
-        "default": "'My Tasks'",
+        "default": "My Tasks",
         "required": false,
         "description": "Section heading rendered above the tab bar."
       },
@@ -349,7 +348,6 @@ export const fullRegistry: ComponentConfig[] = [
     },
     "tier": "free",
     "status": "stable",
-    "label": "New",
     "image": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778443195/cursor-trail_light_f7ug7e.webp",
     "imageDark": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778443195/cursor-trail_dark_jdzcdz.webp",
     "tags": [
@@ -547,8 +545,8 @@ export const fullRegistry: ComponentConfig[] = [
       },
       {
         "name": "variant",
-        "type": "'default' | 'outline'",
-        "default": "'default'",
+        "type": "default | outline",
+        "default": "default",
         "required": false,
         "description": "The visual style of the button."
       },
@@ -659,13 +657,13 @@ export const fullRegistry: ComponentConfig[] = [
       },
       {
         "name": "cellShape",
-        "type": "'rounded' | 'circle'",
+        "type": "rounded | circle",
         "default": "rounded",
         "description": "Visual shape of the contribution cells"
       },
       {
         "name": "theme",
-        "type": "string | ThemeColors",
+        "type": "string | ThemeColors{{}}",
         "default": "github",
         "description": "Color theme (github, blue, sunset, purple, gray) or custom object"
       },
@@ -852,7 +850,7 @@ export const fullRegistry: ComponentConfig[] = [
       {
         "name": "colors",
         "type": "string",
-        "default": "'#cc0066, #1aff53, #004d99, #f5f56b, #a600e6'",
+        "default": "#cc0066 | #1aff53 | #004d99 | #f5f56b | #a600e6",
         "description": "Gradient colors for background animation"
       },
       {
@@ -910,7 +908,7 @@ export const fullRegistry: ComponentConfig[] = [
       {
         "name": "colors",
         "type": "string",
-        "default": "'#cc0066, #1aff53, #004d99, #f5f56b, #a600e6'",
+        "default": "#cc0066 | #1aff53 | #004d99 | #f5f56b | #a600e6",
         "description": "Comma-separated hex colors for the orbs"
       },
       {
@@ -942,6 +940,7 @@ export const fullRegistry: ComponentConfig[] = [
     },
     "tier": "free",
     "status": "stable",
+    "label": "New",
     "image": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778445439/image_trail_light_yo7x8b.webp",
     "imageDark": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778445439/image_trail_dark_qne2hh.webp",
     "tags": [
@@ -1144,8 +1143,22 @@ export const fullRegistry: ComponentConfig[] = [
     ],
     "registryDependencies": [],
     "usage": {
-      "import": "import { Toaster } from \"@/components/pebble-toast\"; // For Global usage, place this import line on root layout.tsx file\nimport { toast } from \"sonner\";",
-      "code": "export default function Demo() {\n  return (\n    <>\n      <Toaster position=\"bottom-right\" /> {/* For Global use render this component once in your root layout file below {children} */}\n      <button onClick={() => { toast(\"Event has been created\") }}>\n        Render Toast\n      </button>\n    </>\n  )\n}"
+      "extra": [
+        {
+          "title": "Add the Toaster component.",
+          "fileName": "app/layout.tsx",
+          "code": "import { Toaster } from \"@/components/ui/sonner\"\n\nexport default function RootLayout({ children }) {\n  return (\n    <html lang=\"en\">\n      <head />\n      <body>\n        <main>{children}</main>\n        <Toaster position=\"bottom-right\" />\n      </body>\n    </html>\n  )\n}",
+          "highlightLines": [
+            1,
+            9
+          ]
+        }
+      ],
+      "import": "\"use client\"\nimport { toast } from \"sonner\"",
+      "importHighlightLines": [
+        2
+      ],
+      "code": "export default function Demo() {\n  return (\n    <div className=\"w-full  h-screen flex justify-center items-center\">\n      <button onClick={() => { toast(\"Event has been created\") }}>\n        Render Toast\n      </button>\n    </div>\n  )\n}"
     },
     "examples": [
       {
@@ -1155,6 +1168,41 @@ export const fullRegistry: ComponentConfig[] = [
     ],
     "props": [
       {
+        "name": "success",
+        "type": "(message: string | React.ReactNode, options?: ToastOptions) => void",
+        "default": "-",
+        "required": false,
+        "description": "Function to trigger a success toast variant with a green gradient."
+      },
+      {
+        "name": "warning",
+        "type": "(message: string | React.ReactNode, options?: ToastOptions) => void",
+        "default": "-",
+        "required": false,
+        "description": "Function to trigger a warning toast variant with a yellow gradient."
+      },
+      {
+        "name": "error",
+        "type": "(message: string | React.ReactNode, options?: ToastOptions) => void",
+        "default": "-",
+        "required": false,
+        "description": "Function to trigger an error toast variant with a red gradient."
+      },
+      {
+        "name": "info",
+        "type": "(message: string | React.ReactNode, options?: ToastOptions) => void",
+        "default": "-",
+        "required": false,
+        "description": "Function to trigger an info toast variant with a blue gradient."
+      },
+      {
+        "name": "promise",
+        "type": "(promise: Promise<any>, options: PromiseOptions) => void",
+        "default": "-",
+        "required": false,
+        "description": "Function to trigger a promise-based toast that updates dynamically on resolution/rejection."
+      },
+      {
         "name": "duration",
         "type": "number",
         "default": "6000",
@@ -1163,8 +1211,8 @@ export const fullRegistry: ComponentConfig[] = [
       },
       {
         "name": "position",
-        "type": "'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'",
-        "default": "'bottom-right'",
+        "type": "top-left | top-center | top-right | bottom-left | bottom-center | bottom-right",
+        "default": "bottom-right",
         "required": false,
         "description": "Default position of the toast stack."
       }
@@ -1172,7 +1220,7 @@ export const fullRegistry: ComponentConfig[] = [
     "files": [
       {
         "name": "pebble-toast.tsx",
-        "content": "\"use client\"\n\nimport { useState, useEffect, useMemo, memo } from \"react\"\nimport { useTheme } from \"next-themes\"\nimport {\n    Toaster as Sonner,\n    useSonner,\n    toast,\n    type ToasterProps,\n    type ToastT,\n} from \"sonner\"\nimport { X } from \"lucide-react\"\nimport { motion, AnimatePresence } from \"motion/react\"\n\ntype ToastPosition =\n    | \"top-left\"\n    | \"top-center\"\n    | \"top-right\"\n    | \"bottom-left\"\n    | \"bottom-center\"\n    | \"bottom-right\"\n\nconst POSITION_CLASSES: Record<ToastPosition, string> = {\n    \"top-left\": \"top-6 left-6\",\n    \"top-center\": \"top-6 left-1/2 -translate-x-1/2\",\n    \"top-right\": \"top-6 right-6\",\n    \"bottom-left\": \"bottom-6 left-6\",\n    \"bottom-center\": \"bottom-6 left-1/2 -translate-x-1/2\",\n    \"bottom-right\": \"bottom-6 right-6\",\n}\n\nconst ALL_POSITIONS: ToastPosition[] = [\n    \"top-left\",\n    \"top-center\",\n    \"top-right\",\n    \"bottom-left\",\n    \"bottom-center\",\n    \"bottom-right\",\n]\n\nconst TOAST_GRADIENTS: Record<string, string> = {\n    success: \"radial-gradient(circle at center, #34d399, #047857)\",\n    warning: \"radial-gradient(circle at center, #fbbf24, #b45309)\",\n    error: \"radial-gradient(circle at center, #f43f5e, #be123c)\",\n    info: \"radial-gradient(circle at center, #38bdf8, #1d4ed8)\",\n    default: \"radial-gradient(circle at center, #a1a1aa, #3f3f46)\",\n    normal: \"radial-gradient(circle at center, #a1a1aa, #3f3f46)\",\n    loading: \"radial-gradient(circle at center, #818cf8, #4338ca)\",\n}\n\nconst getGradient = (t: ToastT) => TOAST_GRADIENTS[t.type || \"default\"] || TOAST_GRADIENTS.default\n\nconst getTitle = (t: ToastT) => {\n    const title = t.title\n    if (typeof title === \"function\") {\n        const res = title()\n        return typeof res === \"string\" ? res : \"Notification\"\n    }\n    return typeof title === \"string\" ? title : \"Notification\"\n}\n\nconst getDescription = (t: ToastT) => {\n    const desc = t.description\n    if (typeof desc === \"function\") {\n        const res = desc()\n        return typeof res === \"string\" ? res : null\n    }\n    return typeof desc === \"string\" ? desc : null\n}\n\ninterface ToastStackProps {\n    position: ToastPosition\n    items: ToastT[]\n}\n\nconst ToastStack = memo(\n    ({ position, items }: ToastStackProps) => {\n        const [hoveredId, setHoveredId] = useState<number | string | null>(null)\n        const [fullyExpandedId, setFullyExpandedId] = useState<number | string | null>(null)\n\n        useEffect(() => {\n            if (hoveredId !== null && !items.some((t) => t.id === hoveredId)) {\n                setHoveredId(null)\n                setFullyExpandedId(null)\n            }\n        }, [items, hoveredId])\n\n        const displayedItems = useMemo(() => [...items].reverse(), [items])\n        const positionClass = POSITION_CLASSES[position] || POSITION_CLASSES[\"bottom-right\"]\n        const isLeftAligned = position.includes(\"left\")\n        const initialX = isLeftAligned ? -12 : 12\n\n        return (\n            <div className={`fixed z-9999 pointer-events-none ${positionClass}`}>\n                <div className=\"flex flex-row items-center justify-center\">\n                    <AnimatePresence initial={false}>\n                        {displayedItems.map((item, idx) => {\n                            const isFirst = idx === 0\n                            const isHovered = hoveredId === item.id\n                            const isExpanded = hoveredId !== null ? isHovered : idx === displayedItems.length - 1\n                            const isFullyExpanded = fullyExpandedId === item.id\n\n                            const hoveredIndex = displayedItems.findIndex((i) => i.id === hoveredId)\n                            const isRightOfHovered = hoveredIndex !== -1 && idx === hoveredIndex + 1\n\n                            const marginLeft = isHovered || isRightOfHovered ? 6 : -12\n                            const gradient = getGradient(item)\n\n                            return (\n                                <motion.div\n                                    key={item.id}\n                                    onMouseEnter={() => setHoveredId(item.id)}\n                                    onMouseLeave={() => {\n                                        setHoveredId(null)\n                                        setFullyExpandedId(null)\n                                    }}\n                                    onAnimationComplete={() => isExpanded && setFullyExpandedId(item.id)}\n                                    initial={{\n                                        width: 40,\n                                        scale: 1,\n                                        marginLeft: isFirst ? 0 : -24,\n                                        opacity: 0,\n                                        x: initialX,\n                                        filter: \"blur(2px)\",\n                                    }}\n                                    animate={{\n                                        width: isExpanded ? \"auto\" : 40,\n                                        scale: isExpanded ? 1.05 : 1,\n                                        marginLeft: isFirst ? 0 : marginLeft,\n                                        opacity: 1,\n                                        x: 0,\n                                        filter: \"blur(0px)\",\n                                    }}\n                                    exit={{\n                                        width: 0,\n                                        scale: 0.8,\n                                        opacity: 0,\n                                        marginLeft: 0,\n                                        x: initialX,\n                                        filter: \"blur(2px)\",\n                                    }}\n                                    transition={{\n                                        type: \"spring\",\n                                        stiffness: 180,\n                                        damping: 25,\n                                        filter: { ease: \"easeOut\", duration: 0.3 },\n                                        opacity: { ease: \"easeOut\", duration: 0.3 },\n                                    }}\n                                    style={{ zIndex: isHovered ? 50 : idx + 1 }}\n                                    className=\"relative h-10 p-0.75 pr-3 flex items-center justify-start border bg-card rounded-4xl cursor-pointer overflow-hidden shrink-0 select-none shadow-sm hover:shadow-lg transition-shadow duration-300 pointer-events-auto\"\n                                >\n                                    <div className=\"relative w-8 h-8 border border-white/10 rounded-full overflow-hidden shrink-0 group/avatar shadow-inner cursor-pointer\">\n                                        <AnimatePresence mode=\"popLayout\" initial={false}>\n                                            <motion.div\n                                                key={gradient}\n                                                initial={{ filter: \"blur(2px)\", opacity: 0 }}\n                                                animate={{ filter: \"blur(0px)\", opacity: 1 }}\n                                                exit={{ filter: \"blur(2px)\", opacity: 0 }}\n                                                transition={{ duration: 0.3, ease: \"easeOut\" }}\n                                                style={{ backgroundImage: gradient }}\n                                                className=\"absolute inset-0\"\n                                            />\n                                        </AnimatePresence>\n                                        <div\n                                            className=\"absolute inset-0 opacity-[0.18] mix-blend-overlay pointer-events-none z-10\"\n                                            style={{\n                                                backgroundImage: `url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")`\n                                            }}\n                                        />\n                                        {item.type === \"loading\" && (\n                                            <div className=\"absolute inset-0 flex items-center justify-center bg-black/35 z-20\">\n                                                <div className=\"sonner-loading-wrapper\" style={{ position: \"relative\", inset: \"auto\", \"--size\": \"16px\" } as React.CSSProperties}>\n                                                    <div className=\"sonner-spinner\">\n                                                        {Array(12).fill(0).map((_, i) => (\n                                                            <div\n                                                                className=\"sonner-loading-bar\"\n                                                                key={i}\n                                                                style={{\n                                                                    background: \"white\",\n                                                                    animationDelay: `${-1.2 + i * 0.1}s`,\n                                                                    transform: `rotate(${i * 30}deg) translate(146%)`\n                                                                }}\n                                                            />\n                                                        ))}\n                                                    </div>\n                                                </div>\n                                            </div>\n                                        )}\n                                        {isFullyExpanded && (\n                                            <div\n                                                onClick={(e) => {\n                                                    e.stopPropagation()\n                                                    setHoveredId(null)\n                                                    setFullyExpandedId(null)\n                                                    toast.dismiss(item.id)\n                                                }}\n                                                className=\"absolute inset-0 bg-background/60 flex items-center justify-center cursor-pointer opacity-0 group-hover/avatar:opacity-100 transition-opacity duration-200 z-30\"\n                                            >\n                                                <X className=\"w-4 h-4 text-foreground/80 stroke-[2.5]\" />\n                                            </div>\n                                        )}\n                                    </div>\n\n                                    <motion.div\n                                        initial={false}\n                                        animate={{ opacity: isExpanded ? 1 : 0, x: isExpanded ? 0 : -10 }}\n                                        transition={{ duration: 0.2, ease: \"easeInOut\" }}\n                                        className=\"flex flex-col items-start justify-center ml-2 shrink-0 select-none text-left cursor-default\"\n                                    >\n                                        <AnimatePresence mode=\"wait\">\n                                            {isExpanded && (\n                                                <motion.div\n                                                    key={`${item.id}-${getTitle(item)}-${getDescription(item) || \"\"}`}\n                                                    initial={{ opacity: 0, filter: \"blur(2px)\", y: 4, x: -4 }}\n                                                    animate={{ opacity: 1, filter: \"blur(0px)\", y: 0, x: 0 }}\n                                                    exit={{ opacity: 0, filter: \"blur(2px)\", y: 4, x: -4 }}\n                                                    transition={{ duration: 0.2, ease: \"easeOut\" }}\n                                                >\n                                                    <p className=\"text-muted-foreground text-[13px] font-medium leading-none\">\n                                                        {getTitle(item)}\n                                                    </p>\n                                                    {getDescription(item) && (\n                                                        <p className=\"text-muted-foreground text-[10px] font-normal leading-tight mt-0.5 line-clamp-1\">\n                                                            {getDescription(item)}\n                                                        </p>\n                                                    )}\n                                                </motion.div>\n                                            )}\n                                        </AnimatePresence>\n                                    </motion.div>\n                                </motion.div>\n                            )\n                        })}\n                    </AnimatePresence>\n                </div>\n            </div>\n        )\n    },\n    (prev, next) =>\n        prev.position === next.position &&\n        prev.items.length === next.items.length &&\n        prev.items.every((item, i) => {\n            const nextItem = next.items[i]\n            return (\n                item.id === nextItem?.id &&\n                item.type === nextItem?.type &&\n                item.title === nextItem?.title &&\n                item.description === nextItem?.description\n            )\n        })\n)\n\nconst Toaster = ({\n    duration = 6000,\n    position = \"bottom-right\",\n    ...props\n}: ToasterProps) => {\n    const { theme = \"system\" } = useTheme()\n    const { toasts: rawToasts } = useSonner()\n\n    const groups = useMemo(() => {\n        const items = rawToasts.filter((t): t is ToastT => \"title\" in t || !(\"dismiss\" in t))\n        return items.reduce((acc, item) => {\n            const pos = (item.position || position || \"bottom-right\") as ToastPosition\n            if (!acc[pos]) acc[pos] = []\n            acc[pos].push(item)\n            return acc\n        }, {} as Record<ToastPosition, ToastT[]>)\n    }, [rawToasts, position])\n\n    return (\n        <>\n            <div\n                aria-hidden=\"true\"\n                style={{\n                    position: \"fixed\",\n                    width: 1,\n                    height: 1,\n                    overflow: \"hidden\",\n                    clip: \"rect(0 0 0 0)\",\n                    clipPath: \"inset(50%)\",\n                    whiteSpace: \"nowrap\",\n                }}\n            >\n                <Sonner\n                    theme={theme as ToasterProps[\"theme\"]}\n                    duration={duration}\n                    position={position}\n                    {...props}\n                />\n            </div>\n\n            {ALL_POSITIONS.map((pos) => (\n                <ToastStack\n                    key={pos}\n                    position={pos}\n                    items={groups[pos] || []}\n                />\n            ))}\n        </>\n    )\n}\n\nexport { Toaster }"
+        "content": "\"use client\"\r\n\r\nimport { useState, useEffect, useMemo, memo } from \"react\"\r\nimport { useTheme } from \"next-themes\"\r\nimport {\r\n    Toaster as Sonner,\r\n    useSonner,\r\n    toast,\r\n    type ToasterProps,\r\n    type ToastT,\r\n} from \"sonner\"\r\nimport { X } from \"lucide-react\"\r\nimport { motion, AnimatePresence } from \"motion/react\"\r\n\r\ntype ToastPosition =\r\n    | \"top-left\"\r\n    | \"top-center\"\r\n    | \"top-right\"\r\n    | \"bottom-left\"\r\n    | \"bottom-center\"\r\n    | \"bottom-right\"\r\n\r\nconst POSITION_CLASSES: Record<ToastPosition, string> = {\r\n    \"top-left\": \"top-6 left-6\",\r\n    \"top-center\": \"top-6 left-1/2 -translate-x-1/2\",\r\n    \"top-right\": \"top-6 right-6\",\r\n    \"bottom-left\": \"bottom-6 left-6\",\r\n    \"bottom-center\": \"bottom-6 left-1/2 -translate-x-1/2\",\r\n    \"bottom-right\": \"bottom-6 right-6\",\r\n}\r\n\r\nconst ALL_POSITIONS: ToastPosition[] = [\r\n    \"top-left\",\r\n    \"top-center\",\r\n    \"top-right\",\r\n    \"bottom-left\",\r\n    \"bottom-center\",\r\n    \"bottom-right\",\r\n]\r\n\r\nconst TOAST_GRADIENTS: Record<string, string> = {\r\n    success: \"radial-gradient(circle at center, #34d399, #047857)\",\r\n    warning: \"radial-gradient(circle at center, #fbbf24, #b45309)\",\r\n    error: \"radial-gradient(circle at center, #f43f5e, #be123c)\",\r\n    info: \"radial-gradient(circle at center, #38bdf8, #1d4ed8)\",\r\n    default: \"radial-gradient(circle at center, #a1a1aa, #3f3f46)\",\r\n    normal: \"radial-gradient(circle at center, #a1a1aa, #3f3f46)\",\r\n    loading: \"radial-gradient(circle at center, #818cf8, #4338ca)\",\r\n}\r\n\r\nconst getGradient = (t: ToastT) => TOAST_GRADIENTS[t.type || \"default\"] || TOAST_GRADIENTS.default\r\n\r\nconst getTitle = (t: ToastT) => {\r\n    const title = t.title\r\n    if (typeof title === \"function\") {\r\n        const res = title()\r\n        return typeof res === \"string\" ? res : \"Notification\"\r\n    }\r\n    return typeof title === \"string\" ? title : \"Notification\"\r\n}\r\n\r\nconst getDescription = (t: ToastT) => {\r\n    const desc = t.description\r\n    if (typeof desc === \"function\") {\r\n        const res = desc()\r\n        return typeof res === \"string\" ? res : null\r\n    }\r\n    return typeof desc === \"string\" ? desc : null\r\n}\r\n\r\ninterface ToastStackProps {\r\n    position: ToastPosition\r\n    items: ToastT[]\r\n}\r\n\r\nconst ToastStack = memo(\r\n    ({ position, items }: ToastStackProps) => {\r\n        const [hoveredId, setHoveredId] = useState<number | string | null>(null)\r\n        const [fullyExpandedId, setFullyExpandedId] = useState<number | string | null>(null)\r\n\r\n        useEffect(() => {\r\n            if (hoveredId !== null && !items.some((t) => t.id === hoveredId)) {\r\n                setHoveredId(null)\r\n                setFullyExpandedId(null)\r\n            }\r\n        }, [items, hoveredId])\r\n\r\n        const displayedItems = useMemo(() => [...items].reverse(), [items])\r\n        const positionClass = POSITION_CLASSES[position] || POSITION_CLASSES[\"bottom-right\"]\r\n        const isLeftAligned = position.includes(\"left\")\r\n        const initialX = isLeftAligned ? -12 : 12\r\n\r\n        return (\r\n            <div className={`fixed z-9999 pointer-events-none ${positionClass}`}>\r\n                <div className=\"flex flex-row items-center justify-center\">\r\n                    <AnimatePresence initial={false}>\r\n                        {displayedItems.map((item, idx) => {\r\n                            const isFirst = idx === 0\r\n                            const isHovered = hoveredId === item.id\r\n                            const isExpanded = hoveredId !== null ? isHovered : idx === displayedItems.length - 1\r\n                            const isFullyExpanded = fullyExpandedId === item.id\r\n\r\n                            const hoveredIndex = displayedItems.findIndex((i) => i.id === hoveredId)\r\n                            const isRightOfHovered = hoveredIndex !== -1 && idx === hoveredIndex + 1\r\n\r\n                            const marginLeft = isHovered || isRightOfHovered ? 6 : -12\r\n                            const gradient = getGradient(item)\r\n\r\n                            return (\r\n                                <motion.div\r\n                                    key={item.id}\r\n                                    onMouseEnter={() => setHoveredId(item.id)}\r\n                                    onMouseLeave={() => {\r\n                                        setHoveredId(null)\r\n                                        setFullyExpandedId(null)\r\n                                    }}\r\n                                    onAnimationComplete={() => isExpanded && setFullyExpandedId(item.id)}\r\n                                    initial={{\r\n                                        width: 40,\r\n                                        scale: 1,\r\n                                        marginLeft: isFirst ? 0 : -24,\r\n                                        opacity: 0,\r\n                                        x: initialX,\r\n                                        filter: \"blur(2px)\",\r\n                                    }}\r\n                                    animate={{\r\n                                        width: isExpanded ? \"auto\" : 40,\r\n                                        scale: isExpanded ? 1.05 : 1,\r\n                                        marginLeft: isFirst ? 0 : marginLeft,\r\n                                        opacity: 1,\r\n                                        x: 0,\r\n                                        filter: \"blur(0px)\",\r\n                                    }}\r\n                                    exit={{\r\n                                        width: 0,\r\n                                        scale: 0.8,\r\n                                        opacity: 0,\r\n                                        marginLeft: 0,\r\n                                        x: initialX,\r\n                                        filter: \"blur(2px)\",\r\n                                    }}\r\n                                    transition={{\r\n                                        type: \"spring\",\r\n                                        stiffness: 180,\r\n                                        damping: 25,\r\n                                        filter: { ease: \"easeOut\", duration: 0.3 },\r\n                                        opacity: { ease: \"easeOut\", duration: 0.3 },\r\n                                    }}\r\n                                    style={{ zIndex: isHovered ? 50 : idx + 1 }}\r\n                                    className=\"relative h-10 p-0.75 pr-3 flex items-center justify-start border bg-card rounded-4xl cursor-pointer overflow-hidden shrink-0 select-none shadow-sm hover:shadow-lg transition-shadow duration-300 pointer-events-auto\"\r\n                                >\r\n                                    <div className=\"relative w-8 h-8 border border-white/10 rounded-full overflow-hidden shrink-0 group/avatar shadow-inner cursor-pointer\">\r\n                                        <AnimatePresence mode=\"popLayout\" initial={false}>\r\n                                            <motion.div\r\n                                                key={gradient}\r\n                                                initial={{ filter: \"blur(2px)\", opacity: 0 }}\r\n                                                animate={{ filter: \"blur(0px)\", opacity: 1 }}\r\n                                                exit={{ filter: \"blur(2px)\", opacity: 0 }}\r\n                                                transition={{ duration: 0.3, ease: \"easeOut\" }}\r\n                                                style={{ backgroundImage: gradient }}\r\n                                                className=\"absolute inset-0\"\r\n                                            />\r\n                                        </AnimatePresence>\r\n                                        <div\r\n                                            className=\"absolute inset-0 opacity-[0.18] mix-blend-overlay pointer-events-none z-10\"\r\n                                            style={{\r\n                                                backgroundImage: `url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")`\r\n                                            }}\r\n                                        />\r\n                                        {item.type === \"loading\" && (\r\n                                            <div className=\"absolute inset-0 flex items-center justify-center bg-black/35 z-20\">\r\n                                                <div className=\"sonner-loading-wrapper\" style={{ position: \"relative\", inset: \"auto\", \"--size\": \"16px\" } as React.CSSProperties}>\r\n                                                    <div className=\"sonner-spinner\">\r\n                                                        {Array(12).fill(0).map((_, i) => (\r\n                                                            <div\r\n                                                                className=\"sonner-loading-bar\"\r\n                                                                key={i}\r\n                                                                style={{\r\n                                                                    background: \"white\",\r\n                                                                    animationDelay: `${-1.2 + i * 0.1}s`,\r\n                                                                    transform: `rotate(${i * 30}deg) translate(146%)`\r\n                                                                }}\r\n                                                            />\r\n                                                        ))}\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                        )}\r\n                                        {isFullyExpanded && (\r\n                                            <div\r\n                                                onClick={(e) => {\r\n                                                    e.stopPropagation()\r\n                                                    setHoveredId(null)\r\n                                                    setFullyExpandedId(null)\r\n                                                    toast.dismiss(item.id)\r\n                                                }}\r\n                                                className=\"absolute inset-0 bg-background/60 flex items-center justify-center cursor-pointer opacity-0 group-hover/avatar:opacity-100 transition-opacity duration-200 z-30\"\r\n                                            >\r\n                                                <X className=\"w-4 h-4 text-foreground/80 stroke-[2.5]\" />\r\n                                            </div>\r\n                                        )}\r\n                                    </div>\r\n\r\n                                    <motion.div\r\n                                        initial={false}\r\n                                        animate={{ opacity: isExpanded ? 1 : 0, x: isExpanded ? 0 : -10 }}\r\n                                        transition={{ duration: 0.2, ease: \"easeInOut\" }}\r\n                                        className=\"flex flex-col items-start justify-center ml-2 shrink-0 select-none text-left cursor-default\"\r\n                                    >\r\n                                        <AnimatePresence mode=\"wait\">\r\n                                            {isExpanded && (\r\n                                                <motion.div\r\n                                                    key={`${item.id}-${getTitle(item)}-${getDescription(item) || \"\"}`}\r\n                                                    initial={{ opacity: 0, filter: \"blur(2px)\", y: 4, x: -4 }}\r\n                                                    animate={{ opacity: 1, filter: \"blur(0px)\", y: 0, x: 0 }}\r\n                                                    exit={{ opacity: 0, filter: \"blur(2px)\", y: 4, x: -4 }}\r\n                                                    transition={{ duration: 0.2, ease: \"easeOut\" }}\r\n                                                >\r\n                                                    <p className=\"text-muted-foreground text-[13px] font-medium leading-none\">\r\n                                                        {getTitle(item)}\r\n                                                    </p>\r\n                                                    {getDescription(item) && (\r\n                                                        <p className=\"text-muted-foreground text-[10px] font-normal leading-tight mt-0.5 line-clamp-1\">\r\n                                                            {getDescription(item)}\r\n                                                        </p>\r\n                                                    )}\r\n                                                </motion.div>\r\n                                            )}\r\n                                        </AnimatePresence>\r\n                                    </motion.div>\r\n                                </motion.div>\r\n                            )\r\n                        })}\r\n                    </AnimatePresence>\r\n                </div>\r\n            </div>\r\n        )\r\n    },\r\n    (prev, next) =>\r\n        prev.position === next.position &&\r\n        prev.items.length === next.items.length &&\r\n        prev.items.every((item, i) => {\r\n            const nextItem = next.items[i]\r\n            return (\r\n                item.id === nextItem?.id &&\r\n                item.type === nextItem?.type &&\r\n                item.title === nextItem?.title &&\r\n                item.description === nextItem?.description\r\n            )\r\n        })\r\n)\r\n\r\nconst Toaster = ({\r\n    duration = 6000,\r\n    position = \"bottom-right\",\r\n    ...props\r\n}: ToasterProps) => {\r\n    const { theme = \"system\" } = useTheme()\r\n    const { toasts: rawToasts } = useSonner()\r\n\r\n    const groups = useMemo(() => {\r\n        const items = rawToasts.filter((t): t is ToastT => \"title\" in t || !(\"dismiss\" in t))\r\n        return items.reduce((acc, item) => {\r\n            const pos = (item.position || position || \"bottom-right\") as ToastPosition\r\n            if (!acc[pos]) acc[pos] = []\r\n            acc[pos].push(item)\r\n            return acc\r\n        }, {} as Record<ToastPosition, ToastT[]>)\r\n    }, [rawToasts, position])\r\n\r\n    return (\r\n        <>\r\n            <div\r\n                aria-hidden=\"true\"\r\n                style={{\r\n                    position: \"fixed\",\r\n                    width: 1,\r\n                    height: 1,\r\n                    overflow: \"hidden\",\r\n                    clip: \"rect(0 0 0 0)\",\r\n                    clipPath: \"inset(50%)\",\r\n                    whiteSpace: \"nowrap\",\r\n                }}\r\n            >\r\n                <Sonner\r\n                    theme={theme as ToasterProps[\"theme\"]}\r\n                    duration={duration}\r\n                    position={position}\r\n                    {...props}\r\n                />\r\n            </div>\r\n\r\n            {ALL_POSITIONS.map((pos) => (\r\n                <ToastStack\r\n                    key={pos}\r\n                    position={pos}\r\n                    items={groups[pos] || []}\r\n                />\r\n            ))}\r\n        </>\r\n    )\r\n}\r\n\r\nexport { Toaster }"
       }
     ]
   },
@@ -1240,7 +1288,6 @@ export const fullRegistry: ComponentConfig[] = [
     },
     "tier": "free",
     "status": "stable",
-    "label": "new",
     "image": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777419754/sliding-button_light_ishowx.webp",
     "imageDark": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777419755/sliding-button_dark_pwd8ks.webp",
     "tags": [
@@ -1275,15 +1322,15 @@ export const fullRegistry: ComponentConfig[] = [
       },
       {
         "name": "variant",
-        "type": "'default' | 'outline'",
-        "default": "'default'",
+        "type": "default | outline",
+        "default": "default",
         "required": false,
         "description": "The visual style of the button."
       },
       {
         "name": "iconPosition",
-        "type": "'left' | 'right'",
-        "default": "'right'",
+        "type": "left | right",
+        "default": "right",
         "required": false,
         "description": "Which side the sliding icon should appear on."
       },
@@ -1316,7 +1363,6 @@ export const fullRegistry: ComponentConfig[] = [
       "button",
       "radial-gradient"
     ],
-    "label": "new",
     "preview": {
       "disableSSR": false,
       "height": 160
@@ -1344,14 +1390,14 @@ export const fullRegistry: ComponentConfig[] = [
       },
       {
         "name": "variant",
-        "type": "'neutral' | 'rose' | 'blue'",
+        "type": "neutral | rose | blue",
         "default": "neutral",
         "required": false,
         "description": "The background color scheme and border color of the button."
       },
       {
         "name": "size",
-        "type": "'sm' | 'md' | 'lg'",
+        "type": "sm | md | lg",
         "default": "md",
         "required": false,
         "description": "The height and padding size of the button."
@@ -1428,8 +1474,8 @@ export const fullRegistry: ComponentConfig[] = [
       },
       {
         "name": "colors",
-        "type": "string[]",
-        "default": "[\"#eab308\", \"#ef4444\", \"#3b82f6\", \"#06b6d4\", \"#8b5cf6\"]",
+        "type": "colorArray[] | string",
+        "default": "#eab308 | #ef4444 | #3b82f6 | #06b6d4 | #8b5cf6",
         "required": false,
         "description": "Array of colors for the glowing gradient outline."
       }
@@ -1476,8 +1522,8 @@ export const fullRegistry: ComponentConfig[] = [
     "props": [
       {
         "name": "direction",
-        "type": "'vertical' | 'horizontal'",
-        "default": "'vertical'",
+        "type": "vertical | horizontal",
+        "default": "vertical",
         "required": false,
         "description": "Direction of animation: Vertical sweeps top-to-bottom, horizontal sweeps left-to-right."
       },
@@ -1490,8 +1536,8 @@ export const fullRegistry: ComponentConfig[] = [
       },
       {
         "name": "defaultTheme",
-        "type": "'light' | 'dark'",
-        "default": "'light'",
+        "type": "light | dark",
+        "default": "light",
         "required": false,
         "description": "Initial theme. Auto-detected from the document's dark class."
       },
