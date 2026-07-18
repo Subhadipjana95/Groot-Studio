@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-18T02:11:23.122Z
+// Last generated: 2026-07-18T02:11:32.554Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -1310,7 +1310,7 @@ export const fullRegistry: ComponentConfig[] = [
       "button"
     ],
     "usage": {
-      "import": "import { SlidingButton } from \"@/components/sliding-button\"",
+      "import": "import { SlidingButton } from \"@/components/grootstudio/sliding-button\"",
       "code": "export default function Demo() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <SlidingButton variant=\"default\">\n        Get Started\n      </SlidingButton>\n      <SlidingButton variant=\"outline\" iconPosition=\"left\">\n        Contact Us\n      </SlidingButton>\n    </div>\n  )\n}"
     },
     "props": [

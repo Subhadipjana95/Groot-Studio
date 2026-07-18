@@ -16,7 +16,7 @@ export const config: ComponentConfig = {
   npmDependencies: ["motion/react", "lucide-react"],
   registryDependencies: ["button"],
   usage: {
-    import: `import { SlidingButton } from "@/components/sliding-button"`,
+    import: `import { SlidingButton } from "@/components/grootstudio/sliding-button"`,
     code: `export default function Demo() {
   return (
     <div className="flex items-center gap-4">
