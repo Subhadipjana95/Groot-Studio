@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-18T02:11:32.554Z
+// Last generated: 2026-07-18T02:11:42.195Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -1373,7 +1373,7 @@ export const fullRegistry: ComponentConfig[] = [
     "image": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1781080509/Styled_Button_light_m8jwor.webp",
     "imageDark": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1781080509/Styled_Button_dark_jyefju.webp",
     "usage": {
-      "import": "import { StyledButton } from \"@/components/styled-button\"",
+      "import": "import { StyledButton } from \"@/components/grootstudio/styled-button\"",
       "code": "export default function Demo() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <StyledButton href=\"/dashborad\" variant=\"rose\">\n        Dashboard\n      </StyledButton>\n    </div>\n  )\n}"
     },
     "props": [

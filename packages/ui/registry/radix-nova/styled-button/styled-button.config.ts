@@ -14,7 +14,7 @@ export const config: ComponentConfig = {
   image: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1781080509/Styled_Button_light_m8jwor.webp",
   imageDark: "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1781080509/Styled_Button_dark_jyefju.webp",
   usage: {
-    import: `import { StyledButton } from "@/components/styled-button"`,
+    import: `import { StyledButton } from "@/components/grootstudio/styled-button"`,
     code: `export default function Demo() {
   return (
     <div className="flex items-center gap-4">
