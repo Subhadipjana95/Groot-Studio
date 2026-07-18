@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-18T02:10:55.591Z
+// Last generated: 2026-07-18T02:11:05.333Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -1087,7 +1087,7 @@ export const fullRegistry: ComponentConfig[] = [
     ],
     "registryDependencies": [],
     "usage": {
-      "import": "import { LogoMarquee } from \"@/components/logo-marquee\"",
+      "import": "import { LogoMarquee } from \"@/components/grootstudio/logo-marquee\"",
       "code": "const logos = [\n  { src: \"https://svgl.app/library/nvidia-wordmark-light.svg\", alt: \"Nvidia\" },\n  { src: \"https://svgl.app/library/claude-ai-wordmark-icon_light.svg\", alt: \"Claude\" },\n  { src: \"https://svgl.app/library/stripe-wordmark-light.svg\", alt: \"Stripe\" },\n  { src: \"https://svgl.app/library/rails-wordmark-light.svg\", alt: \"Rails\" },\n  { src: \"https://svgl.app/library/deno-wordmark-icon_light.svg\", alt: \"Deno\" },\n  { src: \"https://svgl.app/library/github-wordmark-light.svg\", alt: \"Github\" },\n  { src: \"https://svgl.app/library/tailwindcss-wordmark-light.svg\", alt: \"Tailwindcss\" },\n  { src: \"https://svgl.app/library/shadcn-ui-logo_light.svg\", alt: \"Shadcn ui\" },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full\">\n      <LogoMarquee logos={logos} />\n    </div>\n  )\n}"
     },
     "props": [

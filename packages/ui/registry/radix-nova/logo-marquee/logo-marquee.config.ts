@@ -17,7 +17,7 @@ export const config: ComponentConfig = {
   npmDependencies: ["motion/react", "react-use-measure"],
   registryDependencies: [],
   usage: {
-    import: `import { LogoMarquee } from "@/components/logo-marquee"`,
+    import: `import { LogoMarquee } from "@/components/grootstudio/logo-marquee"`,
     code: `const logos = [
   { src: "https://svgl.app/library/nvidia-wordmark-light.svg", alt: "Nvidia" },
   { src: "https://svgl.app/library/claude-ai-wordmark-icon_light.svg", alt: "Claude" },
