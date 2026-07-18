@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-18T02:11:42.195Z
+// Last generated: 2026-07-18T02:11:51.584Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -1448,7 +1448,7 @@ export const fullRegistry: ComponentConfig[] = [
     ],
     "registryDependencies": [],
     "usage": {
-      "import": "import { TextHoverEffect } from \"@/components/text-outline-glow\"",
+      "import": "import { TextHoverEffect } from \"@/components/grootstudio/text-outline-glow\"",
       "code": "export default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center h-[300px] w-full\">\n      <TextHoverEffect text=\"GROOT\" />\n    </div>\n  )\n}"
     },
     "props": [
