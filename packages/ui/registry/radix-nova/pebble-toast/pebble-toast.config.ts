@@ -14,14 +14,14 @@ export const config: ComponentConfig = {
   preview: { disableSSR: true, height: 100 },
   registryUrl: "https://grootstudio.vercel.app/r/pebble-toast.json",
   installAlias: "pebble-toast",
-  npmDependencies: ["sonner", "motion", "lucide-react"],
+  npmDependencies: ["sonner", "motion", "lucide-react", "next-themes"],
   registryDependencies: [],
   usage: {
     extra:[
       {
         title: "Add the Toaster component.",
         fileName: "app/layout.tsx",
-        code: `import { Toaster } from "@/components/ui/sonner"
+        code: `import { Toaster } from "@/components/grootstudio/pebble-toast"
 
 export default function RootLayout({ children }) {
   return (

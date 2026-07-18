@@ -19,7 +19,7 @@ export const config: ComponentConfig = {
   npmDependencies: ["lucide-react"],
   registryDependencies: ["Button", "Tooltip"],
   usage: {
-    import: `import { DiscordOnline } from "@/components/discord-online"`,
+    import: `import { DiscordOnline } from "@/components/grootstudio/discord-online"`,
     code: `export default function Demo() {
   return <DiscordOnline guildId="1234567891487752291602665574" />
 }`,

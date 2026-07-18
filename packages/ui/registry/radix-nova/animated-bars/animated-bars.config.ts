@@ -16,7 +16,7 @@ export const config: ComponentConfig = {
   npmDependencies: [],
   registryDependencies: [],
   usage: {
-    import: `import { AnimatedBars } from "@/components/animated-bars"`,
+    import: `import { AnimatedBars } from "@/components/grootstudio/animated-bars"`,
     code: `export default function Demo() {
   return (
     <AnimatedBars numBars={15} gradientFrom="rgb(59, 130, 246)" backgroundColor="rgb(2, 6, 23)">

@@ -20,7 +20,7 @@ export const config: ComponentConfig = {
   npmDependencies: ["motion/react"],
   registryDependencies: [],
   usage: {
-    import: `import { GradientText } from "@/components/gradient-text"`,
+    import: `import { GradientText } from "@/components/grootstudio/gradient-text"`,
     code: `export default function Demo() {
   return <GradientText>Groot Studio</GradientText>
 }`,

@@ -16,8 +16,7 @@
 
 ## Star History
 
-![chart](https://shieldcn.dev/chart/github/stars/Subhadipjana95/Groot-Studio.svg?theme=rose&title=Groot+Stars)
-
+[![RepoStars](https://repostars.dev/api/embed?repo=Subhadipjana95%2FGroot-Studio&theme=dark)](https://repostars.dev/?repos=Subhadipjana95%2FGroot-Studio&theme=dark)
 
 ## Installation
 

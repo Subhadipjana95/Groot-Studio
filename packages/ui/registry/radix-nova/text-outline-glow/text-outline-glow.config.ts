@@ -17,7 +17,7 @@ export const config: ComponentConfig = {
   npmDependencies: ["gsap", "@gsap/react"],
   registryDependencies: [],
   usage: {
-    import: `import { TextHoverEffect } from "@/components/text-outline-glow"`,
+    import: `import { TextHoverEffect } from "@/components/grootstudio/text-outline-glow"`,
     code: `export default function Demo() {
   return (
     <div className="flex items-center justify-center h-[300px] w-full">

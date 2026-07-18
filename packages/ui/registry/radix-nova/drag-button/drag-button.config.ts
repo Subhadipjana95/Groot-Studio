@@ -17,7 +17,7 @@ export const config: ComponentConfig = {
   npmDependencies: ["motion/react", "lucide-react"],
   registryDependencies: ["button"],
   usage: {
-    import: `import { DragButton } from "@/components/drag-button"`,
+    import: `import { DragButton } from "@/components/grootstudio/drag-button"`,
     code: `export default function Demo() {
   const [status, setStatus] = React.useState("Slide to Checkout");
 

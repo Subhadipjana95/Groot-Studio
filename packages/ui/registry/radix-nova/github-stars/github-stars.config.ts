@@ -19,7 +19,7 @@ export const config: ComponentConfig = {
   npmDependencies: ["lucide-react"],
   registryDependencies: ["Tooltip", "Button"],
   usage: {
-    import: `import { GitHubStars } from "@/components/github-stars"`,
+    import: `import { GitHubStars } from "@/components/grootstudio/github-stars"`,
     code: `export default function Demo() {
   return <GitHubStars repo="Subhadipjana95/groot-studio" />
 }`,

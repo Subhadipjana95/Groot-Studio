@@ -16,7 +16,7 @@ export const config: ComponentConfig = {
   npmDependencies: [],
   registryDependencies: [],
   usage: {
-    import: `import { CursorTrail } from "@/components/cursor-trail"`,
+    import: `import { CursorTrail } from "@/components/grootstudio/cursor-trail"`,
     code: `export default function Demo() {
   return (
     <div className="relative w-full h-full overflow-hidden">

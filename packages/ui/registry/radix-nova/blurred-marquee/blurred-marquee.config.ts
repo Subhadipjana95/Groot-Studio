@@ -18,7 +18,7 @@ export const config: ComponentConfig = {
   npmDependencies: ["motion/react", "react-use-measure", "lucide-react"],
   registryDependencies: [],
   usage: {
-    import: `import { BlurredMarquee } from "@/components/blurred-marquee"`,
+    import: `import { BlurredMarquee } from "@/components/grootstudio/blurred-marquee"`,
     code: `const logos = [
   { src: "https://svgl.app/library/nvidia-wordmark-light.svg", alt: "Nvidia" },
   { src: "https://svgl.app/library/claude-ai-wordmark-icon_light.svg", alt: "Claude" },

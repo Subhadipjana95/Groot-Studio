@@ -16,7 +16,7 @@ export const config: ComponentConfig = {
   npmDependencies: [],
   registryDependencies: [],
   usage: {
-    import: `import { ThreeDButton } from "@/components/3d-button"`,
+    import: `import { ThreeDButton } from "@/components/grootstudio/3d-button"`,
     code: `export default function Demo() {
   return (
     <div className="flex items-center gap-4">

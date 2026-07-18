@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-05T12:22:10.092Z
+// Last generated: 2026-07-18T02:12:00.866Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -35,7 +35,7 @@ export const fullRegistry: ComponentConfig[] = [
     "npmDependencies": [],
     "registryDependencies": [],
     "usage": {
-      "import": "import { ThreeDButton } from \"@/components/3d-button\"",
+      "import": "import { ThreeDButton } from \"@/components/grootstudio/3d-button\"",
       "code": "export default function Demo() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <ThreeDButton color1=\"#cc0066\" color2=\"#660033\">\n        Pink Button\n      </ThreeDButton>\n      <ThreeDButton color1=\"#004d99\" color2=\"#00264d\">\n        Blue Button\n      </ThreeDButton>\n    </div>\n  )\n}"
     },
     "props": [
@@ -108,7 +108,7 @@ export const fullRegistry: ComponentConfig[] = [
     "npmDependencies": [],
     "registryDependencies": [],
     "usage": {
-      "import": "import { AnimatedBars } from \"@/components/animated-bars\"",
+      "import": "import { AnimatedBars } from \"@/components/grootstudio/animated-bars\"",
       "code": "export default function Demo() {\n  return (\n    <AnimatedBars numBars={15} gradientFrom=\"rgb(59, 130, 246)\" backgroundColor=\"rgb(2, 6, 23)\">\n      <h1>Energy Waves</h1>\n    </AnimatedBars>\n  )\n}"
     },
     "props": [
@@ -190,7 +190,7 @@ export const fullRegistry: ComponentConfig[] = [
     ],
     "registryDependencies": [],
     "usage": {
-      "import": "import { AnimatedLayout } from \"@/components/animated-layout\"",
+      "import": "import { AnimatedLayout } from \"@/components/grootstudio/animated-layout\"",
       "code": "export default function Demo() {\n  return <AnimatedLayout items={[\n    {\n    id: \"1\",\n    title: \"Shadcn UI\",\n    subtitle: \"Components Library\",\n    badge: \"345\",\n    image: \"https://github.com/Subhadipjana95.png\",\n    icon: CodeXml,\n  },\n  {\n    id: \"2\",\n    title: \"Figma\",\n    subtitle: \"Design Tool\",\n    badge: \"105\",\n    image: \"https://github.com/Subhadipjana95.png\",\n    icon: Brush,\n  }\n]} heading=\"My Collection\" defaultView=\"list\" />\n}"
     },
     "props": [
@@ -257,7 +257,7 @@ export const fullRegistry: ComponentConfig[] = [
     ],
     "registryDependencies": [],
     "usage": {
-      "import": "import { AvatarTooltips } from \"@/components/avatar-tooltips\"",
+      "import": "import { AvatarTooltips } from \"@/components/grootstudio/avatar-tooltips\"",
       "code": "import { Github, Twitter, Linkedin, Mail } from \"lucide-react\"\n\nexport default function Demo() {\n  const items = [\n    { id: 1, name: \"GitHub\", designation: \"Developer Platform\", icon: Github },\n    { id: 2, name: \"Twitter\", designation: \"Social Media\", icon: Twitter },\n    { id: 3, name: \"LinkedIn\", designation: \"Professional Network\", icon: Linkedin },\n    { id: 4, name: \"Email\", designation: \"Contact Us\", icon: Mail },\n  ]\n\n  return (\n    <main className=\"flex items-center justify-center\">\n      <AvatarTooltips items={items} />\n    </main>\n  )\n}"
     },
     "props": [
@@ -314,7 +314,7 @@ export const fullRegistry: ComponentConfig[] = [
     ],
     "registryDependencies": [],
     "usage": {
-      "import": "import { BlurredMarquee } from \"@/components/blurred-marquee\"",
+      "import": "import { BlurredMarquee } from \"@/components/grootstudio/blurred-marquee\"",
       "code": "const logos = [\n  { src: \"https://svgl.app/library/nvidia-wordmark-light.svg\", alt: \"Nvidia\" },\n  { src: \"https://svgl.app/library/claude-ai-wordmark-icon_light.svg\", alt: \"Claude\" },\n  { src: \"https://svgl.app/library/stripe-wordmark-light.svg\", alt: \"Stripe\" },\n  { src: \"https://svgl.app/library/rails-wordmark-light.svg\", alt: \"Rails\" },\n  { src: \"https://svgl.app/library/deno-wordmark-icon_light.svg\", alt: \"Deno\" },\n  { src: \"https://svgl.app/library/github-wordmark-light.svg\", alt: \"Github\" },\n  { src: \"https://svgl.app/library/tailwindcss-wordmark-light.svg\", alt: \"Tailwindcss\" },\n  { src: \"https://svgl.app/library/shadcn-ui-logo_light.svg\", alt: \"Shadcn ui\" },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full\">\n      <BlurredMarquee logos={logos} />\n    </div>\n  )\n}"
     },
     "props": [
@@ -366,7 +366,7 @@ export const fullRegistry: ComponentConfig[] = [
     "npmDependencies": [],
     "registryDependencies": [],
     "usage": {
-      "import": "import { CursorTrail } from \"@/components/cursor-trail\"",
+      "import": "import { CursorTrail } from \"@/components/grootstudio/cursor-trail\"",
       "code": "export default function Demo() {\n  return (\n    <div className=\"relative w-full h-full overflow-hidden\">\n      <CursorTrail />\n    </div>\n  )\n}"
     },
     "props": [
@@ -444,7 +444,7 @@ export const fullRegistry: ComponentConfig[] = [
       "Tooltip"
     ],
     "usage": {
-      "import": "import { DiscordOnline } from \"@/components/discord-online\"",
+      "import": "import { DiscordOnline } from \"@/components/grootstudio/discord-online\"",
       "code": "export default function Demo() {\n  return <DiscordOnline guildId=\"1234567891487752291602665574\" />\n}"
     },
     "props": [
@@ -511,7 +511,7 @@ export const fullRegistry: ComponentConfig[] = [
       "button"
     ],
     "usage": {
-      "import": "import { DragButton } from \"@/components/drag-button\"",
+      "import": "import { DragButton } from \"@/components/grootstudio/drag-button\"",
       "code": "export default function Demo() {\n  const [status, setStatus] = React.useState(\"Slide to Checkout\");\n\n  const handleComplete = () => {\n    setStatus(\"Order Placed!\");\n    setTimeout(() => {\n      setStatus(\"Slide to Pay\");\n    }, 1500);\n  };\n\n  return (\n    <div className=\"flex justify-center items-center gap-8\">\n      <DragButton \n          onDragComplete={handleComplete}\n          colorLight=\"#a5b4fc\"\n          colorDark=\"#4338ca\"\n        >\n          {status}\n        </DragButton>\n    </div>\n  );\n}"
     },
     "props": [
@@ -612,7 +612,7 @@ export const fullRegistry: ComponentConfig[] = [
       }
     ],
     "usage": {
-      "import": "import { GitHubCalendar } from \"@/components/github-calendar\"",
+      "import": "import { GitHubCalendar } from \"@/components/grootstudio/github-calendar\"",
       "code": "export default function Demo() {\n  return <GitHubCalendar username=\"Subhadipjana95\" />\n}"
     },
     "props": [
@@ -725,7 +725,7 @@ export const fullRegistry: ComponentConfig[] = [
       "Button"
     ],
     "usage": {
-      "import": "import { GitHubStars } from \"@/components/github-stars\"",
+      "import": "import { GitHubStars } from \"@/components/grootstudio/github-stars\"",
       "code": "export default function Demo() {\n  return <GitHubStars repo=\"Subhadipjana95/groot-studio\" />\n}"
     },
     "props": [
@@ -780,7 +780,7 @@ export const fullRegistry: ComponentConfig[] = [
     "npmDependencies": [],
     "registryDependencies": [],
     "usage": {
-      "import": "import { GlowCard } from \"@/components/glow-card\"",
+      "import": "import { GlowCard } from \"@/components/grootstudio/glow-card\"",
       "code": "export default function Demo() {\n  return (\n    <GlowCard className=\"p-6\">\n      <h3 className=\"text-xl font-bold\">Groot Studio</h3>\n      <p className=\"text-muted-foreground\">Interactive glowing cards.</p>\n    </GlowCard>\n  )\n}"
     },
     "props": [
@@ -837,7 +837,7 @@ export const fullRegistry: ComponentConfig[] = [
     ],
     "registryDependencies": [],
     "usage": {
-      "import": "import { GradientBackgroundText } from \"@/components/gradient-background-text\"",
+      "import": "import { GradientBackgroundText } from \"@/components/grootstudio/gradient-background-text\"",
       "code": "export default function Demo() {\n  return <GradientBackgroundText>Groot Studio</GradientBackgroundText>\n}"
     },
     "props": [
@@ -895,7 +895,7 @@ export const fullRegistry: ComponentConfig[] = [
     ],
     "registryDependencies": [],
     "usage": {
-      "import": "import { GradientText } from \"@/components/gradient-text\"",
+      "import": "import { GradientText } from \"@/components/grootstudio/gradient-text\"",
       "code": "export default function Demo() {\n  return <GradientText>Groot Studio</GradientText>\n}"
     },
     "props": [
@@ -960,7 +960,7 @@ export const fullRegistry: ComponentConfig[] = [
     ],
     "registryDependencies": [],
     "usage": {
-      "import": "import { ImageCursorTrail } from \"@/components/image-trail\"",
+      "import": "import { ImageCursorTrail } from \"@/components/grootstudio/image-trail\"",
       "code": "export default function Demo() {\n  return (\n    <ImageCursorTrail\n      items={[\"/image1.jpg\", \"/image2.jpg\"]}\n      maxNumberOfImages={5}\n      distance={45}\n      imgClass=\"sm:w-40 w-28 sm:h-48 h-36\"\n      className=\"max-w-4xl rounded-3xl\"\n    />\n  )\n}"
     },
     "props": [
@@ -1035,7 +1035,7 @@ export const fullRegistry: ComponentConfig[] = [
     ],
     "registryDependencies": [],
     "usage": {
-      "import": "import { LogoGrid } from \"@/components/logo-grid\"",
+      "import": "import { LogoGrid } from \"@/components/grootstudio/logo-grid\"",
       "code": "export default function Demo() {\n  return (\n  <LogoGrid \n  logos={[\n    {\n      src: \"https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777378066/nvidia-wordmark-light_rby94r.webp\",\n      alt: \"NVIDIA\",\n    },\n    {\n      src: \"https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777378067/github-wordmark-light_b6f50g.webp\",\n      alt: \"GitHub\",\n    },\n    {\n      src: \"https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777378067/python-wordmark-light_b0o0x8.webp\",\n      alt: \"Python\",\n    },\n    {\n      src: \"https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777378066/vercel-wordmark-light_y4v7h8.webp\",\n      alt: \"Vercel\",\n    },\n    {\n      src: \"https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777378067/nodejs-wordmark-light_y30xga.webp\",\n      alt: \"Node.js\",\n    },\n    {\n      src: \"https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777378066/typescript-wordmark-light_zmyr6r.webp\",\n      alt: \"TypeScript\",\n    }\n  ]}\n  />\n  )\n}"
     },
     "props": [
@@ -1087,7 +1087,7 @@ export const fullRegistry: ComponentConfig[] = [
     ],
     "registryDependencies": [],
     "usage": {
-      "import": "import { LogoMarquee } from \"@/components/logo-marquee\"",
+      "import": "import { LogoMarquee } from \"@/components/grootstudio/logo-marquee\"",
       "code": "const logos = [\n  { src: \"https://svgl.app/library/nvidia-wordmark-light.svg\", alt: \"Nvidia\" },\n  { src: \"https://svgl.app/library/claude-ai-wordmark-icon_light.svg\", alt: \"Claude\" },\n  { src: \"https://svgl.app/library/stripe-wordmark-light.svg\", alt: \"Stripe\" },\n  { src: \"https://svgl.app/library/rails-wordmark-light.svg\", alt: \"Rails\" },\n  { src: \"https://svgl.app/library/deno-wordmark-icon_light.svg\", alt: \"Deno\" },\n  { src: \"https://svgl.app/library/github-wordmark-light.svg\", alt: \"Github\" },\n  { src: \"https://svgl.app/library/tailwindcss-wordmark-light.svg\", alt: \"Tailwindcss\" },\n  { src: \"https://svgl.app/library/shadcn-ui-logo_light.svg\", alt: \"Shadcn ui\" },\n];\n\nexport default function Demo() {\n  return (\n    <div className=\"w-full\">\n      <LogoMarquee logos={logos} />\n    </div>\n  )\n}"
     },
     "props": [
@@ -1139,7 +1139,8 @@ export const fullRegistry: ComponentConfig[] = [
     "npmDependencies": [
       "sonner",
       "motion",
-      "lucide-react"
+      "lucide-react",
+      "next-themes"
     ],
     "registryDependencies": [],
     "usage": {
@@ -1147,7 +1148,7 @@ export const fullRegistry: ComponentConfig[] = [
         {
           "title": "Add the Toaster component.",
           "fileName": "app/layout.tsx",
-          "code": "import { Toaster } from \"@/components/ui/sonner\"\n\nexport default function RootLayout({ children }) {\n  return (\n    <html lang=\"en\">\n      <head />\n      <body>\n        <main>{children}</main>\n        <Toaster position=\"bottom-right\" />\n      </body>\n    </html>\n  )\n}",
+          "code": "import { Toaster } from \"@/components/grootstudio/pebble-toast\"\n\nexport default function RootLayout({ children }) {\n  return (\n    <html lang=\"en\">\n      <head />\n      <body>\n        <main>{children}</main>\n        <Toaster position=\"bottom-right\" />\n      </body>\n    </html>\n  )\n}",
           "highlightLines": [
             1,
             9
@@ -1248,7 +1249,7 @@ export const fullRegistry: ComponentConfig[] = [
     "registryUrl": "https://grootstudio.vercel.app/r/press-button.json",
     "installAlias": "press-button",
     "usage": {
-      "import": "import { PressButton } from \"@/components/press-button\"",
+      "import": "import { PressButton } from \"@/components/grootstudio/press-button\"",
       "code": "export default function Demo() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <PressButton>Default</PressButton>\n\n      <PressButton className=\"bg-indigo-600 text-white shadow-[4px_4px_0_0_#3730a3] border-[#3730a3]\">\n        Custom Indigo\n      </PressButton>\n    </div>\n  )\n}"
     },
     "props": [
@@ -1309,7 +1310,7 @@ export const fullRegistry: ComponentConfig[] = [
       "button"
     ],
     "usage": {
-      "import": "import { SlidingButton } from \"@/components/sliding-button\"",
+      "import": "import { SlidingButton } from \"@/components/grootstudio/sliding-button\"",
       "code": "export default function Demo() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <SlidingButton variant=\"default\">\n        Get Started\n      </SlidingButton>\n      <SlidingButton variant=\"outline\" iconPosition=\"left\">\n        Contact Us\n      </SlidingButton>\n    </div>\n  )\n}"
     },
     "props": [
@@ -1372,7 +1373,7 @@ export const fullRegistry: ComponentConfig[] = [
     "image": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1781080509/Styled_Button_light_m8jwor.webp",
     "imageDark": "https://res.cloudinary.com/dfjuuwtr6/image/upload/v1781080509/Styled_Button_dark_jyefju.webp",
     "usage": {
-      "import": "import { StyledButton } from \"@/components/styled-button\"",
+      "import": "import { StyledButton } from \"@/components/grootstudio/styled-button\"",
       "code": "export default function Demo() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <StyledButton href=\"/dashborad\" variant=\"rose\">\n        Dashboard\n      </StyledButton>\n    </div>\n  )\n}"
     },
     "props": [
@@ -1447,7 +1448,7 @@ export const fullRegistry: ComponentConfig[] = [
     ],
     "registryDependencies": [],
     "usage": {
-      "import": "import { TextHoverEffect } from \"@/components/text-outline-glow\"",
+      "import": "import { TextHoverEffect } from \"@/components/grootstudio/text-outline-glow\"",
       "code": "export default function Demo() {\n  return (\n    <div className=\"flex items-center justify-center h-[300px] w-full\">\n      <TextHoverEffect text=\"GROOT\" />\n    </div>\n  )\n}"
     },
     "props": [
@@ -1516,7 +1517,7 @@ export const fullRegistry: ComponentConfig[] = [
     ],
     "registryDependencies": [],
     "usage": {
-      "import": "import { ThemeToggler } from \"@/components/theme-toggler\"",
+      "import": "import { ThemeToggler } from \"@/components/grootstudio/theme-toggler\"",
       "code": "export default function Demo() {\n  return <ThemeToggler direction=\"vertical\" duration={550} />\n}"
     },
     "props": [

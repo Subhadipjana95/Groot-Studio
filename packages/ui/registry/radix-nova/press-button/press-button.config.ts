@@ -13,7 +13,7 @@ export const config: ComponentConfig = {
   registryUrl: "https://grootstudio.vercel.app/r/press-button.json",
   installAlias: "press-button",
   usage: {
-    import: `import { PressButton } from "@/components/press-button"`,
+    import: `import { PressButton } from "@/components/grootstudio/press-button"`,
     code: `export default function Demo() {
   return (
     <div className="flex items-center gap-4">

@@ -17,7 +17,7 @@ export const config: ComponentConfig = {
   npmDependencies: ["motion/react"],
   registryDependencies: [],
   usage: {
-    import: `import { GradientBackgroundText } from "@/components/gradient-background-text"`,
+    import: `import { GradientBackgroundText } from "@/components/grootstudio/gradient-background-text"`,
     code: `export default function Demo() {
   return <GradientBackgroundText>Groot Studio</GradientBackgroundText>
 }`,

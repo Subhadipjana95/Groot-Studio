@@ -16,7 +16,7 @@ export const config: ComponentConfig = {
   npmDependencies: ["lucide-react"],
   registryDependencies: [],
   usage: {
-    import: `import { LogoGrid } from "@/components/logo-grid"`,
+    import: `import { LogoGrid } from "@/components/grootstudio/logo-grid"`,
     code: `export default function Demo() {
   return (
   <LogoGrid 
