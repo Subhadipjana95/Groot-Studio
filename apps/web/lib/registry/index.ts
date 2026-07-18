@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-18T02:11:51.584Z
+// Last generated: 2026-07-18T02:12:00.866Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -1517,7 +1517,7 @@ export const fullRegistry: ComponentConfig[] = [
     ],
     "registryDependencies": [],
     "usage": {
-      "import": "import { ThemeToggler } from \"@/components/theme-toggler\"",
+      "import": "import { ThemeToggler } from \"@/components/grootstudio/theme-toggler\"",
       "code": "export default function Demo() {\n  return <ThemeToggler direction=\"vertical\" duration={550} />\n}"
     },
     "props": [

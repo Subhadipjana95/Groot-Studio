@@ -18,7 +18,7 @@ export const config: ComponentConfig = {
   npmDependencies: ["lucide-react"],
   registryDependencies: [],
   usage: {
-    import: `import { ThemeToggler } from "@/components/theme-toggler"`,
+    import: `import { ThemeToggler } from "@/components/grootstudio/theme-toggler"`,
     code: `export default function Demo() {
   return <ThemeToggler direction="vertical" duration={550} />
 }`,
