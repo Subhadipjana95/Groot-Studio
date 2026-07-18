@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-18T02:10:26.896Z
+// Last generated: 2026-07-18T02:10:40.154Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -960,7 +960,7 @@ export const fullRegistry: ComponentConfig[] = [
     ],
     "registryDependencies": [],
     "usage": {
-      "import": "import { ImageCursorTrail } from \"@/components/image-trail\"",
+      "import": "import { ImageCursorTrail } from \"@/components/grootstudio/image-trail\"",
       "code": "export default function Demo() {\n  return (\n    <ImageCursorTrail\n      items={[\"/image1.jpg\", \"/image2.jpg\"]}\n      maxNumberOfImages={5}\n      distance={45}\n      imgClass=\"sm:w-40 w-28 sm:h-48 h-36\"\n      className=\"max-w-4xl rounded-3xl\"\n    />\n  )\n}"
     },
     "props": [

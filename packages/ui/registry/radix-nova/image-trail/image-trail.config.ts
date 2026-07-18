@@ -17,7 +17,7 @@ export const config: ComponentConfig = {
   npmDependencies: ["motion/react"],
   registryDependencies: [],
   usage: {
-    import: `import { ImageCursorTrail } from "@/components/image-trail"`,
+    import: `import { ImageCursorTrail } from "@/components/grootstudio/image-trail"`,
     code: `export default function Demo() {
   return (
     <ImageCursorTrail
