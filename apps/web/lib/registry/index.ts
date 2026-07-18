@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-05T12:22:10.092Z
+// Last generated: 2026-07-18T02:08:34.600Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -35,7 +35,7 @@ export const fullRegistry: ComponentConfig[] = [
     "npmDependencies": [],
     "registryDependencies": [],
     "usage": {
-      "import": "import { ThreeDButton } from \"@/components/3d-button\"",
+      "import": "import { ThreeDButton } from \"@/components/grootstudio/3d-button\"",
       "code": "export default function Demo() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <ThreeDButton color1=\"#cc0066\" color2=\"#660033\">\n        Pink Button\n      </ThreeDButton>\n      <ThreeDButton color1=\"#004d99\" color2=\"#00264d\">\n        Blue Button\n      </ThreeDButton>\n    </div>\n  )\n}"
     },
     "props": [
