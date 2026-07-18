@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-18T02:08:52.341Z
+// Last generated: 2026-07-18T02:09:02.106Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -257,7 +257,7 @@ export const fullRegistry: ComponentConfig[] = [
     ],
     "registryDependencies": [],
     "usage": {
-      "import": "import { AvatarTooltips } from \"@/components/avatar-tooltips\"",
+      "import": "import { AvatarTooltips } from \"@/components/grootstudio/avatar-tooltips\"",
       "code": "import { Github, Twitter, Linkedin, Mail } from \"lucide-react\"\n\nexport default function Demo() {\n  const items = [\n    { id: 1, name: \"GitHub\", designation: \"Developer Platform\", icon: Github },\n    { id: 2, name: \"Twitter\", designation: \"Social Media\", icon: Twitter },\n    { id: 3, name: \"LinkedIn\", designation: \"Professional Network\", icon: Linkedin },\n    { id: 4, name: \"Email\", designation: \"Contact Us\", icon: Mail },\n  ]\n\n  return (\n    <main className=\"flex items-center justify-center\">\n      <AvatarTooltips items={items} />\n    </main>\n  )\n}"
     },
     "props": [

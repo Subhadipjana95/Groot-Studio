@@ -16,7 +16,7 @@ export const config: ComponentConfig = {
   npmDependencies: ["motion/react"],
   registryDependencies: [],
   usage: {
-    import: `import { AvatarTooltips } from "@/components/avatar-tooltips"`,
+    import: `import { AvatarTooltips } from "@/components/grootstudio/avatar-tooltips"`,
     code: `import { Github, Twitter, Linkedin, Mail } from "lucide-react"
 
 export default function Demo() {
