@@ -12,7 +12,7 @@
         {
           "path": "registry/radix-nova/glow-card/glow-card.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/glow-card.tsx"
         }
       ]
     },
@@ -29,7 +29,7 @@
         {
           "path": "registry/radix-nova/github-stars/github-stars.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/github-stars.tsx"
         }
       ]
     },
@@ -46,7 +46,7 @@
         {
           "path": "registry/radix-nova/github-stars-react/github-stars-react.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/github-stars-react.tsx"
         }
       ]
     },
@@ -62,7 +62,7 @@
         {
           "path": "registry/radix-nova/gradient-text-fill/gradient-text-fill.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/gradient-text-fill.tsx"
         }
       ]
     },
@@ -78,7 +78,7 @@
         {
           "path": "registry/radix-nova/gradient-background-text/gradient-background-text.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/gradient-background-text.tsx"
         }
       ]
     },
@@ -95,7 +95,7 @@
         {
           "path": "registry/radix-nova/discord-online/discord-online.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/discord-online.tsx"
         }
       ]
     },
@@ -112,7 +112,7 @@
         {
           "path": "registry/radix-nova/discord-online-react/discord-online-react.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/discord-online-react.tsx"
         }
       ]
     },
@@ -129,7 +129,7 @@
         {
           "path": "registry/radix-nova/logo-marquee/logo-marquee.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/logo-marquee.tsx"
         }
       ]
     },
@@ -147,7 +147,7 @@
         {
           "path": "registry/radix-nova/blurred-marquee/blurred-marquee.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/blurred-marquee.tsx"
         }
       ]
     },
@@ -163,7 +163,7 @@
         {
           "path": "registry/radix-nova/logo-grid/logo-grid.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/logo-grid.tsx"
         }
       ]
     },
@@ -179,7 +179,7 @@
         {
           "path": "registry/radix-nova/github-calendar/github-calendar.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/github-calendar.tsx"
         }
       ]
     },
@@ -195,7 +195,7 @@
         {
           "path": "registry/radix-nova/avatar-tooltips/avatar-tooltips.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/avatar-tooltips.tsx"
         }
       ]
     },
@@ -208,7 +208,7 @@
         {
           "path": "registry/radix-nova/3d-button/3d-button.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/3d-button.tsx"
         }
       ]
     },
@@ -228,7 +228,7 @@
         {
           "path": "registry/radix-nova/sliding-button/sliding-button.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/sliding-button.tsx"
         }
       ]
     },
@@ -248,7 +248,7 @@
         {
           "path": "registry/radix-nova/drag-button/drag-button.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/drag-button.tsx"
         }
       ]
     },
@@ -261,7 +261,7 @@
         {
           "path": "registry/radix-nova/press-button/press-button.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/press-button.tsx"
         }
       ]
     },
@@ -274,7 +274,7 @@
         {
           "path": "registry/radix-nova/cursor-trail/cursor-trail.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/cursor-trail.tsx"
         }
       ]
     },
@@ -290,7 +290,7 @@
         {
           "path": "registry/radix-nova/image-trail/image-trail.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/image-trail.tsx"
         }
       ]
     },
@@ -307,7 +307,7 @@
         {
           "path": "registry/radix-nova/text-outline-glow/text-outline-glow.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/text-outline-glow.tsx"
         }
       ]
     },
@@ -320,7 +320,7 @@
         {
           "path": "registry/radix-nova/animated-bars/animated-bars.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/animated-bars.tsx"
         }
       ]
     },
@@ -337,7 +337,7 @@
         {
           "path": "registry/radix-nova/animated-layout/animated-layout.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/animated-layout.tsx"
         }
       ]
     },
@@ -353,7 +353,7 @@
         {
           "path": "registry/radix-nova/theme-toggler/theme-toggler.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/theme-toggler.tsx"
         }
       ]
     },
@@ -366,7 +366,7 @@
         {
           "path": "registry/radix-nova/styled-button/styled-button.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/styled-button.tsx"
         }
       ]
     },
@@ -384,7 +384,7 @@
         {
           "path": "registry/radix-nova/pebble-toast/pebble-toast.tsx",
           "type": "registry:component",
-          "target": "@components/grootstudio"
+          "target": "@components/grootstudio/pebble-toast.tsx"
         }
       ]
     }
