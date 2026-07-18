@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-18T02:09:28.240Z
+// Last generated: 2026-07-18T02:09:37.402Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -511,7 +511,7 @@ export const fullRegistry: ComponentConfig[] = [
       "button"
     ],
     "usage": {
-      "import": "import { DragButton } from \"@/components/drag-button\"",
+      "import": "import { DragButton } from \"@/components/grootstudio/drag-button\"",
       "code": "export default function Demo() {\n  const [status, setStatus] = React.useState(\"Slide to Checkout\");\n\n  const handleComplete = () => {\n    setStatus(\"Order Placed!\");\n    setTimeout(() => {\n      setStatus(\"Slide to Pay\");\n    }, 1500);\n  };\n\n  return (\n    <div className=\"flex justify-center items-center gap-8\">\n      <DragButton \n          onDragComplete={handleComplete}\n          colorLight=\"#a5b4fc\"\n          colorDark=\"#4338ca\"\n        >\n          {status}\n        </DragButton>\n    </div>\n  );\n}"
     },
     "props": [
