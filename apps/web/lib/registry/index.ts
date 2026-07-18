@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-18T02:09:52.762Z
+// Last generated: 2026-07-18T02:10:02.582Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -780,7 +780,7 @@ export const fullRegistry: ComponentConfig[] = [
     "npmDependencies": [],
     "registryDependencies": [],
     "usage": {
-      "import": "import { GlowCard } from \"@/components/glow-card\"",
+      "import": "import { GlowCard } from \"@/components/grootstudio/glow-card\"",
       "code": "export default function Demo() {\n  return (\n    <GlowCard className=\"p-6\">\n      <h3 className=\"text-xl font-bold\">Groot Studio</h3>\n      <p className=\"text-muted-foreground\">Interactive glowing cards.</p>\n    </GlowCard>\n  )\n}"
     },
     "props": [

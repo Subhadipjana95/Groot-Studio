@@ -17,7 +17,7 @@ export const config: ComponentConfig = {
   npmDependencies: [],
   registryDependencies: [],
   usage: {
-    import: `import { GlowCard } from "@/components/glow-card"`,
+    import: `import { GlowCard } from "@/components/grootstudio/glow-card"`,
     code: `export default function Demo() {
   return (
     <GlowCard className="p-6">
