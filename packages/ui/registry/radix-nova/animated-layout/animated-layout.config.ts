@@ -18,7 +18,7 @@ export const config: ComponentConfig = {
   npmDependencies: ["motion", "lucide-react"],
   registryDependencies: [],
   usage: {
-    import: `import { AnimatedLayout } from "@/components/animated-layout"`,
+    import: `import { AnimatedLayout } from "@/components/grootstudio/animated-layout"`,
     code: `export default function Demo() {
   return <AnimatedLayout items={[
     {

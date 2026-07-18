@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-18T02:08:44.224Z
+// Last generated: 2026-07-18T02:08:52.341Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -190,7 +190,7 @@ export const fullRegistry: ComponentConfig[] = [
     ],
     "registryDependencies": [],
     "usage": {
-      "import": "import { AnimatedLayout } from \"@/components/animated-layout\"",
+      "import": "import { AnimatedLayout } from \"@/components/grootstudio/animated-layout\"",
       "code": "export default function Demo() {\n  return <AnimatedLayout items={[\n    {\n    id: \"1\",\n    title: \"Shadcn UI\",\n    subtitle: \"Components Library\",\n    badge: \"345\",\n    image: \"https://github.com/Subhadipjana95.png\",\n    icon: CodeXml,\n  },\n  {\n    id: \"2\",\n    title: \"Figma\",\n    subtitle: \"Design Tool\",\n    badge: \"105\",\n    image: \"https://github.com/Subhadipjana95.png\",\n    icon: Brush,\n  }\n]} heading=\"My Collection\" defaultView=\"list\" />\n}"
     },
     "props": [
