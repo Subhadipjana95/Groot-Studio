@@ -7,7 +7,8 @@
     {
       "path": "registry/radix-nova/glow-card/glow-card.tsx",
       "content": "import { cn } from \"@/lib/utils\"\r\n\r\ninterface GlowCardProps {\r\n  children: React.ReactNode\r\n  className?: string\r\n}\r\n\r\nexport function GlowCard({ children, className }: GlowCardProps) {\r\n  return (\r\n    <div\r\n      className={cn(\r\n        \"relative rounded-xl border border-white/10 bg-white/5 p-6\",\r\n        \"shadow-[0_0_30px_rgba(120,80,255,0.15)]\",\r\n        \"hover:shadow-[0_0_40px_rgba(120,80,255,0.3)]\",\r\n        \"transition-shadow duration-300\",\r\n        className\r\n      )}\r\n    >\r\n      {children}\r\n    </div>\r\n  )\r\n}",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "@components/grootstudio"
     }
   ],
   "type": "registry:block"
