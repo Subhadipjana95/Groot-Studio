@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-18T02:09:19.460Z
+// Last generated: 2026-07-18T02:09:28.240Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -444,7 +444,7 @@ export const fullRegistry: ComponentConfig[] = [
       "Tooltip"
     ],
     "usage": {
-      "import": "import { DiscordOnline } from \"@/components/discord-online\"",
+      "import": "import { DiscordOnline } from \"@/components/grootstudio/discord-online\"",
       "code": "export default function Demo() {\n  return <DiscordOnline guildId=\"1234567891487752291602665574\" />\n}"
     },
     "props": [
