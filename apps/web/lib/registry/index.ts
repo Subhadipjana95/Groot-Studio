@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-18T02:10:40.154Z
+// Last generated: 2026-07-18T02:10:55.591Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -1035,7 +1035,7 @@ export const fullRegistry: ComponentConfig[] = [
     ],
     "registryDependencies": [],
     "usage": {
-      "import": "import { LogoGrid } from \"@/components/logo-grid\"",
+      "import": "import { LogoGrid } from \"@/components/grootstudio/logo-grid\"",
       "code": "export default function Demo() {\n  return (\n  <LogoGrid \n  logos={[\n    {\n      src: \"https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777378066/nvidia-wordmark-light_rby94r.webp\",\n      alt: \"NVIDIA\",\n    },\n    {\n      src: \"https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777378067/github-wordmark-light_b6f50g.webp\",\n      alt: \"GitHub\",\n    },\n    {\n      src: \"https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777378067/python-wordmark-light_b0o0x8.webp\",\n      alt: \"Python\",\n    },\n    {\n      src: \"https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777378066/vercel-wordmark-light_y4v7h8.webp\",\n      alt: \"Vercel\",\n    },\n    {\n      src: \"https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777378067/nodejs-wordmark-light_y30xga.webp\",\n      alt: \"Node.js\",\n    },\n    {\n      src: \"https://res.cloudinary.com/dfjuuwtr6/image/upload/v1777378066/typescript-wordmark-light_zmyr6r.webp\",\n      alt: \"TypeScript\",\n    }\n  ]}\n  />\n  )\n}"
     },
     "props": [
