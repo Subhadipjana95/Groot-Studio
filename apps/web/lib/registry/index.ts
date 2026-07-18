@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-18T02:08:34.600Z
+// Last generated: 2026-07-18T02:08:44.224Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -108,7 +108,7 @@ export const fullRegistry: ComponentConfig[] = [
     "npmDependencies": [],
     "registryDependencies": [],
     "usage": {
-      "import": "import { AnimatedBars } from \"@/components/animated-bars\"",
+      "import": "import { AnimatedBars } from \"@/components/grootstudio/animated-bars\"",
       "code": "export default function Demo() {\n  return (\n    <AnimatedBars numBars={15} gradientFrom=\"rgb(59, 130, 246)\" backgroundColor=\"rgb(2, 6, 23)\">\n      <h1>Energy Waves</h1>\n    </AnimatedBars>\n  )\n}"
     },
     "props": [
