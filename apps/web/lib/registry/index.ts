@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-18T02:11:14.401Z
+// Last generated: 2026-07-18T02:11:23.122Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -1249,7 +1249,7 @@ export const fullRegistry: ComponentConfig[] = [
     "registryUrl": "https://grootstudio.vercel.app/r/press-button.json",
     "installAlias": "press-button",
     "usage": {
-      "import": "import { PressButton } from \"@/components/press-button\"",
+      "import": "import { PressButton } from \"@/components/grootstudio/press-button\"",
       "code": "export default function Demo() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <PressButton>Default</PressButton>\n\n      <PressButton className=\"bg-indigo-600 text-white shadow-[4px_4px_0_0_#3730a3] border-[#3730a3]\">\n        Custom Indigo\n      </PressButton>\n    </div>\n  )\n}"
     },
     "props": [
