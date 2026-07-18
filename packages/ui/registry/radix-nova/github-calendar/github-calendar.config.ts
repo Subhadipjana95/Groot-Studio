@@ -36,7 +36,7 @@ export const config: ComponentConfig = {
     },
   ],
   usage: {
-    import: `import { GitHubCalendar } from "@/components/github-calendar"`,
+    import: `import { GitHubCalendar } from "@/components/grootstudio/github-calendar"`,
     code: `export default function Demo() {
   return <GitHubCalendar username="Subhadipjana95" />
 }`,

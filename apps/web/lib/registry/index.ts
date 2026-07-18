@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-18T02:09:37.402Z
+// Last generated: 2026-07-18T02:09:45.096Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -612,7 +612,7 @@ export const fullRegistry: ComponentConfig[] = [
       }
     ],
     "usage": {
-      "import": "import { GitHubCalendar } from \"@/components/github-calendar\"",
+      "import": "import { GitHubCalendar } from \"@/components/grootstudio/github-calendar\"",
       "code": "export default function Demo() {\n  return <GitHubCalendar username=\"Subhadipjana95\" />\n}"
     },
     "props": [
