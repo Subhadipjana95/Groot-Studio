@@ -11,7 +11,8 @@
       "files": [
         {
           "path": "registry/radix-nova/glow-card/glow-card.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -27,7 +28,8 @@
       "files": [
         {
           "path": "registry/radix-nova/github-stars/github-stars.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -43,7 +45,8 @@
       "files": [
         {
           "path": "registry/radix-nova/github-stars-react/github-stars-react.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -58,7 +61,8 @@
       "files": [
         {
           "path": "registry/radix-nova/gradient-text-fill/gradient-text-fill.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -73,7 +77,8 @@
       "files": [
         {
           "path": "registry/radix-nova/gradient-background-text/gradient-background-text.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -89,7 +94,8 @@
       "files": [
         {
           "path": "registry/radix-nova/discord-online/discord-online.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -105,7 +111,8 @@
       "files": [
         {
           "path": "registry/radix-nova/discord-online-react/discord-online-react.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -121,7 +128,8 @@
       "files": [
         {
           "path": "registry/radix-nova/logo-marquee/logo-marquee.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -138,7 +146,8 @@
       "files": [
         {
           "path": "registry/radix-nova/blurred-marquee/blurred-marquee.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -153,7 +162,8 @@
       "files": [
         {
           "path": "registry/radix-nova/logo-grid/logo-grid.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -168,7 +178,8 @@
       "files": [
         {
           "path": "registry/radix-nova/github-calendar/github-calendar.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -183,7 +194,8 @@
       "files": [
         {
           "path": "registry/radix-nova/avatar-tooltips/avatar-tooltips.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -195,7 +207,8 @@
       "files": [
         {
           "path": "registry/radix-nova/3d-button/3d-button.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -214,7 +227,8 @@
       "files": [
         {
           "path": "registry/radix-nova/sliding-button/sliding-button.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -233,7 +247,8 @@
       "files": [
         {
           "path": "registry/radix-nova/drag-button/drag-button.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -245,7 +260,8 @@
       "files": [
         {
           "path": "registry/radix-nova/press-button/press-button.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -257,7 +273,8 @@
       "files": [
         {
           "path": "registry/radix-nova/cursor-trail/cursor-trail.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -272,7 +289,8 @@
       "files": [
         {
           "path": "registry/radix-nova/image-trail/image-trail.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -288,7 +306,8 @@
       "files": [
         {
           "path": "registry/radix-nova/text-outline-glow/text-outline-glow.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -300,7 +319,8 @@
       "files": [
         {
           "path": "registry/radix-nova/animated-bars/animated-bars.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -316,7 +336,8 @@
       "files": [
         {
           "path": "registry/radix-nova/animated-layout/animated-layout.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -331,7 +352,8 @@
       "files": [
         {
           "path": "registry/radix-nova/theme-toggler/theme-toggler.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -343,7 +365,8 @@
       "files": [
         {
           "path": "registry/radix-nova/styled-button/styled-button.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     },
@@ -352,13 +375,16 @@
       "type": "registry:block",
       "title": "Pebble Toast",
       "description": "A premium notification stack with beautiful center/corner positioning, micro-animations, and dynamic gradients.",
-      "registryDependencies": [
-        "sonner", "lucide-react", "motion/react"
+      "dependencies": [
+        "sonner",
+        "lucide-react",
+        "motion"
       ],
       "files": [
         {
           "path": "registry/radix-nova/pebble-toast/pebble-toast.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "@components/grootstudio"
         }
       ]
     }
