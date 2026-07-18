@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-18T02:10:12.250Z
+// Last generated: 2026-07-18T02:10:26.896Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -895,7 +895,7 @@ export const fullRegistry: ComponentConfig[] = [
     ],
     "registryDependencies": [],
     "usage": {
-      "import": "import { GradientText } from \"@/components/gradient-text\"",
+      "import": "import { GradientText } from \"@/components/grootstudio/gradient-text\"",
       "code": "export default function Demo() {\n  return <GradientText>Groot Studio</GradientText>\n}"
     },
     "props": [
