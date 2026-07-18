@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-18T02:09:45.096Z
+// Last generated: 2026-07-18T02:09:52.762Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -725,7 +725,7 @@ export const fullRegistry: ComponentConfig[] = [
       "Button"
     ],
     "usage": {
-      "import": "import { GitHubStars } from \"@/components/github-stars\"",
+      "import": "import { GitHubStars } from \"@/components/grootstudio/github-stars\"",
       "code": "export default function Demo() {\n  return <GitHubStars repo=\"Subhadipjana95/groot-studio\" />\n}"
     },
     "props": [
