@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-18T02:11:05.333Z
+// Last generated: 2026-07-18T02:11:14.401Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -1139,7 +1139,8 @@ export const fullRegistry: ComponentConfig[] = [
     "npmDependencies": [
       "sonner",
       "motion",
-      "lucide-react"
+      "lucide-react",
+      "next-themes"
     ],
     "registryDependencies": [],
     "usage": {
@@ -1147,7 +1148,7 @@ export const fullRegistry: ComponentConfig[] = [
         {
           "title": "Add the Toaster component.",
           "fileName": "app/layout.tsx",
-          "code": "import { Toaster } from \"@/components/ui/sonner\"\n\nexport default function RootLayout({ children }) {\n  return (\n    <html lang=\"en\">\n      <head />\n      <body>\n        <main>{children}</main>\n        <Toaster position=\"bottom-right\" />\n      </body>\n    </html>\n  )\n}",
+          "code": "import { Toaster } from \"@/components/grootstudio/pebble-toast\"\n\nexport default function RootLayout({ children }) {\n  return (\n    <html lang=\"en\">\n      <head />\n      <body>\n        <main>{children}</main>\n        <Toaster position=\"bottom-right\" />\n      </body>\n    </html>\n  )\n}",
           "highlightLines": [
             1,
             9
