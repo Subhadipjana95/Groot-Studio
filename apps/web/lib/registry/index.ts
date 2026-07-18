@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // AUTO-GENERATED — do not edit manually.
 // Run: npm run registry:index
-// Last generated: 2026-07-18T02:09:09.832Z
+// Last generated: 2026-07-18T02:09:19.460Z
 // ─────────────────────────────────────────────────────────────────
 
 import type { ComponentConfig } from "@workspace/ui/types/registry";
@@ -366,7 +366,7 @@ export const fullRegistry: ComponentConfig[] = [
     "npmDependencies": [],
     "registryDependencies": [],
     "usage": {
-      "import": "import { CursorTrail } from \"@/components/cursor-trail\"",
+      "import": "import { CursorTrail } from \"@/components/grootstudio/cursor-trail\"",
       "code": "export default function Demo() {\n  return (\n    <div className=\"relative w-full h-full overflow-hidden\">\n      <CursorTrail />\n    </div>\n  )\n}"
     },
     "props": [
