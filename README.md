@@ -98,7 +98,7 @@ npx shadcn@latest add @grootstudio/sliding-button
 Once installed, you can import the component in your files:
 
 ```bash
-import { SlidingButton } from "@/components/sliding-button"
+import { SlidingButton } from "@/components/grootstudio/sliding-button"
 ```
 
 and use it like this:
@@ -115,7 +115,7 @@ export default function Page() {
 }
 ```
 
-**Note:** The import path `@/components/ui/sliding-button` assumes your project has a path alias configured (common in **[Next.js](https://nextjs.org/docs)** and similar frameworks). Adjust the path to match your project's structure if needed.
+**Note:** The import path `@/components/grootstudio/sliding-button` assumes your project has a path alias configured (common in **[Next.js](https://nextjs.org/docs)** and similar frameworks). Adjust the path to match your project's structure if needed.
 
 <p align="center">
   <img alt="image" src="https://res.cloudinary.com/dfjuuwtr6/image/upload/v1778798978/sliding-button_dark_pwd8ks-removebg-preview2_pmf9xi.png" />
