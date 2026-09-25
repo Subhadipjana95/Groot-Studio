@@ -38,7 +38,7 @@ export const navbarData = {
     ],
 
     socials: [
-        { name: "Twitter", href: "https://x.com/Subhadip53874", icon: Twitter },
+        { name: "Twitter", href: "https://x.com/soulsofsavi", icon: Twitter },
         { name: "GitHub", href: "https://github.com/Subhadipjana95/Groot-Studio", icon: Github },
         { name: "Discord", href: "https://discord.com/channels/1487752291602665574", icon: DiscordIcon },
         { name: "YouTube", href: "#", icon: Youtube },
